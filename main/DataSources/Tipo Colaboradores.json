@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_tipocolaboradors",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_tipocolaborador",
+    "Name": "Tipo Colaboradores",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_id": "ID",
+      "uipp_tipo": "Tipo",
+      "uipp_tipocolaborador_AsyncOperations": "System Jobs",
+      "uipp_tipocolaborador_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_tipocolaborador_DuplicateBaseRecord": "Duplicate Records (uipp_tipocolaborador_DuplicateBaseRecord)",
+      "uipp_tipocolaborador_DuplicateMatchingRecord": "Duplicate Records (uipp_tipocolaborador_DuplicateMatchingRecord)",
+      "uipp_tipocolaborador_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_tipocolaborador_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_tipocolaborador_ProcessSession": "Process Sessions",
+      "uipp_tipocolaborador_SyncErrors": "Sync Errors",
+      "uipp_tipocolaboradorid": "Tipo Colaborador",
+      "uipp_uipp_pessoas_Tipo_uipp_tipocolaborador": "Pessoas",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Tipo Colaboradores",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Tipo Colaboradores (Views)",
+    "Name": "_uipp_tipocolaborador_views",
+    "RelatedEntityName": "Tipo Colaboradores",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5d138a5c-2a62-4fe0-a27c-2dfab71ae059": "Tipo Colaborador Advanced Find View",
+      "77849809-490e-4fcd-9fce-8ef8598e3172": "Active Tipo Colaboradores",
+      "890fa7fd-37c6-4fdc-9003-3dacac255bf7": "Inactive Tipo Colaboradores",
+      "ca48dce4-e103-4495-9154-615ed1b6a6f8": "Tipo Colaborador Lookup View",
+      "f2060aff-17d0-401f-9401-c21a435f7234": "Tipo Colaborador Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Tipo Colaboradores)",
+    "Name": "uipp_tipocolaborador_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Tipo Colaboradores"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Tipo Colaboradores",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Tipo Colaboradores)",
+    "Name": "uipp_tipocolaborador_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Tipo Colaboradores"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Tipo Colaboradores",
+    "Type": "OptionSetInfo"
+  }
+]
