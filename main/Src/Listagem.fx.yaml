@@ -1,0 +1,533 @@
+Listagem As screen:
+    OnVisible: |
+        =ClearCollect(
+            Estados,
+            Blank(),
+            Choices('Estado Processo')
+        )
+
+    LeftSectionComponent_2 As LeftSectionComponent:
+        ZIndex: =1
+
+    Label1_1 As label:
+        Size: =15
+        Text: ="Atividades"
+        Width: =610
+        X: =359
+        Y: =35
+        ZIndex: =2
+
+    "'Gallery Data' As gallery.variableTemplateHeightGallery":
+        DelayItemLoading: =true
+        Fill: =Color.White
+        Height: =493
+        Items: |-
+            =With(
+                {
+                    records:
+                    Filter(
+                        Atividades,
+                        (TextInput2.Text in ThisRecord.Atividade Or
+                        TextInput2.Text in ThisRecord.'Tipo de Processo'.'Tipo de Processo' Or
+                        TextInput2.Text in ThisRecord.Processo.'Processo (uipp_processo)' Or
+                        TextInput2.Text in ThisRecord.'Macro Processo'.'Macro Processo (uipp_macroprocesso)' Or
+                        TextInput2.Text in ThisRecord.'Data de Decisão') And
+                        Dropdown1.SelectedText.Value = Text(ThisRecord.Estado)
+                    )
+                },
+                ForAll(
+                    Sequence(CountRows(records)),
+                    Patch(
+                        Last(
+                            FirstN(
+                                SortByColumns(
+                                    records,
+                                    "createdon",
+                                    SortOrder.Descending
+                                ),
+                                Value
+                            )
+                        ),
+                        {rowNumber: Value}
+                    )
+                )
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplateFill: |-
+            =If(
+                Mod(ThisItem.rowNumber, 2) = 0,
+                Color.LightSlateGray,
+                Color.White
+            )
+        TemplatePadding: =0
+        TemplateSize: =75
+        Width: =Principal.Width
+        X: =Principal.X
+        Y: =Principal.Y + Principal.Height
+        ZIndex: =3
+
+        Rectangle2 As rectangle:
+            Fill: |-
+                =Switch(
+                    Trim(Lower(ThisItem.Estado)),
+                    
+                    Trim(Lower("Em preenchimento")),
+                    Color.Blue,
+                    
+                    Trim(Lower("Em validação")),
+                    Color.Yellow,
+                
+                    Trim(Lower("Aprovado")),
+                    Color.Green,
+                
+                    Trim(Lower("Rejeitado")),
+                    Color.Red,
+                
+                    Trim(Lower("Em revisão pela U.O.")),
+                    Color.DarkOrange,
+                
+                    Trim(Lower("Em revalidação")),
+                    Color.Yellow
+                
+                )
+            Height: =74
+            OnSelect: =Select(Parent)
+            Width: =7
+            Y: =1
+            ZIndex: =1
+
+        "'U.O.' As label":
+            Align: =Align.Center
+            Color: |-
+                =If(
+                    Mod(ThisItem.rowNumber, 2) = 0,
+                    Color.White,
+                    Color.DarkSlateGray
+                )
+            Height: =Rectangle2.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Unidade Orgânica'
+            Width: |-
+                =((
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6) - Rectangle2.Width
+            X: =Rectangle2.Width
+            Y: =Rectangle2.Y
+            ZIndex: =2
+
+        "'U.O. Split' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Rectangle2.Height
+            OnSelect: =
+            Width: =2
+            X: ='U.O.'.X + 'U.O.'.Width
+            Y: =Rectangle2.Y
+            ZIndex: =3
+
+        Atividade As label:
+            Align: =Align.Center
+            Color: |-
+                =If(
+                    Mod(ThisItem.rowNumber, 2) = 0,
+                    Color.White,
+                    Color.DarkSlateGray
+                )
+            Height: =Rectangle2.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Atividade
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: ='U.O. Split'.X + 'U.O. Split'.Width
+            Y: =Rectangle2.Y
+            ZIndex: =4
+
+        "'Atividade Split' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Rectangle2.Height
+            OnSelect: =Atividade.X + Atividade.Width
+            Width: =2
+            X: =Atividade.X + Atividade.Width
+            Y: =Rectangle2.Y
+            ZIndex: =5
+
+        Descricao As label:
+            Align: =Align.Center
+            Color: |-
+                =If(
+                    Mod(ThisItem.rowNumber, 2) = 0,
+                    Color.White,
+                    Color.DarkSlateGray
+                )
+            Height: =Rectangle2.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Descrição de atividade'
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: ='Atividade Split'.X + 'Atividade Split'.Width
+            Y: =Rectangle2.Y
+            ZIndex: =6
+
+        "'Descricao Split' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Rectangle2.Height
+            OnSelect: =
+            Width: =2
+            X: =Descricao.X + Descricao.Width
+            Y: =Rectangle2.Y
+            ZIndex: =7
+
+        "'Tipo Processo' As label":
+            Align: =Align.Center
+            Color: |-
+                =If(
+                    Mod(ThisItem.rowNumber, 2) = 0,
+                    Color.White,
+                    Color.DarkSlateGray
+                )
+            Height: =Rectangle2.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: ='Descricao Split'.X + 'Descricao Split'.Width
+            Y: =Rectangle2.Y
+            ZIndex: =8
+
+        "'Tipo Processo Split' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Rectangle2.Height
+            OnSelect: =
+            Width: =2
+            X: ='Tipo Processo'.X + 'Tipo Processo'.Width
+            Y: =Rectangle2.Y
+            ZIndex: =9
+
+        Processo As label:
+            Align: =Align.Center
+            Color: |-
+                =If(
+                    Mod(ThisItem.rowNumber, 2) = 0,
+                    Color.White,
+                    Color.DarkSlateGray
+                )
+            Height: =Rectangle2.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Processo.'Processo (uipp_processo)'
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: ='Tipo Processo Split'.X + 'Tipo Processo Split'.Width
+            Y: =Rectangle2.Y
+            ZIndex: =10
+
+        "'Processo Split' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Rectangle2.Height
+            OnSelect: =
+            Width: =2
+            X: =Processo.X + Processo.Width
+            Y: =Rectangle2.Y
+            ZIndex: =11
+
+        "'Macro Processo' As label":
+            Align: =Align.Center
+            Color: |-
+                =If(
+                    Mod(ThisItem.rowNumber, 2) = 0,
+                    Color.White,
+                    Color.DarkSlateGray
+                )
+            Height: =Rectangle2.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: ='Processo Split'.X + 'Processo Split'.Width
+            Y: =Rectangle2.Y
+            ZIndex: =12
+
+    DynamicBtn_1 As DynamicBtn:
+        BtnText: ="Nova Atividade"
+        BtnWidth: =200
+        X: =1143
+        Y: =35
+        ZIndex: =16
+
+    Button2 As button:
+        BorderColor: =Color.Transparent
+        Color: =Color.Transparent
+        Fill: =Color.Transparent
+        Height: =DynamicBtn_1.Height
+        HoverColor: =Color.Transparent
+        HoverFill: =Color.Transparent
+        OnSelect: |-
+            =Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.New})
+        PressedColor: =Color.Transparent
+        Text: =
+        Width: =DynamicBtn_1.Width
+        X: =DynamicBtn_1.X
+        Y: =DynamicBtn_1.Y
+        ZIndex: =23
+
+    ActionBar As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =23
+
+        TextInput2 As text:
+            BorderColor: =ColorFade(cores.cinzento, 80%)
+            BorderThickness: =1
+            Clear: =true
+            Color: |-
+                =//RGBA(0, 0, 0, 1)
+                cores.cinzento
+            Default: =
+            Fill: =ColorFade(cores.cinzento, 90%)
+            Height: =29
+            HoverBorderColor: =RGBA(128, 128, 128, 1)
+            HoverFill: =
+            PaddingLeft: =40
+            Tooltip: =
+            Width: =264
+            X: =358
+            Y: =124
+            ZIndex: =17
+
+        "Icon1_1 As icon.'3DPrinting'":
+            Color: |-
+                =///RGBA(0, 18, 107, 1)
+                cores.amareloMontepio
+            Height: =18
+            Icon: =Icon.Search
+            OnSelect: =//Select(Parent)
+            Width: =18
+            X: =365
+            Y: =131
+            ZIndex: =18
+
+        Dropdown1 As dropdown:
+            AllowEmptySelection: =true
+            BorderColor: =cores.cinzento
+            ChevronBackground: =cores.amareloMontepio
+            ChevronFill: =Color.White
+            ChevronHoverBackground: =cores.amareloMontepio
+            ChevronHoverFill: =
+            Default: =Blank()
+            Height: =TextInput2.Height
+            HoverColor: =
+            HoverFill: =cores.amareloMontepio
+            Items: =Estados
+            PressedFill: =
+            Reset: =true
+            SelectionFill: =cores.amareloMontepio
+            Width: =264
+            X: =656
+            Y: =TextInput2.Y
+            ZIndex: =22
+
+    "'Galery Headers' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =26
+
+        Principal As rectangle:
+            Fill: =cores.cinzento
+            Height: =63
+            OnSelect: =
+            TabIndex: =0
+            Width: =990
+            X: =358
+            Y: =176
+            ZIndex: =4
+
+        "'U.O. Header' As label":
+            Align: =Align.Center
+            Color: =Color.LightGray
+            Height: =Principal.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            TabIndex: =0
+            Text: ="Unidade Orgânica"
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: =358
+            Y: =176
+            ZIndex: =5
+
+        "'U.O. Header Split' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Principal.Height
+            OnSelect: =
+            TabIndex: =0
+            Width: =2
+            X: =521
+            Y: =Principal.Y
+            ZIndex: =6
+
+        "'Atividade Header' As label":
+            Align: =Align.Center
+            Color: =Color.LightGray
+            Height: =Principal.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            TabIndex: =0
+            Text: ="Atividade"
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: =523
+            Y: =176
+            ZIndex: =7
+
+        "'Atividade Header Split' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Principal.Height
+            OnSelect: =
+            TabIndex: =0
+            Width: =2
+            X: =686
+            Y: =Principal.Y
+            ZIndex: =8
+
+        "'Descricao Header' As label":
+            Align: =Align.Center
+            Color: =Color.LightGray
+            Height: =Principal.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            TabIndex: =0
+            Text: ="Descrição"
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: =688
+            Y: =176
+            ZIndex: =9
+
+        "'Descricao Header Split' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Principal.Height
+            OnSelect: =
+            TabIndex: =0
+            Width: =2
+            X: =851
+            Y: =Principal.Y
+            ZIndex: =10
+
+        "'Tipo Processo Header' As label":
+            Align: =Align.Center
+            Color: =Color.LightGray
+            Height: =Principal.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            TabIndex: =0
+            Text: ="Tipo de processo"
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: =853
+            Y: =176
+            ZIndex: =11
+
+        "'Tipo Processo Header Split' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Principal.Height
+            OnSelect: =
+            TabIndex: =0
+            Width: =2
+            X: =1016
+            Y: =Principal.Y
+            ZIndex: =12
+
+        "'Processo Header' As label":
+            Align: =Align.Center
+            Color: =Color.LightGray
+            Height: =Principal.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            TabIndex: =0
+            Text: ="Processo"
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: =1018
+            Y: =176
+            ZIndex: =13
+
+        "'Processo Header Split' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Principal.Height
+            OnSelect: =
+            TabIndex: =0
+            Width: =2
+            X: =1181
+            Y: =Principal.Y
+            ZIndex: =14
+
+        "'Macro Processo Header Split' As label":
+            Align: =Align.Center
+            Color: =Color.LightGray
+            Height: =Principal.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            TabIndex: =0
+            Text: ="Macro processo"
+            Width: |-
+                =(
+                    Principal.Width - ('U.O. Header Split'.Width * 6)
+                ) / 6
+            X: =1183
+            Y: =176
+            ZIndex: =15
+

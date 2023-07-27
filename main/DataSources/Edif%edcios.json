@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_edificioses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_edificios",
+    "MaxGetRowsCount": 500,
+    "Name": "Edifícios",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_edificios_AsyncOperations": "System Jobs",
+      "uipp_edificios_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_edificios_DuplicateBaseRecord": "Duplicate Records (uipp_edificios_DuplicateBaseRecord)",
+      "uipp_edificios_DuplicateMatchingRecord": "Duplicate Records (uipp_edificios_DuplicateMatchingRecord)",
+      "uipp_edificios_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_edificios_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_edificios_ProcessSession": "Process Sessions",
+      "uipp_edificios_SyncErrors": "Sync Errors",
+      "uipp_edificiosid": "Edifícios",
+      "uipp_id": "ID",
+      "uipp_localizacao": "Localização",
+      "uipp_uipp_atividades_Edificio_uipp_edificios": "Atividades",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Edifícios",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Edifícios (Views)",
+    "Name": "_uipp_edificios_views",
+    "RelatedEntityName": "Edifícios",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1c83af11-8380-4af1-a7d8-dff27602ca2d": "Inactive Edifícios",
+      "628c24a3-f88f-4046-8f27-69fdfc882d2d": "Edifícios Advanced Find View",
+      "7362c951-dbd2-4368-a67b-3a22a1ca7ad7": "Edifícios Associated View",
+      "97b4695b-a334-45d9-a433-bf9d07083a06": "Active Edifícios",
+      "b41fe9ee-abd8-44f3-8886-4170ba395736": "Edifícios Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Edifícios)",
+    "Name": "uipp_edificios_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Edifícios"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Edifícios",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Edifícios)",
+    "Name": "uipp_edificios_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Edifícios"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Edifícios",
+    "Type": "OptionSetInfo"
+  }
+]

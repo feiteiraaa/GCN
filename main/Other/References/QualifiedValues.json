@@ -1,0 +1,74 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_uipp_atividades_forms",
+      "Namespace": "Atividades (Forms)",
+      "Values": {
+        "Information": "d8c776f0-4779-42bc-afa0-a1411223bfb1"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_processo_forms",
+      "Namespace": "Processos (Forms)",
+      "Values": {
+        "Information": "8a0e0573-ee36-424d-b233-b5712bbefe1d"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_tipoprocesso_forms",
+      "Namespace": "Tipo Processos (Forms)",
+      "Values": {
+        "Information": "24ded4a0-f802-4516-b9a6-ac4a7c7d7705"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_edificios_forms",
+      "Namespace": "Edifícios (Forms)",
+      "Values": {
+        "Information": "80a9531c-19ba-41fa-bfc7-e8d613cedcfd"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_macroprocesso_forms",
+      "Namespace": "Macro Processos (Forms)",
+      "Values": {
+        "Information": "5ca2bd53-9dc2-49f7-97c2-ebf394b7f8e2"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_fatoresdecriticidade_forms",
+      "Namespace": "Fatores de Criticidades (Forms)",
+      "Values": {
+        "Information": "dc2b6729-0f00-45d3-88ea-d40aac2e6502"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_rto_forms",
+      "Namespace": "RTOS (Forms)",
+      "Values": {
+        "Information": "31caadac-30bf-48fd-b625-adfdf59de1d9"
+      }
+    },
+    {
+      "Kind": "default.cds_aaduser_forms",
+      "Namespace": "AAD Users (Forms)",
+      "Values": {
+        "Information": "dd5ded01-9aad-4e25-8d0e-e9acdaecbe4e"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_atividade_forms",
+      "Namespace": "Atividades (Forms)1",
+      "Values": {
+        "Information": "37e74310-f336-429a-b95a-aa9bec90548b"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_atividades_forms",
+      "Namespace": "Atividades (Forms)11",
+      "Values": {
+        "Information": "d8c776f0-4779-42bc-afa0-a1411223bfb1"
+      }
+    }
+  ]
+}

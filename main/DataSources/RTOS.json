@@ -1,0 +1,103 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_rtos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_rto",
+    "MaxGetRowsCount": 500,
+    "Name": "RTOS",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_classificacao": "Classificação",
+      "uipp_duracao": "Duração",
+      "uipp_id": "ID",
+      "uipp_rto_AsyncOperations": "System Jobs",
+      "uipp_rto_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_rto_DuplicateBaseRecord": "Duplicate Records (uipp_rto_DuplicateBaseRecord)",
+      "uipp_rto_DuplicateMatchingRecord": "Duplicate Records (uipp_rto_DuplicateMatchingRecord)",
+      "uipp_rto_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_rto_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_rto_ProcessSession": "Process Sessions",
+      "uipp_rto_SyncErrors": "Sync Errors",
+      "uipp_rtoid": "RTO",
+      "uipp_uipp_equipamentodeescritorio_Duracao_uipp": "Equipamentos de Escritório",
+      "uipp_uipp_fatoresdecriticidade_Duracao_uipp_rt": "Fatores de Criticidades",
+      "uipp_uipp_pessoas_Duracao_uipp_rto": "Pessoas",
+      "uipp_uipp_sistemas_Duracao_uipp_rto": "Sistemas",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "RTOS",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "RTOS (Views)",
+    "Name": "_uipp_rto_views",
+    "RelatedEntityName": "RTOS",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "25565caa-635f-4bec-9e29-50d83e313bf2": "Active RTOS",
+      "53a0772d-b141-4374-a7b5-e6f3c112e88d": "RTO Advanced Find View",
+      "74d1558c-c0e7-48f1-b128-48ad675abf7c": "Inactive RTOS",
+      "83607f0e-abde-4ace-9124-5226217bfa44": "RTO Associated View",
+      "f4cb9fd2-8dff-4638-9660-e4ab318bff91": "RTO Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (RTOS)",
+    "Name": "uipp_rto_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "RTOS"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "RTOS",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (RTOS)",
+    "Name": "uipp_rto_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "RTOS"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "RTOS",
+    "Type": "OptionSetInfo"
+  }
+]

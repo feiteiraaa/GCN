@@ -1,0 +1,131 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_fatoresdecriticidades",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_fatoresdecriticidade",
+    "MaxGetRowsCount": 500,
+    "Name": "Fatores de Criticidades",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_classificacao": "Classificacao",
+      "uipp_duassemanas": "duas semanas",
+      "uipp_Duracao": "Duração",
+      "uipp_fatoresdecriticidade_AsyncOperations": "System Jobs",
+      "uipp_fatoresdecriticidade_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_fatoresdecriticidade_DuplicateBaseRecord": "Duplicate Records (uipp_fatoresdecriticidade_DuplicateBaseRecord)",
+      "uipp_fatoresdecriticidade_DuplicateMatchingRecord": "Duplicate Records (uipp_fatoresdecriticidade_DuplicateMatchingRecord)",
+      "uipp_fatoresdecriticidade_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_fatoresdecriticidade_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_fatoresdecriticidade_ProcessSession": "Process Sessions",
+      "uipp_fatoresdecriticidade_SyncErrors": "Sync Errors",
+      "uipp_fatoresdecriticidadeid": "Fatores de Criticidade",
+      "uipp_id": "ID",
+      "uipp_IDAtividade": "ID Atividade",
+      "uipp_quarentaoitohoras": "quarenta oito horas",
+      "uipp_quatrohoras": "quatro horas",
+      "uipp_racional": "Racional",
+      "uipp_tipodefator": "Tipo de Fator",
+      "uipp_umasemana": "uma semana",
+      "uipp_ummes": "um mes",
+      "uipp_vintequatrohoras": "vinte quatro horas",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Fatores de Criticidades",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Fatores de Criticidades (Views)",
+    "Name": "_uipp_fatoresdecriticidade_views",
+    "RelatedEntityName": "Fatores de Criticidades",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0aac1e5d-6639-4b7e-883b-7577b4d90f54": "Fatores de Criticidade Associated View",
+      "0b3ca92d-7bd4-4abf-adc4-9a4e6e786c97": "Fatores de Criticidade Lookup View",
+      "340a4bf3-1db9-4b5c-bcae-ddfecf0816ff": "Inactive Fatores de Criticidades",
+      "4ec8bb4a-5dae-45ef-8ec5-53eeec853d42": "Active Fatores de Criticidades",
+      "e86fa467-310f-4370-9c62-07aa100aaf2c": "Fatores de Criticidade Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Fatores de Criticidades)",
+    "Name": "uipp_fatoresdecriticidade_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Fatores de Criticidades"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Fatores de Criticidades",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Fatores de Criticidades)",
+    "Name": "uipp_fatoresdecriticidade_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Fatores de Criticidades"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Fatores de Criticidades",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Tipo de Fator",
+    "Name": "uipp_tipodefator",
+    "OptionSetInfoNameMapping": {
+      "847700000": "Gestão",
+      "847700001": "Receitas",
+      "847700002": "Reputação",
+      "847700003": "Custo",
+      "847700004": "Legal"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "uipp_tipodefator",
+        "OptionSetReferenceEntityName": "Fatores de Criticidades"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "uipp_tipodefator",
+    "RelatedEntityName": "Fatores de Criticidades",
+    "Type": "OptionSetInfo"
+  }
+]

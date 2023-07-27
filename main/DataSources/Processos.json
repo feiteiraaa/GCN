@@ -1,0 +1,101 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_processos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_processo",
+    "MaxGetRowsCount": 500,
+    "Name": "Processos",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_id": "ID",
+      "uipp_IDMacroProcesso": "ID Macro Processo",
+      "uipp_idprocesso": "ID Processo",
+      "uipp_processo": "Processo (uipp_processo)",
+      "uipp_processo_AsyncOperations": "System Jobs",
+      "uipp_processo_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_processo_DuplicateBaseRecord": "Duplicate Records (uipp_processo_DuplicateBaseRecord)",
+      "uipp_processo_DuplicateMatchingRecord": "Duplicate Records (uipp_processo_DuplicateMatchingRecord)",
+      "uipp_processo_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_processo_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_processo_ProcessSession": "Process Sessions",
+      "uipp_processo_SyncErrors": "Sync Errors",
+      "uipp_processoid": "Processo (uipp_processoid)",
+      "uipp_uipp_atividades_Processo_uipp_processo": "Atividades",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Processos",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Processos (Views)",
+    "Name": "_uipp_processo_views",
+    "RelatedEntityName": "Processos",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "3040ecfd-6e19-4868-b010-c853d1ffb51f": "Inactive Processos",
+      "360b20c8-b958-42e7-ac02-9582801213cb": "Processo Advanced Find View",
+      "48ae6fa6-0d38-494b-bdd4-3cfc8c900d81": "Processo Associated View",
+      "bdb7c72e-572a-4ae8-98f8-a8ce6dbe2c6d": "Active Processos",
+      "e6f2ab92-da74-4ed0-8caa-47ea53dee68a": "Processo Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Processos)",
+    "Name": "uipp_processo_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Processos"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Processos",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Processos)",
+    "Name": "uipp_processo_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Processos"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Processos",
+    "Type": "OptionSetInfo"
+  }
+]

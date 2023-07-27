@@ -1,0 +1,101 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_macroprocessos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_macroprocesso",
+    "MaxGetRowsCount": 500,
+    "Name": "Macro Processos",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_id": "ID",
+      "uipp_idmacroprocesso": "ID Macro Processo",
+      "uipp_macroprocesso": "Macro Processo (uipp_macroprocesso)",
+      "uipp_macroprocesso_AsyncOperations": "System Jobs",
+      "uipp_macroprocesso_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_macroprocesso_DuplicateBaseRecord": "Duplicate Records (uipp_macroprocesso_DuplicateBaseRecord)",
+      "uipp_macroprocesso_DuplicateMatchingRecord": "Duplicate Records (uipp_macroprocesso_DuplicateMatchingRecord)",
+      "uipp_macroprocesso_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_macroprocesso_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_macroprocesso_ProcessSession": "Process Sessions",
+      "uipp_macroprocesso_SyncErrors": "Sync Errors",
+      "uipp_macroprocessoid": "Macro Processo (uipp_macroprocessoid)",
+      "uipp_uipp_atividades_MacroProcesso_uipp_macrop": "Atividades",
+      "uipp_uipp_processo_IDMacroProcesso_uipp_macrop": "Processos",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Macro Processos",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Macro Processos (Views)",
+    "Name": "_uipp_macroprocesso_views",
+    "RelatedEntityName": "Macro Processos",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0a799c53-8455-4c05-85c2-dbe98e5ba747": "Inactive Macro Processos",
+      "1b62b070-4c23-47b7-a617-8808544bd269": "Macro Processo Lookup View",
+      "5580d0af-6811-458b-813e-2a42ae8607ae": "Active Macro Processos",
+      "75899358-1a7c-4e0d-a187-3b6fb4900e34": "Macro Processo Associated View",
+      "aaffb24b-122b-4d66-b923-3988a50632b9": "Macro Processo Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Macro Processos)",
+    "Name": "uipp_macroprocesso_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Macro Processos"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Macro Processos",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Macro Processos)",
+    "Name": "uipp_macroprocesso_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Macro Processos"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Macro Processos",
+    "Type": "OptionSetInfo"
+  }
+]

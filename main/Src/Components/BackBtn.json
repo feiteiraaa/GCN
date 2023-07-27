@@ -1,0 +1,55 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": false,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "BackBtn",
+    "TemplateGuid": "2d388924dc2a407fa48c617669b67c09"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Button heigth",
+      "Hidden": false,
+      "Name": "BtnHeight",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "Altura do botão",
+      "Type": "{\"Version\":\"1.334\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Button width",
+      "Hidden": false,
+      "Name": "BtnWidth",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "Largura do Botão",
+      "Type": "{\"Version\":\"1.334\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Button icon",
+      "Hidden": false,
+      "Name": "ButtonIcon",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.334\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638260605132555952",
+  "Name": "2d388924dc2a407fa48c617669b67c09",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "c4a5d19b54264f7ba92ef2f2fdd8b339",
+  "Version": "638192527436691467"
+}

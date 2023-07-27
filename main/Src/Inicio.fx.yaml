@@ -1,0 +1,79 @@
+Inicio As screen:
+
+    Label1 As label:
+        Size: =15
+        Text: ="Bem vindo, " & User().FullName
+        Width: =610
+        X: =359
+        Y: =35
+        ZIndex: =7
+
+    LeftSectionComponent_1 As LeftSectionComponent:
+        ZIndex: =8
+
+    KPIs As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =9
+
+        KPI_Total As KPI:
+            KPIInfo: ="Total de Processos de Atividades"
+            KPIName: ="Total"
+            X: =359
+            Y: =100
+
+        KPI_EmPreenchimento As KPI:
+            KPIInfo: ="Processos de Atvividades em Preenchimento"
+            KPIName: ="Em Preenchimento"
+            X: =527
+            Y: =100
+            ZIndex: =2
+
+        KPI_EmValidação As KPI:
+            KPIInfo: ="Processos de Atividades em Validação"
+            KPIName: ="Em Validação"
+            X: =696
+            Y: =100
+            ZIndex: =3
+
+        KPI_Aprovados As KPI:
+            KPIInfo: ="Processos de Atividade Aprovados"
+            KPIName: ="Aprovados"
+            X: =864
+            Y: =100
+            ZIndex: =4
+
+        KPI_Rejeitados As KPI:
+            KPIInfo: ="Processos de Atividade Rejeitados"
+            KPIName: ="Rejeitados"
+            X: =1031
+            Y: =100
+            ZIndex: =5
+
+        KPI_EmRevisao As KPI:
+            KPIInfo: ="Processos de Atividade em Revisão"
+            KPIName: ="Em Revisão"
+            X: =1196
+            Y: =100
+            ZIndex: =6
+
+    TextCanvas1 As Text:
+        DisplayMode: =DisplayMode.View
+        Height: =32
+        Text: ="v" & appVersion
+        Width: =58
+        X: =1308
+        Y: =20
+        ZIndex: =10
+
+    Icon1 As icon.Information:
+        Color: =Color.Black
+        Height: =25
+        Icon: =Icon.Information
+        Width: =25
+        X: =1278
+        Y: =23
+        ZIndex: =11
+

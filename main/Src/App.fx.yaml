@@ -1,0 +1,74 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =Set(
+            currentUser,
+            //"DRI-" in
+            First(Split(Office365Users.MyProfileV2().department, "-")).Value
+        );
+        
+        Set(
+            appVersion,
+            "1.0"
+        );
+        
+        ClearCollect(
+            MenuTable,
+            Table(
+                {
+                    selected: true,
+                    icon: Icon.Home,
+                    text: "Inicio",
+                    Navigate: Inicio,
+                    VisivelPara: true
+                },
+                {
+                    selected: false,
+                    icon: Icon.People,
+                    text: "Listagem de atividades",
+                    Navigate: Listagem,
+                    VisivelPara: true
+                }
+            )
+        );
+        
+        RemoveIf(
+            MenuTable,
+            !ThisRecord.VisivelPara
+        );
+        
+        Set(
+            cores,
+            {
+                amareloMontepio: RGBA(
+                    255,
+                    191,
+                    0,
+                    1
+                ),
+                cinzento: RGBA(
+                    70,
+                    70,
+                    70,
+                    1
+                ),
+                rosa: ColorFade(
+                    Color.Red,
+                    0.9
+                ),
+                azulTitulo: RGBA(
+                    50,
+                    86,
+                    160,
+                    1
+                )
+            }
+        )
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

@@ -1,0 +1,138 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_atividadeses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_atividades",
+    "MaxGetRowsCount": 500,
+    "Name": "Atividades",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_atividade": "Atividade",
+      "uipp_atividades_AsyncOperations": "System Jobs",
+      "uipp_atividades_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_atividades_DuplicateBaseRecord": "Duplicate Records (uipp_atividades_DuplicateBaseRecord)",
+      "uipp_atividades_DuplicateMatchingRecord": "Duplicate Records (uipp_atividades_DuplicateMatchingRecord)",
+      "uipp_atividades_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_atividades_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_atividades_ProcessSession": "Process Sessions",
+      "uipp_atividades_SyncErrors": "Sync Errors",
+      "uipp_atividadesid": "Atividades",
+      "uipp_comentarios": "Comentários",
+      "uipp_datadedecisao": "Data de Decisão",
+      "uipp_descricaodeatividade": "Descrição de atividade",
+      "uipp_Edificio": "Edifício",
+      "uipp_estado": "Estado",
+      "uipp_id": "ID",
+      "uipp_MacroProcesso": "Macro Processo",
+      "uipp_observacoes": "Observações",
+      "uipp_Processo": "Processo",
+      "uipp_TipodeProcesso": "Tipo de Processo",
+      "uipp_uipp_dependencias_IDAtividade_uipp_ativid": "Dependências",
+      "uipp_uipp_equipamentodeescritorio_IDAtividade_": "Equipamentos de Escritório",
+      "uipp_uipp_fatoresdecriticidade_IDAtividade_uip": "Fatores de Criticidades",
+      "uipp_uipp_historicodeaprovacoes_IDAtividade_ui": "Histórico de aprovações",
+      "uipp_uipp_pessoas_IDAtividade_uipp_atividades": "Pessoas",
+      "uipp_uipp_sistemas_IDAtividade_uipp_atividades": "Sistemas",
+      "uipp_unidadeorganica": "Unidade Orgânica",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Atividades",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Atividades (Views)",
+    "Name": "_uipp_atividades_views",
+    "RelatedEntityName": "Atividades",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "26f6a8d5-a43e-4611-98cc-26b6e887658a": "Active Atividades",
+      "3add4e14-07db-4462-ba25-8dd7a27e620c": "Inactive Atividades",
+      "77712775-9230-4e73-98d7-4f75c818a44d": "Atividades Advanced Find View",
+      "9d98425b-1d10-4e7d-97dc-34ba08f1f980": "Atividades Associated View",
+      "c474e818-020d-49ba-9c7c-de6c2770d255": "Atividades Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Atividades)",
+    "Name": "uipp_atividades_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Atividades"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Atividades",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Atividades)",
+    "Name": "uipp_atividades_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Atividades"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Atividades",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Estado Processo",
+    "Name": "uipp_estadoprocesso",
+    "OptionSetInfoNameMapping": {
+      "847700000": "Em preenchimento",
+      "847700001": "Em validação",
+      "847700002": "Aprovado",
+      "847700003": "Rejeitado",
+      "847700004": "Em revisão pela U.O.",
+      "847700005": "Em revalidação"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "uipp_estado",
+        "OptionSetReferenceEntityName": "Atividades"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "uipp_estado",
+    "RelatedEntityName": "Atividades",
+    "Type": "OptionSetInfo"
+  }
+]

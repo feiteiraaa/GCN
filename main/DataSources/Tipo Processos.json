@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_tipoprocessos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_tipoprocesso",
+    "MaxGetRowsCount": 500,
+    "Name": "Tipo Processos",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_id": "ID",
+      "uipp_idtipoprocesso": "ID Tipo Processo",
+      "uipp_tipodeprocesso": "Tipo de Processo",
+      "uipp_tipoprocesso_AsyncOperations": "System Jobs",
+      "uipp_tipoprocesso_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_tipoprocesso_DuplicateBaseRecord": "Duplicate Records (uipp_tipoprocesso_DuplicateBaseRecord)",
+      "uipp_tipoprocesso_DuplicateMatchingRecord": "Duplicate Records (uipp_tipoprocesso_DuplicateMatchingRecord)",
+      "uipp_tipoprocesso_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_tipoprocesso_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_tipoprocesso_ProcessSession": "Process Sessions",
+      "uipp_tipoprocesso_SyncErrors": "Sync Errors",
+      "uipp_tipoprocessoid": "Tipo Processo",
+      "uipp_uipp_atividades_TipodeProcesso_uipp_tipop": "Atividades",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Tipo Processos",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Tipo Processos (Views)",
+    "Name": "_uipp_tipoprocesso_views",
+    "RelatedEntityName": "Tipo Processos",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "01a26f7e-a9c1-4186-8d85-71515ba8b02a": "Tipo Processo Associated View",
+      "0ac8f240-7805-4e06-9f8f-4f93ee26e4e4": "Inactive Tipo Processos",
+      "208d87bf-acc1-4683-8dd4-4cb63ce9894c": "Tipo Processo Advanced Find View",
+      "3331d99a-98cd-49e4-a424-9d84a74ea1c8": "Tipo Processo Lookup View",
+      "5ddf2a48-4887-4819-85b8-14278c28009d": "Active Tipo Processos"
+    }
+  },
+  {
+    "DisplayName": "Status (Tipo Processos)",
+    "Name": "uipp_tipoprocesso_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Tipo Processos"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Tipo Processos",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Tipo Processos)",
+    "Name": "uipp_tipoprocesso_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Tipo Processos"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Tipo Processos",
+    "Type": "OptionSetInfo"
+  }
+]

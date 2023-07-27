@@ -1,0 +1,43 @@
+KPI As CanvasComponent:
+    Fill: =RGBA(222, 221, 231, 1)
+    Height: =150
+    KPIInfo: ="Text"
+    KPIName: ="Text"
+    KPINumber: ="Text"
+    Width: =150
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "'KPI title' As label":
+        Align: =Align.Center
+        Height: =60
+        Text: =KPI.KPIName
+        ZIndex: =1
+
+    "'KPI number' As label":
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Height: =77
+        Size: =22
+        Text: =KPI.KPINumber
+        Y: =55
+        ZIndex: =2
+
+    Rectangle3 As rectangle:
+        BorderColor: =Color.Black
+        BorderThickness: =2
+        Fill: =RGBA(56, 96, 178, 0)
+        Height: =150
+        ZIndex: =3
+
+    "InfoButtonCanvas1 As 'Information button'":
+        Content: =KPI.KPIInfo
+        DisplayMode: =DisplayMode.Edit
+        Height: =30
+        IconSize: ='InfoButtonCanvas.IconSize'.Large
+        Width: =30
+        X: =120
+        Y: =0
+        ZIndex: =4
+
