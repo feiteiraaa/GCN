@@ -2006,7 +2006,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 153,
+                  "charOffset": 159,
                   "snippet": {
                     "text": "in"
                   }
@@ -2046,7 +2046,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 122,
+                  "charOffset": 127,
                   "snippet": {
                     "text": "Or"
                   }
@@ -2086,7 +2086,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 205,
+                  "charOffset": 211,
                   "snippet": {
                     "text": "Or"
                   }
@@ -2126,7 +2126,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 286,
+                  "charOffset": 293,
                   "snippet": {
                     "text": "Or"
                   }
@@ -2166,7 +2166,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 386,
+                  "charOffset": 394,
                   "snippet": {
                     "text": "Or"
                   }
@@ -2206,7 +2206,7 @@
                 },
                 "region": {
                   "charLength": 3,
-                  "charOffset": 450,
+                  "charOffset": 459,
                   "snippet": {
                     "text": "And"
                   }
@@ -2230,36 +2230,6 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "KPI.InfoButtonCanvas1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "KPI.InfoButtonCanvas1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "KPI",
-                "type": "KPI.InfoButtonCanvas1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
         },
         {
           "locations": [
@@ -2459,6 +2429,36 @@
                 "member": "AccessibleLabel",
                 "module": "LeftSectionComponent",
                 "type": "LeftSectionComponent.MenuGallery.GalleryBottomEdge"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "KPI.InfoButtonCanvas1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "KPI.InfoButtonCanvas1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "KPI",
+                "type": "KPI.InfoButtonCanvas1"
               }
             }
           ],
