@@ -290,7 +290,48 @@ Listagem As screen:
         HoverColor: =Color.Transparent
         HoverFill: =Color.Transparent
         OnSelect: |-
-            =Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.New})
+            =Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.New});
+            
+            ClearCollect(
+                AtividadeFormMenu,
+                Table(
+                //Excel 02
+                    {
+                        titulo: "Caracterização do Processo",
+                        estado: "em curso",
+                        modo: DisplayMode.Edit
+                    },
+                    {
+                        titulo: "Fatores de Criticidade",
+                        estado: "em falta",
+                        modo: DisplayMode.Edit
+                    },
+                //Excel 03
+                    {
+                        titulo: "Caracterização dos Recursos",
+                        estado: "em falta",
+                        modo: DisplayMode.Disabled
+                    },
+                //Excel 04
+                    {
+                        titulo: "Caracterização dos Equipamentos",
+                        estado: "em falta",
+                        modo: DisplayMode.Disabled
+                    },
+                //Excel 05
+                    {
+                        titulo: "Caracterização dos Sistemas",
+                        estado: "em falta",
+                        modo: DisplayMode.Disabled
+                    },
+                //Excel 06
+                    {
+                        titulo: "Dependências",
+                        estado: "em falta",
+                        modo: DisplayMode.Disabled
+                    }
+                )
+            )
         PressedColor: =Color.Transparent
         Text: =
         Width: =DynamicBtn_1.Width

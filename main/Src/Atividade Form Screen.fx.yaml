@@ -1,47 +1,5 @@
 "'Atividade Form Screen' As screen":
-    OnVisible: |+
-        =ClearCollect(
-            AtividadeFormMenu,
-            Table(
-            //Excel 02
-                {
-                    titulo: "Caracterização do Processo",
-                    estado: "em curso",
-                    modo: DisplayMode.Edit
-                },
-                {
-                    titulo: "Fatores de Criticidade",
-                    estado: "em falta",
-                    modo: DisplayMode.Edit
-                },
-            //Excel 03
-                {
-                    titulo: "Caracterização dos Recursos",
-                    estado: "em falta",
-                    modo: DisplayMode.Disabled
-                },
-            //Excel 04
-                {
-                    titulo: "Caracterização dos Equipamentos",
-                    estado: "em falta",
-                    modo: DisplayMode.Disabled
-                },
-            //Excel 05
-                {
-                    titulo: "Caracterização dos Sistemas",
-                    estado: "em falta",
-                    modo: DisplayMode.Disabled
-                },
-            //Excel 06
-                {
-                    titulo: "Dependências",
-                    estado: "em falta",
-                    modo: DisplayMode.Disabled
-                }
-            )
-        )
-        
-        
+    OnVisible: =
 
     LeftSectionComponent_4 As LeftSectionComponent:
         ZIndex: =1
@@ -60,7 +18,7 @@
         Width: =990
         X: =360
         Y: =224
-        ZIndex: =3
+        ZIndex: =2
 
         "'Tipo de Processo_DataCard1' As typedDataCard.comboBoxEditCard":
             BorderStyle: =BorderStyle.Solid
@@ -710,6 +668,230 @@
                 Y: =DataCardKey13.Y
                 ZIndex: =4
 
+    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =480
+        Items: =Choices('Tipo de Fator')
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =96
+        Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
+        Width: =990
+        X: =360
+        Y: =199
+        ZIndex: =9
+
+        Separator2 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Label5 As label:
+            Height: =50
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Value
+            Width: =130
+            Y: =5
+            ZIndex: =6
+
+        "'4horas' As text":
+            Align: =Align.Center
+            BorderColor: =cores.cinzento
+            Default: =1
+            DelayOutput: =true
+            Format: =TextFormat.Number
+            HoverBorderColor: =cores.cinzento
+            HoverFill: =
+            OnChange: =Select('Calculate RTO')
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Tooltip: =
+            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
+            Width: =50
+            X: =106
+            Y: =10
+            ZIndex: =7
+
+        "'24horas' As text":
+            Align: =Align.Center
+            BorderColor: =cores.cinzento
+            Default: = 
+            DelayOutput: =true
+            Format: =TextFormat.Number
+            HoverBorderColor: =cores.cinzento
+            HoverFill: =
+            MaxLength: =1
+            Mode: =TextFormat.Number
+            OnChange: =Select('Calculate RTO')
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Tooltip: =
+            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
+            Width: =50
+            X: =216
+            Y: =10
+            ZIndex: =8
+
+        "'48horas' As text":
+            Align: =Align.Center
+            BorderColor: =cores.cinzento
+            Default: = 
+            DelayOutput: =true
+            Format: =TextFormat.Number
+            HoverBorderColor: =cores.cinzento
+            HoverFill: =
+            MaxLength: =1
+            Mode: =TextFormat.Number
+            OnChange: =Select('Calculate RTO')
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Tooltip: =
+            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
+            Width: =50
+            X: =326
+            Y: =10
+            ZIndex: =9
+
+        "'1semana' As text":
+            Align: =Align.Center
+            BorderColor: =cores.cinzento
+            Default: = 
+            DelayOutput: =true
+            Format: =TextFormat.Number
+            HoverBorderColor: =cores.cinzento
+            HoverFill: =
+            MaxLength: =1
+            Mode: =TextFormat.Number
+            OnChange: =Select('Calculate RTO')
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Tooltip: =
+            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
+            Width: =50
+            X: =436
+            Y: =10
+            ZIndex: =10
+
+        "'2semanas' As text":
+            Align: =Align.Center
+            BorderColor: =cores.cinzento
+            Default: = 
+            DelayOutput: =true
+            Format: =TextFormat.Number
+            HoverBorderColor: =cores.cinzento
+            HoverFill: =
+            MaxLength: =1
+            Mode: =TextFormat.Number
+            OnChange: =Select('Calculate RTO')
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Tooltip: =
+            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
+            Width: =50
+            X: =546
+            Y: =10
+            ZIndex: =11
+
+        "'1mes' As text":
+            Align: =Align.Center
+            BorderColor: =cores.cinzento
+            Default: = 
+            DelayOutput: =true
+            Format: =TextFormat.Number
+            HoverBorderColor: =cores.cinzento
+            HoverFill: =
+            MaxLength: =1
+            Mode: =TextFormat.Number
+            OnChange: =Select('Calculate RTO')
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Tooltip: =
+            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
+            Width: =50
+            X: =666
+            Y: =10
+            ZIndex: =12
+
+        racional As text:
+            BorderColor: =cores.cinzento
+            Default: = 
+            DelayOutput: =true
+            Height: =81
+            HoverBorderColor: =cores.cinzento
+            HoverFill: =
+            MaxLength: =255
+            Mode: =TextMode.MultiLine
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Tooltip: =
+            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
+            Width: =218
+            X: =759
+            Y: =10
+            ZIndex: =13
+
+        StarVisible10_1 As label:
+            Align: =Align.Center
+            Color: =Color.Red
+            Height: =DataCardKey12.Height
+            Text: ="*"
+            Visible: |-
+                =If(
+                    Gallery2.DisplayMode = DisplayMode.Edit,
+                    true,
+                    false
+                )
+            Width: =25
+            Wrap: =false
+            X: =156
+            ZIndex: =14
+
+        Dropdown2 As dropdown:
+            Default: |-
+                =LookUp(
+                    Choices('Tipo de Fator'),
+                    ThisRecord.Value = ThisItem.Value
+                ).Value
+            Items: =Choices('Tipo de Fator')
+            OnSelect: =Select(Parent)
+            Visible: =false
+            X: =31
+            Y: =56
+            ZIndex: =15
+
+    Label3_11 As label:
+        Align: =Align.Center
+        Text: ="Racional"
+        Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
+        Width: =110
+        X: =1171
+        Y: =160
+        ZIndex: =10
+
     "'Passos do Registo de Atividade' As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =61
@@ -720,7 +902,7 @@
         Width: =945
         X: =382
         Y: =91
-        ZIndex: =6
+        ZIndex: =11
 
         Label2 As label:
             Align: =Align.Center
@@ -780,14 +962,6 @@
         Y: =40
         ZIndex: =13
 
-        DynamicBtn_3 As DynamicBtn:
-            BtnText: ="Guardar"
-            BtnWidth: =200
-            Height: =40
-            Width: =201
-            X: =1104
-            Y: =35
-
         Label1_3 As label:
             Size: =15
             Text: |-
@@ -800,7 +974,16 @@
             Width: =610
             X: =359
             Y: =35
-            ZIndex: =4
+            ZIndex: =12
+
+        DynamicBtn_3 As DynamicBtn:
+            BtnText: ="Guardar"
+            BtnWidth: =200
+            Height: =40
+            Width: =201
+            X: =1104
+            Y: =35
+            ZIndex: =13
 
         Button3 As button:
             Color: =Color.Transparent
@@ -848,20 +1031,8 @@
                             'Fatores de Criticidades',
                             Defaults('Fatores de Criticidades'),
                             {
-                                'Tipo de Fator':
-                                Switch(
-                                    ThisRecord.Label5.Text,
-                                    "Gestão",
-                                    'Tipo de Fator'.Gestão,
-                                    "Receitas",
-                                    'Tipo de Fator'.Receitas,
-                                    "Reputação",
-                                    'Tipo de Fator'.Reputação,
-                                    "Custo",
-                                    'Tipo de Fator'.Custo,
-                                    "Legal",
-                                    'Tipo de Fator'.Legal
-                                ),
+                                'Tipo de Fator': ThisRecord.Dropdown2.Selected.Value,
+                                
                                 'quatro horas': Value(ThisRecord.'4horas'.Text),
                                 'vinte quatro horas': ThisRecord.'24horas'.Text,
                                 'quarenta oito horas': Value(ThisRecord.'48horas'.Text),
@@ -881,197 +1052,135 @@
             Width: =201
             X: =1104
             Y: =35
-            ZIndex: =7
+            ZIndex: =14
 
-    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-        DelayItemLoading: =true
-        Height: =495
-        Items: =Choices('Tipo de Fator')
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplatePadding: =0
-        TemplateSize: =96
+    RTO As groupContainer.manualLayoutContainer:
+        Height: =80
         Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
-        Width: =990
+        Width: =734
         X: =360
-        Y: =199
-        ZIndex: =51
+        Y: =655
+        ZIndex: =23
 
-        Separator2 As rectangle:
-            Height: =8
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - Self.Height
+        Global As label:
+            Fill: |-
+                =//RGBA(0, 0, 0, 0)
+                ColorFade(cores.amareloMontepio, 0.5)
+            Text: ="Global"
+            Width: =734
+            ZIndex: =1
+
+        "'4Horas' As label":
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: |-
+                =Max(
+                    Gallery2.AllItems,
+                    ThisRecord.'4horas'.Text
+                )
+            Width: =75
+            X: =92
+            ZIndex: =2
+
+        "'24Horas' As label":
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: |-
+                =Max(
+                    Gallery2.AllItems,
+                    ThisRecord.'24horas'.Text
+                )
+            Width: =75
+            X: =202
+            ZIndex: =3
+
+        "'48Horas' As label":
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: |-
+                =Max(
+                    Gallery2.AllItems,
+                    ThisRecord.'48horas'.Text
+                )
+            Width: =75
+            X: =312
+            ZIndex: =4
+
+        "'1Semana' As label":
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: |-
+                =Max(
+                    Gallery2.AllItems,
+                    ThisRecord.'1semana'.Text
+                )
+            Width: =75
+            X: =422
             ZIndex: =5
 
-        Label5 As label:
-            Height: =50
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Value
-            Width: =130
-            Y: =5
+        "'2Semanas' As label":
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: |-
+                =Max(
+                    Gallery2.AllItems,
+                    ThisRecord.'2semanas'.Text
+                )
+            Width: =75
+            X: =532
             ZIndex: =6
 
-        "'4horas' As text":
-            BorderColor: =cores.cinzento
-            Default: =
-            DelayOutput: =true
-            Format: =TextFormat.Number
-            HoverBorderColor: =cores.cinzento
-            HoverFill: =
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Tooltip: =
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
-            Width: =50
-            X: =106
-            Y: =10
+        "'1Mes' As label":
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: |-
+                =Max(
+                    Gallery2.AllItems,
+                    ThisRecord.'1mes'.Text
+                )
+            Width: =75
+            X: =653
             ZIndex: =7
 
-        "'24horas' As text":
-            BorderColor: =cores.cinzento
-            Default: = 
-            DelayOutput: =true
-            Format: =TextFormat.Number
-            HoverBorderColor: =cores.cinzento
-            HoverFill: =
-            MaxLength: =1
-            Mode: =TextFormat.Number
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Tooltip: =
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
-            Width: =50
-            X: =216
-            Y: =10
+        "'RTO label' As label":
+            Align: =Align.Center
+            Fill: =ColorFade(cores.cinzento, 0.9)
+            FontWeight: =FontWeight.Bold
+            Size: =15
+            Text: |-
+                ="RTO: " & If(
+                    IsBlank(RTOTempo),
+                    "<4 horas",
+                    RTOTempo
+                )
+            Width: =734
+            Y: =40
             ZIndex: =8
 
-        "'48horas' As text":
-            BorderColor: =cores.cinzento
-            Default: = 
-            DelayOutput: =true
-            Format: =TextFormat.Number
-            HoverBorderColor: =cores.cinzento
-            HoverFill: =
-            MaxLength: =1
-            Mode: =TextFormat.Number
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Tooltip: =
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
-            Width: =50
-            X: =326
-            Y: =10
-            ZIndex: =9
-
-        "'1semana' As text":
-            BorderColor: =cores.cinzento
-            Default: = 
-            DelayOutput: =true
-            Format: =TextFormat.Number
-            HoverBorderColor: =cores.cinzento
-            HoverFill: =
-            MaxLength: =1
-            Mode: =TextFormat.Number
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Tooltip: =
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
-            Width: =50
-            X: =436
-            Y: =10
+        "'Calculate RTO' As button":
+            OnSelect: |-
+                =UpdateContext({
+                    RTO: 0,
+                    RTOTempo: "<4 horas"
+                });
+                
+                If( Value('4Horas'.Text) > RTO, UpdateContext({ RTO: Value('4Horas'.Text), RTOTempo: "<4 horas"}));
+                If( Value('24Horas'.Text) > RTO, UpdateContext({ RTO: Value('24Horas'.Text), RTOTempo: "<24 horas" }));
+                If( Value('48Horas'.Text) > RTO, UpdateContext({ RTO: Value('48Horas'.Text), RTOTempo: "<48 horas" }));
+                If( Value('1Semana'.Text) > RTO, UpdateContext({ RTO: Value('1Semana'.Text), RTOTempo: "<1 semana" }));
+                If( Value('2Semanas'.Text) > RTO, UpdateContext({ RTO: Value('2Semanas'.Text), RTOTempo: "<2 semanas" }));
+                If( Value('1Mes'.Text) > RTO, UpdateContext({ RTO: Value('1Mes'.Text), RTOTempo: "<1 mês" }));
+            Text: ="Button"
+            Visible: =false
+            X: =569
+            Y: =40
             ZIndex: =10
-
-        "'2semanas' As text":
-            BorderColor: =cores.cinzento
-            Default: = 
-            DelayOutput: =true
-            Format: =TextFormat.Number
-            HoverBorderColor: =cores.cinzento
-            HoverFill: =
-            MaxLength: =1
-            Mode: =TextFormat.Number
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Tooltip: =
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
-            Width: =50
-            X: =546
-            Y: =10
-            ZIndex: =11
-
-        "'1mes' As text":
-            BorderColor: =cores.cinzento
-            Default: = 
-            DelayOutput: =true
-            Format: =TextFormat.Number
-            HoverBorderColor: =cores.cinzento
-            HoverFill: =
-            MaxLength: =1
-            Mode: =TextFormat.Number
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Tooltip: =
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
-            Width: =50
-            X: =666
-            Y: =10
-            ZIndex: =12
-
-        racional As text:
-            BorderColor: =cores.cinzento
-            Default: = 
-            DelayOutput: =true
-            Height: =81
-            HoverBorderColor: =cores.cinzento
-            HoverFill: =
-            MaxLength: =255
-            Mode: =TextMode.MultiLine
-            PaddingLeft: =5
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Tooltip: =
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
-            Width: =218
-            X: =759
-            Y: =10
-            ZIndex: =13
-
-        StarVisible10_1 As label:
-            Align: =Align.Center
-            Color: =Color.Red
-            Height: =DataCardKey12.Height
-            Text: ="*"
-            Visible: |-
-                =If(
-                    Gallery2.DisplayMode = DisplayMode.Edit,
-                    true,
-                    false
-                )
-            Width: =25
-            Wrap: =false
-            X: =156
-            ZIndex: =14
 
     FatoresHeaders As group:
         Height: =5
@@ -1087,7 +1196,7 @@
             Width: =110
             X: =434
             Y: =160
-            ZIndex: =19
+            ZIndex: =3
 
         Label3_6 As label:
             Align: =Align.Center
@@ -1096,7 +1205,7 @@
             Width: =110
             X: =544
             Y: =160
-            ZIndex: =20
+            ZIndex: =4
 
         Label3_7 As label:
             Align: =Align.Center
@@ -1105,7 +1214,7 @@
             Width: =110
             X: =654
             Y: =160
-            ZIndex: =22
+            ZIndex: =5
 
         Label3_8 As label:
             Align: =Align.Center
@@ -1114,7 +1223,7 @@
             Width: =110
             X: =764
             Y: =160
-            ZIndex: =23
+            ZIndex: =6
 
         Label3_9 As label:
             Align: =Align.Center
@@ -1123,7 +1232,7 @@
             Width: =110
             X: =874
             Y: =160
-            ZIndex: =24
+            ZIndex: =7
 
         Label3_10 As label:
             Align: =Align.Center
@@ -1132,14 +1241,5 @@
             Width: =110
             X: =984
             Y: =160
-            ZIndex: =25
-
-    Label3_11 As label:
-        Align: =Align.Center
-        Text: ="Racional"
-        Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
-        Width: =110
-        X: =1176
-        Y: =160
-        ZIndex: =52
+            ZIndex: =8
 
