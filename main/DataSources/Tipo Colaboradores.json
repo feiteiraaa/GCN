@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "uipp_tipocolaborador",
+    "MaxGetRowsCount": 500,
     "Name": "Tipo Colaboradores",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",

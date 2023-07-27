@@ -8,31 +8,10 @@
       }
     },
     {
-      "Kind": "default.cds_uipp_processo_forms",
-      "Namespace": "Processos (Forms)",
-      "Values": {
-        "Information": "8a0e0573-ee36-424d-b233-b5712bbefe1d"
-      }
-    },
-    {
-      "Kind": "default.cds_uipp_tipoprocesso_forms",
-      "Namespace": "Tipo Processos (Forms)",
-      "Values": {
-        "Information": "24ded4a0-f802-4516-b9a6-ac4a7c7d7705"
-      }
-    },
-    {
       "Kind": "default.cds_uipp_edificios_forms",
       "Namespace": "Edifícios (Forms)",
       "Values": {
         "Information": "80a9531c-19ba-41fa-bfc7-e8d613cedcfd"
-      }
-    },
-    {
-      "Kind": "default.cds_uipp_macroprocesso_forms",
-      "Namespace": "Macro Processos (Forms)",
-      "Values": {
-        "Information": "5ca2bd53-9dc2-49f7-97c2-ebf394b7f8e2"
       }
     },
     {
@@ -43,10 +22,45 @@
       }
     },
     {
+      "Kind": "default.cds_uipp_macroprocesso_forms",
+      "Namespace": "Macro Processos (Forms)",
+      "Values": {
+        "Information": "5ca2bd53-9dc2-49f7-97c2-ebf394b7f8e2"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_pessoas_forms",
+      "Namespace": "Pessoas (Forms)",
+      "Values": {
+        "Information": "2d85854b-6ed5-4109-9cff-bf59d862627a"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_processo_forms",
+      "Namespace": "Processos (Forms)",
+      "Values": {
+        "Information": "8a0e0573-ee36-424d-b233-b5712bbefe1d"
+      }
+    },
+    {
       "Kind": "default.cds_uipp_rto_forms",
       "Namespace": "RTOS (Forms)",
       "Values": {
         "Information": "31caadac-30bf-48fd-b625-adfdf59de1d9"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_tipocolaborador_forms",
+      "Namespace": "Tipo Colaboradores (Forms)",
+      "Values": {
+        "Information": "6fd37579-240a-420c-bfe0-c8992c1c8a5d"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_tipoprocesso_forms",
+      "Namespace": "Tipo Processos (Forms)",
+      "Values": {
+        "Information": "24ded4a0-f802-4516-b9a6-ac4a7c7d7705"
       }
     },
     {
