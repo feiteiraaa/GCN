@@ -69,20 +69,6 @@
       "Values": {
         "Information": "d8c776f0-4779-42bc-afa0-a1411223bfb1"
       }
-    },
-    {
-      "Kind": "default.cds_uipp_pessoas_forms",
-      "Namespace": "Pessoas (Forms)",
-      "Values": {
-        "Information": "2d85854b-6ed5-4109-9cff-bf59d862627a"
-      }
-    },
-    {
-      "Kind": "default.cds_uipp_tipocolaborador_forms",
-      "Namespace": "Tipo Colaboradores (Forms)",
-      "Values": {
-        "Information": "6fd37579-240a-420c-bfe0-c8992c1c8a5d"
-      }
     }
   ]
 }
