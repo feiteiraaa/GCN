@@ -292,6 +292,11 @@ Listagem As screen:
         OnSelect: |-
             =Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.New});
             
+            Concurrent(
+                UpdateContext({ RTO: 0, RTOTempo: "<24 horas" }),
+                ResetForm('Caracterizacao do Processo')
+            );
+            
             ClearCollect(
                 AtividadeFormMenu,
                 Table(
