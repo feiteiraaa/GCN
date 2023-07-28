@@ -75,7 +75,7 @@
         "Name": "KPI title",
         "Parent": "KPI",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 9,
+        "PublishOrderIndex": 192,
         "Rules": [
           {
             "Category": "Data",
@@ -382,7 +382,7 @@
         "Name": "Rectangle3",
         "Parent": "KPI",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 10,
+        "PublishOrderIndex": 193,
         "Rules": [
           {
             "Category": "Design",
@@ -545,7 +545,7 @@
         "Name": "InfoButtonCanvas1",
         "Parent": "KPI",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 11,
+        "PublishOrderIndex": 194,
         "Rules": [
           {
             "Category": "Data",
@@ -699,7 +699,7 @@
         "Name": "KPI number",
         "Parent": "KPI",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 12,
+        "PublishOrderIndex": 195,
         "Rules": [
           {
             "Category": "Data",

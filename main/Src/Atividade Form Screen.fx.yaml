@@ -1002,7 +1002,8 @@
                 =SubmitForm('Caracterizacao do Processo');
                 Set(
                     LastAtividadeId,
-                    'Caracterizacao do Processo'.LastSubmit.ID
+                    //'Caracterizacao do Processo'.LastSubmit.ID
+                    1001
                 );
                 
                 ForAll(
@@ -1053,6 +1054,14 @@
                         ),
                         false
                     )
+                );
+                
+                Patch(
+                    RTOS,
+                    Defaults(RTOS),
+                    {
+                        
+                    }
                 )
             PressedColor: =Color.Transparent
             PressedFill: =Color.Transparent
