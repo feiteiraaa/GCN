@@ -258,12 +258,13 @@
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 ChevronBackground: =cores.amareloMontepio
                 DefaultSelectedItems: =Parent.Default
-                DisplayFields: =["uipp_id"]
+                DisplayFields: =["uipp_atividade"]
                 DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
                 Items: =Choices([@Pessoas].uipp_IDAtividade)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SearchFields: =["uipp_id"]
-                SearchItems: =Search(Choices([@Pessoas].uipp_IDAtividade),DataCardValue1.SearchText,"uipp_id")
+                SearchFields: =["uipp_atividade"]
+                SearchItems: =[]
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -294,6 +295,75 @@
                 Width: =30
                 Wrap: =false
                 Y: =DataCardKey1.Y
+                ZIndex: =4
+
+        Duração_DataCard3 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="uipp_Duracao"
+            Default: =ThisItem.Duração
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Pessoas],DataSourceInfo.DisplayName,"uipp_Duracao")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue31.Selected
+            Width: =495
+            X: =1
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey31 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue31 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =cores.amareloMontepio
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["uipp_duracao"]
+                DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
+                Items: |
+                    =Choices([@Pessoas].uipp_Duracao)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["uipp_duracao"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey31.Y + DataCardKey31.Height + 5
+                ZIndex: =2
+
+            ErrorMessage29 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue31.Y + DataCardValue31.Height
+                ZIndex: =3
+
+            StarVisible29 As label:
+                Align: =Align.Center
+                Height: =DataCardKey31.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey31.Y
                 ZIndex: =4
 
         "'Nº Empregado_DataCard2' As typedDataCard.textualEditCard":
@@ -328,6 +398,7 @@
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
+                OnChange: =
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -434,27 +505,83 @@
 
         DataCard1 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
+            DisplayMode: =DisplayMode.View
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =86
+            Height: =111
+            Visible: =false
             Width: =990
             X: =0
             Y: =1
             ZIndex: =1
 
+            Label3 As label:
+                Text: =GalleryDuration.Selected.'1semana_2'.Text
+                X: =12
+                Y: =27
+                ZIndex: =8
+
+            FatoresHeaders_2 As group:
+                Height: =5
+                Width: =5
+                X: =-360
+                Y: =-160
+                ZIndex: =8
+
+                Label3_19 As label:
+                    Align: =Align.Center
+                    Text: ="<4 horas"
+                    Width: =110
+                    X: =149
+                    ZIndex: =1
+
+                Label3_20 As label:
+                    Align: =Align.Center
+                    Text: ="<24 horas"
+                    Width: =110
+                    X: =259
+                    ZIndex: =2
+
+                Label3_21 As label:
+                    Align: =Align.Center
+                    Text: ="<48 horas"
+                    Width: =110
+                    X: =369
+                    ZIndex: =3
+
+                Label3_22 As label:
+                    Align: =Align.Center
+                    Text: ="<1 semana"
+                    Width: =110
+                    X: =479
+                    ZIndex: =4
+
+                Label3_23 As label:
+                    Align: =Align.Center
+                    Text: ="<2 semanas"
+                    Width: =110
+                    X: =589
+                    ZIndex: =5
+
+                Label3_24 As label:
+                    Align: =Align.Center
+                    Text: ="<1 mês"
+                    Width: =110
+                    X: =699
+                    ZIndex: =6
+
             "GalleryDuration As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
-                Height: =76
-                Items: =ThisItem.Duração
+                Height: =58
+                Items: =[1000]
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
                 TemplatePadding: =0
-                TemplateSize: =63
+                TemplateSize: =58
                 Width: =877
-                X: =73
-                Y: =40
-                ZIndex: =7
+                X: =75
+                Y: =33
+                ZIndex: =9
 
                 Separator2_2 As rectangle:
                     Height: =8
@@ -585,7 +712,7 @@
                     Align: =Align.Center
                     Color: =Color.Red
                     Height: =DataCardKey12.Height
-                    Text: ="*"
+                    Text: =ThisItem.Value
                     Visible: |-
                         =If(
                             GalleryDuration.DisplayMode = DisplayMode.Edit,
@@ -596,61 +723,6 @@
                     Wrap: =false
                     X: =156
                     ZIndex: =14
-
-            Label3 As label:
-                Text: =GalleryDuration.Selected.'1semana_2'.Text
-                X: =12
-                Y: =27
-                ZIndex: =8
-
-            FatoresHeaders_2 As group:
-                Height: =5
-                Width: =5
-                X: =-360
-                Y: =-160
-                ZIndex: =8
-
-                Label3_19 As label:
-                    Align: =Align.Center
-                    Text: ="<4 horas"
-                    Width: =110
-                    X: =149
-                    ZIndex: =1
-
-                Label3_20 As label:
-                    Align: =Align.Center
-                    Text: ="<24 horas"
-                    Width: =110
-                    X: =259
-                    ZIndex: =2
-
-                Label3_21 As label:
-                    Align: =Align.Center
-                    Text: ="<48 horas"
-                    Width: =110
-                    X: =369
-                    ZIndex: =3
-
-                Label3_22 As label:
-                    Align: =Align.Center
-                    Text: ="<1 semana"
-                    Width: =110
-                    X: =479
-                    ZIndex: =4
-
-                Label3_23 As label:
-                    Align: =Align.Center
-                    Text: ="<2 semanas"
-                    Width: =110
-                    X: =589
-                    ZIndex: =5
-
-                Label3_24 As label:
-                    Align: =Align.Center
-                    Text: ="<1 mês"
-                    Width: =110
-                    X: =699
-                    ZIndex: =6
 
         Teletrabalho_DataCard1 As typedDataCard.comboBoxOptionSetSingleEditCard:
             BorderStyle: =BorderStyle.Solid
@@ -749,12 +821,13 @@
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 ChevronBackground: =cores.amareloMontepio
                 DefaultSelectedItems: =Parent.Default
-                DisplayFields: =["uipp_id"]
+                DisplayFields: =["uipp_tipo"]
                 DisplayMode: =Parent.DisplayMode
                 IsSearchable: =false
-                Items: =Choices([@Pessoas].uipp_Tipo)
+                Items: |
+                    =Choices([@Pessoas].uipp_Tipo)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SearchFields: =["uipp_id"]
+                SearchFields: =["uipp_tipo"]
                 SearchItems: =[]
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
@@ -952,6 +1025,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =125
+            Visible: =false
             Width: =990
             X: =0
             Y: =1
@@ -1253,7 +1327,7 @@
             Height: =50
             Required: =false
             Update: =DataCardValue16.Selected
-            Visible: =false
+            Visible: =true
             Width: =495
             X: =1
             Y: =2
@@ -1271,6 +1345,7 @@
 
             DataCardValue16 As combobox:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =cores.amareloMontepio
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["uipp_id"]
                 DisplayMode: =Parent.DisplayMode
@@ -1461,6 +1536,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
             Height: =123
+            Visible: =false
             Width: =990
             X: =0
             Y: =1
@@ -1830,7 +1906,7 @@
             Height: =50
             Required: =false
             Update: =DataCardValue25.Selected
-            Visible: =false
+            Visible: =true
             Width: =495
             X: =0
             Y: =3
@@ -1848,6 +1924,7 @@
 
             DataCardValue25 As combobox:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =cores.amareloMontepio
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["uipp_id"]
                 DisplayMode: =Parent.DisplayMode
@@ -2061,12 +2138,14 @@
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 ChevronBackground: =cores.amareloMontepio
                 DefaultSelectedItems: =Parent.Default
-                DisplayFields: =["uipp_id"]
+                DisplayFields: =["uipp_atividade"]
                 DisplayMode: =Parent.DisplayMode
-                Items: =Choices([@Dependências].uipp_IDAtividade)
+                IsSearchable: =false
+                Items: |
+                    =Choices([@Dependências].uipp_IDAtividade)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SearchFields: =["uipp_id"]
-                SearchItems: =Search(Choices([@Dependências].uipp_IDAtividade),DataCardValue27.SearchText,"uipp_id")
+                SearchFields: =["uipp_atividade"]
+                SearchItems: =[]
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -2198,10 +2277,12 @@
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["uipp_id"]
                 DisplayMode: =Parent.DisplayMode
-                Items: =Choices([@Dependências].uipp_Entidades)
+                IsSearchable: =false
+                Items: |
+                    =Choices([@Dependências].uipp_Entidades)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_id"]
-                SearchItems: =Search(Choices([@Dependências].uipp_Entidades),DataCardValue29.SearchText,"uipp_id")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
