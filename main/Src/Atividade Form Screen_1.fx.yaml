@@ -882,8 +882,8 @@
                         'Colaborador Crítico': DataCardValue9.Text,
                         Teletrabalho: DataCardValue14.Selected.Value,
                         Tipo: LookUp('Tipo Colaboradores', uipp_tipo = DataCardValue15.Selected.Tipo),
-                       'ID Atividade': LookUp('Atividades', uipp_atividade = DataCardValue1.Selected.Atividade),
-                        Duração: LookUp('RTOS', uipp_duracao = DataCardValue31.Selected.Duração)
+                       'ID Atividade': LookUp(Atividades, uipp_atividade = DataCardValue1.Selected.Atividade),
+                        Duração: LookUp(RTOS, uipp_duracao = DataCardValue31.Selected.Duração)
                     }
                 )
             )
@@ -1982,7 +1982,7 @@
                 ZIndex: =4
 
     Dependencia As form:
-        DataSource: ='Dependências'
+        DataSource: =Dependências
         Height: =400
         Visible: =Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Dependências"))
         Width: =990
