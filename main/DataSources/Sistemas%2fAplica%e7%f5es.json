@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_sistemasaplicacoeses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_sistemasaplicacoes",
+    "Name": "Sistemas/Aplicações",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_id": "ID",
+      "uipp_nome": "Nome",
+      "uipp_referencia": "Referência",
+      "uipp_sistemasaplicacoes_AsyncOperations": "System Jobs",
+      "uipp_sistemasaplicacoes_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_sistemasaplicacoes_DuplicateBaseRecord": "Duplicate Records (uipp_sistemasaplicacoes_DuplicateBaseRecord)",
+      "uipp_sistemasaplicacoes_DuplicateMatchingRecord": "Duplicate Records (uipp_sistemasaplicacoes_DuplicateMatchingRecord)",
+      "uipp_sistemasaplicacoes_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_sistemasaplicacoes_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_sistemasaplicacoes_ProcessSession": "Process Sessions",
+      "uipp_sistemasaplicacoes_SyncErrors": "Sync Errors",
+      "uipp_sistemasaplicacoesid": "Sistemas/Aplicações",
+      "uipp_uipp_sistemas_SistemasAplicacoes_uipp_sis": "Sistemas",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Sistemas/Aplicações",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Sistemas/Aplicações (Views)",
+    "Name": "_uipp_sistemasaplicacoes_views",
+    "RelatedEntityName": "Sistemas/Aplicações",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "32371a32-a86b-4377-9db6-49a633178cee": "Inactive Sistemas/Aplicações",
+      "6246ebac-4182-48fc-8d05-ce58f15fbed0": "Active Sistemas/Aplicações",
+      "938de5e0-5fdd-42b7-84b3-63615d37b7c7": "Sistemas/Aplicações Lookup View",
+      "a1f36860-3a00-485a-8589-659f787590f1": "Sistemas/Aplicações Advanced Find View",
+      "abf8c384-3c8a-4bdc-b16b-ffca60ca3431": "Sistemas/Aplicações Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Sistemas/Aplicações)",
+    "Name": "uipp_sistemasaplicacoes_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Sistemas/Aplicações"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Sistemas/Aplicações",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Sistemas/Aplicações)",
+    "Name": "uipp_sistemasaplicacoes_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Sistemas/Aplicações"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Sistemas/Aplicações",
+    "Type": "OptionSetInfo"
+  }
+]
