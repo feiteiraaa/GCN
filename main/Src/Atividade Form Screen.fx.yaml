@@ -999,7 +999,7 @@
             HoverColor: =Color.Transparent
             HoverFill: =Color.Transparent
             OnSelect: |-
-                =//SubmitForm('Caracterizacao do Processo');
+                =SubmitForm('Caracterizacao do Processo');
                 Set(
                     LastAtividadeId,
                     'Caracterizacao do Processo'.LastSubmit.ID
