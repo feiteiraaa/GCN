@@ -1,4 +1,6 @@
 Informações As screen:
+    OnVisible: |-
+        =ClearCollect( Recursos, {Nome: "a", Numero: "a"})
 
     LeftSectionComponent_3 As LeftSectionComponent:
         ZIndex: =8
@@ -11,114 +13,66 @@ Informações As screen:
         Y: =35
         ZIndex: =10
 
-    DataTable1 As dataTable.datatable:
-        BorderStyle: =BorderStyle.Solid
-        DisplayMode: =DisplayMode.Edit
-        Fill: =RGBA(0, 0, 0, 0)
-        Height: =500
-        Items: =Gallery2.AllItems
-        Width: =1023
-        X: =342
-        Y: =110
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Items: =Recursos
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =104
+        X: =445
+        Y: =85
         ZIndex: =11
 
-        Label5_Column1 As dataTableColumn.textualColumn:
-            AutoWidth: =false
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="Label5"
-            FieldName: ="Label5"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =3
-            Text: =ThisItem.Label5
-            Width: =119
-            X: =0
-            Y: =0
-            ZIndex: =3
-
-        "'4horas_Column1' As dataTableColumn.textualColumn":
-            AutoWidth: =false
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="4horas"
-            FieldName: ="4horas"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =4
-            Text: =ThisItem.'4horas'
-            Width: =99
-            X: =0
-            Y: =0
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
             ZIndex: =4
 
-        "'48horas_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="48horas"
-            FieldName: ="48horas"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =6
-            Text: =ThisItem.'48horas'.Text
-            Width: =100
-            X: =0
-            Y: =0
+        Separator1 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
             ZIndex: =5
 
-        "'2semanas_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="2semanas"
-            FieldName: ="2semanas"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =8
-            Text: =ThisItem.'2semanas'
-            Width: =100
-            X: =0
-            Y: =0
+        Rectangle5 As rectangle:
+            Height: =Parent.TemplateHeight - Separator1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
             ZIndex: =6
 
-        "'24horas_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="24horas"
-            FieldName: ="24horas"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =5
-            Text: =ThisItem.'24horas'.Text
-            Width: =100
-            X: =0
-            Y: =0
+        Label7 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Nome
+            X: =24
+            Y: =15
             ZIndex: =7
 
-        "'1semana_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="1semana"
-            FieldName: ="1semana"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =7
-            Text: =ThisItem.'1semana'
-            Width: =100
-            X: =0
-            Y: =0
+        Label7_1 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Numero
+            X: =216
+            Y: =15
             ZIndex: =8
 
-        "'1mes_Column1' As dataTableColumn.textualColumn":
-            DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="1mes"
-            FieldName: ="1mes"
-            FieldVariantName: ="textualColumn"
-            Height: =Parent.Height
-            LayoutHeight: =Parent.Height
-            Order: =9
-            Text: =ThisItem.'1mes'
-            Width: =100
-            X: =0
-            Y: =0
-            ZIndex: =9
+    Button5 As button:
+        OnSelect: |-
+            =Collect(Recursos, {Nome: "b", Numero: "b"})
+        Text: ="Button"
+        X: =1115
+        Y: =45
+        ZIndex: =12
 
