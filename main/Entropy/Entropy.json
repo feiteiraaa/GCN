@@ -373,7 +373,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "07/28/2023 14:44:43",
+  "HeaderLastSavedDateTimeUTC": "07/28/2023 14:44:45",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "91f2bfd4-685e-4b8c-9feb-05860874215f": "\"/providers/microsoft.powerapps/apis/shared_office365users/connections/1ebd681223fd4278a9d06beb382d10bf\""
