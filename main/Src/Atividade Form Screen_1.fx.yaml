@@ -260,6 +260,7 @@
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Lighter
                 MaxLength: =Parent.MaxLength
                 OnChange: =
                 PaddingLeft: =5
@@ -330,6 +331,7 @@
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
+                OnChange: =
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -376,12 +378,6 @@
             X: =0
             Y: =1
             ZIndex: =1
-
-            Label3 As label:
-                Text: =GalleryDuration.Selected.'1semana_2'.Text
-                X: =12
-                Y: =27
-                ZIndex: =8
 
             FatoresHeaders_2 As group:
                 Height: =5
@@ -431,6 +427,12 @@
                     Width: =110
                     X: =699
                     ZIndex: =6
+
+            Label3 As label:
+                Text: =GalleryDuration.Selected.'1semana_2'.Text
+                X: =12
+                Y: =27
+                ZIndex: =8
 
             "GalleryDuration As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
@@ -620,6 +622,7 @@
                 DisplayMode: =Parent.DisplayMode
                 IsSearchable: =false
                 Items: =Choices('Teletrabalho (Pessoas)')
+                OnChange: =
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
                 SearchItems: =[]
@@ -689,6 +692,7 @@
                 IsSearchable: =false
                 Items: |
                     =Choices([@Pessoas].Tipo)
+                OnChange: =
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_tipo"]
                 SearchItems: =[]
@@ -863,14 +867,27 @@
 
     Button4 As button:
         OnSelect: |-
-            =Patch(Pessoas,
-            {},
-            {
-                'Nº Empregado':DataCardValue13.Text,
-                'Colaborador Crítico':DataCardValue9.Text,
-                Teletrabalho:DataCardValue14.Selected.Value
-            })
-        Text: ="Patch"
+            =If(
+                !IsBlank(DataCardValue13) &&
+                !IsBlank(DataCardValue9) &&
+                !IsBlank(DataCardValue14) &&
+                !IsBlank(DataCardValue15) &&
+                !IsBlank(DataCardValue1) &&
+                !IsBlank(DataCardValue31),
+                Patch(
+                    Pessoas,
+                    Defaults(Pessoas),
+                    {
+                        'Nº Empregado': DataCardValue13.Text,
+                        'Colaborador Crítico': DataCardValue9.Text,
+                        Teletrabalho: DataCardValue14.Selected.Value,
+                        Tipo: LookUp('Tipo Colaboradores', uipp_tipo = DataCardValue15.Selected.Tipo),
+                       'ID Atividade': LookUp(Atividades, uipp_atividade = DataCardValue1.Selected.Atividade),
+                        Duração: LookUp(RTOS, uipp_duracao = DataCardValue31.Selected.Duração)
+                    }
+                )
+            )
+        Text: ="Next Form"
         X: =1145
         Y: =644
         ZIndex: =54
@@ -2382,4 +2399,10 @@
                 Wrap: =false
                 Y: =DataCardKey30.Y
                 ZIndex: =4
+
+    Label6 As label:
+        Text: = DataCardValue31.Selected.Duração
+        X: =648
+        Y: =168
+        ZIndex: =58
 

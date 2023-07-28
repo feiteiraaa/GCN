@@ -2,10 +2,6 @@
   "DatasetName": "default.cds",
   "EntityName": "Equipamentos de Escritório",
   "InstanceUrl": "https://bmpowerappsd.crm4.dynamics.com/",
-  "LocalReferenceDSJson": {
-    "entitySetName": "uipp_equipamentodeescritorios",
-    "logicalName": "uipp_equipamentodeescritorio"
-  },
   "state": "Configured",
   "TableDefinition": {
     "BooleanOptionSetAttribute": "{\"@odata.context\":\"https://bmpowerappsd.crm4.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('uipp_equipamentodeescritorio')/Attributes/Microsoft.Dynamics.CRM.BooleanAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[]}",
