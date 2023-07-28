@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_equipamentoses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_equipamentos",
+    "Name": "Equipamentos",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_equipamento": "Equipamento",
+      "uipp_equipamentos_AsyncOperations": "System Jobs",
+      "uipp_equipamentos_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_equipamentos_DuplicateBaseRecord": "Duplicate Records (uipp_equipamentos_DuplicateBaseRecord)",
+      "uipp_equipamentos_DuplicateMatchingRecord": "Duplicate Records (uipp_equipamentos_DuplicateMatchingRecord)",
+      "uipp_equipamentos_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_equipamentos_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_equipamentos_ProcessSession": "Process Sessions",
+      "uipp_equipamentos_SyncErrors": "Sync Errors",
+      "uipp_equipamentosid": "Equipamentos",
+      "uipp_id": "ID",
+      "uipp_uipp_equipamentodeescritorio_Equipamento_": "Equipamentos de Escritório",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Equipamentos",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Equipamentos (Views)",
+    "Name": "_uipp_equipamentos_views",
+    "RelatedEntityName": "Equipamentos",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0862c171-e3a4-4a33-966e-3ee4e5d2d1ff": "Active Equipamentos",
+      "1aae6069-11c5-476f-bd91-fc23c4a0232e": "Equipamentos Lookup View",
+      "5d12ff1c-3fa8-4fd2-b710-ca76e2a26f72": "Equipamentos Advanced Find View",
+      "77e57e4e-69d5-49d5-8cdb-936939e69d49": "Equipamentos Associated View",
+      "944adf92-1ff1-42fd-9255-f95b578c0ac6": "Inactive Equipamentos"
+    }
+  },
+  {
+    "DisplayName": "Status (Equipamentos)",
+    "Name": "uipp_equipamentos_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Equipamentos"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Equipamentos",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Equipamentos)",
+    "Name": "uipp_equipamentos_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Equipamentos"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Equipamentos",
+    "Type": "OptionSetInfo"
+  }
+]

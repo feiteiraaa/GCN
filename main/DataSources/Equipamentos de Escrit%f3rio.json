@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_equipamentodeescritorios",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_equipamentodeescritorio",
+    "Name": "Equipamentos de Escritório",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_Duracao": "Duração",
+      "uipp_Equipamento": "Equipamento",
+      "uipp_equipamentodeescritorio_AsyncOperations": "System Jobs",
+      "uipp_equipamentodeescritorio_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_equipamentodeescritorio_DuplicateBaseRecord": "Duplicate Records (uipp_equipamentodeescritorio_DuplicateBaseRecord)",
+      "uipp_equipamentodeescritorio_DuplicateMatchingRecord": "Duplicate Records (uipp_equipamentodeescritorio_DuplicateMatchingRecord)",
+      "uipp_equipamentodeescritorio_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_equipamentodeescritorio_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_equipamentodeescritorio_ProcessSession": "Process Sessions",
+      "uipp_equipamentodeescritorio_SyncErrors": "Sync Errors",
+      "uipp_equipamentodeescritorioid": "Equipamento de Escritório",
+      "uipp_id": "ID",
+      "uipp_IDAtividade": "ID Atividade",
+      "uipp_observacoes": "Observações",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Equipamentos de Escritório",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Equipamentos de Escritório (Views)",
+    "Name": "_uipp_equipamentodeescritorio_views",
+    "RelatedEntityName": "Equipamentos de Escritório",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "a466b1c1-08a2-48c2-adb9-f8bc098ee726": "Equipamento de Escritório Associated View",
+      "abe048c5-d54f-48fd-b847-5f703056584a": "Equipamento de Escritório Advanced Find View",
+      "dd03a1f5-d037-4fdc-bf66-880310e71701": "Equipamento de Escritório Lookup View",
+      "eac3a54f-f173-4218-a8b5-4f820e36d658": "Active Equipamentos de Escritório",
+      "edec8781-7c3f-49b3-8dcc-c2d0be0e7785": "Inactive Equipamentos de Escritório"
+    }
+  },
+  {
+    "DisplayName": "Status (Equipamentos de Escritório)",
+    "Name": "uipp_equipamentodeescritorio_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Equipamentos de Escritório"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Equipamentos de Escritório",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Equipamentos de Escritório)",
+    "Name": "uipp_equipamentodeescritorio_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Equipamentos de Escritório"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Equipamentos de Escritório",
+    "Type": "OptionSetInfo"
+  }
+]
