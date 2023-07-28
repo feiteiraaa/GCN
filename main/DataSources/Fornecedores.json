@@ -1,12 +1,12 @@
 [
   {
     "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
-    "EntitySetName": "uipp_equipamentoses",
+    "EntitySetName": "uipp_fornecedoreses",
     "IsHidden": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "LogicalName": "uipp_equipamentos",
-    "Name": "Equipamentos",
+    "LogicalName": "uipp_fornecedores",
+    "Name": "Fornecedores",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
       "createdby": "Created By",
@@ -23,41 +23,42 @@
       "statecode": "Status",
       "statuscode": "Status Reason",
       "timezoneruleversionnumber": "Time Zone Rule Version Number",
-      "uipp_equipamento": "Equipamento",
-      "uipp_equipamentos_AsyncOperations": "System Jobs",
-      "uipp_equipamentos_BulkDeleteFailures": "Bulk Delete Failures",
-      "uipp_equipamentos_DuplicateBaseRecord": "Duplicate Records (uipp_equipamentos_DuplicateBaseRecord)",
-      "uipp_equipamentos_DuplicateMatchingRecord": "Duplicate Records (uipp_equipamentos_DuplicateMatchingRecord)",
-      "uipp_equipamentos_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
-      "uipp_equipamentos_PrincipalObjectAttributeAccesses": "Field Sharing",
-      "uipp_equipamentos_ProcessSession": "Process Sessions",
-      "uipp_equipamentos_SyncErrors": "Sync Errors",
-      "uipp_equipamentosid": "Equipamentos",
+      "uipp_fornecedores_AsyncOperations": "System Jobs",
+      "uipp_fornecedores_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_fornecedores_DuplicateBaseRecord": "Duplicate Records (uipp_fornecedores_DuplicateBaseRecord)",
+      "uipp_fornecedores_DuplicateMatchingRecord": "Duplicate Records (uipp_fornecedores_DuplicateMatchingRecord)",
+      "uipp_fornecedores_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_fornecedores_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_fornecedores_ProcessSession": "Process Sessions",
+      "uipp_fornecedores_SyncErrors": "Sync Errors",
+      "uipp_fornecedoresid": "Fornecedores",
       "uipp_id": "ID",
-      "uipp_uipp_equipamentodeescritorio_Equipamento_": "Equipamentos de Escritório",
+      "uipp_nome": "Nome",
+      "uipp_referencia": "Referência",
+      "uipp_uipp_dependencias_Entidades_uipp_forneced": "Dependências",
       "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
       "versionnumber": "Version Number"
     },
-    "PreferredName": "Equipamentos",
+    "PreferredName": "Fornecedores",
     "Type": "NativeCDSDataSourceInfo"
   },
   {
-    "DisplayName": "Equipamentos (Views)",
-    "Name": "_uipp_equipamentos_views",
-    "RelatedEntityName": "Equipamentos",
+    "DisplayName": "Fornecedores (Views)",
+    "Name": "_uipp_fornecedores_views",
+    "RelatedEntityName": "Fornecedores",
     "TrimmedViewName": true,
     "Type": "ViewInfo",
     "ViewInfoNameMapping": {
-      "0862c171-e3a4-4a33-966e-3ee4e5d2d1ff": "Active Equipamentos",
-      "1aae6069-11c5-476f-bd91-fc23c4a0232e": "Equipamentos Lookup View",
-      "5d12ff1c-3fa8-4fd2-b710-ca76e2a26f72": "Equipamentos Advanced Find View",
-      "77e57e4e-69d5-49d5-8cdb-936939e69d49": "Equipamentos Associated View",
-      "944adf92-1ff1-42fd-9255-f95b578c0ac6": "Inactive Equipamentos"
+      "3dcb3cd3-0d3b-4b21-8972-0965bf17f1a2": "Fornecedores Lookup View",
+      "525b990f-db48-4997-a350-1834a5d9dfba": "Fornecedores Associated View",
+      "b0342f9c-c6e8-439a-a11d-222d990a7638": "Fornecedores Advanced Find View",
+      "c67c7ff9-2610-4870-a9d6-10b3d3c10d67": "Active Fornecedores",
+      "daa17185-3924-46b6-8637-8862fe87bd5f": "Inactive Fornecedores"
     }
   },
   {
-    "DisplayName": "Status (Equipamentos)",
-    "Name": "uipp_equipamentos_statecode",
+    "DisplayName": "Status (Fornecedores)",
+    "Name": "uipp_fornecedores_statecode",
     "OptionSetInfoNameMapping": {
       "0": "Active",
       "1": "Inactive"
@@ -67,17 +68,17 @@
     "OptionSetReference": {
       "OptionSetReferenceItem0": {
         "OptionSetReferenceColumnName": "statecode",
-        "OptionSetReferenceEntityName": "Equipamentos"
+        "OptionSetReferenceEntityName": "Fornecedores"
       }
     },
     "OptionSetTypeKey": "StateType",
     "RelatedColumnInvariantName": "statecode",
-    "RelatedEntityName": "Equipamentos",
+    "RelatedEntityName": "Fornecedores",
     "Type": "OptionSetInfo"
   },
   {
-    "DisplayName": "Status Reason (Equipamentos)",
-    "Name": "uipp_equipamentos_statuscode",
+    "DisplayName": "Status Reason (Fornecedores)",
+    "Name": "uipp_fornecedores_statuscode",
     "OptionSetInfoNameMapping": {
       "1": "Active",
       "2": "Inactive"
@@ -87,12 +88,12 @@
     "OptionSetReference": {
       "OptionSetReferenceItem0": {
         "OptionSetReferenceColumnName": "statuscode",
-        "OptionSetReferenceEntityName": "Equipamentos"
+        "OptionSetReferenceEntityName": "Fornecedores"
       }
     },
     "OptionSetTypeKey": "StatusType",
     "RelatedColumnInvariantName": "statuscode",
-    "RelatedEntityName": "Equipamentos",
+    "RelatedEntityName": "Fornecedores",
     "Type": "OptionSetInfo"
   }
 ]
