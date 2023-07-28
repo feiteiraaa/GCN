@@ -21,12 +21,28 @@ Inicio As screen:
         KPI_Total As KPI:
             KPIInfo: ="Total de Processos de Atividades"
             KPIName: ="Total"
+            KPINumber: |-
+                =CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica'
+                    )
+                )
             X: =359
             Y: =100
 
         KPI_EmPreenchimento As KPI:
             KPIInfo: ="Processos de Atvividades em Preenchimento"
             KPIName: ="Em Preenchimento"
+            KPINumber: |-
+                =CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica'
+                        And
+                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Preenchimento"))
+                    )
+                )
             X: =527
             Y: =100
             ZIndex: =2
@@ -34,6 +50,15 @@ Inicio As screen:
         KPI_EmValidação As KPI:
             KPIInfo: ="Processos de Atividades em Validação"
             KPIName: ="Em Validação"
+            KPINumber: |-
+                =CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica'
+                        And
+                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Validação"))
+                    )
+                )
             X: =696
             Y: =100
             ZIndex: =3
@@ -41,6 +66,15 @@ Inicio As screen:
         KPI_Aprovados As KPI:
             KPIInfo: ="Processos de Atividade Aprovados"
             KPIName: ="Aprovados"
+            KPINumber: |-
+                =CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica'
+                        And
+                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Aprovados"))
+                    )
+                )
             X: =864
             Y: =100
             ZIndex: =4
@@ -48,6 +82,15 @@ Inicio As screen:
         KPI_Rejeitados As KPI:
             KPIInfo: ="Processos de Atividade Rejeitados"
             KPIName: ="Rejeitados"
+            KPINumber: |-
+                =CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica'
+                        And
+                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Rejeitados"))
+                    )
+                )
             X: =1031
             Y: =100
             ZIndex: =5
@@ -55,6 +98,15 @@ Inicio As screen:
         KPI_EmRevisao As KPI:
             KPIInfo: ="Processos de Atividade em Revisão"
             KPIName: ="Em Revisão"
+            KPINumber: |-
+                =CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica'
+                        And
+                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Revisão"))
+                    )
+                )
             X: =1196
             Y: =100
             ZIndex: =6
