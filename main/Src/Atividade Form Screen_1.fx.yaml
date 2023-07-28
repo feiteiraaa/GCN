@@ -397,6 +397,7 @@
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Lighter
                 MaxLength: =Parent.MaxLength
                 OnChange: =
                 PaddingLeft: =5
@@ -467,6 +468,7 @@
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 MaxLength: =Parent.MaxLength
+                OnChange: =
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -757,6 +759,7 @@
                 DisplayMode: =Parent.DisplayMode
                 IsSearchable: =false
                 Items: =Choices('Teletrabalho (Pessoas)')
+                OnChange: =
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
                 SearchItems: =[]
@@ -826,6 +829,7 @@
                 IsSearchable: =false
                 Items: |
                     =Choices([@Pessoas].uipp_Tipo)
+                OnChange: =
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_tipo"]
                 SearchItems: =[]
@@ -863,14 +867,27 @@
 
     Button4 As button:
         OnSelect: |-
-            =Patch(Pessoas,
-            {},
-            {
-                'Nº Empregado':DataCardValue13.Text,
-                'Colaborador Crítico':DataCardValue9.Text,
-                Teletrabalho:DataCardValue14.Selected.Value
-            })
-        Text: ="Patch"
+            =If(
+                !IsBlank(DataCardValue13) &&
+                !IsBlank(DataCardValue9) &&
+                !IsBlank(DataCardValue14) &&
+                !IsBlank(DataCardValue15) &&
+                !IsBlank(DataCardValue1) &&
+                !IsBlank(DataCardValue31),
+                Patch(
+                    Pessoas,
+                    Defaults(Pessoas),
+                    {
+                        'Nº Empregado': DataCardValue13.Text,
+                        'Colaborador Crítico': DataCardValue9.Text,
+                        Teletrabalho: DataCardValue14.Selected.Value,
+                        Tipo: LookUp('Tipo Colaboradores', uipp_tipo = DataCardValue15.Selected.Tipo),
+                       'ID Atividade': LookUp('Atividades', uipp_atividade = DataCardValue1.Selected.Atividade),
+                        Duração: LookUp('RTOS', uipp_duracao = DataCardValue31.Selected.Duração)
+                    }
+                )
+            )
+        Text: ="Next Form"
         X: =1145
         Y: =644
         ZIndex: =54
@@ -2382,4 +2399,10 @@
                 Wrap: =false
                 Y: =DataCardKey30.Y
                 ZIndex: =4
+
+    Label6 As label:
+        Text: = DataCardValue31.Selected.Duração
+        X: =648
+        Y: =168
+        ZIndex: =58
 
