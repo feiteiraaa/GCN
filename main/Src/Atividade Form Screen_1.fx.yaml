@@ -299,6 +299,74 @@
                 Y: =DataCardKey10.Y
                 ZIndex: =4
 
+        "'ID Atividade_DataCard3' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="uipp_IDAtividade"
+            Default: =ThisItem.'ID Atividade'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Pessoas],DataSourceInfo.DisplayName,"uipp_IDAtividade")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue1.Selected
+            Width: =495
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =cores.amareloMontepio
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["uipp_atividade"]
+                DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
+                Items: =Choices([@Pessoas].'ID Atividade')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["uipp_atividade"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage22 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue1.Y + DataCardValue1.Height
+                ZIndex: =3
+
+            StarVisible22 As label:
+                Align: =Align.Center
+                Height: =DataCardKey1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey1.Y
+                ZIndex: =4
+
         "'Colaborador Crítico_DataCard1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="uipp_colaboradorcritico"
@@ -368,6 +436,75 @@
                 Y: =DataCardKey5.Y
                 ZIndex: =4
 
+        Duração_DataCard3 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="uipp_Duracao"
+            Default: =ThisItem.Duração
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Pessoas],DataSourceInfo.DisplayName,"uipp_Duracao")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue31.Selected
+            Width: =495
+            X: =1
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey31 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue31 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =cores.amareloMontepio
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["uipp_duracao"]
+                DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
+                Items: |
+                    =Choices([@Pessoas].Duração)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["uipp_duracao"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey31.Y + DataCardKey31.Height + 5
+                ZIndex: =2
+
+            ErrorMessage29 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue31.Y + DataCardValue31.Height
+                ZIndex: =3
+
+            StarVisible29 As label:
+                Align: =Align.Center
+                Height: =DataCardKey31.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey31.Y
+                ZIndex: =4
+
         DataCard1 As typedDataCard.blankCard:
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.View
@@ -378,6 +515,12 @@
             X: =0
             Y: =1
             ZIndex: =1
+
+            Label3 As label:
+                Text: =GalleryDuration.Selected.'1semana_2'.Text
+                X: =12
+                Y: =27
+                ZIndex: =8
 
             FatoresHeaders_2 As group:
                 Height: =5
@@ -427,12 +570,6 @@
                     Width: =110
                     X: =699
                     ZIndex: =6
-
-            Label3 As label:
-                Text: =GalleryDuration.Selected.'1semana_2'.Text
-                X: =12
-                Y: =27
-                ZIndex: =8
 
             "GalleryDuration As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
@@ -728,143 +865,6 @@
                 Y: =DataCardKey15.Y
                 ZIndex: =4
 
-        "'ID Atividade_DataCard3' As typedDataCard.comboBoxEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="uipp_IDAtividade"
-            Default: =ThisItem.'ID Atividade'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Pessoas],DataSourceInfo.DisplayName,"uipp_IDAtividade")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =DataCardValue1.Selected
-            Width: =495
-            X: =0
-            Y: =3
-            ZIndex: =1
-
-            DataCardKey1 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue1 As combobox:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                ChevronBackground: =cores.amareloMontepio
-                DefaultSelectedItems: =Parent.Default
-                DisplayFields: =["uipp_atividade"]
-                DisplayMode: =Parent.DisplayMode
-                IsSearchable: =false
-                Items: =Choices([@Pessoas].'ID Atividade')
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SearchFields: =["uipp_atividade"]
-                SearchItems: =[]
-                SelectMultiple: =false
-                Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
-                ZIndex: =2
-
-            ErrorMessage22 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue1.Y + DataCardValue1.Height
-                ZIndex: =3
-
-            StarVisible22 As label:
-                Align: =Align.Center
-                Height: =DataCardKey1.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey1.Y
-                ZIndex: =4
-
-        Duração_DataCard3 As typedDataCard.comboBoxEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="uipp_Duracao"
-            Default: =ThisItem.Duração
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Pessoas],DataSourceInfo.DisplayName,"uipp_Duracao")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =DataCardValue31.Selected
-            Width: =495
-            X: =1
-            Y: =3
-            ZIndex: =1
-
-            DataCardKey31 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue31 As combobox:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                ChevronBackground: =cores.amareloMontepio
-                DefaultSelectedItems: =Parent.Default
-                DisplayFields: =["uipp_duracao"]
-                DisplayMode: =Parent.DisplayMode
-                IsSearchable: =false
-                Items: |
-                    =Choices([@Pessoas].Duração)
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SearchFields: =["uipp_duracao"]
-                SearchItems: =[]
-                SelectMultiple: =false
-                Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardKey31.Y + DataCardKey31.Height + 5
-                ZIndex: =2
-
-            ErrorMessage29 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue31.Y + DataCardValue31.Height
-                ZIndex: =3
-
-            StarVisible29 As label:
-                Align: =Align.Center
-                Height: =DataCardKey31.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey31.Y
-                ZIndex: =4
-
     Button4 As button:
         OnSelect: |-
             =If(
@@ -881,9 +881,9 @@
                         'Nº Empregado': DataCardValue13.Text,
                         'Colaborador Crítico': DataCardValue9.Text,
                         Teletrabalho: DataCardValue14.Selected.Value,
-                        Tipo: LookUp('Tipo Colaboradores', uipp_tipo = DataCardValue15.Selected.Tipo),
-                       'ID Atividade': LookUp(Atividades, uipp_atividade = DataCardValue1.Selected.Atividade),
-                        Duração: LookUp(RTOS, uipp_duracao = DataCardValue31.Selected.Duração)
+                        Tipo: LookUp('Tipo Colaboradores', Tipo = DataCardValue15.Selected.Tipo),
+                       'ID Atividade': LookUp(Atividades, Atividade = DataCardValue1.Selected.Atividade),
+                        Duração: LookUp(RTOS, Duração = DataCardValue31.Selected.Duração)
                     }
                 )
             )
