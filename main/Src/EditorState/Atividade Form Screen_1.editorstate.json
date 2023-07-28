@@ -6904,7 +6904,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Atividade Form Header_1",
-      "ParentIndex": 12,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7116,7 +7116,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button3_1",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7367,7 +7367,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button4",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7623,7 +7623,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "Caracterizacao de equipamentos",
-      "ParentIndex": 10,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7778,7 +7778,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "Caracterizacao de sistema",
-      "ParentIndex": 11,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7934,7 +7934,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "Caracterizacao do Recurso",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14634,14 +14634,7 @@
         "PressedFill",
         "HoverFill",
         "Font",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "",
-          "InvariantPropertyName": "FontWeight",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "FontWeight",
         "Align",
         "X",
         "Y",
@@ -22440,7 +22433,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "DynamicBtn_4",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -30609,7 +30602,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label1_4",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31500,7 +31493,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label3_18",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -37734,7 +37727,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "LeftSectionComponent_5",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -38446,7 +38439,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Passos do Registo de Atividade_1",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
