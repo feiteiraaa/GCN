@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "uipp_equipamentos",
+    "MaxGetRowsCount": 500,
     "Name": "Equipamentos",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",

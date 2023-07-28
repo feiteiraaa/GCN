@@ -377,6 +377,12 @@
             Y: =1
             ZIndex: =1
 
+            Label3 As label:
+                Text: =GalleryDuration.Selected.'1semana_2'.Text
+                X: =12
+                Y: =27
+                ZIndex: =8
+
             FatoresHeaders_2 As group:
                 Height: =5
                 Width: =5
@@ -425,12 +431,6 @@
                     Width: =110
                     X: =699
                     ZIndex: =6
-
-            Label3 As label:
-                Text: =GalleryDuration.Selected.'1semana_2'.Text
-                X: =12
-                Y: =27
-                ZIndex: =8
 
             "GalleryDuration As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
@@ -688,7 +688,7 @@
                 DisplayMode: =Parent.DisplayMode
                 IsSearchable: =false
                 Items: |
-                    =Choices([@Pessoas].uipp_Tipo)
+                    =Choices([@Pessoas].Tipo)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_tipo"]
                 SearchItems: =[]
@@ -756,7 +756,7 @@
                 DisplayFields: =["uipp_atividade"]
                 DisplayMode: =Parent.DisplayMode
                 IsSearchable: =false
-                Items: =Choices([@Pessoas].uipp_IDAtividade)
+                Items: =Choices([@Pessoas].'ID Atividade')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_atividade"]
                 SearchItems: =[]
@@ -825,7 +825,7 @@
                 DisplayMode: =Parent.DisplayMode
                 IsSearchable: =false
                 Items: |
-                    =Choices([@Pessoas].uipp_Duracao)
+                    =Choices([@Pessoas].Duração)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_duracao"]
                 SearchItems: =[]
@@ -1965,7 +1965,7 @@
                 ZIndex: =4
 
     Dependencia As form:
-        DataSource: ='Dependências'
+        DataSource: =Dependências
         Height: =400
         Visible: =Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Dependências"))
         Width: =990
@@ -2142,7 +2142,7 @@
                 DisplayMode: =Parent.DisplayMode
                 IsSearchable: =false
                 Items: |
-                    =Choices([@Dependências].uipp_IDAtividade)
+                    =Choices([@Dependências].'ID Atividade')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_atividade"]
                 SearchItems: =[]

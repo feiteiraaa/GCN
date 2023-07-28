@@ -8,6 +8,13 @@
       }
     },
     {
+      "Kind": "default.cds_uipp_dependencias_forms",
+      "Namespace": "Dependências (Forms)",
+      "Values": {
+        "Information": "ac7a6a6f-8665-4888-9467-f20c79121b6f"
+      }
+    },
+    {
       "Kind": "default.cds_uipp_edificios_forms",
       "Namespace": "Edifícios (Forms)",
       "Values": {
@@ -15,10 +22,31 @@
       }
     },
     {
+      "Kind": "default.cds_uipp_equipamentodeescritorio_forms",
+      "Namespace": "Equipamentos de Escritório (Forms)",
+      "Values": {
+        "Information": "17bfa135-3870-425e-a8c8-93e223984dfd"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_equipamentos_forms",
+      "Namespace": "Equipamentos (Forms)",
+      "Values": {
+        "Information": "94218429-0630-4731-8874-717af59d0d44"
+      }
+    },
+    {
       "Kind": "default.cds_uipp_fatoresdecriticidade_forms",
       "Namespace": "Fatores de Criticidades (Forms)",
       "Values": {
         "Information": "dc2b6729-0f00-45d3-88ea-d40aac2e6502"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_fornecedores_forms",
+      "Namespace": "Fornecedores (Forms)",
+      "Values": {
+        "Information": "7b8cb769-6608-4a15-a613-b6a7311b40f8"
       }
     },
     {
@@ -47,6 +75,20 @@
       "Namespace": "RTOS (Forms)",
       "Values": {
         "Information": "31caadac-30bf-48fd-b625-adfdf59de1d9"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_sistemasaplicacoes_forms",
+      "Namespace": "Sistemas/Aplicações (Forms)",
+      "Values": {
+        "Information": "16808c95-b6fc-48b0-95ab-f437a3914282"
+      }
+    },
+    {
+      "Kind": "default.cds_uipp_sistemas_forms",
+      "Namespace": "Sistemas (Forms)",
+      "Values": {
+        "Information": "a5a3615a-f321-4eb0-9313-8becda2c9447"
       }
     },
     {
