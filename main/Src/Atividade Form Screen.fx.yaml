@@ -836,7 +836,7 @@
             Tooltip: =
             Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
             Width: =50
-            X: =666
+            X: =656
             Y: =10
             ZIndex: =12
 
@@ -1078,7 +1078,7 @@
     RTO As groupContainer.manualLayoutContainer:
         Height: =80
         Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Fatores de Criticidade"))
-        Width: =734
+        Width: =723
         X: =360
         Y: =655
         ZIndex: =23
@@ -1167,7 +1167,7 @@
                     ThisRecord.'1mes'.Text
                 )
             Width: =75
-            X: =653
+            X: =643
             ZIndex: =7
 
         "'RTO label' As label":
