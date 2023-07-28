@@ -870,7 +870,7 @@
                 'Colaborador Crítico':DataCardValue9.Text,
                 Teletrabalho:DataCardValue14.Selected.Value
             })
-        Text: ="Patchh"
+        Text: ="Patch"
         X: =1145
         Y: =644
         ZIndex: =54
