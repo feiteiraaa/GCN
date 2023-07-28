@@ -1,0 +1,145 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_dependenciases",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_dependencias",
+    "Name": "Dependências",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_dependencias_AsyncOperations": "System Jobs",
+      "uipp_dependencias_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_dependencias_DuplicateBaseRecord": "Duplicate Records (uipp_dependencias_DuplicateBaseRecord)",
+      "uipp_dependencias_DuplicateMatchingRecord": "Duplicate Records (uipp_dependencias_DuplicateMatchingRecord)",
+      "uipp_dependencias_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_dependencias_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_dependencias_ProcessSession": "Process Sessions",
+      "uipp_dependencias_SyncErrors": "Sync Errors",
+      "uipp_dependenciasid": "Dependências",
+      "uipp_Entidades": "Entidades",
+      "uipp_id": "ID",
+      "uipp_IDAtividade": "ID Atividade",
+      "uipp_importancia": "Importância",
+      "uipp_informacaodesuporte": "Informação de Suporte",
+      "uipp_observacoes": "Observações",
+      "uipp_tipodedependencia": "Tipo de Dependência",
+      "uipp_unidadesorganicas": "Unidades Orgânicas",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Dependências",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Dependências (Views)",
+    "Name": "_uipp_dependencias_views",
+    "RelatedEntityName": "Dependências",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0a9172d1-46da-4d82-8d45-40813eba1419": "Inactive Dependências",
+      "484c6001-5823-49bd-b22d-a9466fb53cb9": "Dependências Associated View",
+      "7a6d13ec-1686-4494-b8e8-52f156889c69": "Dependências Advanced Find View",
+      "d4f04f29-acba-4e2b-a003-8b64c38a6c35": "Dependências Lookup View",
+      "e6179996-91bd-48a7-9844-0812e03d93af": "Active Dependências"
+    }
+  },
+  {
+    "DisplayName": "Status (Dependências)",
+    "Name": "uipp_dependencias_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Dependências"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Dependências",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Dependências)",
+    "Name": "uipp_dependencias_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Dependências"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Dependências",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Importância",
+    "Name": "uipp_importancia",
+    "OptionSetInfoNameMapping": {
+      "847700000": "Crítica",
+      "847700001": "Média",
+      "847700002": "Baixa"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "uipp_importancia",
+        "OptionSetReferenceEntityName": "Dependências"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "uipp_importancia",
+    "RelatedEntityName": "Dependências",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Tipo de Dependência",
+    "Name": "uipp_tipodedependencia",
+    "OptionSetInfoNameMapping": {
+      "847700000": "Informação de Suporte",
+      "847700001": "Prestadores de Serviços Externos",
+      "847700002": "Prestadores Internos"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "uipp_tipodedependencia",
+        "OptionSetReferenceEntityName": "Dependências"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "uipp_tipodedependencia",
+    "RelatedEntityName": "Dependências",
+    "Type": "OptionSetInfo"
+  }
+]
