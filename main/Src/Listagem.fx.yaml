@@ -27,12 +27,19 @@ Listagem As screen:
                     records:
                     Filter(
                         Atividades,
-                        (TextInput2.Text in ThisRecord.Atividade Or
-                        TextInput2.Text in ThisRecord.'Tipo de Processo'.'Tipo de Processo' Or
-                        TextInput2.Text in ThisRecord.Processo.'Processo (uipp_processo)' Or
-                        TextInput2.Text in ThisRecord.'Macro Processo'.'Macro Processo (uipp_macroprocesso)' Or
-                        TextInput2.Text in ThisRecord.'Data de Decisão') And
-                        Dropdown1.SelectedText.Value = Text(ThisRecord.Estado)
+                        (
+                            TextInput2.Text in ThisRecord.Atividade Or
+                            TextInput2.Text in ThisRecord.'Tipo de Processo'.'Tipo de Processo' Or
+                            TextInput2.Text in ThisRecord.Processo.'Processo (uipp_processo)' Or
+                            TextInput2.Text in ThisRecord.'Macro Processo'.'Macro Processo (uipp_macroprocesso)' Or
+                            TextInput2.Text in ThisRecord.'Data de Decisão'
+                        )
+                        And
+                        If(
+                            !IsBlank(Dropdown1.SelectedText.Value),
+                            Dropdown1.SelectedText.Value = Text(ThisRecord.Estado),
+                            true
+                        )
                     )
                 },
                 ForAll(

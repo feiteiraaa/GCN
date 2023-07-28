@@ -2,10 +2,6 @@
   "DatasetName": "default.cds",
   "EntityName": "Sistemas/Aplicações",
   "InstanceUrl": "https://bmpowerappsd.crm4.dynamics.com/",
-  "LocalReferenceDSJson": {
-    "entitySetName": "uipp_sistemasaplicacoeses",
-    "logicalName": "uipp_sistemasaplicacoes"
-  },
   "state": "Configured",
   "TableDefinition": {
     "BooleanOptionSetAttribute": "{\"@odata.context\":\"https://bmpowerappsd.crm4.dynamics.com/api/data/v9.0/$metadata#EntityDefinitions('uipp_sistemasaplicacoes')/Attributes/Microsoft.Dynamics.CRM.BooleanAttributeMetadata(MetadataId,LogicalName,SchemaName,DisplayName,OptionSet())\",\"value\":[]}",

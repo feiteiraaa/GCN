@@ -126,13 +126,7 @@
 
         Label1_4 As label:
             Size: =15
-            Text: |-
-                ="Atividades > " &
-                If(
-                    formMode = FormMode.New,
-                    "Criar registo de Atividade",
-                    "Editar registo de Atividade"
-                )
+            Text: ="Atividades"
             Width: =610
             X: =359
             Y: =35
@@ -144,13 +138,9 @@
             HoverColor: =Color.Transparent
             HoverFill: =Color.Transparent
             OnSelect: |-
-                =//SubmitForm('Caracterizacao do Processo');
-                Set(
-                    LastAtividadeId,
-                    'Caracterizacao do Processo_1'.LastSubmit.ID
-                );
+                =//submit Fatores de criticidade
                 
-                ForAll(
+                /*ForAll(
                     Gallery2_1.AllItems,
                     If(
                         !IsBlank(ThisRecord.4horas_1.Text) And
@@ -210,7 +200,7 @@
                         ),
                         false
                     )
-                )
+                )*/
             PressedColor: =Color.Transparent
             PressedFill: =Color.Transparent
             Text: ="Button"
@@ -231,12 +221,12 @@
     "'Caracterizacao do Recurso' As form":
         DataSource: =Pessoas
         DefaultMode: =FormMode.New
-        Height: =385
+        Height: =612
         NumberOfColumns: =2
         Visible: =false
         Width: =990
-        X: =360
-        Y: =224
+        X: =361
+        Y: =156
         ZIndex: =53
 
         "'Nº Empregado_DataCard2' As typedDataCard.textualEditCard":
@@ -379,7 +369,7 @@
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =113
+            Height: =300
             Width: =990
             X: =0
             Y: =1
@@ -387,7 +377,7 @@
 
             "GalleryDuration As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 DelayItemLoading: =true
-                Height: =65
+                Height: =250
                 Items: =[1000,1001,1002,1003,1004,1005]
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
