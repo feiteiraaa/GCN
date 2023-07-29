@@ -41,6 +41,7 @@
             )
         );
         
+        ClearCollect( collectRecursos, {row: 1})
         
 
     LeftSectionComponent_5 As LeftSectionComponent:
@@ -222,12 +223,12 @@
         BorderColor: =cores.cinzento
         DataSource: =Pessoas
         DefaultMode: =FormMode.New
-        Height: =450
+        Height: =212
         NumberOfColumns: =2
         Visible: =Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
         Width: =990
-        X: =360
-        Y: =224
+        X: =355
+        Y: =139
         ZIndex: =53
 
         "'Nº Empregado_DataCard2' As typedDataCard.textualEditCard":
@@ -947,8 +948,8 @@
             //Trim(Lower("Caracterização dos Equipamentos")), SubmitForm('Caracterizacao do Recurso') & ResetForm('Caracterizacao do Recurso')
             )*/
         Text: ="Next Form"
-        X: =1145
-        Y: =644
+        X: =1206
+        Y: =728
         ZIndex: =54
 
     "'Caracterizacao de equipamentos' As form":
