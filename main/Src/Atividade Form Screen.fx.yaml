@@ -1002,11 +1002,11 @@
                 =SubmitForm('Caracterizacao do Processo');
                 Set(
                     LastAtividadeId,
-                    //'Caracterizacao do Processo'.LastSubmit.ID
-                    1001
+                    'Caracterizacao do Processo'.LastSubmit.ID
+                    //1001
                 );
                 
-                ForAll(
+                /*ForAll(
                     Gallery2.AllItems,
                     If(
                         !IsBlank(ThisRecord.'4horas'.Text) And
@@ -1054,13 +1054,14 @@
                         ),
                         false
                     )
-                );
+                );*/
                 
                 Patch(
                     RTOS,
                     Defaults(RTOS),
                     {
-                        Classificação: 'RTO label'
+                        Atividade: LookUp(Atividades, ThisRecord.ID = LastAtividadeId),
+                        Classificação: 'RTO label'.Text
                     }
                 )
                 
