@@ -25,7 +25,7 @@
       "statuscode": "Status Reason",
       "timezoneruleversionnumber": "Time Zone Rule Version Number",
       "uipp_colaboradorcritico": "Colaborador Crítico",
-      "uipp_Duracao": "Duração",
+      "uipp_duracao": "Duração",
       "uipp_id": "ID",
       "uipp_IDAtividade": "ID Atividade",
       "uipp_nempregado": "Nº Empregado",
@@ -98,6 +98,30 @@
     },
     "OptionSetTypeKey": "StatusType",
     "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Pessoas",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Duração (Pessoas)",
+    "Name": "uipp_pessoas_uipp_duracao",
+    "OptionSetInfoNameMapping": {
+      "847700000": "<4 horas",
+      "847700001": "<24 horas",
+      "847700002": "<48 horas",
+      "847700003": "<1 semana",
+      "847700004": "<2 semanas",
+      "847700005": "<1 mês"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "uipp_duracao",
+        "OptionSetReferenceEntityName": "Pessoas"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "uipp_duracao",
     "RelatedEntityName": "Pessoas",
     "Type": "OptionSetInfo"
   },

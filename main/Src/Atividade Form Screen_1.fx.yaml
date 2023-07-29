@@ -801,7 +801,7 @@
         Duração_DataCard3 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="uipp_Duracao"
-            Default: =ThisItem.Duração
+            Default: =ThisItem.uipp_Duracao
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Pessoas],DataSourceInfo.DisplayName,"uipp_Duracao")
             Fill: =RGBA(0, 0, 0, 0)
@@ -831,7 +831,7 @@
                 DisplayMode: =Parent.DisplayMode
                 IsSearchable: =false
                 Items: |
-                    =Choices([@Pessoas].Duração)
+                    =Choices([@Pessoas].uipp_Duracao)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_duracao"]
                 SearchItems: =[]
