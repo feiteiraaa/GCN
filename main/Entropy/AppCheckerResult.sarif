@@ -4986,54 +4986,6 @@
               "message": {
                 "text": "Error occurred running rule app-InefficientDelayLoading."
               }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 14
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 14
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 14
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 14
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
             }
           ]
         }
@@ -5577,6 +5529,361 @@
                 "member": "Items",
                 "module": "Atividade Form Screen_1",
                 "type": "'Atividade Form Screen_1'.'Caracterizacao de equipamentos'.Duração_DataCard1.DataCardValue16"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Choices"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 54,
+                  "snippet": {
+                    "text": "\"uipp_Duracao\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Atividade Form Screen_1",
+                "type": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_Duracao",
+              "uipp_duracao"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 69,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@Sistemas],DataSourceInfo.DisplayName,\"uipp_Duracao\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Atividade Form Screen_1",
+                "type": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_Duracao"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Atividade Form Screen_1",
+                "type": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_Duracao"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.SearchItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.SearchItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 26,
+                  "snippet": {
+                    "text": ".uipp_Duracao"
+                  }
+                }
+              },
+              "properties": {
+                "member": "SearchItems",
+                "module": "Atividade Form Screen_1",
+                "type": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.SearchItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.SearchItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 33,
+                  "charOffset": 7,
+                  "snippet": {
+                    "text": "Choices([@Sistemas].uipp_Duracao)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "SearchItems",
+                "module": "Atividade Form Screen_1",
+                "type": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Choices"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.SearchItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.SearchItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 68,
+                  "snippet": {
+                    "text": "\"uipp_id\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "SearchItems",
+                "module": "Atividade Form Screen_1",
+                "type": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_id"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.SearchItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.SearchItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 78,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Search(Choices([@Sistemas].uipp_Duracao),DataCardValue25.SearchText,\"uipp_id\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "SearchItems",
+                "module": "Atividade Form Screen_1",
+                "type": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Search"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 19,
+                  "snippet": {
+                    "text": ".uipp_Duracao"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Atividade Form Screen_1",
+                "type": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 33,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Choices([@Sistemas].uipp_Duracao)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Atividade Form Screen_1",
+                "type": "'Atividade Form Screen_1'.'Caracterizacao de sistema'.Duração_DataCard2.DataCardValue25"
               }
             }
           ],
@@ -6437,26 +6744,147 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.'Sistemas/Aplicações_DataCard2'.DataCardValue46.Items"
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DisplayName"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.'Sistemas/Aplicações_DataCard2'.DataCardValue46.Items",
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DisplayName",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 26,
-                  "charOffset": 19,
+                  "charLength": 14,
+                  "charOffset": 54,
                   "snippet": {
-                    "text": ".uipp_SistemasAplicacoesId"
+                    "text": "\"uipp_Duracao\""
                   }
                 }
               },
               "properties": {
-                "member": "Items",
+                "member": "DisplayName",
                 "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.Form1.'Sistemas/Aplicações_DataCard2'.DataCardValue46"
+                "type": "'Atividade Form Screen'.Form1.Duração_DataCard5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_Duracao",
+              "uipp_duracao"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColumnDoesNotExist-Name-Similar",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DisplayName"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DisplayName",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 69,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "DataSourceInfo([@Sistemas],DataSourceInfo.DisplayName,\"uipp_Duracao\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayName",
+                "module": "Atividade Form Screen",
+                "type": "'Atividade Form Screen'.Form1.Duração_DataCard5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "DataSourceInfo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.Default"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.Default",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_Duracao"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Default",
+                "module": "Atividade Form Screen",
+                "type": "'Atividade Form Screen'.Form1.Duração_DataCard5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_Duracao"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.SearchItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.SearchItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 26,
+                  "snippet": {
+                    "text": ".uipp_Duracao"
+                  }
+                }
+              },
+              "properties": {
+                "member": "SearchItems",
+                "module": "Atividade Form Screen",
+                "type": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43"
               }
             }
           ],
@@ -6474,26 +6902,260 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.'Sistemas/Aplicações_DataCard2'.DataCardValue46.Items"
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.SearchItems"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.'Sistemas/Aplicações_DataCard2'.DataCardValue46.Items",
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.SearchItems",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 46,
+                  "charLength": 33,
+                  "charOffset": 7,
+                  "snippet": {
+                    "text": "Choices([@Sistemas].uipp_Duracao)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "SearchItems",
+                "module": "Atividade Form Screen",
+                "type": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Choices"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.SearchItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.SearchItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 68,
+                  "snippet": {
+                    "text": "\"uipp_id\""
+                  }
+                }
+              },
+              "properties": {
+                "member": "SearchItems",
+                "module": "Atividade Form Screen",
+                "type": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_id"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrColDNE-Name",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.SearchItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.SearchItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 78,
                   "charOffset": 0,
                   "snippet": {
-                    "text": "Choices([@Sistemas].uipp_SistemasAplicacoesId)"
+                    "text": "Search(Choices([@Sistemas].uipp_Duracao),DataCardValue43.SearchText,\"uipp_id\")"
+                  }
+                }
+              },
+              "properties": {
+                "member": "SearchItems",
+                "module": "Atividade Form Screen",
+                "type": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Search"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 19,
+                  "snippet": {
+                    "text": ".uipp_Duracao"
                   }
                 }
               },
               "properties": {
                 "member": "Items",
                 "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.Form1.'Sistemas/Aplicações_DataCard2'.DataCardValue46"
+                "type": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 33,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Choices([@Sistemas].uipp_Duracao)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Atividade Form Screen",
+                "type": "'Atividade Form Screen'.Form1.Duração_DataCard5.DataCardValue43"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Choices"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.Sistema.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.Sistema.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 16,
+                  "charOffset": 32,
+                  "snippet": {
+                    "text": ".uipp_Referencia"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Atividade Form Screen",
+                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.Sistema"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.Sistema.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.Sistema.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 49,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Choices([@'Sistemas/Aplicações'].uipp_Referencia)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Atividade Form Screen",
+                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.Sistema"
               }
             }
           ],
@@ -8854,19 +9516,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.EquipamentoAtividadeID_1.AccessibleLabel"
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.SistemasAtividadeID.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.EquipamentoAtividadeID_1.AccessibleLabel",
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.SistemasAtividadeID.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.EquipamentoAtividadeID_1"
+                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.SistemasAtividadeID"
               }
             }
           ],
@@ -8884,19 +9546,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamento Obs_1'.AccessibleLabel"
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Obs'.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamento Obs_1'.AccessibleLabel",
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Obs'.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamento Obs_1'"
+                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Obs'"
               }
             }
           ],
@@ -9454,19 +10116,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamentos Remove_1'.AccessibleLabel"
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Remove'.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamentos Remove_1'.AccessibleLabel",
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Remove'.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamentos Remove_1'"
+                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Remove'"
               }
             }
           ],
@@ -9484,19 +10146,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamento Duracao_1'.AccessibleLabel"
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Duracao'.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamento Duracao_1'.AccessibleLabel",
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Duracao'.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamento Duracao_1'"
+                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Duracao'"
               }
             }
           ],
@@ -9598,36 +10260,6 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.Equipamento_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.Equipamento_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.Equipamento_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
         },
         {
           "locations": [
@@ -10294,19 +10926,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamentos Remove_1'.TabIndex"
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Remove'.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamentos Remove_1'.TabIndex",
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Remove'.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Equipamentos Remove_1'"
+                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Remove'"
               }
             }
           ],
@@ -10414,19 +11046,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Observações_DataCard6.DataCardValue45.AccessibleLabel"
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.Sistema.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Observações_DataCard6.DataCardValue45.AccessibleLabel",
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.Sistema.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.Form1.Observações_DataCard6.DataCardValue45"
+                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.Sistema"
               }
             }
           ],
@@ -10444,19 +11076,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.'Sistemas/Aplicações_DataCard2'.DataCardValue46.AccessibleLabel"
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Descrição'.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.'Sistemas/Aplicações_DataCard2'.DataCardValue46.AccessibleLabel",
+                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Descrição'.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.Form1.'Sistemas/Aplicações_DataCard2'.DataCardValue46"
+                "type": "'Atividade Form Screen'.'Caracterização dos sistemas'.'Sistemas Descrição'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Observações_DataCard7.DataCardValue48.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Atividade Form Screen'.Form1.Observações_DataCard7.DataCardValue48.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Atividade Form Screen",
+                "type": "'Atividade Form Screen'.Form1.Observações_DataCard7.DataCardValue48"
               }
             }
           ],

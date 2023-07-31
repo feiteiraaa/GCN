@@ -1977,7 +1977,7 @@
         Duração_DataCard2 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="uipp_Duracao"
-            Default: =ThisItem.Duração
+            Default: =ThisItem.uipp_Duracao
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@Sistemas],DataSourceInfo.DisplayName,"uipp_Duracao")
             Fill: =RGBA(0, 0, 0, 0)
