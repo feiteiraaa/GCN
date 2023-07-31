@@ -708,12 +708,39 @@
         "'4horas' As text":
             Align: =Align.Center
             BorderColor: =cores.cinzento
-            Default: =1
+            Default: =
             DelayOutput: =true
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
             HoverFill: =
-            OnChange: =Select('Calculate RTO')
+            OnChange: |-
+                =Select('Calculate RTO');
+                
+                If(
+                    Value(Self.Text) > 0,
+                    
+                    Patch(
+                        AtividadeFormMenu,
+                        LookUp(
+                            AtividadeFormMenu,
+                            Trim(Lower(ThisRecord.titulo)) = Trim(Lower("Fatores de Criticidade"))
+                        ),
+                        {
+                            estado: "feito"
+                        }
+                    ),
+                    
+                    Patch(
+                        AtividadeFormMenu,
+                        LookUp(
+                            AtividadeFormMenu,
+                            Trim(Lower(ThisRecord.titulo)) = Trim(Lower("Fatores de Criticidade"))
+                        ),
+                        {
+                            estado: "em curso"
+                        }
+                    )
+                )
             PaddingLeft: =5
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -730,8 +757,20 @@
         "'24horas' As text":
             Align: =Align.Center
             BorderColor: =cores.cinzento
-            Default: = 
+            Default: |-
+                = If(
+                    IsBlank('4horas'.Text)
+                    Or
+                    Value('4horas'.Text) = 0,
+                    ""
+                )
             DelayOutput: =true
+            DisplayMode: |-
+                =If(
+                    IsBlank('4horas'.Text) Or Value('4horas'.Text) = 0,
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
             HoverFill: =
@@ -754,8 +793,18 @@
         "'48horas' As text":
             Align: =Align.Center
             BorderColor: =cores.cinzento
-            Default: = 
+            Default: |-
+                =If(
+                    IsBlank('24horas'.Text) Or '24horas'.Text = 0,
+                    ""
+                )
             DelayOutput: =true
+            DisplayMode: |-
+                =If(
+                    IsBlank('24horas'.Text),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
             HoverFill: =
@@ -778,8 +827,18 @@
         "'1semana' As text":
             Align: =Align.Center
             BorderColor: =cores.cinzento
-            Default: = 
+            Default: |-
+                =If(
+                    IsBlank('48horas'.Text)  Or '48horas'.Text = 0,
+                    ""
+                )
             DelayOutput: =true
+            DisplayMode: |-
+                =If(
+                    IsBlank('48horas'.Text),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
             HoverFill: =
@@ -802,8 +861,18 @@
         "'2semanas' As text":
             Align: =Align.Center
             BorderColor: =cores.cinzento
-            Default: = 
+            Default: |-
+                =If(
+                    IsBlank('1semana'.Text) Or '1semana'.Text = 0,
+                    ""
+                )
             DelayOutput: =true
+            DisplayMode: |-
+                =If(
+                    IsBlank('1semana'.Text),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
             HoverFill: =
@@ -826,8 +895,18 @@
         "'1mes' As text":
             Align: =Align.Center
             BorderColor: =cores.cinzento
-            Default: = 
+            Default: |-
+                =If(
+                    IsBlank('2semanas'.Text) Or '2semanas'.Text = 0,
+                    ""
+                )
             DelayOutput: =true
+            DisplayMode: |-
+                =If(
+                    IsBlank('2semanas'.Text),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
             HoverFill: =
@@ -1018,18 +1097,51 @@
             ZIndex: =8
 
         "'Calculate RTO' As button":
-            OnSelect: |-
+            OnSelect: |+
                 =UpdateContext({
                     RTO: 0,
                     RTOTempo: "<4 horas"
                 });
                 
                 If( Value('4Horas'.Text) > RTO, UpdateContext({ RTO: Value('4Horas'.Text), RTOTempo: "<4 horas"}));
-                If( Value('24Horas'.Text) > RTO, UpdateContext({ RTO: Value('24Horas'.Text), RTOTempo: "<24 horas" }));
-                If( Value('48Horas'.Text) > RTO, UpdateContext({ RTO: Value('48Horas'.Text), RTOTempo: "<48 horas" }));
-                If( Value('1Semana'.Text) > RTO, UpdateContext({ RTO: Value('1Semana'.Text), RTOTempo: "<1 semana" }));
-                If( Value('2Semanas'.Text) > RTO, UpdateContext({ RTO: Value('2Semanas'.Text), RTOTempo: "<2 semanas" }));
-                If( Value('1Mes'.Text) > RTO, UpdateContext({ RTO: Value('1Mes'.Text), RTOTempo: "<1 mês" }));
+                If( Value('24Horas'.Text) >= RTO, UpdateContext({ RTO: Value('24Horas'.Text), RTOTempo: "<24 horas" }));
+                If( Value('48Horas'.Text) >= RTO, UpdateContext({ RTO: Value('48Horas'.Text), RTOTempo: "<48 horas" }));
+                If( Value('1Semana'.Text) >= RTO, UpdateContext({ RTO: Value('1Semana'.Text), RTOTempo: "<1 semana" }));
+                If( Value('2Semanas'.Text) >= RTO, UpdateContext({ RTO: Value('2Semanas'.Text), RTOTempo: "<2 semanas" }));
+                If( Value('1Mes'.Text) >= RTO, UpdateContext({ RTO: Value('1Mes'.Text), RTOTempo: "<1 mês" }));
+                
+                If(
+                    Value('4Horas'.Text) = 4 Or
+                    Value('24Horas'.Text) = 4 Or
+                    Value('48Horas'.Text) = 4 Or
+                    Value('1Semana'.Text) = 4 Or
+                    Value('2Semanas'.Text) = 4 Or
+                    Value('1Mes'.Text) = 4,
+                    
+                    UpdateIf(
+                        AtividadeFormMenu,
+                        !(
+                            Trim(Lower("Caracterização do Processo")) = Trim(Lower(titulo))
+                            Or
+                            Trim(Lower("Fatores de Criticidade")) in Trim(Lower(titulo))
+                        ),
+                
+                        {modo: DisplayMode.Edit}
+                    ),
+                    
+                    UpdateIf(
+                        AtividadeFormMenu,
+                        !(
+                            Trim(Lower("Caracterização do Processo")) = Trim(Lower(titulo))
+                            Or
+                            Trim(Lower("Fatores de Criticidade")) in Trim(Lower(titulo))
+                        ),
+                        {modo: DisplayMode.Disabled}
+                    )
+                )
+                
+                
+                
             Text: ="Button"
             Visible: =false
             X: =569
@@ -1177,7 +1289,17 @@
 
         AddEquipamentoBTN As groupContainer:
             Height: =40
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Equipamentos"))
+            Visible: |-
+                =(
+                    Value('4Horas'.Text) = 4 Or
+                    Value('24Horas'.Text) = 4 Or
+                    Value('48Horas'.Text) = 4 Or
+                    Value('1Semana'.Text) = 4 Or
+                    Value('2Semanas'.Text) = 4 Or
+                    Value('1Mes'.Text) = 4
+                )
+                And
+                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Equipamentos"))
             Width: =201
             X: =718
             Y: =655
@@ -1372,7 +1494,17 @@
 
         AddSistemasBTN As groupContainer:
             Height: =40
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Sistemas"))
+            Visible: |-
+                =(
+                    Value('4Horas'.Text) = 4 Or
+                    Value('24Horas'.Text) = 4 Or
+                    Value('48Horas'.Text) = 4 Or
+                    Value('1Semana'.Text) = 4 Or
+                    Value('2Semanas'.Text) = 4 Or
+                    Value('1Mes'.Text) = 4
+                )
+                And
+                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Sistemas"))
             Width: =201
             X: =718
             Y: =655
@@ -1422,10 +1554,27 @@
             Y: =91
             ZIndex: =19
 
+            Rectangle4 As rectangle:
+                Fill: |-
+                    =Switch(
+                        ThisItem.estado,
+                        "em curso",
+                        cores.amareloMontepio,
+                        "em falta",
+                        Color.Red,
+                        "feito",
+                        Color.Green
+                    )
+                Height: =2
+                OnSelect: =Select(Parent)
+                Width: =Parent.Width / Parent.AllItemsCount
+                Y: =47
+                ZIndex: =1
+
             Label2 As label:
                 Align: =Align.Center
                 DisplayMode: |-
-                    =If(
+                    =/*If(
                         ThisItem.titulo = "Caracterização do Processo" Or ThisItem.titulo = "Fatores de Criticidade",
                         
                         DisplayMode.Edit,
@@ -1442,7 +1591,8 @@
                     
                             DisplayMode.Disabled
                         )
-                    )
+                    )*/
+                    ThisItem.modo
                 FontWeight: |-
                     =If(
                         ThisItem.IsSelected,
@@ -1486,23 +1636,6 @@
                 Text: =ThisItem.titulo
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Parent.Width / Parent.AllItemsCount
-                ZIndex: =1
-
-            Rectangle4 As rectangle:
-                Fill: |-
-                    =Switch(
-                        ThisItem.estado,
-                        "em curso",
-                        cores.amareloMontepio,
-                        "em falta",
-                        Color.Red,
-                        "feito",
-                        Color.Green
-                    )
-                Height: =2
-                OnSelect: =Select(Parent)
-                Width: =Parent.Width / Parent.AllItemsCount
-                Y: =47
                 ZIndex: =2
 
         "'Title Container' As groupContainer":
@@ -1541,8 +1674,8 @@
                 Fill: =Color.Transparent
                 HoverColor: =Color.Transparent
                 HoverFill: =Color.Transparent
-                OnSelect: |
-                    =/*
+                OnSelect: |-
+                    =
                     // Submeter Caracterização do Processo
                     SubmitForm('Caracterizacao do Processo');
                     Set(
@@ -1550,165 +1683,175 @@
                         'Caracterizacao do Processo'.LastSubmit.ID
                         //1001
                     );
-                    
-                    // Submeter Criticidade do Processo
-                    ForAll(
-                        Gallery2.AllItems,
-                        If(
-                            !IsBlank(ThisRecord.'4horas'.Text) And
-                            !IsBlank(First(Gallery2.AllItems).'4horas'.Text) And
+                    If(
+                        'Caracterizacao do Processo'.Valid
+                        And
+                        (
+                            LookUp(AtividadeFormMenu, Trim(Lower(titulo)) = Trim(Lower("Caracterização do Processo"))).estado = "feito"
+                            Or
+                            LookUp(AtividadeFormMenu, Trim(Lower(titulo)) = Trim(Lower("Fatores de Criticidade"))).estado = "feito"
+                        ),
+                        
+                        // Submeter Criticidade do Processo
+                        ForAll(
+                            Gallery2.AllItems,
                             If(
-                                !IsBlank(First(Gallery2.AllItems).'24horas'.Text),
-                                Value(First(Gallery2.AllItems).'4horas'.Text) <= Value(First(Gallery2.AllItems).'24horas'.Text),
-                                true
-                            ) And
-                            If(
-                                !IsBlank(First(Gallery2.AllItems).'48horas'.Text),
-                                Value(First(Gallery2.AllItems).'24horas'.Text) <= Value(First(Gallery2.AllItems).'48horas'.Text),
-                                true
-                            ) And
-                            If(
-                                !IsBlank(First(Gallery2.AllItems).'1semana'.Text),
-                                Value(First(Gallery2.AllItems).'48horas'.Text) <= Value(First(Gallery2.AllItems).'1semana'.Text),
-                                true
-                            ) And
-                            If(
-                                !IsBlank(First(Gallery2.AllItems).'2semanas'.Text),
-                                Value(First(Gallery2.AllItems).'1semana'.Text) <= Value(First(Gallery2.AllItems).'2semanas'.Text),
-                                true
-                            )  And
-                            If(
-                                !IsBlank(First(Gallery2.AllItems).'1mes'.Text),
-                                Value(First(Gallery2.AllItems).'2semanas'.Text) <= Value(First(Gallery2.AllItems).'1mes'.Text),
-                                true
-                            ),
-                    
-                            Patch(
-                                'Fatores de Criticidades',
-                                Defaults('Fatores de Criticidades'),
+                                !IsBlank(ThisRecord.'4horas'.Text) And !IsBlank(First(Gallery2.AllItems).'4horas'.Text) And If(
+                                    !IsBlank(First(Gallery2.AllItems).'24horas'.Text),
+                                    Value(First(Gallery2.AllItems).'4horas'.Text) <= Value(First(Gallery2.AllItems).'24horas'.Text),
+                                    true
+                                ) And If(
+                                    !IsBlank(First(Gallery2.AllItems).'48horas'.Text),
+                                    Value(First(Gallery2.AllItems).'24horas'.Text) <= Value(First(Gallery2.AllItems).'48horas'.Text),
+                                    true
+                                ) And If(
+                                    !IsBlank(First(Gallery2.AllItems).'1semana'.Text),
+                                    Value(First(Gallery2.AllItems).'48horas'.Text) <= Value(First(Gallery2.AllItems).'1semana'.Text),
+                                    true
+                                ) And If(
+                                    !IsBlank(First(Gallery2.AllItems).'2semanas'.Text),
+                                    Value(First(Gallery2.AllItems).'1semana'.Text) <= Value(First(Gallery2.AllItems).'2semanas'.Text),
+                                    true
+                                ) And If(
+                                    !IsBlank(First(Gallery2.AllItems).'1mes'.Text),
+                                    Value(First(Gallery2.AllItems).'2semanas'.Text) <= Value(First(Gallery2.AllItems).'1mes'.Text),
+                                    true
+                                ),
+                                Patch(
+                                    'Fatores de Criticidades',
+                                    Defaults('Fatores de Criticidades'),
+                                    {
+                                        'Tipo de Fator': ThisRecord.Dropdown2.Selected.Value,
+                                        'quatro horas': Value(ThisRecord.'4horas'.Text),
+                                        'vinte quatro horas': ThisRecord.'24horas'.Text,
+                                        'quarenta oito horas': Value(ThisRecord.'48horas'.Text),
+                                        'uma semana': Value(ThisRecord.'1semana'.Text),
+                                        'duas semanas': Value(ThisRecord.'2semanas'.Text),
+                                        'um mes': Value(ThisRecord.'1mes'.Text),
+                                        'ID Atividade': LookUp(
+                                            Atividades,
+                                            ThisRecord.ID = LastAtividadeId
+                                        ),
+                                        Racional: ThisRecord.racional.Text
+                                    }
+                                ),
+                                false
+                            )
+                        );
+                        
+                        // Submeter RTO
+                        Patch(
+                                RTOS,
+                                Defaults(RTOS),
                                 {
-                                    'Tipo de Fator': ThisRecord.Dropdown2.Selected.Value,
-                                    'quatro horas': Value(ThisRecord.'4horas'.Text),
-                                    'vinte quatro horas': ThisRecord.'24horas'.Text,
-                                    'quarenta oito horas': Value(ThisRecord.'48horas'.Text),
-                                    'uma semana': Value(ThisRecord.'1semana'.Text),
-                                    'duas semanas': Value(ThisRecord.'2semanas'.Text),
-                                    'um mes': Value(ThisRecord.'1mes'.Text),
-                                    'ID Atividade': LookUp(Atividades, ThisRecord.ID = LastAtividadeId),
-                                    Racional: ThisRecord.racional.Text
+                                    Atividade: LookUp(
+                                        Atividades,
+                                        ThisRecord.ID = LastAtividadeId
+                                    ),
+                                    Classificação: 'RTO label'.Text
                                 }
-                            ),
-                    
-                            false
-                        )
-                    );
-                    
-                    // Submeter RTO
-                    Patch(
-                        RTOS,
-                        Defaults(RTOS),
-                        {
-                            Atividade: LookUp(Atividades, ThisRecord.ID = LastAtividadeId),
-                            Classificação: 'RTO label'.Text
-                        }
-                    )
-                    
-                    // Submeter Recursos
-                    ForAll(
-                        'Caracterização dos recursos'.AllItems,
-                        If(
-                            !IsBlank(ThisRecord.NumEmpregado.Text) Or
-                            !IsBlank(ThisRecord.Critico.Text) Or
-                            !IsBlank(ThisRecord.Teletrabalho.Selected.Value) Or
-                            !IsBlank(ThisRecord.Tipo.Selected) Or
-                            !IsBlank(ThisRecord.Duracao.Selected.Value) Or
-                            !IsBlank(ThisRecord.Critico_1.Text),
+                            );
+                        
+                        //Concurrent(
+                            // Submeter Recursos
+                            ForAll(
+                                'Caracterização dos recursos'.AllItems,
+                                If(
+                                    !IsBlank(ThisRecord.NumEmpregado.Text) Or !IsBlank(ThisRecord.Critico.Text) Or !IsBlank(ThisRecord.Teletrabalho.Selected.Value) Or !IsBlank(ThisRecord.Tipo.Selected) Or !IsBlank(ThisRecord.Duracao.Selected.Value) Or !IsBlank(ThisRecord.Critico_1.Text),
+                                    Patch(
+                                        Pessoas,
+                                        Defaults(Pessoas),
+                                        {
+                                            'Nº Empregado': ThisRecord.NumEmpregado.Text,
+                                            'Colaborador Crítico': ThisRecord.Critico.Text,
+                                            Teletrabalho: ThisRecord.Teletrabalho.Selected.Value,
+                                            Tipo: ThisRecord.Tipo.Selected,
+                                            Duração: ThisRecord.Duracao.Selected.Value,
+                                            Observações: ThisRecord.Critico_1.Text,
+                                            'ID Atividade': LookUp(
+                                                Atividades,
+                                                ThisRecord.ID = LastAtividadeId
+                                            )
+                                        }
+                                    ),
+                                    false
+                                )
+                            );
                             
-                            Patch(
-                                Pessoas,
-                                Defaults(Pessoas),
-                                {
-                                    'Nº Empregado': ThisRecord.NumEmpregado.Text,
-                                    'Colaborador Crítico': ThisRecord.Critico.Text,
-                                    Teletrabalho: ThisRecord.Teletrabalho.Selected.Value,
-                                    Tipo: ThisRecord.Tipo.Selected,
-                                    Duração: ThisRecord.Duracao.Selected.Value,
-                                    Observações: ThisRecord.Critico_1.Text,
-                                    'ID Atividade': LookUp(Atividades, ThisRecord.ID = LastAtividadeId)
-                                }
-                            ),
-                    
-                            false
-                        )
-                    );
-                    
-                    // Submeter Equipamentos
-                    ForAll(
-                        'Caracterização dos equipamentos'.AllItems,
-                        If(
-                            !IsBlank(ThisRecord.'Equipamento Duracao'.Selected.Value) Or
-                            !IsBlank(ThisRecord.Equipamento.Selected.Equipamento),
+                            // Submeter Equipamentos
+                            ForAll(
+                                'Caracterização dos equipamentos'.AllItems,
+                                If(
+                                    !IsBlank(ThisRecord.'Equipamento Duracao'.Selected.Value) Or !IsBlank(ThisRecord.Equipamento.Selected.Equipamento),
+                                    Patch(
+                                        'Equipamentos de Escritório',
+                                        Defaults('Equipamentos de Escritório'),
+                                        {
+                                            Equipamento: ThisRecord.Equipamento.Selected,
+                                            Duração: ThisRecord.'Equipamento Duracao'.Selected.Value,
+                                            Observações: ThisRecord.'Equipamento Obs'.Text,
+                                            'ID Atividade': LookUp(
+                                                Atividades,
+                                                ThisRecord.ID = LastAtividadeId
+                                            )
+                                        }
+                                    ),
+                                    false
+                                )
+                            );
                             
-                            Patch(
-                                'Equipamentos de Escritório',
-                                Defaults('Equipamentos de Escritório'),
-                                {
-                                    Equipamento: ThisRecord.Equipamento.Selected,
-                                    Duração: ThisRecord.'Equipamento Duracao'.Selected.Value,
-                                    Observações: ThisRecord.'Equipamento Obs'.Text,
-                                    'ID Atividade': LookUp(Atividades, ThisRecord.ID = LastAtividadeId)
-                                }
-                            ),
-                    
-                            false
-                        )
-                    );
-                    
-                    
-                    // Submeter Sistemas/Aplicações
-                    ForAll(
-                        'Caracterização dos sistemas'.AllItems,
-                        If(
-                            !IsBlank(ThisRecord.'Sistemas Duracao'.Selected.Value) Or
-                            !IsBlank(ThisRecord.Sistema.Selected),
+                            // Submeter Sistemas/Aplicações
+                            ForAll(
+                                'Caracterização dos sistemas'.AllItems,
+                                If(
+                                    !IsBlank(ThisRecord.'Sistemas Duracao'.Selected.Value) Or !IsBlank(ThisRecord.Sistema.Selected),
+                                    Patch(
+                                        Sistemas,
+                                        Defaults('Sistemas'),
+                                        {
+                                            'Sistemas/Aplicações': ThisRecord.Sistema.Selected,
+                                            Duração: ThisRecord.'Sistemas Duracao'.Selected.Value,
+                                            Descrição: ThisRecord.'Sistemas Descrição'.Text,
+                                            Observações: ThisRecord.'Sistemas Obs'.Text,
+                                            'ID Atividade': LookUp(
+                                                Atividades,
+                                                ThisRecord.ID = LastAtividadeId
+                                            )
+                                        }
+                                    ),
+                                    false
+                                )
+                            );
                             
-                            Patch(
-                                Sistemas,
-                                Defaults('Sistemas'),
-                                {
-                                    'Sistemas/Aplicações': ThisRecord.Sistema.Selected,
-                                    Duração: ThisRecord.'Sistemas Duracao'.Selected.Value,
-                                    Descrição: ThisRecord.'Sistemas Descrição'.Text,
-                                    Observações: ThisRecord.'Sistemas Obs'.Text,
-                                    'ID Atividade': First(Atividades) //LookUp(Atividades, ThisRecord.ID = LastAtividadeId)
-                                }
-                            ),
-                    
-                            false
-                        )
-                    );*/
-                    
-                    
-                    // Submeter Dependências
-                    ForAll(
-                        'Caracterização das dependencias'.AllItems,
-                        If(
-                            !IsBlank(ThisRecord.'Dependencias Importancia'.Selected.Value),
-                            Patch(
-                                Dependências,
-                                Defaults('Dependências'),
-                                {
-                                    Entidades: ThisRecord.'Dependencias Entidades'.Selected,
-                                    Importância: ThisRecord.'Dependencias Importancia'.Selected.Value,
-                                    'Tipo de Dependência': ThisRecord.'Dependencias Tipo'.Selected.Value,
-                                    'Unidade Orgânica': ThisRecord.'Dependencias UO'.Selected,
-                                    'Informação de Suporte': ThisRecord.'Dependencias Informacao'.Text,
-                                    Observações: ThisRecord.'Dependencias Observacoes'.Text,
-                                    'ID Atividade': First(Atividades) //LookUp(Atividades, ThisRecord.ID = LastAtividadeId)
-                                }
-                            ),
-                            false
-                        )
+                            // Submeter Dependências
+                            ForAll(
+                                'Caracterização das dependencias'.AllItems,
+                                If(
+                                    !IsBlank(ThisRecord.'Dependencias Importancia'.Selected.Value),
+                                    Patch(
+                                        Dependências,
+                                        Defaults('Dependências'),
+                                        {
+                                            Entidades: ThisRecord.'Dependencias Entidades'.Selected,
+                                            Importância: ThisRecord.'Dependencias Importancia'.Selected.Value,
+                                            'Tipo de Dependência': ThisRecord.'Dependencias Tipo'.Selected.Value,
+                                            'Unidade Orgânica': ThisRecord.'Dependencias UO'.Selected,
+                                            'Informação de Suporte': ThisRecord.'Dependencias Informacao'.Text,
+                                            Observações: ThisRecord.'Dependencias Observacoes'.Text,
+                                            'ID Atividade': LookUp(
+                                                Atividades,
+                                                ThisRecord.ID = LastAtividadeId
+                                            )
+                                        }
+                                    ),
+                                    false
+                                )
+                            )
+                        //)
+                        
+                        //Modal Success,
+                        
+                        //Modal Failure
                     )
                 PressedColor: =Color.Transparent
                 PressedFill: =Color.Transparent
@@ -1759,7 +1902,17 @@
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
             TemplateSize: =120
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
+            Visible: |-
+                =(
+                    Value('4Horas'.Text) = 4 Or
+                    Value('24Horas'.Text) = 4 Or
+                    Value('48Horas'.Text) = 4 Or
+                    Value('1Semana'.Text) = 4 Or
+                    Value('2Semanas'.Text) = 4 Or
+                    Value('1Mes'.Text) = 4
+                )
+                And
+                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
             Width: =980
             X: =362
             Y: =165
@@ -1801,9 +1954,35 @@
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
                 HintText: ="Núm. Empregado"
+                HoverBorderColor: =cores.cinzento
                 HoverFill: =RGBA(255, 255, 255, 1)
                 MaxLength: =10
-                OnChange: =
+                OnChange: |-
+                    =If(
+                        !IsBlank(NumEmpregado.Text) And !IsBlank(Critico.Text) And !IsBlank(Teletrabalho.Selected.Value) And !IsBlank(Tipo.Selected.ID) And !IsBlank(Duracao.Selected.Value),
+                        
+                        Patch(
+                            AtividadeFormMenu,
+                            LookUp(
+                                AtividadeFormMenu,
+                                Trim(Lower(ThisRecord.titulo)) = Trim(Lower("Caracterização do Recursos"))
+                            ),
+                            {
+                                estado: "feito"
+                            }
+                        ),
+                    
+                        Patch(
+                            AtividadeFormMenu,
+                            LookUp(
+                                AtividadeFormMenu,
+                                Trim(Lower(ThisRecord.titulo)) = Trim(Lower("Caracterização do Recursos"))
+                            ),
+                            {
+                                estado: "em curso"
+                            }
+                        )
+                    )
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -1822,6 +2001,7 @@
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
                 HintText: ="Nome do Colaborador"
+                HoverBorderColor: =cores.cinzento
                 HoverFill: =RGBA(255, 255, 255, 1)
                 MaxLength: =30
                 OnChange: =
@@ -1918,6 +2098,7 @@
                 FontWeight: =FontWeight.Lighter
                 Height: =89
                 HintText: ="Observações"
+                HoverBorderColor: =cores.cinzento
                 HoverFill: =RGBA(255, 255, 255, 1)
                 MaxLength: =30
                 Mode: =TextMode.MultiLine
@@ -1951,7 +2132,17 @@
 
         AddRecursoBTN As groupContainer:
             Height: =40
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
+            Visible: |-
+                =(
+                    Value('4Horas'.Text) = 4 Or
+                    Value('24Horas'.Text) = 4 Or
+                    Value('48Horas'.Text) = 4 Or
+                    Value('1Semana'.Text) = 4 Or
+                    Value('2Semanas'.Text) = 4 Or
+                    Value('1Mes'.Text) = 4
+                )
+                And
+                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
             Width: =201
             X: =718
             Y: =655
@@ -2193,7 +2384,17 @@
 
         AddDependenciaBTN As groupContainer:
             Height: =40
-            Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Dependências"))
+            Visible: |-
+                =(
+                    Value('4Horas'.Text) = 4 Or
+                    Value('24Horas'.Text) = 4 Or
+                    Value('48Horas'.Text) = 4 Or
+                    Value('1Semana'.Text) = 4 Or
+                    Value('2Semanas'.Text) = 4 Or
+                    Value('1Mes'.Text) = 4
+                )
+                And
+                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Dependências"))
             Width: =201
             X: =718
             Y: =655

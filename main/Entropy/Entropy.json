@@ -1,11 +1,10 @@
 {
   "ComponentIndexes": {
     "BackBtn": 5,
-    "Component2": 6,
-    "DynamicBtn": 7,
-    "KPI": 8,
-    "LeftSectionComponent": 9,
-    "ModalConfirmation": 10
+    "DynamicBtn": 6,
+    "KPI": 7,
+    "LeftSectionComponent": 8,
+    "ModalConfirmation": 9
   },
   "ControlUniqueGuids": {},
   "ControlUniqueIds": {
@@ -86,7 +85,6 @@
     "Caracterização dos sistemas": 131,
     "Caracterização dos Sistemas": 237,
     "Colaborador Crítico_DataCard1": 254,
-    "Component2": 37,
     "Critico": 116,
     "Critico_1": 117,
     "DataCard1": 259,
@@ -428,7 +426,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "07/31/2023 15:32:12",
+  "HeaderLastSavedDateTimeUTC": "07/31/2023 18:21:51",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "91f2bfd4-685e-4b8c-9feb-05860874215f": "\"/providers/microsoft.powerapps/apis/shared_office365users/connections/a28aeee97dd244838abd264f0a1b28a1\""
@@ -451,18 +449,16 @@
   "OrderComponentMetadata": {
     "2d388924dc2a407fa48c617669b67c09": 3,
     "32f1ad5d924d4ed7a5ecb8165fa2a616": 2,
-    "5a4be3bd4c8f4cdf850d831d6eebf73a": 5,
+    "5a4be3bd4c8f4cdf850d831d6eebf73a": 4,
     "64d9d06916f44723aa621bfdb85cf73f": 0,
-    "c022f2d62cd04de1afec3719753785d5": 1,
-    "e0be28753c634c588298cfbf8966a1af": 4
+    "c022f2d62cd04de1afec3719753785d5": 1
   },
   "OrderComponentTemplate": {
     "2d388924dc2a407fa48c617669b67c09": 3,
     "32f1ad5d924d4ed7a5ecb8165fa2a616": 2,
-    "5a4be3bd4c8f4cdf850d831d6eebf73a": 5,
+    "5a4be3bd4c8f4cdf850d831d6eebf73a": 4,
     "64d9d06916f44723aa621bfdb85cf73f": 0,
-    "c022f2d62cd04de1afec3719753785d5": 1,
-    "e0be28753c634c588298cfbf8966a1af": 4
+    "c022f2d62cd04de1afec3719753785d5": 1
   },
   "OrderDataSource": {
     "AtividadeFormMenu": 74,
@@ -729,7 +725,6 @@
     "Caracterização dos sistemas": {},
     "Caracterização dos Sistemas": {},
     "Colaborador Crítico_DataCard1": {},
-    "Component2": {},
     "Critico": {},
     "Critico_1": {},
     "DataCard1": {},
@@ -1178,7 +1173,6 @@
     "Caracterização dos sistemas": 96,
     "Caracterização dos Sistemas": 105,
     "Colaborador Crítico_DataCard1": 199,
-    "Component2": 4,
     "Critico": 68,
     "Critico_1": 69,
     "DataCard1": 204,
