@@ -301,7 +301,11 @@ Listagem As screen:
             
             Concurrent(
                 UpdateContext({ RTO: 0, RTOTempo: "<24 horas" }),
-                ResetForm('Caracterizacao do Processo')
+                ResetForm('Caracterizacao do Processo');
+                ClearCollect(collectRecursos, Blank());
+                ClearCollect(collectEquipamentos, Blank());
+                ClearCollect(collectDependencias, Blank());
+                ClearCollect(collectSistemas, Blank())
             );
             
             ClearCollect(
