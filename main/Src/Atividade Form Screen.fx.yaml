@@ -1424,7 +1424,25 @@
 
             Label2 As label:
                 Align: =Align.Center
-                DisplayMode: =ThisItem.modo
+                DisplayMode: |-
+                    =If(
+                        ThisItem.titulo = "Caracterização do Processo" Or ThisItem.titulo = "Fatores de Criticidade",
+                        
+                        DisplayMode.Edit,
+                        
+                        If(
+                            Value('4Horas'.Text) = 4 Or
+                            Value('24Horas'.Text) = 4 Or
+                            Value('48Horas'.Text) = 4 Or
+                            Value('1Semana'.Text) = 4 Or
+                            Value('2Semanas'.Text) = 4 Or
+                            Value('1Mes'.Text) = 4,
+                    
+                            DisplayMode.Edit,
+                    
+                            DisplayMode.Disabled
+                        )
+                    )
                 FontWeight: |-
                     =If(
                         ThisItem.IsSelected,
