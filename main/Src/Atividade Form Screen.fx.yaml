@@ -1556,7 +1556,6 @@
                                 Defaults('Fatores de Criticidades'),
                                 {
                                     'Tipo de Fator': ThisRecord.Dropdown2.Selected.Value,
-                                    
                                     'quatro horas': Value(ThisRecord.'4horas'.Text),
                                     'vinte quatro horas': ThisRecord.'24horas'.Text,
                                     'quarenta oito horas': Value(ThisRecord.'48horas'.Text),
@@ -1662,17 +1661,15 @@
                     ForAll(
                         'Caracterização das dependencias'.AllItems,
                         If(
-                            !IsBlank(ThisRecord.'Dependencias Duracao'.Selected.Value) Or
                             !IsBlank(ThisRecord.'Dependencias Importancia'.Selected.Value),
-                            
                             Patch(
                                 Dependências,
                                 Defaults('Dependências'),
                                 {
                                     Entidades: ThisRecord.'Dependencias Entidades'.Selected,
                                     Importância: ThisRecord.'Dependencias Importancia'.Selected.Value,
-                                    //'Tipo de Dependência': ThisRecord.'Dependencias Importancia'.Selected.Value,
-                                    //'Unidade Orgânica': ThisRecord.'Dependencias Entidades'.Selected,
+                                    'Tipo de Dependência': ThisRecord.'Dependencias Tipo'.Selected.Value,
+                                    'Unidade Orgânica': ThisRecord.'Dependencias UO'.Selected,
                                     'Informação de Suporte': ThisRecord.'Dependencias Informacao'.Text,
                                     Observações: ThisRecord.'Dependencias Observacoes'.Text,
                                     'ID Atividade': First(Atividades) //LookUp(Atividades, ThisRecord.ID = LastAtividadeId)
@@ -1688,6 +1685,32 @@
                 X: =790
                 Y: =5
                 ZIndex: =3
+
+    Label7 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Size: =15
+        Text: ="Sem dados para apresentar, de momento"
+        Visible: |-
+            =Switch(
+                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)),
+                
+                Trim(Lower("Caracterização dos Recursos")),
+                If(CountRows(collectRecursos) = 0, true, false),
+            
+                Trim(Lower("Caracterização dos Equipamentos")),
+                If(CountRows(collectEquipamentos) = 0, true, false),
+            
+                Trim(Lower("Caracterização dos Sistemas")),
+                If(CountRows(collectSistemas) = 0, true, false),
+            
+                Trim(Lower("Dependências")),
+                If(CountRows(collectDependencias) = 0, true, false)
+            )
+        Width: =980
+        X: =362
+        Y: =165
+        ZIndex: =22
 
     "'Caracterização dos Recursos' As group":
         Height: =5
@@ -2088,30 +2111,6 @@
                 X: =4
                 Y: =112
                 ZIndex: =7
-
-            "'Dependencias Duracao' As combobox":
-                BorderColor: =cores.cinzento
-                ChevronBackground: =cores.amareloMontepio
-                ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
-                DisplayFields: =["Value"]
-                DisplayMode: =Parent.DisplayMode
-                HoverBorderColor: =cores.cinzento
-                HoverFill: =cores.amareloMontepio
-                IsSearchable: =false
-                Items: =Choices('Duração (Pessoas)')
-                NoSelectionText: ="Tempo"
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                PressedFill: =cores.amareloMontepio
-                SearchFields: =["Value"]
-                SearchItems: =[]
-                SelectionFill: =cores.amareloMontepio
-                SelectMultiple: =false
-                Tooltip: =
-                Width: =176
-                X: =196
-                Y: =63
-                ZIndex: =8
 
             "'Dependencias Importancia' As combobox":
                 BorderColor: =cores.cinzento

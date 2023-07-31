@@ -10622,36 +10622,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização das dependencias'.'Dependencias Duracao'.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização das dependencias'.'Dependencias Duracao'.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Atividade Form Screen",
-                "type": "'Atividade Form Screen'.'Caracterização das dependencias'.'Dependencias Duracao'"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'Atividade Form Screen'.'Caracterização das dependencias'.'Dependencias Entidades'.AccessibleLabel"
                 }
               ],
@@ -11708,7 +11678,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Atividade Form Screen\" is 342, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Atividade Form Screen\" is 338, which exceeds the maximum threshold recommended (300)."
               }
             },
             {

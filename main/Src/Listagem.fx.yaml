@@ -99,7 +99,7 @@ Listagem As screen:
                     Color.Yellow
                 
                 )
-            Height: =74
+            Height: =75
             OnSelect: =Select(Parent)
             Width: =7
             Y: =1
