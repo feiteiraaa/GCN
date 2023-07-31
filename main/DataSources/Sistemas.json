@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_sistemases",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_sistemas",
+    "MaxGetRowsCount": 500,
+    "Name": "Sistemas",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_descricao": "Descrição",
+      "uipp_duracao": "Duração",
+      "uipp_id": "ID",
+      "uipp_IDAtividade": "ID Atividade",
+      "uipp_observacoes": "Observações",
+      "uipp_sistemas_AsyncOperations": "System Jobs",
+      "uipp_sistemas_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_sistemas_DuplicateBaseRecord": "Duplicate Records (uipp_sistemas_DuplicateBaseRecord)",
+      "uipp_sistemas_DuplicateMatchingRecord": "Duplicate Records (uipp_sistemas_DuplicateMatchingRecord)",
+      "uipp_sistemas_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_sistemas_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_sistemas_ProcessSession": "Process Sessions",
+      "uipp_sistemas_SyncErrors": "Sync Errors",
+      "uipp_SistemasAplicacoes": "Sistemas/Aplicações",
+      "uipp_sistemasid": "Sistemas",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Sistemas",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Sistemas (Views)",
+    "Name": "_uipp_sistemas_views",
+    "RelatedEntityName": "Sistemas",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "034c807b-6c6d-4f9b-b7ed-077b2661b2cc": "Active Sistemas",
+      "73344764-cc92-4c4d-ad63-bc9dce0103ad": "Inactive Sistemas",
+      "b5aa2d3d-7a67-48cb-b9bc-8c767a377292": "Sistemas Lookup View",
+      "cf49e4d3-deda-42df-8e8a-9e2304d12b93": "Sistemas Associated View",
+      "f7069924-1c29-4cad-9f5d-beddb7c5c5ea": "Sistemas Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Sistemas)",
+    "Name": "uipp_sistemas_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Sistemas"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Sistemas",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Sistemas)",
+    "Name": "uipp_sistemas_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Sistemas"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Sistemas",
+    "Type": "OptionSetInfo"
+  }
+]
