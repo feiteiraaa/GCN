@@ -1158,7 +1158,7 @@
                 PressedBorderColor: =cores.cinzento
                 PressedFill: =cores.amareloMontepio
                 SearchFields: =["uipp_equipamento"]
-                SearchItems: =Search(Choices([@'Equipamentos de Escritório'].uipp_Equipamento),Equipamento.SearchText,"uipp_equipamento")
+                SearchItems: =Search(Choices([@'Equipamentos de Escritório'].Equipamento),Equipamento.SearchText,"uipp_equipamento")
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
                 Tooltip: =
@@ -1306,10 +1306,11 @@
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["uipp_id"]
                 DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
                 Items: =Choices([@Sistemas].uipp_Duracao)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_id"]
-                SearchItems: =Search(Choices([@Sistemas].uipp_Duracao),DataCardValue43.SearchText,"uipp_id")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60

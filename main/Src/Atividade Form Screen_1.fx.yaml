@@ -1427,10 +1427,11 @@
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["uipp_id"]
                 DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
                 Items: =Choices([@'Equipamentos de Escritório'].uipp_Duracao)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_id"]
-                SearchItems: =Search(Choices([@'Equipamentos de Escritório'].uipp_Duracao),DataCardValue16.SearchText,"uipp_id")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -2006,10 +2007,11 @@
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["uipp_id"]
                 DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
                 Items: =Choices([@Sistemas].uipp_Duracao)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["uipp_id"]
-                SearchItems: =Search(Choices([@Sistemas].uipp_Duracao),DataCardValue25.SearchText,"uipp_id")
+                SearchItems: =[]
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
