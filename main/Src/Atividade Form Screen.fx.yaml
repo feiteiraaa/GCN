@@ -1671,14 +1671,13 @@
                                 {
                                     Entidades: ThisRecord.'Dependencias Entidades'.Selected,
                                     Importância: ThisRecord.'Dependencias Importancia'.Selected.Value,
-                                    'Tipo de Dependência': ThisRecord.'Dependencias Importancia'.Selected,
-                                    'Unidade Orgânica': ThisRecord.'Dependencias Entidades'.Selected,
+                                    //'Tipo de Dependência': ThisRecord.'Dependencias Importancia'.Selected.Value,
+                                    //'Unidade Orgânica': ThisRecord.'Dependencias Entidades'.Selected,
                                     'Informação de Suporte': ThisRecord.'Dependencias Informacao'.Text,
                                     Observações: ThisRecord.'Dependencias Observacoes'.Text,
                                     'ID Atividade': First(Atividades) //LookUp(Atividades, ThisRecord.ID = LastAtividadeId)
                                 }
                             ),
-                    
                             false
                         )
                     )
@@ -2059,6 +2058,7 @@
                 SearchFields: =["uipp_unidade"]
                 SearchItems: =[]
                 SelectionFill: =cores.amareloMontepio
+                SelectMultiple: =false
                 Tooltip: =
                 Width: =368
                 X: =4
@@ -2084,7 +2084,6 @@
                 SearchItems: =[]
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
-                Tooltip: =
                 Width: =368
                 X: =4
                 Y: =112
