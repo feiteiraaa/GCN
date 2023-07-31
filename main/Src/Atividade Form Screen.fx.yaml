@@ -1433,19 +1433,33 @@
                     )
                 Height: =61
                 OnSelect: |-
-                    =Select(Parent);
-                    If(
-                        ThisItem.estado <> "feito",
-                        Patch(
-                            AtividadeFormMenu,
-                            LookUp(
-                                AtividadeFormMenu,
-                                Trim(Lower(ThisRecord.titulo)) = Trim(Lower(ThisItem.titulo))
+                    =If(
+                        ThisItem.titulo <> "Caracterização do Processo" Or ThisItem.titulo <> "Fatores de Criticidade",
+                        If(
+                            Value('4Horas'.Text) = 4 Or
+                            Value('24Horas'.Text) = 4 Or
+                            Value('48Horas'.Text) = 4 Or
+                            Value('1Semana'.Text) = 4 Or
+                            Value('2Semanas'.Text) = 4 Or
+                            Value('1Mes'.Text) = 4,
+                            
+                            Select(Parent);
+                            If(
+                                ThisItem.estado <> "feito",
+                                Patch(
+                                    AtividadeFormMenu,
+                                    LookUp(
+                                        AtividadeFormMenu,
+                                        Trim(Lower(ThisRecord.titulo)) = Trim(Lower(ThisItem.titulo))
+                                    ),
+                                    {
+                                        estado: "em curso"
+                                    }
+                                )
                             ),
-                            {
-                                estado: "em curso"
-                            }
-                        )
+                            false
+                        ),
+                        false
                     )
                 PaddingBottom: =0
                 PaddingLeft: =0

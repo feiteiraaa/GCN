@@ -1,8 +1,6 @@
 App As appinfo:
     BackEnabled: =false
-    Formulas: |+
-        =///AtividadeId = LookUp(Atividades, ThisRecord.ID = LastAtividadeId);
-        
+    Formulas: =
     OnStart: |-
         =Set(
             currentUser,
