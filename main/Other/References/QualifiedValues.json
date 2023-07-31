@@ -125,6 +125,13 @@
       "Values": {
         "Information": "d8c776f0-4779-42bc-afa0-a1411223bfb1"
       }
+    },
+    {
+      "Kind": "default.cds_uipp_unidadeorganica_forms",
+      "Namespace": "Unidade Orgânicas (Forms)",
+      "Values": {
+        "Information": "5a837025-2a26-4bfb-8ca6-b270b0314fdb"
+      }
     }
   ]
 }

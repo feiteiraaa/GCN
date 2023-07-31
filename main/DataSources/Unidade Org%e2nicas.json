@@ -1,0 +1,97 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_unidadeorganicas",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_unidadeorganica",
+    "Name": "Unidade Orgânicas",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_uipp_dependencias_UnidadeOrganica_uipp_un": "Dependências",
+      "uipp_unidade": "Unidade",
+      "uipp_unidadeorganica_AsyncOperations": "System Jobs",
+      "uipp_unidadeorganica_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_unidadeorganica_DuplicateBaseRecord": "Duplicate Records (uipp_unidadeorganica_DuplicateBaseRecord)",
+      "uipp_unidadeorganica_DuplicateMatchingRecord": "Duplicate Records (uipp_unidadeorganica_DuplicateMatchingRecord)",
+      "uipp_unidadeorganica_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_unidadeorganica_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_unidadeorganica_ProcessSession": "Process Sessions",
+      "uipp_unidadeorganica_SyncErrors": "Sync Errors",
+      "uipp_unidadeorganicaid": "Unidade Orgânica",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Unidade Orgânicas",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Unidade Orgânicas (Views)",
+    "Name": "_uipp_unidadeorganica_views",
+    "RelatedEntityName": "Unidade Orgânicas",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "09b8e9ba-a0f7-46e7-bc2c-242af6029c48": "Inactive Unidade Orgânicas",
+      "1df99449-993d-464e-9650-9deff4b7c0fa": "Unidade Orgânica Lookup View",
+      "43d9ccd1-bd27-42ba-9660-6f2e05fedf42": "Unidade Orgânica Advanced Find View",
+      "8bf46dcc-d00e-4a07-846e-a01256b60fe4": "Unidade Orgânica Associated View",
+      "f8a34ee4-f23e-4960-95ed-b1085b625a3e": "Active Unidade Orgânicas"
+    }
+  },
+  {
+    "DisplayName": "Status (Unidade Orgânicas)",
+    "Name": "uipp_unidadeorganica_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Unidade Orgânicas"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Unidade Orgânicas",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Unidade Orgânicas)",
+    "Name": "uipp_unidadeorganica_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Unidade Orgânicas"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Unidade Orgânicas",
+    "Type": "OptionSetInfo"
+  }
+]
