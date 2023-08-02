@@ -282,79 +282,6 @@ Listagem As screen:
             Y: =Rectangle2.Y
             ZIndex: =12
 
-    DynamicBtn_1 As DynamicBtn:
-        BtnText: ="Nova Atividade"
-        BtnWidth: =200
-        X: =1143
-        Y: =35
-        ZIndex: =16
-
-    Button2 As button:
-        BorderColor: =Color.Transparent
-        Color: =Color.Transparent
-        Fill: =Color.Transparent
-        Height: =DynamicBtn_1.Height
-        HoverColor: =Color.Transparent
-        HoverFill: =Color.Transparent
-        OnSelect: |-
-            =Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.New});
-            
-            Concurrent(
-                UpdateContext({ RTO: 0, RTOTempo: "<24 horas" }),
-                ResetForm('Caracterizacao do Processo');
-                ClearCollect(collectRecursos, Blank());
-                ClearCollect(collectEquipamentos, Blank());
-                ClearCollect(collectDependencias, Blank());
-                ClearCollect(collectSistemas, Blank())
-            );
-            
-            ClearCollect(
-                AtividadeFormMenu,
-                Table(
-                //Excel 02
-                    {
-                        titulo: "Caracterização do Processo",
-                        estado: "em curso",
-                        modo: DisplayMode.Edit
-                    },
-                    {
-                        titulo: "Fatores de Criticidade",
-                        estado: "em falta",
-                        modo: DisplayMode.Edit
-                    },
-                //Excel 03
-                    {
-                        titulo: "Caracterização dos Recursos",
-                        estado: "em falta",
-                        modo: DisplayMode.Disabled
-                    },
-                //Excel 04
-                    {
-                        titulo: "Caracterização dos Equipamentos",
-                        estado: "em falta",
-                        modo: DisplayMode.Disabled
-                    },
-                //Excel 05
-                    {
-                        titulo: "Caracterização dos Sistemas",
-                        estado: "em falta",
-                        modo: DisplayMode.Disabled
-                    },
-                //Excel 06
-                    {
-                        titulo: "Dependências",
-                        estado: "em falta",
-                        modo: DisplayMode.Disabled
-                    }
-                )
-            )
-        PressedColor: =Color.Transparent
-        Text: =
-        Width: =DynamicBtn_1.Width
-        X: =DynamicBtn_1.X
-        Y: =DynamicBtn_1.Y
-        ZIndex: =23
-
     ActionBar As group:
         Height: =5
         Width: =5
@@ -412,6 +339,86 @@ Listagem As screen:
             X: =656
             Y: =TextInput2.Y
             ZIndex: =22
+
+    NovaAtividade As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        DynamicBtn_1 As DynamicBtn:
+            BtnText: ="Nova Atividade"
+            BtnWidth: =200
+            X: =1143
+            Y: =35
+            ZIndex: =16
+
+        Button2 As button:
+            BorderColor: =Color.Transparent
+            Color: =Color.Transparent
+            Fill: =Color.Transparent
+            Height: =DynamicBtn_1.Height
+            HoverColor: =Color.Transparent
+            HoverFill: =Color.Transparent
+            OnSelect: |-
+                =Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.New, Criticidade: 0});
+                
+                Concurrent(
+                    UpdateContext({ RTO: 0, RTOTempo: "<24 horas" }),
+                    ResetForm('Caracterizacao do Processo');
+                    ClearCollect(collectRecursos, Blank());
+                    ClearCollect(collectEquipamentos, Blank());
+                    ClearCollect(collectDependencias, Blank());
+                    ClearCollect(collectSistemas, Blank())
+                );
+                
+                ClearCollect(
+                    AtividadeFormMenu,
+                    Table(
+                    //Excel 02
+                        {
+                            titulo: "Caracterização do Processo",
+                            estado: "em curso",
+                            modo: DisplayMode.Edit
+                        },
+                        {
+                            titulo: "Fatores de Criticidade",
+                            estado: "em falta",
+                            modo: DisplayMode.Edit
+                        },
+                    //Excel 03
+                        {
+                            titulo: "Caracterização dos Recursos",
+                            estado: "em falta",
+                            modo: DisplayMode.Disabled
+                        },
+                    //Excel 04
+                        {
+                            titulo: "Caracterização dos Equipamentos",
+                            estado: "em falta",
+                            modo: DisplayMode.Disabled
+                        },
+                    //Excel 05
+                        {
+                            titulo: "Caracterização dos Sistemas",
+                            estado: "em falta",
+                            modo: DisplayMode.Disabled
+                        },
+                    //Excel 06
+                        {
+                            titulo: "Dependências",
+                            estado: "em falta",
+                            modo: DisplayMode.Disabled
+                        }
+                    )
+                )
+            PressedColor: =Color.Transparent
+            Text: =
+            Width: =DynamicBtn_1.Width
+            X: =DynamicBtn_1.X
+            Y: =DynamicBtn_1.Y
+            ZIndex: =23
 
     "'Galery Headers' As group":
         Height: =5

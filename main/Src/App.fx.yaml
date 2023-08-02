@@ -5,7 +5,12 @@ App As appinfo:
         =Set(
             currentUser,
             //"DRI-" in
-            First(Split(Office365Users.MyProfileV2().department, "-")).Value
+            First(
+                Split(
+                    Office365Users.MyProfileV2().department,
+                    "-"
+                )
+            ).Value
         );
         
         Set(
