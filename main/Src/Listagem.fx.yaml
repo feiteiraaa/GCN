@@ -115,7 +115,9 @@ Listagem As screen:
                     Color.DarkSlateGray
                 )
             Height: =Rectangle2.Height
-            OnSelect: =Select(Parent)
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -147,7 +149,9 @@ Listagem As screen:
                     Color.DarkSlateGray
                 )
             Height: =Rectangle2.Height
-            OnSelect: =Select(Parent)
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -179,7 +183,9 @@ Listagem As screen:
                     Color.DarkSlateGray
                 )
             Height: =Rectangle2.Height
-            OnSelect: =Select(Parent)
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -211,7 +217,9 @@ Listagem As screen:
                     Color.DarkSlateGray
                 )
             Height: =Rectangle2.Height
-            OnSelect: =Select(Parent)
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -243,7 +251,9 @@ Listagem As screen:
                     Color.DarkSlateGray
                 )
             Height: =Rectangle2.Height
-            OnSelect: =Select(Parent)
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -275,7 +285,9 @@ Listagem As screen:
                     Color.DarkSlateGray
                 )
             Height: =Rectangle2.Height
-            OnSelect: =Select(Parent)
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -372,7 +384,7 @@ Listagem As screen:
                 =Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.New, Criticidade: 0});
                 
                 Concurrent(
-                    UpdateContext({ RTO: 0, RTOTempo: "<24 horas" }),
+                    UpdateContext({ RTO: 0, RTOTempo: "" }),
                     ResetForm('Caracterizacao do Processo');
                     ClearCollect(collectRecursos, Blank());
                     ClearCollect(collectEquipamentos, Blank());
@@ -601,84 +613,4 @@ Listagem As screen:
             X: =1183
             Y: =176
             ZIndex: =15
-
-    NovaAtividade_1 As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =26
-
-        DynamicBtn_2 As DynamicBtn:
-            BtnText: ="Editar Atividade"
-            BtnWidth: =200
-            X: =1082
-            Y: =692
-            ZIndex: =24
-
-        Button2_1 As button:
-            BorderColor: =Color.Transparent
-            Color: =Color.Transparent
-            Fill: =Color.Transparent
-            Height: =DynamicBtn_2.Height
-            HoverColor: =Color.Transparent
-            HoverFill: =Color.Transparent
-            OnSelect: |-
-                =Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.Edit, Criticidade: 0});
-                
-                Concurrent(
-                    UpdateContext({ RTO: 0, RTOTempo: "<24 horas" }),
-                    ResetForm('Caracterizacao do Processo');
-                    ClearCollect(collectRecursos, Blank());
-                    ClearCollect(collectEquipamentos, Blank());
-                    ClearCollect(collectDependencias, Blank());
-                    ClearCollect(collectSistemas, Blank())
-                );
-                
-                ClearCollect(
-                    AtividadeFormMenu,
-                    Table(
-                    //Excel 02
-                        {
-                            titulo: "Caracterização do Processo",
-                            estado: "em curso",
-                            modo: DisplayMode.Edit
-                        },
-                        {
-                            titulo: "Fatores de Criticidade",
-                            estado: "em falta",
-                            modo: DisplayMode.Edit
-                        },
-                    //Excel 03
-                        {
-                            titulo: "Caracterização dos Recursos",
-                            estado: "em falta",
-                            modo: DisplayMode.Disabled
-                        },
-                    //Excel 04
-                        {
-                            titulo: "Caracterização dos Equipamentos",
-                            estado: "em falta",
-                            modo: DisplayMode.Disabled
-                        },
-                    //Excel 05
-                        {
-                            titulo: "Caracterização dos Sistemas",
-                            estado: "em falta",
-                            modo: DisplayMode.Disabled
-                        },
-                    //Excel 06
-                        {
-                            titulo: "Dependências",
-                            estado: "em falta",
-                            modo: DisplayMode.Disabled
-                        }
-                    )
-                )
-            PressedColor: =Color.Transparent
-            Text: =
-            Width: =DynamicBtn_2.Width
-            X: =1082
-            Y: =692
-            ZIndex: =25
 

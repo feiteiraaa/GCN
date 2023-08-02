@@ -25,37 +25,51 @@ Informações As screen:
         DisplayMode: =DisplayMode.Edit
         Fill: =RGBA(0, 0, 0, 0)
         Height: =500
-        Items: =
+        Items: =collectRecursos
         Width: =800
         X: =375
         Y: =185
         ZIndex: =13
 
-        ID_Column1 As dataTableColumn.textualColumn:
+        Value_Column1 As dataTableColumn.textualColumn:
             DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="ID"
-            FieldName: ="uipp_id"
+            FieldDisplayName: ="Value"
+            FieldName: ="Value"
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =1
-            Text: =ThisItem.ID
+            Text: =ThisItem.Value
             Width: =100
             X: =0
             Y: =0
             ZIndex: =1
 
-        "'Created On_Column1' As dataTableColumn.dateTimeColumn":
+        row_Column2 As dataTableColumn.textualColumn:
             DisplayMode: =DisplayMode.Edit
-            FieldDisplayName: ="Created On"
-            FieldName: ="createdon"
-            FieldVariantName: ="dateTimeColumn"
+            FieldDisplayName: ="row"
+            FieldName: ="row"
+            FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =2
-            Text: =Text(ThisItem.'Created On',DateTimeFormat.LongDateTime)
+            Text: =ThisItem.row
             Width: =100
             X: =0
             Y: =0
             ZIndex: =2
+
+        record_Column3 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="record"
+            FieldName: ="record"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.record
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
 

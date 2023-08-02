@@ -3,14 +3,96 @@
         =UpdateContext({
             ModalForm: {visible: false, text: "Deseja submeter os dados da Atividade?"}
         });
+        
         If(
-            formMode = FormMode.New,
+            formMode <> FormMode.New,
+        
             UpdateContext({
                 AtividadeRecord: LookUp(
                     Atividades,
                     ThisRecord.ID = 'Gallery Data'.Selected.ID
                 )
-            })
+            });
+            UpdateIf(
+                AtividadeFormMenu,
+                ThisRecord.modo = DisplayMode.Disabled,
+                {modo: DisplayMode.Edit}
+            );
+            // dados dos Recursos/Pessoas
+            ForAll(
+                Filter(
+                    Pessoas,
+                    ThisRecord.'ID Atividade'.ID = Text('Gallery Data'.Selected.ID)
+                ),
+                Collect(
+                    collectRecursos,
+                    {
+                        row: Last(collectRecursos).row + 1,
+                        ID: ThisRecord.ID,
+                        Colaborador: ThisRecord.'Colaborador Crítico',
+                        Duracao: ThisRecord.Duração,
+                        NumEmpregado: ThisRecord.'Nº Empregado',
+                        Teletrabalho: ThisRecord.Teletrabalho,
+                        Tipo: ThisRecord.Tipo.Tipo,
+                        Observações: ThisRecord.Observações
+                    }
+                )
+            );
+            // dados dos Equipamentos
+            ForAll(
+                Filter(
+                    'Equipamentos de Escritório',
+                    ThisRecord.'ID Atividade'.ID = Text('Gallery Data'.Selected.ID)
+                ),
+                Collect(
+                    collectEquipamentos,
+                    {
+                        row: Last(collectEquipamentos).row + 1,
+                        ID: ThisRecord.ID,
+                        Equipamento: ThisRecord.Equipamento,
+                        Duracao: ThisRecord.Duração,
+                        Observações: ThisRecord.Observações
+                    }
+                )
+            );
+            // dados dos Sistemas/Aplicações
+            ForAll(
+                Filter(
+                    'Sistemas',
+                    ThisRecord.'ID Atividade'.ID = Text('Gallery Data'.Selected.ID)
+                ),
+                Collect(
+                    collectSistemas,
+                    {
+                        row: Last(collectSistemas).row + 1,
+                        ID: ThisRecord.ID,
+                        Sistema: ThisRecord.'Sistemas/Aplicações',
+                        Duracao: ThisRecord.Duração,
+                        Descricao: ThisRecord.Descrição,
+                        Observações: ThisRecord.Observações
+                    }
+                )
+            );
+            // dados das Dependências
+            ForAll(
+                Filter(
+                    Dependências,
+                    ThisRecord.'ID Atividade'.ID = Text('Gallery Data'.Selected.ID)
+                ),
+                Collect(
+                    collectDependencias,
+                    {
+                        row: Last(collectDependencias).row + 1,
+                        ID: ThisRecord.ID,
+                        Entidade: ThisRecord.Entidades,
+                        Tipo: ThisRecord.'Tipo de Dependência',
+                        Importancia: ThisRecord.Importância,
+                        Informacao: ThisRecord.'Informação de Suporte',
+                        Unidade: ThisRecord.'Unidade Orgânica',
+                        Observações: ThisRecord.Observações
+                    }
+                )
+            )
         )
 
     LeftSectionComponent_4 As LeftSectionComponent:
@@ -19,10 +101,13 @@
     "'Caracterizacao do Processo' As form":
         DataSource: =Atividades
         DefaultMode: |-
-            =If(
-                formMode = 1,
+            =Switch(
+                formMode,
+                0,
+                FormMode.Edit,
+                1,
                 FormMode.New,
-                FormMode.Edit
+                FormMode.View
             )
         Height: =385
         Item: |-
@@ -501,6 +586,7 @@
                 BorderColor: =If(IsBlank(Parent.Error), cores.cinzento, Color.Red)
                 Default: =Parent.Default
                 DelayOutput: =true
+                DisabledColor: =RGBA(0, 0, 0, 1)
                 DisplayMode: =Parent.DisplayMode
                 Height: =80
                 HintText: ="Descrição de atividade"
@@ -697,6 +783,15 @@
 
     "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
+        DisplayMode: |-
+            =Switch(
+                formMode,
+                0,
+                DisplayMode.Edit,
+                1,
+                DisplayMode.Edit,
+                DisplayMode.View
+            )
         Height: =480
         Items: =Choices('Tipo de Fator')
         Layout: =Layout.Vertical
@@ -735,12 +830,22 @@
                     Value(
                         LookUp(
                             'Fatores de Criticidades',
-                            Trim(Lower(ThisRecord.'ID Atividade'.Atividades)) = Trim(Lower('Gallery Data'.Selected.Atividades))
-                            //And Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower("Gestão")) //Label5.Text
+                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                            And
+                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
                         ).'quatro horas'
                     )
                 )
             DelayOutput: =true
+            DisplayMode: |-
+                =Switch(
+                    formMode,
+                    0,
+                    DisplayMode.Edit,
+                    1,
+                    DisplayMode.Edit,
+                    DisplayMode.View
+                )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
             HoverFill: =
@@ -790,18 +895,43 @@
             Align: =Align.Center
             BorderColor: =cores.cinzento
             Default: |-
-                = If(
-                    IsBlank('4horas'.Text)
-                    Or
-                    Value('4horas'.Text) = 0,
-                    ""
+                =If(
+                    formMode = FormMode.New,
+                    If(
+                        IsBlank('4horas'.Text)
+                        Or
+                        Value('4horas'.Text) = 0,
+                        ""
+                    ),
+                    Value(
+                        LookUp(
+                            'Fatores de Criticidades',
+                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                            And
+                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                        ).'vinte quatro horas'
+                    )
                 )
             DelayOutput: =true
             DisplayMode: |-
                 =If(
                     IsBlank('4horas'.Text) Or Value('4horas'.Text) = 0,
-                    DisplayMode.Disabled,
-                    DisplayMode.Edit
+                        Switch(
+                        formMode,
+                        0,
+                        DisplayMode.Edit,
+                        1,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    ),
+                    Switch(
+                        formMode,
+                        0,
+                        DisplayMode.Edit,
+                        1,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
                 )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -827,15 +957,40 @@
             BorderColor: =cores.cinzento
             Default: |-
                 =If(
-                    IsBlank('24horas'.Text) Or '24horas'.Text = 0,
-                    ""
+                    formMode = FormMode.New,
+                    If(
+                        IsBlank('24horas'.Text) Or '24horas'.Text = 0,
+                        ""
+                    ),
+                    Value(
+                        LookUp(
+                            'Fatores de Criticidades',
+                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                            And
+                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                        ).'quarenta oito horas'
+                    )
                 )
             DelayOutput: =true
             DisplayMode: |-
                 =If(
                     IsBlank('24horas'.Text),
-                    DisplayMode.Disabled,
-                    DisplayMode.Edit
+                    Switch(
+                        formMode,
+                        0,
+                        DisplayMode.Edit,
+                        1,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    ),
+                    Switch(
+                        formMode,
+                        0,
+                        DisplayMode.Edit,
+                        1,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
                 )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -861,15 +1016,40 @@
             BorderColor: =cores.cinzento
             Default: |-
                 =If(
-                    IsBlank('48horas'.Text)  Or '48horas'.Text = 0,
-                    ""
+                    formMode = FormMode.New,
+                    If(
+                        IsBlank('48horas'.Text)  Or '48horas'.Text = 0,
+                        ""
+                    ),
+                    Value(
+                        LookUp(
+                            'Fatores de Criticidades',
+                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                            And
+                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                        ).'uma semana'
+                    )
                 )
             DelayOutput: =true
             DisplayMode: |-
                 =If(
                     IsBlank('48horas'.Text),
-                    DisplayMode.Disabled,
-                    DisplayMode.Edit
+                    Switch(
+                        formMode,
+                        0,
+                        DisplayMode.Edit,
+                        1,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    ),
+                    Switch(
+                        formMode,
+                        0,
+                        DisplayMode.Edit,
+                        1,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
                 )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -895,15 +1075,40 @@
             BorderColor: =cores.cinzento
             Default: |-
                 =If(
-                    IsBlank('1semana'.Text) Or '1semana'.Text = 0,
-                    ""
+                    formMode = FormMode.New,
+                    If(
+                        IsBlank('1semana'.Text) Or '1semana'.Text = 0,
+                        ""
+                    ),
+                    Value(
+                        LookUp(
+                            'Fatores de Criticidades',
+                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                            And
+                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                        ).'duas semanas'
+                    )
                 )
             DelayOutput: =true
             DisplayMode: |-
                 =If(
-                    IsBlank('1semana'.Text),
-                    DisplayMode.Disabled,
-                    DisplayMode.Edit
+                    IsBlank('2semanas'.Text),
+                    Switch(
+                        formMode,
+                        0,
+                        DisplayMode.Edit,
+                        1,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    ),
+                    Switch(
+                        formMode,
+                        0,
+                        DisplayMode.Edit,
+                        1,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
                 )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -929,15 +1134,40 @@
             BorderColor: =cores.cinzento
             Default: |-
                 =If(
-                    IsBlank('2semanas'.Text) Or '2semanas'.Text = 0,
-                    ""
+                    formMode = FormMode.New,
+                    If(
+                        IsBlank('2semanas'.Text) Or '2semanas'.Text = 0,
+                        ""
+                    ),
+                    Value(
+                        LookUp(
+                            'Fatores de Criticidades',
+                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                            And
+                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                        ).'um mes'
+                    )
                 )
             DelayOutput: =true
             DisplayMode: |-
                 =If(
-                    IsBlank('2semanas'.Text),
-                    DisplayMode.Disabled,
-                    DisplayMode.Edit
+                    IsBlank('1mes'.Text),
+                    Switch(
+                        formMode,
+                        0,
+                        DisplayMode.Edit,
+                        1,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    ),
+                    Switch(
+                        formMode,
+                        0,
+                        DisplayMode.Edit,
+                        1,
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
                 )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -960,8 +1190,29 @@
 
         racional As text:
             BorderColor: =cores.cinzento
-            Default: =
+            Default: |-
+                =If(
+                    formMode = FormMode.New,
+                    "",
+                    Value(
+                        LookUp(
+                            'Fatores de Criticidades',
+                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                            And
+                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                        ).Racional
+                    )
+                )
             DelayOutput: =true
+            DisplayMode: |-
+                =Switch(
+                    formMode,
+                    0,
+                    DisplayMode.Edit,
+                    1,
+                    DisplayMode.Edit,
+                    DisplayMode.View
+                )
             Height: =81
             HoverBorderColor: =cores.cinzento
             HoverFill: =
@@ -1119,10 +1370,19 @@
             FontWeight: =FontWeight.Bold
             Size: =15
             Text: |-
-                ="RTO: " & If(
-                    IsBlank(RTOTempo),
-                    "<4 horas",
-                    RTOTempo
+                =If(
+                    formMode = 1,
+                    "RTO: "
+                    &
+                    If(
+                        IsBlank(RTOTempo),
+                        "<4 horas",
+                        RTOTempo
+                    ),
+                    LookUp(
+                        RTOS,
+                        ThisRecord.Atividade.ID = Text('Gallery Data'.Selected.ID)
+                    ).Classificação
                 )
             Width: =734
             Y: =40
@@ -1189,6 +1449,15 @@
 
         "'Caracterização dos equipamentos' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
+            DisplayMode: |-
+                =Switch(
+                    formMode,
+                    0,
+                    DisplayMode.Edit,
+                    1,
+                    DisplayMode.Edit,
+                    DisplayMode.View
+                )
             Height: =514
             Items: =collectEquipamentos
             Layout: =Layout.Vertical
@@ -1234,7 +1503,15 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        LookUp(
+                            Choices('Duração (Pessoas)'),
+                            ThisItem.Duracao in Text(ThisRecord.Value)
+                        )
+                    )
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
                 HoverFill: =cores.amareloMontepio
@@ -1255,7 +1532,12 @@
 
             "'Equipamento Obs' As text":
                 BorderColor: =cores.cinzento
-                Default: =
+                Default: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        ThisItem.Observações
+                    )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
@@ -1297,7 +1579,11 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |-
+                    =LookUp(
+                        Choices([@'Equipamentos de Escritório'].Equipamento),
+                        ThisItem.Equipamento.Equipamento in ThisRecord.Equipamento
+                    )
                 DisplayFields: =["uipp_equipamento"]
                 DisplayMode: =Parent.DisplayMode
                 FocusedBorderColor: =cores.cinzento
@@ -1371,6 +1657,15 @@
 
         "'Caracterização dos sistemas' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
+            DisplayMode: |-
+                =Switch(
+                    formMode,
+                    0,
+                    DisplayMode.Edit,
+                    1,
+                    DisplayMode.Edit,
+                    DisplayMode.View
+                )
             Height: =514
             Items: =collectSistemas
             Layout: =Layout.Vertical
@@ -1429,7 +1724,12 @@
 
             "'Sistemas Obs' As text":
                 BorderColor: =cores.cinzento
-                Default: =
+                Default: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        ThisItem.Observações
+                    )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
@@ -1454,7 +1754,12 @@
 
             "'Sistemas Descrição' As text":
                 BorderColor: =cores.cinzento
-                Default: =
+                Default: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        ThisItem.Descricao
+                    )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
@@ -1481,7 +1786,15 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        LookUp(
+                            Choices('Duração (Pessoas)'),
+                            ThisItem.Duracao in Text(ThisRecord.Value)
+                        )
+                    )
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
                 HoverFill: =cores.amareloMontepio
@@ -1504,21 +1817,30 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        LookUp(
+                            Choices([@Sistemas].'Sistemas/Aplicações'),
+                            ThisItem.Sistema.Nome in ThisRecord.Nome
+                        )
+                    )
                 DisplayFields: =["uipp_nome"]
                 DisplayMode: =Parent.DisplayMode
                 HoverBorderColor: =ColorFade(cores.cinzento, 15%)
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: ="Sistema/App"
+                IsSearchable: =false
                 Items: =Choices([@Sistemas].'Sistemas/Aplicações')
                 NoSelectionText: ="Sistema/App"
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =cores.amareloMontepio
                 SearchFields: =["uipp_nome"]
-                SearchItems: =Search(Choices([@Sistemas].'Sistemas/Aplicações'),Sistema.SearchText,"uipp_nome")
+                SearchItems: =[]
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
-                Tooltip: =
+                Tooltip: =Self.Selected.Nome
                 Width: =148
                 X: =2
                 Y: =14
@@ -1576,6 +1898,8 @@
 
         "'Passos do Registo de Atividade' As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
+            DisplayMode: |
+                =DisplayMode.Edit
             Height: =61
             Items: =AtividadeFormMenu
             LoadingSpinner: =LoadingSpinner.Data
@@ -1588,14 +1912,18 @@
 
             Rectangle4 As rectangle:
                 Fill: |-
-                    =Switch(
-                        ThisItem.estado,
-                        "em curso",
-                        cores.amareloMontepio,
-                        "em falta",
-                        Color.Red,
-                        "feito",
-                        Color.Green
+                    =If(
+                        formMode = 2,
+                        Color.Green,
+                        Switch(
+                            ThisItem.estado,
+                            "em curso",
+                            cores.amareloMontepio,
+                            "em falta",
+                            Color.Red,
+                            "feito",
+                            Color.Green
+                        )
                     )
                 Height: =2
                 OnSelect: =Select(Parent)
@@ -1692,9 +2020,19 @@
                 ZIndex: =1
 
             DynamicBtn_3 As DynamicBtn:
-                BtnText: ="Guardar"
+                BtnText: |-
+                    =If(
+                        formMode = 2,   
+                        "Editar",
+                        "Guardar"
+                    )
                 BtnWidth: =200
-                ButtonIcon: =Icon.Save
+                ButtonIcon: |-
+                    =If(
+                        formMode = 2,
+                        Icon.Edit,
+                        Icon.Save
+                    )
                 Height: =40
                 Width: =201
                 X: =790
@@ -1707,7 +2045,9 @@
                 HoverColor: =Color.Transparent
                 HoverFill: =Color.Transparent
                 OnSelect: |-
-                    =
+                    =If(
+                        formMode = 2,
+                        UpdateContext({formMode: FormMode.Edit}),
                     // Submeter Caracterização do Processo
                     If(
                         'Caracterizacao do Processo'.Valid
@@ -1760,6 +2100,7 @@
                         //em caso de erro
                         Notify( "Preencha todos os campos necessários, verifique se existem registos em branco e tente novamente", NotificationType.Error, 4000)
                     )
+                    )
                 PressedColor: =Color.Transparent
                 PressedFill: =Color.Transparent
                 Text: =""
@@ -1767,6 +2108,33 @@
                 X: =790
                 Y: =5
                 ZIndex: =3
+
+            DynamicBtn_4 As DynamicBtn:
+                BtnText: ="Cancelar"
+                BtnWidth: =200
+                ButtonIcon: =Icon.Cancel
+                Height: =40
+                Visible: =formMode = 0
+                Width: =201
+                X: =578
+                Y: =5
+                ZIndex: =4
+
+            Button3_1 As button:
+                Color: =Color.Transparent
+                Fill: =Color.Transparent
+                HoverColor: =Color.Transparent
+                HoverFill: =Color.Transparent
+                OnSelect: |-
+                    =UpdateContext({formMode: FormMode.View})
+                PressedColor: =Color.Transparent
+                PressedFill: =Color.Transparent
+                Text: =""
+                Visible: =formMode = 0
+                Width: =201
+                X: =578
+                Y: =5
+                ZIndex: =5
 
     Label7 As label:
         Align: =Align.Center
@@ -1803,6 +2171,15 @@
 
         "'Caracterização dos recursos' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
+            DisplayMode: |-
+                =Switch(
+                    formMode,
+                    0,
+                    DisplayMode.Edit,
+                    1,
+                    DisplayMode.Edit,
+                    DisplayMode.View
+                )
             Height: =514
             Items: =collectRecursos
             Layout: =Layout.Vertical
@@ -1856,7 +2233,12 @@
 
             NumEmpregado As text:
                 BorderColor: =cores.cinzento
-                Default: =
+                Default: |-
+                    =If(
+                        formMode = FormMode.New,
+                        "",
+                        ThisItem.NumEmpregado
+                    )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
@@ -1903,7 +2285,12 @@
 
             Critico As text:
                 BorderColor: =cores.cinzento
-                Default: =
+                Default: |-
+                    =If(
+                        formMode = FormMode.New,
+                        "",
+                        ThisItem.Colaborador
+                    )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
@@ -1927,13 +2314,22 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        LookUp(
+                            Choices('Teletrabalho (Pessoas)'),
+                            ThisItem.Teletrabalho in Text(ThisRecord.Value)
+                        )
+                    )
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: =""
                 IsSearchable: =false
-                Items: =Choices('Teletrabalho (Pessoas)')
+                Items: |
+                    =Choices('Teletrabalho (Pessoas)')
                 NoSelectionText: ="Teletrabalho"
                 OnChange: =
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
@@ -1952,14 +2348,17 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |
+                    =LookUp(
+                        Choices([@Pessoas].Tipo),
+                        ThisItem.Tipo in ThisRecord.Tipo
+                    )
                 DisplayFields: =["uipp_tipo"]
                 DisplayMode: =Parent.DisplayMode
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: =""
                 IsSearchable: =false
-                Items: |
-                    =Choices([@Pessoas].Tipo)
+                Items: =Choices([@Pessoas].Tipo)
                 NoSelectionText: ="Tipo Colab."
                 OnChange: =
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
@@ -1978,7 +2377,15 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        LookUp(
+                            Choices('Duração (Pessoas)'),
+                            ThisItem.Duracao in Text(ThisRecord.Value)
+                        )
+                    )
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
                 HoverFill: =cores.amareloMontepio
@@ -1999,7 +2406,12 @@
 
             Critico_1 As text:
                 BorderColor: =cores.cinzento
-                Default: =
+                Default: |-
+                    =If(
+                        formMode = FormMode.New,
+                        "",
+                        ThisItem.Observações
+                    )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
@@ -2087,6 +2499,15 @@
 
         "'Caracterização das dependencias' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
+            DisplayMode: |-
+                =Switch(
+                    formMode,
+                    0,
+                    DisplayMode.Edit,
+                    1,
+                    DisplayMode.Edit,
+                    DisplayMode.View
+                )
             Height: =514
             Items: =collectDependencias
             Layout: =Layout.Vertical
@@ -2130,7 +2551,12 @@
 
             "'Dependencias Observacoes' As text":
                 BorderColor: =cores.cinzento
-                Default: =
+                Default: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        ThisItem.Observações
+                    )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
@@ -2155,7 +2581,12 @@
 
             "'Dependencias Informacao' As text":
                 BorderColor: =cores.cinzento
-                Default: =
+                Default: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        ThisItem.Informacao
+                    )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
@@ -2197,7 +2628,15 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        LookUp(
+                            Choices([@Dependências].uipp_UnidadeOrganica),
+                            ThisItem.Unidade.Unidade in ThisRecord.Unidade
+                        )
+                    )
                 DisplayFields: =["uipp_unidade"]
                 DisplayMode: =Parent.DisplayMode
                 HoverBorderColor: =cores.cinzento
@@ -2222,7 +2661,15 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        LookUp(
+                            Choices('Tipo de Dependência'),
+                            ThisItem.Tipo in Text(ThisRecord.Value)
+                        )
+                    )
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
                 HoverBorderColor: =cores.cinzento
@@ -2246,7 +2693,15 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        LookUp(
+                            Choices(Importância),
+                            ThisItem.Importancia in Text(ThisRecord.Value)
+                        )
+                    )
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
                 HoverBorderColor: =cores.cinzento
@@ -2271,11 +2726,20 @@
                 BorderColor: =cores.cinzento
                 ChevronBackground: =cores.amareloMontepio
                 ChevronHoverBackground: =ColorFade(cores.amareloMontepio, -20%)
-                DefaultSelectedItems: =
+                DefaultSelectedItems: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        LookUp(
+                            Choices([@Dependências].uipp_Entidades),
+                            ThisItem.Entidade.Nome in ThisRecord.Nome
+                        )
+                    )
                 DisplayFields: =["uipp_nome"]
                 DisplayMode: =Parent.DisplayMode
                 HoverBorderColor: =cores.cinzento
                 HoverFill: =cores.amareloMontepio
+                InputTextPlaceholder: ="Entidades"
                 Items: =Choices([@Dependências].uipp_Entidades)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =cores.amareloMontepio
