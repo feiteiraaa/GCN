@@ -2,7 +2,16 @@
     OnVisible: |-
         =UpdateContext({
             ModalForm: {visible: false, text: "Deseja submeter os dados da Atividade?"}
-        })
+        });
+        If(
+            formMode = FormMode.New,
+            UpdateContext({
+                AtividadeRecord: LookUp(
+                    Atividades,
+                    ThisRecord.ID = 'Gallery Data'.Selected.ID
+                )
+            })
+        )
 
     LeftSectionComponent_4 As LeftSectionComponent:
         ZIndex: =1
@@ -16,7 +25,15 @@
                 FormMode.Edit
             )
         Height: =385
-        Item: =Blank()
+        Item: |-
+            =If(
+                formMode = FormMode.New,
+                Blank(),
+                LookUp(
+                    Atividades,
+                    ThisRecord.ID = 'Gallery Data'.Selected.ID
+                )
+            )
         Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização do Processo"))
         Width: =990
         X: =360
@@ -711,7 +728,18 @@
         "'4horas' As text":
             Align: =Align.Center
             BorderColor: =cores.cinzento
-            Default: =Criticidade
+            Default: |-
+                =If(
+                    formMode = FormMode.New,
+                    Criticidade,
+                    Value(
+                        LookUp(
+                            'Fatores de Criticidades',
+                            Trim(Lower(ThisRecord.'ID Atividade'.Atividades)) = Trim(Lower('Gallery Data'.Selected.Atividades))
+                            //And Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower("Gestão")) //Label5.Text
+                        ).'quatro horas'
+                    )
+                )
             DelayOutput: =true
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -932,7 +960,7 @@
 
         racional As text:
             BorderColor: =cores.cinzento
-            Default: = 
+            Default: =
             DelayOutput: =true
             Height: =81
             HoverBorderColor: =cores.cinzento
