@@ -58,7 +58,7 @@
             // dados dos Sistemas/Aplicações
             ForAll(
                 Filter(
-                    'Sistemas',
+                    Sistemas,
                     ThisRecord.'ID Atividade'.ID = Text('Gallery Data'.Selected.ID)
                 ),
                 Collect(

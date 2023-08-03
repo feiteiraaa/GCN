@@ -4,7 +4,9 @@ Listagem As screen:
             Estados,
             Blank(),
             Choices('Estado Processo')
-        )
+        );
+        
+        UpdateContext({checkBox: false})
 
     LeftSectionComponent_2 As LeftSectionComponent:
         ZIndex: =1
@@ -123,11 +125,8 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.'Unidade Orgânica'
-            Width: |-
-                =((
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6) - Rectangle2.Width
-            X: =Rectangle2.Width
+            Width: =128
+            X: =35
             Y: =Rectangle2.Y
             ZIndex: =2
 
@@ -301,6 +300,20 @@ Listagem As screen:
             Y: =Rectangle2.Y
             ZIndex: =12
 
+        Checkbox1_1 As checkbox:
+            BorderColor: =Color.Transparent
+            CheckboxBorderColor: =cores.cinzento
+            CheckmarkFill: =cores.amareloMontepio
+            Color: =cores.amareloMontepio
+            Default: =checkBox
+            Height: =74
+            HoverColor: =cores.amareloMontepio
+            PressedColor: =cores.amareloMontepio
+            Text: =""
+            X: =5
+            Y: =1
+            ZIndex: =13
+
     ActionBar As group:
         Height: =5
         Width: =5
@@ -358,6 +371,21 @@ Listagem As screen:
             X: =656
             Y: =TextInput2.Y
             ZIndex: =22
+
+    Checkbox1 As checkbox:
+        BorderColor: =Color.Transparent
+        CheckboxBorderColor: =cores.cinzento
+        CheckmarkFill: =cores.amareloMontepio
+        Color: =cores.amareloMontepio
+        HoverColor: =cores.amareloMontepio
+        OnSelect: |-
+            =UpdateContext({checkBox: !checkBox})
+        PressedColor: =cores.amareloMontepio
+        Text: =""
+        Width: =40
+        X: =362
+        Y: =182
+        ZIndex: =24
 
     NovaAtividade As group:
         Height: =5
@@ -466,11 +494,8 @@ Listagem As screen:
             PaddingTop: =0
             TabIndex: =0
             Text: ="Unidade Orgânica"
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
-            X: =358
+            Width: =124
+            X: =397
             Y: =176
             ZIndex: =5
 
