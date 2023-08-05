@@ -18,6 +18,11 @@
                 ThisRecord.modo = DisplayMode.Disabled,
                 {modo: DisplayMode.Edit}
             );
+            UpdateIf(
+                AtividadeFormMenu,
+                Lower(Trim(ThisRecord.titulo)) = Lower(Trim("Fatores de Criticidade")),
+                {estado : "feito"}
+            );
             // dados dos Recursos/Pessoas
             ForAll(
                 Filter(
@@ -903,35 +908,52 @@
                         Value('4horas'.Text) = 0,
                         ""
                     ),
-                    Value(
-                        LookUp(
-                            'Fatores de Criticidades',
-                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
-                            And
-                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
-                        ).'vinte quatro horas'
+                    If(
+                        formMode = FormMode.View,
+                        Value(
+                            LookUp(
+                                'Fatores de Criticidades',
+                                Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                And
+                                Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                            ).'vinte quatro horas'
+                        ),
+                        If(
+                            IsBlank(
+                                LookUp(
+                                    'Fatores de Criticidades',
+                                    Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                    And
+                                    Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                                ).'vinte quatro horas'
+                            ),
+                            "",
+                            LookUp(
+                                'Fatores de Criticidades',
+                                Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                And
+                                Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                            ).'vinte quatro horas'
+                        )
                     )
                 )
             DelayOutput: =true
             DisplayMode: |-
-                =If(
-                    IsBlank('4horas'.Text) Or Value('4horas'.Text) = 0,
-                        Switch(
-                        formMode,
-                        0,
-                        DisplayMode.Edit,
-                        1,
-                        DisplayMode.Edit,
-                        DisplayMode.View
+                =Switch(
+                    formMode,
+                    0, //Edit
+                    If(
+                        IsBlank('4horas'.Text) Or Value('4horas'.Text) = 0,
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
                     ),
-                    Switch(
-                        formMode,
-                        0,
-                        DisplayMode.Edit,
-                        1,
-                        DisplayMode.Edit,
-                        DisplayMode.View
-                    )
+                    1, //New
+                    If(
+                        IsBlank('4horas'.Text) Or Value('4horas'.Text) = 0,
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    ),
+                    DisplayMode.View
                 )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -959,38 +981,57 @@
                 =If(
                     formMode = FormMode.New,
                     If(
-                        IsBlank('24horas'.Text) Or '24horas'.Text = 0,
+                        IsBlank('24horas'.Text)
+                        Or
+                        Value('24horas'.Text) = 0,
                         ""
                     ),
-                    Value(
-                        LookUp(
-                            'Fatores de Criticidades',
-                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
-                            And
-                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
-                        ).'quarenta oito horas'
+                    If(
+                        formMode = FormMode.View,
+                        Value(
+                            LookUp(
+                                'Fatores de Criticidades',
+                                Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                And
+                                Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                            ).'quarenta oito horas'
+                        ),
+                        If(
+                            IsBlank(
+                                LookUp(
+                                    'Fatores de Criticidades',
+                                    Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                    And
+                                    Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                                ).'quarenta oito horas'
+                            ),
+                            "",
+                            LookUp(
+                                'Fatores de Criticidades',
+                                Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                And
+                                Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                            ).'quarenta oito horas'
+                        )
                     )
                 )
             DelayOutput: =true
             DisplayMode: |-
-                =If(
-                    IsBlank('24horas'.Text),
-                    Switch(
-                        formMode,
-                        0,
-                        DisplayMode.Edit,
-                        1,
-                        DisplayMode.Edit,
-                        DisplayMode.View
+                =Switch(
+                    formMode,
+                    0, //Edit
+                    If(
+                        IsBlank('24horas'.Text) Or Value('24horas'.Text) = 0,
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
                     ),
-                    Switch(
-                        formMode,
-                        0,
-                        DisplayMode.Edit,
-                        1,
-                        DisplayMode.Edit,
-                        DisplayMode.View
-                    )
+                    1, //New
+                    If(
+                        IsBlank('24horas'.Text) Or Value('24horas'.Text) = 0,
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    ),
+                    DisplayMode.View
                 )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -1018,38 +1059,57 @@
                 =If(
                     formMode = FormMode.New,
                     If(
-                        IsBlank('48horas'.Text)  Or '48horas'.Text = 0,
+                        IsBlank('48horas'.Text)
+                        Or
+                        Value('48horas'.Text) = 0,
                         ""
                     ),
-                    Value(
-                        LookUp(
-                            'Fatores de Criticidades',
-                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
-                            And
-                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
-                        ).'uma semana'
+                    If(
+                        formMode = FormMode.View,
+                        Value(
+                            LookUp(
+                                'Fatores de Criticidades',
+                                Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                And
+                                Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                            ).'uma semana'
+                        ),
+                        If(
+                            IsBlank(
+                                LookUp(
+                                    'Fatores de Criticidades',
+                                    Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                    And
+                                    Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                                ).'uma semana'
+                            ),
+                            "",
+                            LookUp(
+                                'Fatores de Criticidades',
+                                Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                And
+                                Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                            ).'uma semana'
+                        )
                     )
                 )
             DelayOutput: =true
             DisplayMode: |-
-                =If(
-                    IsBlank('48horas'.Text),
-                    Switch(
-                        formMode,
-                        0,
-                        DisplayMode.Edit,
-                        1,
-                        DisplayMode.Edit,
-                        DisplayMode.View
+                =Switch(
+                    formMode,
+                    0, //Edit
+                    If(
+                        IsBlank('48horas'.Text) Or Value('48horas'.Text) = 0,
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
                     ),
-                    Switch(
-                        formMode,
-                        0,
-                        DisplayMode.Edit,
-                        1,
-                        DisplayMode.Edit,
-                        DisplayMode.View
-                    )
+                    1, //New
+                    If(
+                        IsBlank('48horas'.Text) Or Value('48horas'.Text) = 0,
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    ),
+                    DisplayMode.View
                 )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -1077,38 +1137,57 @@
                 =If(
                     formMode = FormMode.New,
                     If(
-                        IsBlank('1semana'.Text) Or '1semana'.Text = 0,
+                        IsBlank('1semana'.Text)
+                        Or
+                        Value('1semana'.Text) = 0,
                         ""
                     ),
-                    Value(
-                        LookUp(
-                            'Fatores de Criticidades',
-                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
-                            And
-                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
-                        ).'duas semanas'
+                    If(
+                        formMode = FormMode.View,
+                        Value(
+                            LookUp(
+                                'Fatores de Criticidades',
+                                Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                And
+                                Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                            ).'duas semanas'
+                        ),
+                        If(
+                            IsBlank(
+                                LookUp(
+                                    'Fatores de Criticidades',
+                                    Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                    And
+                                    Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                                ).'duas semanas'
+                            ),
+                            "",
+                            LookUp(
+                                'Fatores de Criticidades',
+                                Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                And
+                                Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                            ).'duas semanas'
+                        )
                     )
                 )
             DelayOutput: =true
             DisplayMode: |-
-                =If(
-                    IsBlank('2semanas'.Text),
-                    Switch(
-                        formMode,
-                        0,
-                        DisplayMode.Edit,
-                        1,
-                        DisplayMode.Edit,
-                        DisplayMode.View
+                =Switch(
+                    formMode,
+                    0, //Edit
+                    If(
+                        IsBlank('1semana'.Text) Or Value('1semana'.Text) = 0,
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
                     ),
-                    Switch(
-                        formMode,
-                        0,
-                        DisplayMode.Edit,
-                        1,
-                        DisplayMode.Edit,
-                        DisplayMode.View
-                    )
+                    1, //New
+                    If(
+                        IsBlank('1semana'.Text) Or Value('1semana'.Text) = 0,
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    ),
+                    DisplayMode.View
                 )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -1136,38 +1215,57 @@
                 =If(
                     formMode = FormMode.New,
                     If(
-                        IsBlank('2semanas'.Text) Or '2semanas'.Text = 0,
+                        IsBlank('2semanas'.Text)
+                        Or
+                        Value('2semanas'.Text) = 0,
                         ""
                     ),
-                    Value(
-                        LookUp(
-                            'Fatores de Criticidades',
-                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
-                            And
-                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
-                        ).'um mes'
+                    If(
+                        formMode = FormMode.View,
+                        Value(
+                            LookUp(
+                                'Fatores de Criticidades',
+                                Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                And
+                                Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                            ).'um mes'
+                        ),
+                        If(
+                            IsBlank(
+                                LookUp(
+                                    'Fatores de Criticidades',
+                                    Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                    And
+                                    Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                                ).'um mes'
+                            ),
+                            "",
+                            LookUp(
+                                'Fatores de Criticidades',
+                                Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                                And
+                                Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                            ).'um mes'
+                        )
                     )
                 )
             DelayOutput: =true
             DisplayMode: |-
-                =If(
-                    IsBlank('1mes'.Text),
-                    Switch(
-                        formMode,
-                        0,
-                        DisplayMode.Edit,
-                        1,
-                        DisplayMode.Edit,
-                        DisplayMode.View
+                =Switch(
+                    formMode,
+                    0, //Edit
+                    If(
+                        IsBlank('2semanas'.Text) Or Value('2semanas'.Text) = 0,
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
                     ),
-                    Switch(
-                        formMode,
-                        0,
-                        DisplayMode.Edit,
-                        1,
-                        DisplayMode.Edit,
-                        DisplayMode.View
-                    )
+                    1, //New
+                    If(
+                        IsBlank('2semanas'.Text) Or Value('2semanas'.Text) = 0,
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    ),
+                    DisplayMode.View
                 )
             Format: =TextFormat.Number
             HoverBorderColor: =cores.cinzento
@@ -1258,6 +1356,25 @@
             X: =31
             Y: =56
             ZIndex: =15
+
+        Label3 As label:
+            OnSelect: =Select(Parent)
+            Text: |-
+                =If(
+                    formMode <> FormMode.New,
+                    Value(
+                        LookUp(
+                            'Fatores de Criticidades',
+                            Trim(Lower(ThisRecord.'ID Atividade'.ID)) = Text('Gallery Data'.Selected.ID)
+                            And
+                            Trim(Lower(ThisRecord.'Tipo de Fator')) = Trim(Lower(ThisItem.Value))
+                        ).ID
+                    )
+                )
+            Visible: =false
+            X: =288
+            Y: =56
+            ZIndex: =16
 
     Label3_11 As label:
         Align: =Align.Center
@@ -1379,10 +1496,35 @@
                         "<4 horas",
                         RTOTempo
                     ),
-                    LookUp(
-                        RTOS,
-                        ThisRecord.Atividade.ID = Text('Gallery Data'.Selected.ID)
-                    ).Classificação
+                    
+                    If(
+                        Value('4Horas'.Text) > RTO,
+                        RTOTempo,
+                        If(
+                            Value('24Horas'.Text) >= RTO,
+                            RTOTempo,
+                            If(
+                                Value('48Horas'.Text) >= RTO,
+                                RTOTempo,
+                                If(
+                                    Value('1Semana'.Text) >= RTO,
+                                    RTOTempo,
+                                    If(
+                                        Value('2Semanas'.Text) >= RTO,
+                                        RTOTempo,
+                                        If(
+                                            Value('1Mes'.Text) >= RTO,
+                                            RTOTempo,
+                                            LookUp(
+                                                RTOS,
+                                                ThisRecord.Atividade.ID = Text('Gallery Data'.Selected.ID)
+                                            ).Classificação
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
                 )
             Width: =734
             Y: =40
@@ -1439,6 +1581,17 @@
             X: =569
             Y: =40
             ZIndex: =10
+
+        Label8 As label:
+            Text: |-
+                =LookUp(
+                    RTOS,
+                    ThisRecord.Atividade.ID = Text('Gallery Data'.Selected.ID)
+                ).ID
+            Visible: =false
+            X: =60
+            Y: =40
+            ZIndex: =11
 
     "'Caracterização dos Equipamentos' As group":
         Height: =5
@@ -1604,6 +1757,21 @@
                 X: =2
                 Y: =15
                 ZIndex: =10
+
+            Label9 As label:
+                Height: =17
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        ThisItem.ID
+                    )
+                Visible: =false
+                Width: =56
+                X: =924
+                Y: =73
+                ZIndex: =11
 
         AddEquipamentoBTN As groupContainer:
             Height: =40
@@ -1845,6 +2013,21 @@
                 X: =2
                 Y: =14
                 ZIndex: =7
+
+            Label9_1 As label:
+                Height: =17
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        ThisItem.ID
+                    )
+                Visible: =false
+                Width: =56
+                X: =924
+                Y: =73
+                ZIndex: =8
 
         AddSistemasBTN As groupContainer:
             Height: =40
@@ -2449,6 +2632,15 @@
                 Y: =43
                 ZIndex: =9
 
+            Label6 As label:
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.ID
+                Visible: =false
+                Width: =56
+                X: =924
+                Y: =80
+                ZIndex: =10
+
         AddRecursoBTN As groupContainer:
             Height: =40
             Visible: |-
@@ -2753,6 +2945,21 @@
                 Y: =14
                 ZIndex: =10
 
+            Label9_2 As label:
+                Height: =17
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =If(
+                        formMode = FormMode.New,
+                        Blank(),
+                        ThisItem.ID
+                    )
+                Visible: =false
+                Width: =56
+                X: =924
+                Y: =198
+                ZIndex: =11
+
         AddDependenciaBTN As groupContainer:
             Height: =40
             Visible: |-
@@ -2829,7 +3036,17 @@
                         Gallery2.AllItems,
                             Patch(
                                 'Fatores de Criticidades',
-                                Defaults('Fatores de Criticidades'),
+                                If(
+                                    formMode = FormMode.Edit,
+                                    With(
+                                        {record : ThisRecord.Label3.Text},
+                                        LookUp(
+                                            'Fatores de Criticidades',
+                                            ThisRecord.ID = record
+                                        )
+                                    ),
+                                    Defaults('Fatores de Criticidades')
+                                ),
                                 {
                                     'Tipo de Fator': ThisRecord.Dropdown2.Selected.Value,
                                     'quatro horas': Value(ThisRecord.'4horas'.Text),
@@ -2850,7 +3067,14 @@
                     // Submeter RTO
                     Patch(
                             RTOS,
-                            Defaults(RTOS),
+                            If(
+                                    formMode = FormMode.Edit,
+                                    LookUp(
+                                        RTOS,
+                                        ThisRecord.ID = Label8.Text
+                                    ),
+                                    Defaults(RTOS)
+                                ),
                             {
                                 Atividade: LookUp(
                                     Atividades,
@@ -2868,7 +3092,17 @@
                             'Caracterização dos recursos'.AllItems,
                                 Patch(
                                     Pessoas,
-                                    Defaults(Pessoas),
+                                    If(
+                                        formMode = FormMode.Edit,
+                                        With(
+                                            {record : ThisRecord.Label6.Text},
+                                            LookUp(
+                                                'Pessoas',
+                                                ThisRecord.ID = record
+                                            )
+                                        ),
+                                        Defaults('Pessoas')
+                                    ),
                                     {
                                         'Nº Empregado': ThisRecord.NumEmpregado.Text,
                                         'Colaborador Crítico': ThisRecord.Critico.Text,
@@ -2889,7 +3123,17 @@
                             'Caracterização dos equipamentos'.AllItems,
                                 Patch(
                                     'Equipamentos de Escritório',
-                                    Defaults('Equipamentos de Escritório'),
+                                    If(
+                                        formMode = FormMode.Edit,
+                                        With(
+                                            {record : ThisRecord.Label9.Text},
+                                            LookUp(
+                                                'Equipamentos de Escritório',
+                                                ThisRecord.ID = record
+                                            )
+                                        ),
+                                        Defaults('Equipamentos de Escritório')
+                                    ),
                                     {
                                         Equipamento: ThisRecord.Equipamento.Selected,
                                         Duração: ThisRecord.'Equipamento Duracao'.Selected.Value,
@@ -2907,7 +3151,17 @@
                             'Caracterização dos sistemas'.AllItems,
                                 Patch(
                                     Sistemas,
-                                    Defaults(Sistemas),
+                                    If(
+                                        formMode = FormMode.Edit,
+                                        With(
+                                            {record : ThisRecord.Label9_1.Text},
+                                            LookUp(
+                                                'Sistemas',
+                                                ThisRecord.ID = record
+                                            )
+                                        ),
+                                        Defaults('Sistemas')
+                                    ),
                                     {
                                         'Sistemas/Aplicações': ThisRecord.Sistema.Selected,
                                         Duração: ThisRecord.'Sistemas Duracao'.Selected.Value,
@@ -2926,7 +3180,17 @@
                             'Caracterização das dependencias'.AllItems,
                                 Patch(
                                     Dependências,
-                                    Defaults(Dependências),
+                                    If(
+                                        formMode = FormMode.Edit,
+                                        With(
+                                            {record : ThisRecord.Label9_2.Text},
+                                            LookUp(
+                                                'Dependências',
+                                                ThisRecord.ID = record
+                                            )
+                                        ),
+                                        Defaults('Dependências')
+                                    ),
                                     {
                                         Entidades: ThisRecord.'Dependencias Entidades'.Selected,
                                         Importância: ThisRecord.'Dependencias Importancia'.Selected.Value,
@@ -3000,7 +3264,7 @@
             Text: =""
             Visible: =ModalForm.visible
             Width: =164
-            X: =490
+            X: =486
             Y: =440
             ZIndex: =24
 

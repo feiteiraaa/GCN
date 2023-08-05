@@ -1,8 +1,23 @@
 Inicio As screen:
+    OnVisible: |-
+        =Set(
+            currentUser,
+            First(
+                Split(
+                    Office365Users.MyProfileV2().department,
+                    "-"
+                )
+            ).Value
+        );
+        
+        Set(
+            currentUser,
+            "DRI"
+        );
 
     Label1 As label:
         Size: =15
-        Text: ="Bem vindo, " & User().FullName
+        Text: ="Bem vindo, " & User().FullName & " (" & currentUser & ")"
         Width: =610
         X: =359
         Y: =35

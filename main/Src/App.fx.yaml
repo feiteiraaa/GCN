@@ -2,18 +2,7 @@ App As appinfo:
     BackEnabled: =false
     Formulas: =
     OnStart: |-
-        =/*Set(
-            currentUser,
-            //"DRI-" in
-            First(
-                Split(
-                    Office365Users.MyProfileV2().department,
-                    "-"
-                )
-            ).Value
-        );*/
-        
-        Set(
+        =Set(
             appVersion,
             "1.0"
         );

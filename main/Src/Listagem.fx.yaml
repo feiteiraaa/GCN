@@ -1,23 +1,53 @@
 Listagem As screen:
-    OnVisible: |
+    OnVisible: |-
         =ClearCollect(
             Estados,
             Blank(),
             Choices('Estado Processo')
         );
         
-        UpdateContext({checkBox: false})
-
-    LeftSectionComponent_2 As LeftSectionComponent:
-        ZIndex: =1
-
-    Label1_1 As label:
-        Size: =15
-        Text: ="Atividades"
-        Width: =610
-        X: =359
-        Y: =35
-        ZIndex: =2
+        UpdateContext({checkBox: false});
+        
+        ClearCollect(
+            AtividadeFormMenu,
+            Table(
+            //Excel 02
+                {
+                    titulo: "Caracterização do Processo",
+                    estado: "em curso",
+                    modo: DisplayMode.Edit
+                },
+                {
+                    titulo: "Fatores de Criticidade",
+                    estado: "em falta",
+                    modo: DisplayMode.Edit
+                },
+            //Excel 03
+                {
+                    titulo: "Caracterização dos Recursos",
+                    estado: "em falta",
+                    modo: DisplayMode.Disabled
+                },
+            //Excel 04
+                {
+                    titulo: "Caracterização dos Equipamentos",
+                    estado: "em falta",
+                    modo: DisplayMode.Disabled
+                },
+            //Excel 05
+                {
+                    titulo: "Caracterização dos Sistemas",
+                    estado: "em falta",
+                    modo: DisplayMode.Disabled
+                },
+            //Excel 06
+                {
+                    titulo: "Dependências",
+                    estado: "em falta",
+                    modo: DisplayMode.Disabled
+                }
+            )
+        )
 
     "'Gallery Data' As gallery.variableTemplateHeightGallery":
         DelayItemLoading: =true
@@ -76,7 +106,7 @@ Listagem As screen:
         Width: =Principal.Width
         X: =Principal.X
         Y: =Principal.Y + Principal.Height
-        ZIndex: =3
+        ZIndex: =13
 
         Rectangle2 As rectangle:
             Fill: |-
@@ -125,8 +155,18 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.'Unidade Orgânica'
-            Width: =128
-            X: =35
+            Width: |-
+                =If(
+                    currentUser = "DRI",
+                    118,
+                    155
+                )
+            X: |-
+                =If(
+                    currentUser = "DRI",
+                    45,
+                    8
+                )
             Y: =Rectangle2.Y
             ZIndex: =2
 
@@ -310,9 +350,22 @@ Listagem As screen:
             HoverColor: =cores.amareloMontepio
             PressedColor: =cores.amareloMontepio
             Text: =""
+            Visible: =currentUser = "DRI"
+            Width: =40
             X: =5
             Y: =1
             ZIndex: =13
+
+    Label1_1 As label:
+        Size: =15
+        Text: ="Atividades"
+        Width: =610
+        X: =359
+        Y: =35
+        ZIndex: =22
+
+    LeftSectionComponent_2 As LeftSectionComponent:
+        ZIndex: =23
 
     ActionBar As group:
         Height: =5
@@ -338,7 +391,7 @@ Listagem As screen:
             Width: =264
             X: =358
             Y: =124
-            ZIndex: =17
+            ZIndex: =15
 
         "Icon1_1 As icon.'3DPrinting'":
             Color: |-
@@ -350,7 +403,7 @@ Listagem As screen:
             Width: =18
             X: =365
             Y: =131
-            ZIndex: =18
+            ZIndex: =16
 
         Dropdown1 As dropdown:
             AllowEmptySelection: =true
@@ -370,22 +423,7 @@ Listagem As screen:
             Width: =264
             X: =656
             Y: =TextInput2.Y
-            ZIndex: =22
-
-    Checkbox1 As checkbox:
-        BorderColor: =Color.Transparent
-        CheckboxBorderColor: =cores.cinzento
-        CheckmarkFill: =cores.amareloMontepio
-        Color: =cores.amareloMontepio
-        HoverColor: =cores.amareloMontepio
-        OnSelect: |-
-            =UpdateContext({checkBox: !checkBox})
-        PressedColor: =cores.amareloMontepio
-        Text: =""
-        Width: =40
-        X: =362
-        Y: =182
-        ZIndex: =24
+            ZIndex: =19
 
     NovaAtividade As group:
         Height: =5
@@ -399,7 +437,7 @@ Listagem As screen:
             BtnWidth: =200
             X: =1143
             Y: =35
-            ZIndex: =16
+            ZIndex: =14
 
         Button2 As button:
             BorderColor: =Color.Transparent
@@ -465,14 +503,56 @@ Listagem As screen:
             Width: =DynamicBtn_1.Width
             X: =DynamicBtn_1.X
             Y: =DynamicBtn_1.Y
-            ZIndex: =23
+            ZIndex: =20
+
+    NovaAtividade_1 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =24
+
+        DynamicBtn_2 As DynamicBtn:
+            BtnText: ="Revisão anual"
+            BtnWidth: =200
+            ButtonIcon: =Icon.AddLibrary
+            X: =931
+            Y: =35
+            ZIndex: =18
+
+        Button2_1 As button:
+            BorderColor: =Color.Transparent
+            Color: =Color.Transparent
+            Fill: =Color.Transparent
+            Height: =DynamicBtn_2.Height
+            HoverColor: =Color.Transparent
+            HoverFill: =Color.Transparent
+            OnSelect: |-
+                =ForAll(
+                    Filter('Gallery Data'.AllItems, ThisRecord.Checkbox1_1.Value) As Record,
+                    
+                    Patch(
+                        Atividades,
+                        LookUp( Atividades, ThisRecord.ID = Record.ID),
+                        {
+                            Estado: 'Estado Processo'.'Em revalidação'
+                        }
+                    )
+                )
+            PressedColor: =Color.Transparent
+            Text: =
+            Visible: =currentUser = "DRI"
+            Width: =DynamicBtn_2.Width
+            X: =931
+            Y: =DynamicBtn_2.Y
+            ZIndex: =21
 
     "'Galery Headers' As group":
         Height: =5
         Width: =5
         X: =40
         Y: =40
-        ZIndex: =26
+        ZIndex: =25
 
         Principal As rectangle:
             Fill: =cores.cinzento
@@ -482,7 +562,7 @@ Listagem As screen:
             Width: =990
             X: =358
             Y: =176
-            ZIndex: =4
+            ZIndex: =1
 
         "'U.O. Header' As label":
             Align: =Align.Center
@@ -494,10 +574,20 @@ Listagem As screen:
             PaddingTop: =0
             TabIndex: =0
             Text: ="Unidade Orgânica"
-            Width: =124
-            X: =397
+            Width: |-
+                =If(
+                    currentUser = "DRI",
+                    124,
+                    155
+                )
+            X: |-
+                =If(
+                    currentUser = "DRI",
+                    397,
+                    362
+                )
             Y: =176
-            ZIndex: =5
+            ZIndex: =2
 
         "'U.O. Header Split' As rectangle":
             Fill: =Color.LightGray
@@ -507,7 +597,7 @@ Listagem As screen:
             Width: =2
             X: =521
             Y: =Principal.Y
-            ZIndex: =6
+            ZIndex: =3
 
         "'Atividade Header' As label":
             Align: =Align.Center
@@ -525,7 +615,7 @@ Listagem As screen:
                 ) / 6
             X: =523
             Y: =176
-            ZIndex: =7
+            ZIndex: =4
 
         "'Atividade Header Split' As rectangle":
             Fill: =Color.LightGray
@@ -535,7 +625,7 @@ Listagem As screen:
             Width: =2
             X: =686
             Y: =Principal.Y
-            ZIndex: =8
+            ZIndex: =5
 
         "'Descricao Header' As label":
             Align: =Align.Center
@@ -553,7 +643,7 @@ Listagem As screen:
                 ) / 6
             X: =688
             Y: =176
-            ZIndex: =9
+            ZIndex: =6
 
         "'Descricao Header Split' As rectangle":
             Fill: =Color.LightGray
@@ -563,7 +653,7 @@ Listagem As screen:
             Width: =2
             X: =851
             Y: =Principal.Y
-            ZIndex: =10
+            ZIndex: =7
 
         "'Tipo Processo Header' As label":
             Align: =Align.Center
@@ -581,7 +671,7 @@ Listagem As screen:
                 ) / 6
             X: =853
             Y: =176
-            ZIndex: =11
+            ZIndex: =8
 
         "'Tipo Processo Header Split' As rectangle":
             Fill: =Color.LightGray
@@ -591,7 +681,7 @@ Listagem As screen:
             Width: =2
             X: =1016
             Y: =Principal.Y
-            ZIndex: =12
+            ZIndex: =9
 
         "'Processo Header' As label":
             Align: =Align.Center
@@ -609,7 +699,7 @@ Listagem As screen:
                 ) / 6
             X: =1018
             Y: =176
-            ZIndex: =13
+            ZIndex: =10
 
         "'Processo Header Split' As rectangle":
             Fill: =Color.LightGray
@@ -619,7 +709,7 @@ Listagem As screen:
             Width: =2
             X: =1181
             Y: =Principal.Y
-            ZIndex: =14
+            ZIndex: =11
 
         "'Macro Processo Header Split' As label":
             Align: =Align.Center
@@ -637,5 +727,21 @@ Listagem As screen:
                 ) / 6
             X: =1183
             Y: =176
-            ZIndex: =15
+            ZIndex: =12
+
+        Checkbox1 As checkbox:
+            BorderColor: =Color.Transparent
+            CheckboxBorderColor: =cores.cinzento
+            CheckmarkFill: =cores.amareloMontepio
+            Color: =cores.amareloMontepio
+            HoverColor: =cores.amareloMontepio
+            OnSelect: |-
+                =UpdateContext({checkBox: !checkBox})
+            PressedColor: =cores.amareloMontepio
+            Text: =""
+            Visible: =currentUser = "DRI"
+            Width: =40
+            X: =362
+            Y: =182
+            ZIndex: =17
 
