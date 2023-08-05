@@ -113,6 +113,13 @@
       }
     },
     {
+      "Kind": "default.cds_uipp_historicodeaprovacoes_forms",
+      "Namespace": "Histórico de aprovações (Forms)",
+      "Values": {
+        "Information": "8df85899-f888-48ae-b7dc-f8c96ceabf32"
+      }
+    },
+    {
       "Kind": "default.cds_aaduser_forms",
       "Namespace": "AAD Users (Forms)",
       "Values": {
@@ -138,13 +145,6 @@
       "Namespace": "Aprovacaos (Forms)",
       "Values": {
         "Information": "a10858ff-b782-4ff9-8b96-92e39c030996"
-      }
-    },
-    {
-      "Kind": "default.cds_uipp_historicodeaprovacoes_forms",
-      "Namespace": "Histórico de aprovações (Forms)",
-      "Values": {
-        "Information": "8df85899-f888-48ae-b7dc-f8c96ceabf32"
       }
     }
   ]

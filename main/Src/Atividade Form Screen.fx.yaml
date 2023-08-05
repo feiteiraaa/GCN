@@ -5,10 +5,7 @@
         });
         
         UpdateContext({
-            AproveRejectForm: {
-                visible: false,
-                texto: ""
-            }
+            ApproveForm: { visible: false, texto: ""}
         });
         
         If(
@@ -577,7 +574,7 @@
             Height: =50
             Required: =false
             Update: =DataCardValue5.Text
-            Width: =990
+            Width: =445
             WidthFit: =true
             X: =0
             Y: =2
@@ -2219,7 +2216,7 @@
                             "Guardar"
                         ),
                         If(
-                            AtividadeRecord.'Unidade Orgânica' = "DRI",
+                            AtividadeRecord.'Unidade Orgânica' = "DRI" Or formMode = 1,
                             If(
                                 formMode = 2,
                                 "Editar",
@@ -2237,7 +2234,7 @@
                             Icon.Save
                         ),
                         If(
-                            AtividadeRecord.'Unidade Orgânica' = "DRI",
+                            AtividadeRecord.'Unidade Orgânica' = "DRI" Or formMode = 1,
                             If(
                                 formMode = 2,
                                 Icon.Edit,
@@ -2246,7 +2243,7 @@
                         )
                     )
                 Height: =40
-                Visible: =AtividadeRecord.Estado = 'Estado Processo'.'Em preenchimento'
+                Visible: =AtividadeRecord.Estado = 'Estado Processo'.'Em preenchimento' Or formMode = 1
                 Width: =201
                 X: =790
                 Y: =5
@@ -2317,7 +2314,7 @@
                 PressedColor: =Color.Transparent
                 PressedFill: =Color.Transparent
                 Text: =""
-                Visible: =AtividadeRecord.Estado = 'Estado Processo'.'Em preenchimento'
+                Visible: =AtividadeRecord.Estado = 'Estado Processo'.'Em preenchimento' Or formMode = 1
                 Width: =201
                 X: =790
                 Y: =5
@@ -2349,6 +2346,39 @@
                 X: =578
                 Y: =5
                 ZIndex: =5
+
+            CancelBtn_1 As DynamicBtn:
+                BtnText: ="Histórico"
+                BtnWidth: =200
+                ButtonIcon: =Icon.History
+                Height: =40
+                Visible: =AtividadeRecord.Estado <> 'Estado Processo'.'Em preenchimento' And formMode = 2
+                Width: =201
+                X: =790
+                Y: =5
+                ZIndex: =6
+
+            CancelBtnCode_1 As button:
+                Color: =Color.Transparent
+                Fill: =Color.Transparent
+                HoverColor: =Color.Transparent
+                HoverFill: =Color.Transparent
+                OnSelect: |-
+                    =Navigate(
+                        'Histórico de Aprovações',
+                        ScreenTransition.None,
+                        {
+                            recordId: 'Gallery Data'.Selected.ID
+                        }
+                    )
+                PressedColor: =Color.Transparent
+                PressedFill: =Color.Transparent
+                Text: =""
+                Visible: =AtividadeRecord.Estado <> 'Estado Processo'.'Em preenchimento' And formMode = 2
+                Width: =201
+                X: =790
+                Y: =5
+                ZIndex: =7
 
     Label7 As label:
         Align: =Align.Center
@@ -2706,11 +2736,15 @@
                 HoverFill: =Color.Transparent
                 OnSelect: |-
                     =Collect(collectRecursos, {row: Last(collectRecursos).row + 1})
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
                 PressedFill: =Color.Transparent
                 Size: =13
                 Text: =""
                 Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
-                Width: =201
+                Width: =200
                 ZIndex: =2
 
     "'Caracterização das Dependencias' As group":
@@ -3128,11 +3162,11 @@
                                         With(
                                             {record : ThisRecord.Label6.Text},
                                             LookUp(
-                                                'Pessoas',
+                                                Pessoas,
                                                 ThisRecord.ID = record
                                             )
                                         ),
-                                        Defaults('Pessoas')
+                                        Defaults(Pessoas)
                                     ),
                                     {
                                         'Nº Empregado': ThisRecord.NumEmpregado.Text,
@@ -3187,11 +3221,11 @@
                                         With(
                                             {record : ThisRecord.Label9_1.Text},
                                             LookUp(
-                                                'Sistemas',
+                                                Sistemas,
                                                 ThisRecord.ID = record
                                             )
                                         ),
-                                        Defaults('Sistemas')
+                                        Defaults(Sistemas)
                                     ),
                                     {
                                         'Sistemas/Aplicações': ThisRecord.Sistema.Selected,
@@ -3216,11 +3250,11 @@
                                         With(
                                             {record : ThisRecord.Label9_2.Text},
                                             LookUp(
-                                                'Dependências',
+                                                Dependências,
                                                 ThisRecord.ID = record
                                             )
                                         ),
-                                        Defaults('Dependências')
+                                        Defaults(Dependências)
                                     ),
                                     {
                                         Entidades: ThisRecord.'Dependencias Entidades'.Selected,
@@ -3332,12 +3366,10 @@
             BtnWidth: =200
             ButtonIcon: =Icon.Check
             Height: =40
-            Visible: |-
-                =//AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
-                currentUser = "DRI"
+            Visible: =(AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação') And currentUser = "DRI"
             Width: =201
             X: =912
-            Y: =695
+            Y: =700
             ZIndex: =23
 
         ApproveBtnCode As button:
@@ -3348,7 +3380,7 @@
             OnSelect: |-
                 =UpdateContext(
                     {
-                        AproveRejectForm: {
+                        ApproveForm: {
                             visible: true,
                             texto: "Deseja APROVAR a atividade " & DataCardValue3.Text & " ?"
                         }
@@ -3357,12 +3389,10 @@
             PressedColor: =Color.Transparent
             PressedFill: =Color.Transparent
             Text: ="Aprovar"
-            Visible: |-
-                =//AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
-                currentUser = "DRI"
+            Visible: =(AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação') And currentUser = "DRI"
             Width: =201
             X: =912
-            Y: =695
+            Y: =700
             ZIndex: =24
 
         RejectBtn As DynamicBtn:
@@ -3370,12 +3400,10 @@
             BtnWidth: =200
             ButtonIcon: =Icon.Cancel
             Height: =40
-            Visible: |-
-                =//AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
-                currentUser = "DRI"
+            Visible: =(AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação') And currentUser = "DRI"
             Width: =201
             X: =1125
-            Y: =695
+            Y: =700
             ZIndex: =25
 
         RejectBtnCode As button:
@@ -3385,7 +3413,7 @@
             HoverFill: =Color.Transparent
             OnSelect: |-
                 =UpdateContext({
-                    AproveRejectForm: {
+                    ApproveForm: {
                         visible: true,
                         texto: "Deseja REJEITAR a atividade " & DataCardValue3.Text & " ?"
                     }
@@ -3393,27 +3421,32 @@
             PressedColor: =Color.Transparent
             PressedFill: =Color.Transparent
             Text: ="Rejeitar"
-            Visible: |-
-                =//AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
-                currentUser = "DRI"
+            Visible: =(AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação') And currentUser = "DRI"
             Width: =201
             X: =1125
-            Y: =695
+            Y: =700
             ZIndex: =26
 
-    Container1 As groupContainer.manualLayoutContainer:
-        Height: =768
-        Visible: =ApproveRejectForm.visible
-        Width: =1366
+    ApproveModal As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
         ZIndex: =33
 
         ModalConfirmation_2 As ModalConfirmation:
             Height: =768
             ModalIcon: =Icon.Warning
             ModalIconColor: =cores.amareloMontepio
-            ModalText: =AproveRejectForm.texto
-            Visible: =ApproveRejectForm.visible
+            ModalText: =ApproveForm.texto
+            Visible: |-
+                =If(
+                    ApproveForm.visible,
+                    true,
+                    false
+                )
             Width: =1366
+            ZIndex: =30
 
         BtnModalConfirm_1 As button:
             Color: =Color.Transparent
@@ -3422,7 +3455,9 @@
             HoverFill: =Color.Transparent
             OnSelect: |-
                 =If(
-                    Trim(Lower("Aprovar")) in Trim(Lower(AproveRejectForm.texto)),
+                    Trim(Lower("Aprovar")) in Trim(Lower(ApproveForm.texto)),
+                
+                    //Escrever no Histórico de Aprovações - APROVADO
                     Patch(
                         'Histórico de aprovações',
                         Defaults('Histórico de aprovações'),
@@ -3431,13 +3466,25 @@
                             'ID Atividade':
                                 LookUp(
                                     Atividades,
-                                    ThisRecord.ID = LastAtividadeId
+                                    ThisRecord.ID = 'Gallery Data'.Selected.ID
                                 )
                         }
                     );
-                    UpdateContext({
-                        ApproveRejectForm: {visible: false}
-                    }),
+                    //Atualizar o estado da Atividade - APROVADO
+                    Patch(
+                        Atividades,
+                        LookUp(
+                            Atividades,
+                            ThisRecord.ID = 'Gallery Data'.Selected.ID
+                        ),
+                        {
+                            Estado:'Estado Processo'.Aprovado
+                        }
+                    );
+                    Back();
+                    Notify("Atividade " & 'Gallery Data'.Selected.Atividade & " aprovada!", NotificationType.Success, 4000),
+                
+                    //Escrever no Histórico de Aprovações - REJEITADO
                     Patch(
                         'Histórico de aprovações',
                         Defaults('Histórico de aprovações'),
@@ -3446,22 +3493,32 @@
                             'ID Atividade':
                                 LookUp(
                                     Atividades,
-                                    ThisRecord.ID = LastAtividadeId
+                                    ThisRecord.ID = 'Gallery Data'.Selected.ID
                                 )
                         }
                     );
-                    UpdateContext({
-                        ApproveRejectForm: {visible: false}
-                    })
+                    //Atualizar o estado da Atividade - Rejeitado
+                    Patch(
+                        Atividades,
+                        LookUp(
+                            Atividades,
+                            ThisRecord.ID = 'Gallery Data'.Selected.ID
+                        ),
+                        {
+                            Estado:'Estado Processo'.Rejeitado
+                        }
+                    );
+                    Back();
+                    Notify("Atividade " & 'Gallery Data'.Selected.Atividade & " rejeitada!", NotificationType.Success, 4000)
                 )
             PressedColor: =Color.Transparent
             PressedFill: =Color.Transparent
             Text: =""
-            Visible: =ApproveRejectForm.visible
+            Visible: =ApproveForm.visible
             Width: =164
             X: =488
             Y: =440
-            ZIndex: =2
+            ZIndex: =31
 
         BtnModalCancel_1 As button:
             Color: =Color.Transparent
@@ -3470,16 +3527,16 @@
             HoverFill: =Color.Transparent
             OnSelect: |-
                 =UpdateContext({
-                    ApproveRejectForm: {visible: false}
+                    ApproveForm: {visible: false}
                 })
             PressedColor: =Color.Transparent
             PressedFill: =Color.Transparent
             Text: =""
-            Visible: =ApproveRejectForm.visible
+            Visible: =ApproveForm.visible
             Width: =164
             X: =716
             Y: =440
-            ZIndex: =3
+            ZIndex: =32
 
     FatoresHeaders As group:
         Height: =5

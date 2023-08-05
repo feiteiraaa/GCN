@@ -135,7 +135,6 @@ Listagem As screen:
             Height: =75
             OnSelect: =Select(Parent)
             Width: =7
-            Y: =1
             ZIndex: =1
 
         "'U.O.' As label":
