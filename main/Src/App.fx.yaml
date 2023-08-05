@@ -2,7 +2,7 @@ App As appinfo:
     BackEnabled: =false
     Formulas: =
     OnStart: |-
-        =Set(
+        =/*Set(
             currentUser,
             //"DRI-" in
             First(
@@ -11,7 +11,7 @@ App As appinfo:
                     "-"
                 )
             ).Value
-        );
+        );*/
         
         Set(
             appVersion,
