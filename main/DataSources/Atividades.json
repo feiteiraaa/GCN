@@ -129,6 +129,10 @@
       "OptionSetReferenceItem0": {
         "OptionSetReferenceColumnName": "uipp_estado",
         "OptionSetReferenceEntityName": "Atividades"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "uipp_estado",
+        "OptionSetReferenceEntityName": "Histórico de aprovações"
       }
     },
     "OptionSetTypeKey": "PicklistType",

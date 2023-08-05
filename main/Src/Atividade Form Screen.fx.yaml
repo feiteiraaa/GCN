@@ -4,6 +4,13 @@
             ModalForm: {visible: false, text: "Deseja submeter os dados da Atividade?"}
         });
         
+        UpdateContext({
+            AproveRejectForm: {
+                visible: false,
+                texto: ""
+            }
+        });
+        
         If(
             formMode <> FormMode.New,
         
@@ -2202,27 +2209,50 @@
                 X: =40
                 ZIndex: =1
 
-            DynamicBtn_3 As DynamicBtn:
+            SaveEditBtn As DynamicBtn:
                 BtnText: |-
                     =If(
-                        formMode = 2,   
-                        "Editar",
-                        "Guardar"
+                        currentUser <> "DRI",
+                        If(
+                            formMode = 2,
+                            "Editar",
+                            "Guardar"
+                        ),
+                        If(
+                            AtividadeRecord.'Unidade Orgânica' = "DRI",
+                            If(
+                                formMode = 2,
+                                "Editar",
+                                "Guardar"
+                            )
+                        )
                     )
                 BtnWidth: =200
                 ButtonIcon: |-
                     =If(
-                        formMode = 2,
-                        Icon.Edit,
-                        Icon.Save
+                        currentUser <> "DRI",
+                        If(
+                            formMode = 2,
+                            Icon.Edit,
+                            Icon.Save
+                        ),
+                        If(
+                            AtividadeRecord.'Unidade Orgânica' = "DRI",
+                            If(
+                                formMode = 2,
+                                Icon.Edit,
+                                Icon.Save
+                            )
+                        )
                     )
                 Height: =40
+                Visible: =AtividadeRecord.Estado = 'Estado Processo'.'Em preenchimento'
                 Width: =201
                 X: =790
                 Y: =5
                 ZIndex: =2
 
-            Button3 As button:
+            SaveEditBtnCode As button:
                 Color: =Color.Transparent
                 Fill: =Color.Transparent
                 HoverColor: =Color.Transparent
@@ -2287,12 +2317,13 @@
                 PressedColor: =Color.Transparent
                 PressedFill: =Color.Transparent
                 Text: =""
+                Visible: =AtividadeRecord.Estado = 'Estado Processo'.'Em preenchimento'
                 Width: =201
                 X: =790
                 Y: =5
                 ZIndex: =3
 
-            DynamicBtn_4 As DynamicBtn:
+            CancelBtn As DynamicBtn:
                 BtnText: ="Cancelar"
                 BtnWidth: =200
                 ButtonIcon: =Icon.Cancel
@@ -2303,7 +2334,7 @@
                 Y: =5
                 ZIndex: =4
 
-            Button3_1 As button:
+            CancelBtnCode As button:
                 Color: =Color.Transparent
                 Fill: =Color.Transparent
                 HoverColor: =Color.Transparent
@@ -3014,7 +3045,7 @@
             ModalIconColor: =cores.amareloMontepio
             ModalText: ="Deseja submeter os dados da Atividade " & DataCardValue3.Text & "?"
             Visible: =ModalForm.visible
-            ZIndex: =23
+            ZIndex: =27
 
         BtnModalConfirm As button:
             Color: =Color.Transparent
@@ -3221,6 +3252,22 @@
                     IsEmpty(Errors(Dependências)),
                 
                     //em caso de sucesso
+                    Patch(
+                        'Histórico de aprovações',
+                        Defaults('Histórico de aprovações'),
+                        {
+                            Estado:
+                                LookUp(
+                                    Atividades,
+                                    ThisRecord.ID = LastAtividadeId
+                                ).Estado,
+                            'ID Atividade':
+                                LookUp(
+                                    Atividades,
+                                    ThisRecord.ID = LastAtividadeId
+                                )
+                        }
+                    );
                     Notify("Dados submetidos com sucesso!", NotificationType.Success, 4000);
                     Concurrent(
                         UpdateContext({ RTO: 0, RTOTempo: "<24 horas" }),
@@ -3243,19 +3290,6 @@
                         NotificationType.Success,
                         4000
                     )
-                    /*UpdateContext({
-                        ModalForm:
-                        {
-                            visible: true,
-                            text:
-                            Concat(Errors('Fatores de Criticidades'), Column&": "&Message) & "
-                            " & Concat(Errors(RTOS), Column&": "&Message) & "
-                            " & Concat(Errors(Pessoas), Column&": "&Message) & "
-                            " & Concat(Errors(Equipamentos), Column&": "&Message) & "
-                            " & Concat(Errors('Sistemas/Aplicações'), Column&": "&Message) & "
-                            " & Concat(Errors(Dependências), Column&": "&Message)
-                        }
-                    })*/
                 )
                 
                 
@@ -3266,7 +3300,7 @@
             Width: =164
             X: =486
             Y: =440
-            ZIndex: =24
+            ZIndex: =28
 
         BtnModalCancel As button:
             Color: =Color.Transparent
@@ -3284,7 +3318,168 @@
             Width: =164
             X: =718
             Y: =440
+            ZIndex: =29
+
+    AproveReject As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =30
+
+        ApproveBtn As DynamicBtn:
+            BtnText: ="Aprovar"
+            BtnWidth: =200
+            ButtonIcon: =Icon.Check
+            Height: =40
+            Visible: |-
+                =//AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
+                currentUser = "DRI"
+            Width: =201
+            X: =912
+            Y: =695
+            ZIndex: =23
+
+        ApproveBtnCode As button:
+            Color: =Color.Transparent
+            Fill: =Color.Transparent
+            HoverColor: =Color.Transparent
+            HoverFill: =Color.Transparent
+            OnSelect: |-
+                =UpdateContext(
+                    {
+                        AproveRejectForm: {
+                            visible: true,
+                            texto: "Deseja APROVAR a atividade " & DataCardValue3.Text & " ?"
+                        }
+                    }
+                )
+            PressedColor: =Color.Transparent
+            PressedFill: =Color.Transparent
+            Text: ="Aprovar"
+            Visible: |-
+                =//AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
+                currentUser = "DRI"
+            Width: =201
+            X: =912
+            Y: =695
+            ZIndex: =24
+
+        RejectBtn As DynamicBtn:
+            BtnText: ="Rejeitar"
+            BtnWidth: =200
+            ButtonIcon: =Icon.Cancel
+            Height: =40
+            Visible: |-
+                =//AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
+                currentUser = "DRI"
+            Width: =201
+            X: =1125
+            Y: =695
             ZIndex: =25
+
+        RejectBtnCode As button:
+            Color: =Color.Transparent
+            Fill: =Color.Transparent
+            HoverColor: =Color.Transparent
+            HoverFill: =Color.Transparent
+            OnSelect: |-
+                =UpdateContext({
+                    AproveRejectForm: {
+                        visible: true,
+                        texto: "Deseja REJEITAR a atividade " & DataCardValue3.Text & " ?"
+                    }
+                });
+            PressedColor: =Color.Transparent
+            PressedFill: =Color.Transparent
+            Text: ="Rejeitar"
+            Visible: |-
+                =//AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
+                currentUser = "DRI"
+            Width: =201
+            X: =1125
+            Y: =695
+            ZIndex: =26
+
+    Container1 As groupContainer.manualLayoutContainer:
+        Height: =768
+        Visible: =ApproveRejectForm.visible
+        Width: =1366
+        ZIndex: =33
+
+        ModalConfirmation_2 As ModalConfirmation:
+            Height: =768
+            ModalIcon: =Icon.Warning
+            ModalIconColor: =cores.amareloMontepio
+            ModalText: =AproveRejectForm.texto
+            Visible: =ApproveRejectForm.visible
+            Width: =1366
+
+        BtnModalConfirm_1 As button:
+            Color: =Color.Transparent
+            Fill: =Color.Transparent
+            HoverColor: =Color.Transparent
+            HoverFill: =Color.Transparent
+            OnSelect: |-
+                =If(
+                    Trim(Lower("Aprovar")) in Trim(Lower(AproveRejectForm.texto)),
+                    Patch(
+                        'Histórico de aprovações',
+                        Defaults('Histórico de aprovações'),
+                        {
+                            Estado:'Estado Processo'.Aprovado,
+                            'ID Atividade':
+                                LookUp(
+                                    Atividades,
+                                    ThisRecord.ID = LastAtividadeId
+                                )
+                        }
+                    );
+                    UpdateContext({
+                        ApproveRejectForm: {visible: false}
+                    }),
+                    Patch(
+                        'Histórico de aprovações',
+                        Defaults('Histórico de aprovações'),
+                        {
+                            Estado:'Estado Processo'.Rejeitado,
+                            'ID Atividade':
+                                LookUp(
+                                    Atividades,
+                                    ThisRecord.ID = LastAtividadeId
+                                )
+                        }
+                    );
+                    UpdateContext({
+                        ApproveRejectForm: {visible: false}
+                    })
+                )
+            PressedColor: =Color.Transparent
+            PressedFill: =Color.Transparent
+            Text: =""
+            Visible: =ApproveRejectForm.visible
+            Width: =164
+            X: =488
+            Y: =440
+            ZIndex: =2
+
+        BtnModalCancel_1 As button:
+            Color: =Color.Transparent
+            Fill: =Color.Transparent
+            HoverColor: =Color.Transparent
+            HoverFill: =Color.Transparent
+            OnSelect: |-
+                =UpdateContext({
+                    ApproveRejectForm: {visible: false}
+                })
+            PressedColor: =Color.Transparent
+            PressedFill: =Color.Transparent
+            Text: =""
+            Visible: =ApproveRejectForm.visible
+            Width: =164
+            X: =716
+            Y: =440
+            ZIndex: =3
 
     FatoresHeaders As group:
         Height: =5

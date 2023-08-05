@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_historicodeaprovacoeses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_historicodeaprovacoes",
+    "Name": "Histórico de aprovações",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_estado": "Estado",
+      "uipp_historicodeaprovacoes_AsyncOperations": "System Jobs",
+      "uipp_historicodeaprovacoes_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_historicodeaprovacoes_DuplicateBaseRecord": "Duplicate Records (uipp_historicodeaprovacoes_DuplicateBaseRecord)",
+      "uipp_historicodeaprovacoes_DuplicateMatchingRecord": "Duplicate Records (uipp_historicodeaprovacoes_DuplicateMatchingRecord)",
+      "uipp_historicodeaprovacoes_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_historicodeaprovacoes_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_historicodeaprovacoes_ProcessSession": "Process Sessions",
+      "uipp_historicodeaprovacoes_SyncErrors": "Sync Errors",
+      "uipp_historicodeaprovacoesid": "Histórico de aprovações",
+      "uipp_id": "ID",
+      "uipp_IDAtividade": "ID Atividade",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Histórico de aprovações",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Histórico de aprovações (Views)",
+    "Name": "_uipp_historicodeaprovacoes_views",
+    "RelatedEntityName": "Histórico de aprovações",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "09754968-2cac-49a3-bd51-a83ac996c9b8": "Active Histórico de aprovações",
+      "2ebc0d19-924b-4795-9660-692c3e9a8cda": "Inactive Histórico de aprovações",
+      "4e1f56db-5d91-4cad-888b-578d11217cc5": "Histórico de aprovações Advanced Find View",
+      "7897604f-a789-464a-b1b1-867ca71f63cb": "Histórico de aprovações Associated View",
+      "c8a159b2-d680-40ec-9ebf-9c9eca122670": "Histórico de aprovações Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Histórico de aprovações)",
+    "Name": "uipp_historicodeaprovacoes_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Histórico de aprovações"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Histórico de aprovações",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Histórico de aprovações)",
+    "Name": "uipp_historicodeaprovacoes_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Histórico de aprovações"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Histórico de aprovações",
+    "Type": "OptionSetInfo"
+  }
+]
