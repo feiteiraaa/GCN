@@ -4,7 +4,17 @@ App As appinfo:
     OnStart: |-
         =Set(
             appVersion,
-            "1.0"
+            "1.1"
+        );
+        
+        Set(
+            currentUser,
+            First(
+                Split(
+                    Office365Users.MyProfileV2().department,
+                    "-"
+                )
+            ).Value
         );
         
         ClearCollect(

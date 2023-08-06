@@ -275,7 +275,7 @@
             ="Histórico de Atividades"
             &
             If(
-                IsBlank(recordId),
+                !IsBlank(recordId),
                 " - " & LookUp(
                     Atividades,
                     ThisRecord.ID = recordId

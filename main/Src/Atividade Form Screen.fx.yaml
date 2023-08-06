@@ -2321,11 +2321,21 @@
                 ZIndex: =3
 
             CancelBtn As DynamicBtn:
-                BtnText: ="Cancelar"
+                BtnText: |-
+                    =If(
+                        formMode = 0,
+                        "Cancelar",
+                        "Aprovação"
+                    )
                 BtnWidth: =200
-                ButtonIcon: =Icon.Cancel
+                ButtonIcon: |-
+                    =If(
+                        formMode = 0,
+                        Icon.Cancel,
+                        Icon.Send
+                    )
                 Height: =40
-                Visible: =formMode = 0
+                Visible: =true
                 Width: =201
                 X: =578
                 Y: =5
@@ -2347,7 +2357,7 @@
                 Y: =5
                 ZIndex: =5
 
-            CancelBtn_1 As DynamicBtn:
+            HistoricoBtn As DynamicBtn:
                 BtnText: ="Histórico"
                 BtnWidth: =200
                 ButtonIcon: =Icon.History
@@ -2358,7 +2368,7 @@
                 Y: =5
                 ZIndex: =6
 
-            CancelBtnCode_1 As button:
+            HistoricoBtnCode As button:
                 Color: =Color.Transparent
                 Fill: =Color.Transparent
                 HoverColor: =Color.Transparent
