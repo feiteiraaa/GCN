@@ -536,17 +536,22 @@ Listagem As screen:
                         {
                             Estado: 'Estado Processo'.'Em revalidação'
                         }
-                    )
-                );
+                    );
+                    Patch(
+                        'Histórico de aprovações',
+                        Defaults('Histórico de aprovações'),
+                        {
+                            Estado: 'Estado Processo'.'Em revalidação',
+                            'ID Atividade': LookUp(Atividades, ThisRecord.ID = LastAtividadeId)
+                        }
+                    );
                 
-                Patch(
-                    'Histórico de aprovações',
-                    Defaults('Histórico de aprovações'),
-                    {
-                        Estado: 'Estado Processo'.'Em revalidação',
-                        'ID Atividade': LookUp(Atividades, ThisRecord.ID = LastAtividadeId)
-                    }
-                );
+                    'GCN-Pediraprovação'.Run(
+                        Record.ID,
+                        Record.'Unidade Orgânica',
+                        Record.Atividade
+                    )
+                )
             PressedColor: =Color.Transparent
             Text: =
             Visible: =currentUser = "DRI"

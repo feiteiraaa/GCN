@@ -2335,7 +2335,10 @@
                         Icon.Send
                     )
                 Height: =40
-                Visible: =true
+                Visible: |-
+                    =AtividadeRecord.Estado = 'Estado Processo'.'Em validação'
+                    Or
+                    AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
                 Width: =201
                 X: |-
                     =If(
@@ -2392,7 +2395,10 @@
                 PressedColor: =Color.Transparent
                 PressedFill: =Color.Transparent
                 Text: =""
-                Visible: =formMode = 0
+                Visible: |-
+                    =AtividadeRecord.Estado = 'Estado Processo'.'Em validação'
+                    Or
+                    AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
                 Width: =201
                 X: |-
                     =If(
@@ -3453,7 +3459,7 @@
             Fill: =Color.Transparent
             HoverColor: =Color.Transparent
             HoverFill: =Color.Transparent
-            OnSelect: |-
+            OnSelect: |
                 =UpdateContext(
                     {
                         ApproveForm: {
@@ -3557,6 +3563,7 @@
                             Estado:'Estado Processo'.Aprovado
                         }
                     );
+                    
                     Back();
                     Notify("Atividade " & 'Gallery Data'.Selected.Atividade & " aprovada!", NotificationType.Success, 4000),
                 

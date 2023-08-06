@@ -17,6 +17,11 @@ App As appinfo:
             ).Value
         );
         
+        /**/Set(
+            currentUser,
+            "DRI"
+        );
+        
         ClearCollect(
             MenuTable,
             Table(
