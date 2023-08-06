@@ -515,6 +515,10 @@ Listagem As screen:
             BtnText: ="Revisão anual"
             BtnWidth: =200
             ButtonIcon: =Icon.AddLibrary
+            Visible: |-
+                =CountRows(
+                    Filter('Gallery Data'.AllItems, ThisRecord.Checkbox1_1.Value = true)
+                )
             X: =931
             Y: =35
             ZIndex: =18
@@ -554,7 +558,10 @@ Listagem As screen:
                 )
             PressedColor: =Color.Transparent
             Text: =
-            Visible: =currentUser = "DRI"
+            Visible: |-
+                =CountRows(
+                    Filter('Gallery Data'.AllItems, ThisRecord.Checkbox1_1.Value = true)
+                )
             Width: =DynamicBtn_2.Width
             X: =931
             Y: =DynamicBtn_2.Y

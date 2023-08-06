@@ -13,6 +13,44 @@
     ],
     "id": "0b90b242-83b6-44ca-a100-1224c8852526"
   },
+  "84e0689b-70a2-4ae3-9a7a-77ba0a25dc70": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1645/1.0.1645.3345/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "e6ac19c6-86f9-4cd5-8cbc-0fff88282472": {
+          "value": "shared_office365"
+        },
+        "workflowEntityId": {
+          "value": "3e31c07c-6c34-ee11-bdf4-000d3aad2641"
+        },
+        "workflowName": {
+          "value": "7975aa9e-d58c-c91e-282a-277c32f34092"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "e6ac19c6-86f9-4cd5-8cbc-0fff88282472"
+        },
+        "workflowEntityId": {
+          "value": "3e31c07c-6c34-ee11-bdf4-000d3aad2641"
+        },
+        "workflowName": {
+          "value": "7975aa9e-d58c-c91e-282a-277c32f34092"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "GCN-Respostaaopedido"
+    ],
+    "dependencies": {
+      "shared_office365": "e6ac19c6-86f9-4cd5-8cbc-0fff88282472"
+    },
+    "dependents": [],
+    "id": "84e0689b-70a2-4ae3-9a7a-77ba0a25dc70"
+  },
   "91f2bfd4-685e-4b8c-9feb-05860874215f": {
     "connectionRef": {
       "apiTier": "Standard",
@@ -85,7 +123,8 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "c969daf5-f313-4754-8b7f-defe99cd7215"
+      "c969daf5-f313-4754-8b7f-defe99cd7215",
+      "84e0689b-70a2-4ae3-9a7a-77ba0a25dc70"
     ],
     "id": "e6ac19c6-86f9-4cd5-8cbc-0fff88282472"
   }

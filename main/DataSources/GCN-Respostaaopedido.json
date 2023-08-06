@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "ec9a234b-917e-4f33-bdaa-621a756da73e",
+    "Name": "GCN-Respostaaopedido",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "3e31c07c-6c34-ee11-bdf4-000d3aad2641"
+  }
+]

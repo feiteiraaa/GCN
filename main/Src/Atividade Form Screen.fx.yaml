@@ -3563,7 +3563,11 @@
                             Estado:'Estado Processo'.Aprovado
                         }
                     );
-                    
+                    'GCN-Respostaaopedido'.Run(
+                        'Gallery Data'.Selected.Atividade,
+                        User().Email,
+                        "APROVADO"
+                    );
                     Back();
                     Notify("Atividade " & 'Gallery Data'.Selected.Atividade & " aprovada!", NotificationType.Success, 4000),
                 
@@ -3590,6 +3594,11 @@
                         {
                             Estado:'Estado Processo'.Rejeitado
                         }
+                    );
+                    'GCN-Respostaaopedido'.Run(
+                        'Gallery Data'.Selected.Atividade,
+                        User().Email,
+                        "REJEITADO"
                     );
                     Back();
                     Notify("Atividade " & 'Gallery Data'.Selected.Atividade & " rejeitada!", NotificationType.Success, 4000)
