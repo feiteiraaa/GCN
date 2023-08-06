@@ -2408,7 +2408,17 @@
                 BtnWidth: =200
                 ButtonIcon: =Icon.History
                 Height: =40
-                Visible: =AtividadeRecord.Estado <> 'Estado Processo'.'Em preenchimento' And formMode = 2
+                Visible: |-
+                    =AtividadeRecord.Estado <> 'Estado Processo'.'Em preenchimento'
+                    And
+                    formMode = 2
+                    And
+                    !IsBlank(
+                        Filter(
+                            'Histórico de aprovações',
+                            ThisRecord.'ID Atividade'.ID = 'Gallery Data'.Selected.ID
+                        )
+                    )
                 Width: =201
                 X: =790
                 Y: =5
@@ -2430,7 +2440,17 @@
                 PressedColor: =Color.Transparent
                 PressedFill: =Color.Transparent
                 Text: =""
-                Visible: =AtividadeRecord.Estado <> 'Estado Processo'.'Em preenchimento' And formMode = 2
+                Visible: |-
+                    =AtividadeRecord.Estado <> 'Estado Processo'.'Em preenchimento'
+                    And
+                    formMode = 2
+                    And
+                    !IsBlank(
+                        Filter(
+                            'Histórico de aprovações',
+                            ThisRecord.'ID Atividade'.ID = 'Gallery Data'.Selected.ID
+                        )
+                    )
                 Width: =201
                 X: =790
                 Y: =5
