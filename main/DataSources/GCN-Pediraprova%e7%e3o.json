@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "8381de6e-369d-4b31-9979-8b40d5f89f91",
+    "Name": "GCN-Pediraprovação",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "42bad25e-6834-ee11-bdf4-6045bd8c9741"
+  }
+]

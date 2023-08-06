@@ -2320,7 +2320,7 @@
                 Y: =5
                 ZIndex: =3
 
-            CancelBtn As DynamicBtn:
+            CancelAndAporoveBtn As DynamicBtn:
                 BtnText: |-
                     =If(
                         formMode = 0,
@@ -2337,23 +2337,69 @@
                 Height: =40
                 Visible: =true
                 Width: =201
-                X: =578
+                X: |-
+                    =If(
+                        HistoricoBtn.Visible,
+                        578,
+                        790
+                    )
                 Y: =5
                 ZIndex: =4
 
-            CancelBtnCode As button:
+            CancelAndAporoveBtnCode As button:
                 Color: =Color.Transparent
                 Fill: =Color.Transparent
                 HoverColor: =Color.Transparent
                 HoverFill: =Color.Transparent
                 OnSelect: |-
-                    =UpdateContext({formMode: FormMode.View})
+                    =If(
+                        formMode = 0,
+                        
+                        UpdateContext({formMode: FormMode.View}),
+                        
+                        Concurrent(
+                            Patch(
+                                Atividades,
+                                LookUp(
+                                    Atividades,
+                                    ThisRecord.ID = 'Gallery Data'.Selected.ID
+                                ),
+                                {
+                                    Estado: 'Estado Processo'.'Em validação'
+                                }
+                            ),
+                    
+                            Patch(
+                                'Histórico de aprovações',
+                                Defaults('Histórico de aprovações'),
+                                {
+                                    Estado: 'Estado Processo'.'Em validação',
+                                    'ID Atividade':
+                                        LookUp(
+                                            Atividades,
+                                            ThisRecord.ID = 'Gallery Data'.Selected.ID
+                                        )
+                                }
+                            ),
+                    
+                            'GCN-Pediraprovação'.Run(
+                                'Gallery Data'.Selected.ID,
+                                currentUser,
+                                'Gallery Data'.Selected.Atividade
+                            )
+                        )
+                    )
                 PressedColor: =Color.Transparent
                 PressedFill: =Color.Transparent
                 Text: =""
                 Visible: =formMode = 0
                 Width: =201
-                X: =578
+                X: |-
+                    =If(
+                        HistoricoBtn.Visible,
+                        578,
+                        790
+                    )
                 Y: =5
                 ZIndex: =5
 
