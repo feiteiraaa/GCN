@@ -6,7 +6,10 @@ Listagem As screen:
             Choices('Estado Processo')
         );
         
-        UpdateContext({checkBox: false});
+        UpdateContext({
+            checkBox: false,
+            modalExport: false
+        });
         
         ClearCollect(
             AtividadeFormMenu,
@@ -765,20 +768,6 @@ Listagem As screen:
             Y: =182
             ZIndex: =17
 
-    excelexport1 As excelexport:
-        BackgroundColor: ="Transparent"
-        ButtonHeight: ="35"
-        ButtonText: =""
-        dataToExport: =dataToExport
-        DisplayMode: =DisplayMode.Edit
-        Height: =40
-        TextColor: ="Transparent"
-        Visible: =true
-        Width: =190
-        X: =953
-        Y: =91
-        ZIndex: =26
-
     Export As group:
         Height: =5
         Width: =5
@@ -817,14 +806,27 @@ Listagem As screen:
                             Estado: Text(ThisRecord.Estado),
                             Edifício: ThisRecord.Edifício.Localização,
                             Observações: ThisRecord.Observações,
-                            'Data de Decisão':ThisRecord.'Data de Decisão',
+                            'Data de Decisão': Text(ThisRecord.'Data de Decisão', DateTimeFormat.ShortDateTime24, "pt-PT"),
                             Comentários: ThisRecord.Comentários,
-                            'Criado em': ThisRecord.'Created On',
-                            'Created By': ThisRecord.'Created By'           
+                            'Criado em': Text(ThisRecord.'Created On', DateTimeFormat.ShortDateTime24, "pt-PT"),
+                            'Created By': ThisRecord.'Created By'.'Full Name'
                         }
                     )
-                            //JSON( "", JSONFormat.IgnoreUnsupportedTypes & JSONFormat.IgnoreBinaryData)
-                )
+                );
+                
+                Set(
+                    dataExport,
+                    JSON(
+                        dataToExport,
+                        JSONFormat.IgnoreUnsupportedTypes
+                        &
+                        JSONFormat.IgnoreBinaryData
+                    )
+                );
+                
+                UpdateContext({
+                    modalExport: true
+                })
             PressedColor: =Color.Transparent
             Text: =
             Visible: =currentUser = "DRI"
@@ -832,4 +834,39 @@ Listagem As screen:
             X: =931
             Y: =35
             ZIndex: =23
+
+    ExportModal As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =32
+
+        ModalExport_1 As ModalExport:
+            ExportJSON: =dataExport
+            ModalText: |-
+                ="Deseja exportar a listagem completa de Atividades para um ficheiro Excel?
+                
+                Será efetuado o download após a confirmação."
+            Visible: =modalExport
+            ZIndex: =30
+
+        ExportBtnCode_1 As button:
+            BorderColor: =Color.Transparent
+            Color: =Color.Transparent
+            Fill: =Color.Transparent
+            Height: =ExportBtn.Height
+            HoverColor: =Color.Transparent
+            HoverFill: =Color.Transparent
+            OnSelect: |-
+                =UpdateContext({
+                    modalExport: false
+                })
+            PressedColor: =Color.Transparent
+            Text: =
+            Visible: =modalExport
+            Width: =41
+            X: =858
+            Y: =232
+            ZIndex: =31
 
