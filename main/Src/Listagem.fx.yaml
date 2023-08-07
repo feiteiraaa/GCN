@@ -355,17 +355,6 @@ Listagem As screen:
             Y: =1
             ZIndex: =13
 
-    Label1_1 As label:
-        Size: =15
-        Text: ="Atividades"
-        Width: =610
-        X: =359
-        Y: =35
-        ZIndex: =22
-
-    LeftSectionComponent_2 As LeftSectionComponent:
-        ZIndex: =23
-
     ActionBar As group:
         Height: =5
         Width: =5
@@ -423,6 +412,14 @@ Listagem As screen:
             X: =656
             Y: =TextInput2.Y
             ZIndex: =19
+
+    Label1_1 As label:
+        Size: =15
+        Text: ="Atividades"
+        Width: =360
+        X: =359
+        Y: =35
+        ZIndex: =24
 
     NovaAtividade As group:
         Height: =5
@@ -504,14 +501,14 @@ Listagem As screen:
             Y: =DynamicBtn_1.Y
             ZIndex: =20
 
-    NovaAtividade_1 As group:
+    AnualApproval As group:
         Height: =5
         Width: =5
         X: =20
         Y: =20
         ZIndex: =24
 
-        DynamicBtn_2 As DynamicBtn:
+        AnualApprovalBtn As DynamicBtn:
             BtnText: ="Revisão anual"
             BtnWidth: =200
             ButtonIcon: =Icon.AddLibrary
@@ -519,15 +516,15 @@ Listagem As screen:
                 =CountRows(
                     Filter('Gallery Data'.AllItems, ThisRecord.Checkbox1_1.Value = true)
                 )
-            X: =931
+            X: =719
             Y: =35
             ZIndex: =18
 
-        Button2_1 As button:
+        AnualApprovalBtnCode As button:
             BorderColor: =Color.Transparent
             Color: =Color.Transparent
             Fill: =Color.Transparent
-            Height: =DynamicBtn_2.Height
+            Height: =AnualApprovalBtn.Height
             HoverColor: =Color.Transparent
             HoverFill: =Color.Transparent
             OnSelect: |-
@@ -562,10 +559,13 @@ Listagem As screen:
                 =CountRows(
                     Filter('Gallery Data'.AllItems, ThisRecord.Checkbox1_1.Value = true)
                 )
-            Width: =DynamicBtn_2.Width
-            X: =931
-            Y: =DynamicBtn_2.Y
+            Width: =AnualApprovalBtn.Width
+            X: =719
+            Y: =AnualApprovalBtn.Y
             ZIndex: =21
+
+    LeftSectionComponent_2 As LeftSectionComponent:
+        ZIndex: =25
 
     "'Galery Headers' As group":
         Height: =5
@@ -764,4 +764,72 @@ Listagem As screen:
             X: =362
             Y: =182
             ZIndex: =17
+
+    excelexport1 As excelexport:
+        BackgroundColor: ="Transparent"
+        ButtonHeight: ="35"
+        ButtonText: =""
+        dataToExport: =dataToExport
+        DisplayMode: =DisplayMode.Edit
+        Height: =40
+        TextColor: ="Transparent"
+        Visible: =true
+        Width: =190
+        X: =953
+        Y: =91
+        ZIndex: =26
+
+    Export As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =26
+
+        ExportBtn As DynamicBtn:
+            BtnText: ="Exportar"
+            BtnWidth: =200
+            Visible: =currentUser = "DRI"
+            X: =931
+            Y: =35
+            ZIndex: =22
+
+        ExportBtnCode As button:
+            BorderColor: =Color.Transparent
+            Color: =Color.Transparent
+            Fill: =Color.Transparent
+            Height: =ExportBtn.Height
+            HoverColor: =Color.Transparent
+            HoverFill: =Color.Transparent
+            OnSelect: |-
+                =ClearCollect(
+                    dataToExport,
+                    ForAll(
+                        'Gallery Data'.AllItems,
+                        {
+                            'ID Atividade': ThisRecord.ID,
+                            Atividade: ThisRecord.Atividade,
+                            'Descrição de atividade': ThisRecord.'Descrição de atividade',
+                            'Tipo processo': ThisRecord.'Tipo de Processo'.'Tipo de Processo',
+                            'Macro Processo': ThisRecord.'Macro Processo'.'Macro Processo (uipp_macroprocesso)',
+                            Processo: ThisRecord.Processo.'Processo (uipp_processo)',
+                            'Unidade Orgânica': ThisRecord.'Unidade Orgânica',
+                            Estado: Text(ThisRecord.Estado),
+                            Edifício: ThisRecord.Edifício.Localização,
+                            Observações: ThisRecord.Observações,
+                            'Data de Decisão':ThisRecord.'Data de Decisão',
+                            Comentários: ThisRecord.Comentários,
+                            'Criado em': ThisRecord.'Created On',
+                            'Created By': ThisRecord.'Created By'           
+                        }
+                    )
+                            //JSON( "", JSONFormat.IgnoreUnsupportedTypes & JSONFormat.IgnoreBinaryData)
+                )
+            PressedColor: =Color.Transparent
+            Text: =
+            Visible: =currentUser = "DRI"
+            Width: =ExportBtn.Width
+            X: =931
+            Y: =35
+            ZIndex: =23
 
