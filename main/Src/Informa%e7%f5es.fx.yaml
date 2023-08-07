@@ -5,10 +5,102 @@ Informações As screen:
         ZIndex: =8
 
     Label1_2 As label:
+        FontWeight: =FontWeight.Bold
         Size: =15
         Text: ="Informações"
         Width: =610
         X: =359
         Y: =35
         ZIndex: =10
+
+    Label1_6 As label:
+        Align: =Align.Center
+        Size: =15
+        Text: ="Made by FEITEIRA ;) "
+        Width: =1366
+        Y: =765
+        ZIndex: =11
+
+    Label10 As label:
+        Align: =Align.Center
+        DisplayMode: =DisplayMode.View
+        FontWeight: =FontWeight.Semibold
+        PaddingLeft: =50
+        PaddingRight: =50
+        Size: =15
+        Text: ="Apoio Técnico"
+        Width: =1024
+        X: =342
+        Y: =128
+        ZIndex: =12
+
+    Label10_1 As label:
+        DisplayMode: =DisplayMode.View
+        Height: =177
+        PaddingLeft: =50
+        PaddingRight: =50
+        Text: |-
+            ="Em caso de identificação de erros ou problemas relacionados com a aplicação ou qualquer um dos seus componentes, deverá entrar em contacto com o Owner da solução GNC - Gestão da Continuidade do Negócio, Rui Rodrigues ou abrir um ASK a partir do link:
+            https://ask.montepio.pt/saw/ess/search?query=GCN"
+        Width: =1024
+        X: =342
+        Y: =148
+        ZIndex: =13
+
+    Label10_2 As label:
+        Align: =Align.Center
+        DisplayMode: =DisplayMode.View
+        FontWeight: =FontWeight.Semibold
+        PaddingLeft: =50
+        PaddingRight: =50
+        Size: =15
+        Text: |-
+            ="Desenvolvido e mantido por:"
+        Width: =1024
+        X: =342
+        Y: =639
+        ZIndex: =14
+
+    Label10_3 As label:
+        Align: =Align.Center
+        DisplayMode: =DisplayMode.View
+        Height: =85
+        PaddingLeft: =50
+        PaddingRight: =50
+        Text: |-
+            ="Equipa Elastic Factory
+            Unipartner S.A."
+        Width: =1024
+        X: =342
+        Y: =683
+        ZIndex: =15
+
+    Label10_4 As label:
+        Align: =Align.Center
+        DisplayMode: =DisplayMode.View
+        FontWeight: =FontWeight.Semibold
+        PaddingLeft: =50
+        PaddingRight: =50
+        Size: =15
+        Text: ="Versionamento da solução"
+        Width: =1024
+        X: =342
+        Y: =342
+        ZIndex: =16
+
+    Label10_5 As label:
+        DisplayMode: =DisplayMode.View
+        Height: =123
+        PaddingLeft: =50
+        PaddingRight: =50
+        Text: |-
+            ="v1.0 - Funcionalidades base para perfil básico;
+            v1.1 - Funcionalidades avançadas do utilizador normal (Histórico, Pedido de aprovação);
+            v1.2 - Funcionalidades base para perfil de gestor (Aprovação, Histórico);
+            v1.3 - Funcionalidades avançadas para perfil de gestor (Aprovação anual, Exportação de listagem para Excel);
+            v1.4 - Ecrã de Informações, Correção de erros ;"
+        Width: =1024
+        X: =342
+        Y: =400
+        ZIndex: =17
 

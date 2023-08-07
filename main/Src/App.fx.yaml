@@ -38,6 +38,13 @@ App As appinfo:
                     text: "Listagem de atividades",
                     Navigate: Listagem,
                     VisivelPara: true
+                },
+                {
+                    selected: false,
+                    icon: Icon.Information,
+                    text: "Informações",
+                    Navigate: Informações,
+                    VisivelPara: true
                 }
             )
         );
