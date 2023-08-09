@@ -3079,11 +3079,11 @@
                 HoverBorderColor: =cores.cinzento
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: ="Entidades"
-                Items: =Choices([@Dependências].uipp_Entidades)
+                Items: =Choices([@Dependências].Entidades)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =cores.amareloMontepio
                 SearchFields: =["uipp_nome"]
-                SearchItems: =Search(Choices([@Dependências].uipp_Entidades),'Dependencias Entidades'.SearchText,"uipp_nome")
+                SearchItems: =Search(Choices([@Dependências].Entidades),'Dependencias Entidades'.SearchText,"uipp_nome")
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
                 Tooltip: =
