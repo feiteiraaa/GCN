@@ -91,13 +91,13 @@ Inicio As screen:
                     CountRows(
                         Filter(
                             Atividades,
-                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Aprovados"))
+                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Aprovado"))
                         )
                     ),
                     CountRows(
                         Filter(
                             Atividades,
-                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Aprovados"))
+                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Aprovado"))
                         )
                     )
                 )
@@ -114,13 +114,13 @@ Inicio As screen:
                     CountRows(
                         Filter(
                             Atividades,
-                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Rejeitados"))
+                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Rejeitado"))
                         )
                     ),
                     CountRows(
                         Filter(
                             Atividades,
-                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Rejeitados"))
+                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Rejeitado"))
                         )
                     )
                 )
@@ -137,13 +137,13 @@ Inicio As screen:
                     CountRows(
                         Filter(
                             Atividades,
-                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Revisão"))
+                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Revalidação"))
                         )
                     ),
                     CountRows(
                         Filter(
                             Atividades,
-                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Revisão"))
+                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Revalidação"))
                         )
                     )
                 )
