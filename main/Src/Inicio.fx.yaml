@@ -23,10 +23,14 @@ Inicio As screen:
             KPIInfo: ="Total de Processos de Atividades"
             KPIName: ="Total"
             KPINumber: |-
-                =CountRows(
-                    Filter(
-                        Atividades,
-                        currentUser in ThisRecord.'Unidade Orgânica'
+                =If(
+                    currentUser = "DRI",
+                    CountRows(Atividades),
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            currentUser in ThisRecord.'Unidade Orgânica'
+                        )
                     )
                 )
             X: =359
@@ -36,12 +40,19 @@ Inicio As screen:
             KPIInfo: ="Processos de Atvividades em Preenchimento"
             KPIName: ="Em Preenchimento"
             KPINumber: |-
-                =CountRows(
-                    Filter(
-                        Atividades,
-                        currentUser in ThisRecord.'Unidade Orgânica'
-                        And
-                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Preenchimento"))
+                =If(
+                    currentUser = "DRI",
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Preenchimento"))
+                        )
+                    ),
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Preenchimento"))
+                        )
                     )
                 )
             X: =527
@@ -52,12 +63,19 @@ Inicio As screen:
             KPIInfo: ="Processos de Atividades em Validação"
             KPIName: ="Em Validação"
             KPINumber: |-
-                =CountRows(
-                    Filter(
-                        Atividades,
-                        currentUser in ThisRecord.'Unidade Orgânica'
-                        And
-                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Validação"))
+                =If(
+                    currentUser = "DRI",
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Validação"))
+                        )
+                    ),
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Validação"))
+                        )
                     )
                 )
             X: =696
@@ -68,12 +86,19 @@ Inicio As screen:
             KPIInfo: ="Processos de Atividade Aprovados"
             KPIName: ="Aprovados"
             KPINumber: |-
-                =CountRows(
-                    Filter(
-                        Atividades,
-                        currentUser in ThisRecord.'Unidade Orgânica'
-                        And
-                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Aprovados"))
+                =If(
+                    currentUser = "DRI",
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Aprovados"))
+                        )
+                    ),
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Aprovados"))
+                        )
                     )
                 )
             X: =864
@@ -84,12 +109,19 @@ Inicio As screen:
             KPIInfo: ="Processos de Atividade Rejeitados"
             KPIName: ="Rejeitados"
             KPINumber: |-
-                =CountRows(
-                    Filter(
-                        Atividades,
-                        currentUser in ThisRecord.'Unidade Orgânica'
-                        And
-                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Rejeitados"))
+                =If(
+                    currentUser = "DRI",
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Rejeitados"))
+                        )
+                    ),
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Rejeitados"))
+                        )
                     )
                 )
             X: =1031
@@ -100,12 +132,19 @@ Inicio As screen:
             KPIInfo: ="Processos de Atividade em Revisão"
             KPIName: ="Em Revisão"
             KPINumber: |-
-                =CountRows(
-                    Filter(
-                        Atividades,
-                        currentUser in ThisRecord.'Unidade Orgânica'
-                        And
-                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Revisão"))
+                =If(
+                    currentUser = "DRI",
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Revisão"))
+                        )
+                    ),
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Revisão"))
+                        )
                     )
                 )
             X: =1196

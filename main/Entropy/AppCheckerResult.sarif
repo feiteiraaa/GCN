@@ -3934,7 +3934,7 @@
                 },
                 "region": {
                   "charLength": 30,
-                  "charOffset": 116,
+                  "charOffset": 96,
                   "snippet": {
                     "text": "Lower(Trim(ThisRecord.Estado))"
                   }
@@ -3974,7 +3974,87 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 147,
+                  "charOffset": 127,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "KPINumber",
+                "module": "Inicio",
+                "type": "Inicio.KPI_EmPreenchimento"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Inicio.KPI_EmPreenchimento.KPINumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Inicio.KPI_EmPreenchimento.KPINumber",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 30,
+                  "charOffset": 294,
+                  "snippet": {
+                    "text": "Lower(Trim(ThisRecord.Estado))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "KPINumber",
+                "module": "Inicio",
+                "type": "Inicio.KPI_EmPreenchimento"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Lower"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Inicio.KPI_EmPreenchimento.KPINumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Inicio.KPI_EmPreenchimento.KPINumber",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 325,
                   "snippet": {
                     "text": "="
                   }
@@ -4014,7 +4094,7 @@
                 },
                 "region": {
                   "charLength": 3,
-                  "charOffset": 104,
+                  "charOffset": 290,
                   "snippet": {
                     "text": "And"
                   }
@@ -4054,7 +4134,7 @@
                 },
                 "region": {
                   "charLength": 30,
-                  "charOffset": 116,
+                  "charOffset": 96,
                   "snippet": {
                     "text": "Lower(Trim(ThisRecord.Estado))"
                   }
@@ -4094,7 +4174,87 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 147,
+                  "charOffset": 127,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "KPINumber",
+                "module": "Inicio",
+                "type": "Inicio.KPI_EmValidação"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Inicio.KPI_EmValidação.KPINumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Inicio.KPI_EmValidação.KPINumber",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 30,
+                  "charOffset": 290,
+                  "snippet": {
+                    "text": "Lower(Trim(ThisRecord.Estado))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "KPINumber",
+                "module": "Inicio",
+                "type": "Inicio.KPI_EmValidação"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Lower"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Inicio.KPI_EmValidação.KPINumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Inicio.KPI_EmValidação.KPINumber",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 321,
                   "snippet": {
                     "text": "="
                   }
@@ -4134,7 +4294,7 @@
                 },
                 "region": {
                   "charLength": 3,
-                  "charOffset": 104,
+                  "charOffset": 286,
                   "snippet": {
                     "text": "And"
                   }
@@ -4174,7 +4334,7 @@
                 },
                 "region": {
                   "charLength": 30,
-                  "charOffset": 116,
+                  "charOffset": 96,
                   "snippet": {
                     "text": "Lower(Trim(ThisRecord.Estado))"
                   }
@@ -4214,7 +4374,87 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 147,
+                  "charOffset": 127,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "KPINumber",
+                "module": "Inicio",
+                "type": "Inicio.KPI_Aprovados"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Inicio.KPI_Aprovados.KPINumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Inicio.KPI_Aprovados.KPINumber",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 30,
+                  "charOffset": 287,
+                  "snippet": {
+                    "text": "Lower(Trim(ThisRecord.Estado))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "KPINumber",
+                "module": "Inicio",
+                "type": "Inicio.KPI_Aprovados"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Lower"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Inicio.KPI_Aprovados.KPINumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Inicio.KPI_Aprovados.KPINumber",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 318,
                   "snippet": {
                     "text": "="
                   }
@@ -4254,7 +4494,7 @@
                 },
                 "region": {
                   "charLength": 3,
-                  "charOffset": 104,
+                  "charOffset": 283,
                   "snippet": {
                     "text": "And"
                   }
@@ -4294,7 +4534,7 @@
                 },
                 "region": {
                   "charLength": 30,
-                  "charOffset": 116,
+                  "charOffset": 96,
                   "snippet": {
                     "text": "Lower(Trim(ThisRecord.Estado))"
                   }
@@ -4334,7 +4574,87 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 147,
+                  "charOffset": 127,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "KPINumber",
+                "module": "Inicio",
+                "type": "Inicio.KPI_Rejeitados"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Inicio.KPI_Rejeitados.KPINumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Inicio.KPI_Rejeitados.KPINumber",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 30,
+                  "charOffset": 288,
+                  "snippet": {
+                    "text": "Lower(Trim(ThisRecord.Estado))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "KPINumber",
+                "module": "Inicio",
+                "type": "Inicio.KPI_Rejeitados"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Lower"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Inicio.KPI_Rejeitados.KPINumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Inicio.KPI_Rejeitados.KPINumber",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 319,
                   "snippet": {
                     "text": "="
                   }
@@ -4374,7 +4694,7 @@
                 },
                 "region": {
                   "charLength": 3,
-                  "charOffset": 104,
+                  "charOffset": 284,
                   "snippet": {
                     "text": "And"
                   }
@@ -4414,7 +4734,7 @@
                 },
                 "region": {
                   "charLength": 30,
-                  "charOffset": 116,
+                  "charOffset": 96,
                   "snippet": {
                     "text": "Lower(Trim(ThisRecord.Estado))"
                   }
@@ -4454,7 +4774,87 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 147,
+                  "charOffset": 127,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "KPINumber",
+                "module": "Inicio",
+                "type": "Inicio.KPI_EmRevisao"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Inicio.KPI_EmRevisao.KPINumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Inicio.KPI_EmRevisao.KPINumber",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 30,
+                  "charOffset": 288,
+                  "snippet": {
+                    "text": "Lower(Trim(ThisRecord.Estado))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "KPINumber",
+                "module": "Inicio",
+                "type": "Inicio.KPI_EmRevisao"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Lower"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Inicio.KPI_EmRevisao.KPINumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Inicio.KPI_EmRevisao.KPINumber",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 319,
                   "snippet": {
                     "text": "="
                   }
@@ -4494,7 +4894,7 @@
                 },
                 "region": {
                   "charLength": 3,
-                  "charOffset": 104,
+                  "charOffset": 284,
                   "snippet": {
                     "text": "And"
                   }

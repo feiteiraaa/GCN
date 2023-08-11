@@ -2336,9 +2336,13 @@
                     )
                 Height: =40
                 Visible: |-
-                    =AtividadeRecord.Estado = 'Estado Processo'.'Em validação'
-                    Or
-                    AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
+                    =(
+                        AtividadeRecord.Estado = 'Estado Processo'.'Em validação'
+                        Or
+                        AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
+                    )
+                    And
+                    currentUser = 'Gallery Data'.Selected.'Unidade Orgânica'
                 Width: =201
                 X: |-
                     =If(
@@ -2396,9 +2400,13 @@
                 PressedFill: =Color.Transparent
                 Text: =""
                 Visible: |-
-                    =AtividadeRecord.Estado = 'Estado Processo'.'Em validação'
-                    Or
-                    AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
+                    =(
+                        AtividadeRecord.Estado = 'Estado Processo'.'Em validação'
+                        Or
+                        AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
+                    )
+                    And
+                    currentUser = 'Gallery Data'.Selected.'Unidade Orgânica'
                 Width: =201
                 X: |-
                     =If(
