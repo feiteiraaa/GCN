@@ -79,22 +79,6 @@ ModalExport As CanvasComponent:
             Y: =441
             ZIndex: =5
 
-        excelexport2 As excelexport:
-            BackgroundColor: ="Transparent"
-            ButtonHeight: ="40"
-            ButtonText: =""
-            dataToExport: =ModalExport.ExportJSON
-            DisplayMode: =DisplayMode.Edit
-            FileName: ="Atividades - " & Text(Now(),DateTimeFormat.ShortDateTime24, "PT-pt")
-            Height: =40
-            TextColor: ="Transparent"
-            TextSize: ="10"
-            Tooltip: =
-            Width: =165
-            X: =600
-            Y: =436
-            ZIndex: =6
-
         "Icon4_2 As icon.'3DPrinting'":
             Color: =Color.Black
             Height: =40

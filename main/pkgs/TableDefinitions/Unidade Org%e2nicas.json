@@ -1,14 +1,4 @@
 {
-  "components": [
-    {
-      "Capabilities": {
-        "PCFExternalServiceUsageAllowed": false
-      },
-      "ComponentName": "CustomControl",
-      "Identifier": "btd_contoso.excelexport",
-      "IdentifierType": 0
-    }
-  ],
   "DatasetName": "default.cds",
   "EntityName": "Unidade Orgânicas",
   "InstanceUrl": "https://bmpowerappsd.crm4.dynamics.com/",
@@ -31,5 +21,6 @@
     "TableName": "uipp_unidadeorganica",
     "Views": "{\"@odata.context\":\"https://bmpowerappsd.crm4.dynamics.com/api/data/v9.0/$metadata#savedqueries(savedqueryid,name,querytype)\",\"value\":[{\"@odata.etag\":\"W/\\\"4373090\\\"\",\"savedqueryid\":\"09b8e9ba-a0f7-46e7-bc2c-242af6029c48\",\"name\":\"Inactive Unidade Org\\u00e2nicas\",\"querytype\":0},{\"@odata.etag\":\"W/\\\"4373126\\\"\",\"savedqueryid\":\"43d9ccd1-bd27-42ba-9660-6f2e05fedf42\",\"name\":\"Unidade Org\\u00e2nica Advanced Find View\",\"querytype\":1},{\"@odata.etag\":\"W/\\\"4373114\\\"\",\"savedqueryid\":\"1df99449-993d-464e-9650-9deff4b7c0fa\",\"name\":\"Unidade Org\\u00e2nica Lookup View\",\"querytype\":64},{\"@odata.etag\":\"W/\\\"4373102\\\"\",\"savedqueryid\":\"8bf46dcc-d00e-4a07-846e-a01256b60fe4\",\"name\":\"Unidade Org\\u00e2nica Associated View\",\"querytype\":2},{\"@odata.etag\":\"W/\\\"4373078\\\"\",\"savedqueryid\":\"f8a34ee4-f23e-4960-95ed-b1085b625a3e\",\"name\":\"Active Unidade Org\\u00e2nicas\",\"querytype\":0}]}"
   },
+  "UnusedDataSources": {},
   "webApiVersion": "v9.0"
 }
