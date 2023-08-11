@@ -2,84 +2,87 @@ App As appinfo:
     BackEnabled: =false
     Formulas: =
     OnStart: |-
-        =Set(
-            appVersion,
-            "1.4"
-        );
-        
-        Set(
-            currentUser,
-            First(
-                Split(
-                    Office365Users.MyProfileV2().department,
-                    "-"
-                )
-            ).Value
-        );
-        
-        /**/Set(
-            currentUser,
-            "DRI"
-        );
-        
-        ClearCollect(
-            MenuTable,
-            Table(
+        =Concurrent(
+            Set(
+                appVersion,
+                "1.4"
+            ),
+            Set(
+                Clap,
+                false
+            ),
+            Set(
+                currentUser,
+                First(
+                    Split(
+                        Office365Users.MyProfileV2().department,
+                        "-"
+                    )
+                ).Value
+            ),
+            Set(
+                cores,
                 {
-                    selected: true,
-                    icon: Icon.Home,
-                    text: "Inicio",
-                    Navigate: Inicio,
-                    VisivelPara: true
-                },
-                {
-                    selected: false,
-                    icon: Icon.People,
-                    text: "Listagem de atividades",
-                    Navigate: Listagem,
-                    VisivelPara: true
-                },
-                {
-                    selected: false,
-                    icon: Icon.Information,
-                    text: "Informações",
-                    Navigate: Informações,
-                    VisivelPara: true
+                    amareloMontepio: RGBA(
+                        255,
+                        191,
+                        0,
+                        1
+                    ),
+                    cinzento: RGBA(
+                        70,
+                        70,
+                        70,
+                        1
+                    ),
+                    rosa: ColorFade(
+                        Color.Red,
+                        0.9
+                    ),
+                    azulTitulo: RGBA(
+                        50,
+                        86,
+                        160,
+                        1
+                    )
                 }
+            ),
+            ClearCollect(
+                MenuTable,
+                Table(
+                    {
+                        selected: true,
+                        icon: Icon.Home,
+                        text: "Inicio",
+                        Navigate: Inicio,
+                        VisivelPara: true
+                    },
+                    {
+                        selected: false,
+                        icon: Icon.People,
+                        text: "Listagem de atividades",
+                        Navigate: Listagem,
+                        VisivelPara: true
+                    },
+                    {
+                        selected: false,
+                        icon: Icon.Information,
+                        text: "Informações",
+                        Navigate: Informações,
+                        VisivelPara: true
+                    }
+                )
             )
         );
+        
+        /*Set(
+            currentUser,
+            "DRI"
+        );*/
         
         RemoveIf(
             MenuTable,
             !ThisRecord.VisivelPara
-        );
-        
-        Set(
-            cores,
-            {
-                amareloMontepio: RGBA(
-                    255,
-                    191,
-                    0,
-                    1
-                ),
-                cinzento: RGBA(
-                    70,
-                    70,
-                    70,
-                    1
-                ),
-                rosa: ColorFade(
-                    Color.Red,
-                    0.9
-                ),
-                azulTitulo: RGBA(
-                    50,
-                    86,
-                    160,
-                    1
-                )
-            }
         )
     Theme: =PowerAppsTheme
 
