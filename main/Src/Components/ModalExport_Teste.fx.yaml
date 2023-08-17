@@ -1,0 +1,75 @@
+ModalExport_Teste As CanvasComponent:
+    ContentLanguage: ="PT-pt"
+    Data: ="Text"
+    Fill: =RGBA(77, 77, 77, 0.3)
+    Height: =App.Height
+    LeftBtnIcon: =Icon.Check
+    LeftBtnText: ="Confirmar"
+    ModalIcon: =Icon.Error
+    ModalIconColor: =Color.Red
+    ModalText: ="Deseja eliminar o registo?"
+    RightBtnFill: =ColorFade(Color.Red, 0.9)
+    RightBtnIcon: =Icon.Cancel
+    RightBtnText: ="CANCELAR"
+    Width: =App.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    JsonTableExport2 As JsonTableExport:
+        ContentLanguage: =
+        Data: =ModalExport_Teste.Data
+        DisplayMode: =DisplayMode.Edit
+        Height: =46
+        OnChange: =ModalExport_Teste.Data
+        TabIndex: =-1
+        Tooltip: =
+        Width: =200
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =Label4_2.Y + Label4_2.Height
+        ZIndex: =6
+
+    InsideModal_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        Rectangle1_2 As rectangle:
+            Fill: =Color.White
+            Height: |
+                =300//259
+            Width: |-
+                =//456
+                460
+            X: =455
+            Y: =215//255
+            ZIndex: =1
+
+        Label4_2 As label:
+            Align: =Align.Center
+            Height: =99
+            Text: =ModalExport_Teste.ModalText
+            Width: =374
+            X: =496
+            Y: =312
+            ZIndex: =2
+
+        "Icon4_3 As icon.'3DPrinting'":
+            Color: =ModalExport_Teste.ModalIconColor
+            Icon: =ModalExport_Teste.ModalIcon
+            X: =651
+            Y: =230//271
+            ZIndex: =3
+
+        "Icon4_4 As icon.'3DPrinting'":
+            Color: =Color.Black
+            Height: =40
+            Icon: =Icon.CancelBadge
+            OnSelect: =
+            Width: =40
+            X: =857
+            Y: =230
+            ZIndex: =4
+

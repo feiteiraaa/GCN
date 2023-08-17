@@ -778,7 +778,7 @@ Listagem As screen:
         ExportBtn As DynamicBtn:
             BtnText: ="Exportar"
             BtnWidth: =200
-            Visible: =currentUser = "DRI"
+            Visible: =true
             X: =931
             Y: =35
             ZIndex: =22
@@ -826,32 +826,33 @@ Listagem As screen:
                 
                 UpdateContext({
                     modalExport: true
-                })
+                });
             PressedColor: =Color.Transparent
             Text: =
-            Visible: =currentUser = "DRI"
             Width: =ExportBtn.Width
             X: =931
             Y: =35
             ZIndex: =23
 
-    ExportModal As group:
+    ExportModalNovo As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
-        ZIndex: =32
+        ZIndex: =31
 
-        ModalExport_1 As ModalExport:
-            ExportJSON: =dataExport
+        ModalExport_Teste_1 As ModalExport_Teste:
+            Data: =dataExport
             ModalText: |-
                 ="Deseja exportar a listagem completa de Atividades para um ficheiro Excel?
                 
                 Será efetuado o download após a confirmação."
             Visible: =modalExport
-            ZIndex: =30
+            X: =50%
+            Y: =50%
+            ZIndex: =29
 
-        ExportBtnCode_1 As button:
+        ExportBtnCode_2 As button:
             BorderColor: =Color.Transparent
             Color: =Color.Transparent
             Fill: =Color.Transparent
@@ -866,7 +867,42 @@ Listagem As screen:
             Text: =
             Visible: =modalExport
             Width: =41
+            X: =50%
+            Y: =50%
+            ZIndex: =30
+
+    ExportModal As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =32
+
+        ModalExport_1 As ModalExport:
+            ExportJSON: =dataExport
+            ModalText: |-
+                ="Deseja exportar a listagem completa de Atividades para um ficheiro Excel?
+                
+                Será efetuado o download após a confirmação."
+            Visible: =false
+            ZIndex: =26
+
+        ExportBtnCode_1 As button:
+            BorderColor: =Color.Transparent
+            Color: =Color.Transparent
+            Fill: =Color.Transparent
+            Height: =ExportBtn.Height
+            HoverColor: =Color.Transparent
+            HoverFill: =Color.Transparent
+            OnSelect: |-
+                =UpdateContext({
+                    modalExport: false
+                })
+            PressedColor: =Color.Transparent
+            Text: =
+            Visible: =false
+            Width: =41
             X: =858
             Y: =232
-            ZIndex: =31
+            ZIndex: =28
 
