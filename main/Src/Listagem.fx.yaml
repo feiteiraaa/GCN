@@ -778,7 +778,7 @@ Listagem As screen:
         ExportBtn As DynamicBtn:
             BtnText: ="Exportar"
             BtnWidth: =200
-            Visible: =true
+            Visible: =If(currentUser = "DRI", true, false)
             X: =931
             Y: =35
             ZIndex: =22
@@ -831,6 +831,7 @@ Listagem As screen:
                 Set(Var, true)
             PressedColor: =Color.Transparent
             Text: =
+            Visible: =If(currentUser = "DRI", true, false)
             Width: =ExportBtn.Width
             X: =931
             Y: =35
