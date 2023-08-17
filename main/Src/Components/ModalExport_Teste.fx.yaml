@@ -21,7 +21,7 @@ ModalExport_Teste As CanvasComponent:
         Data: =ModalExport_Teste.Data
         DisplayMode: =DisplayMode.Edit
         Height: =46
-        OnChange: =ModalExport_Teste.Data
+        OnChange: =Select(Icon4_4)
         TabIndex: =-1
         Tooltip: =
         Width: =200
@@ -67,7 +67,7 @@ ModalExport_Teste As CanvasComponent:
             Color: =Color.Black
             Height: =40
             Icon: =Icon.CancelBadge
-            OnSelect: =
+            OnSelect: =Set(Var, false)
             Width: =40
             X: =857
             Y: =230

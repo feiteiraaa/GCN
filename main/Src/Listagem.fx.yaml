@@ -824,9 +824,11 @@ Listagem As screen:
                     )
                 );
                 
-                UpdateContext({
-                    modalExport: true
-                });
+                //UpdateContext({
+                //    modalExport: true
+                //});
+                
+                Set(Var, true)
             PressedColor: =Color.Transparent
             Text: =
             Width: =ExportBtn.Width
@@ -834,42 +836,16 @@ Listagem As screen:
             Y: =35
             ZIndex: =23
 
-    ExportModalNovo As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =31
-
-        ModalExport_Teste_1 As ModalExport_Teste:
-            Data: =dataExport
-            ModalText: |-
-                ="Deseja exportar a listagem completa de Atividades para um ficheiro Excel?
-                
-                Será efetuado o download após a confirmação."
-            Visible: =modalExport
-            X: =50%
-            Y: =50%
-            ZIndex: =29
-
-        ExportBtnCode_2 As button:
-            BorderColor: =Color.Transparent
-            Color: =Color.Transparent
-            Fill: =Color.Transparent
-            Height: =ExportBtn.Height
-            HoverColor: =Color.Transparent
-            HoverFill: =Color.Transparent
-            OnSelect: |-
-                =UpdateContext({
-                    modalExport: false
-                })
-            PressedColor: =Color.Transparent
-            Text: =
-            Visible: =modalExport
-            Width: =41
-            X: =50%
-            Y: =50%
-            ZIndex: =30
+    ModalExport_Teste_1 As ModalExport_Teste:
+        Data: =dataExport
+        ModalText: |-
+            ="Deseja exportar a listagem completa de Atividades para um ficheiro Excel?
+            
+            Será efetuado o download após a confirmação."
+        Visible: =Var
+        X: =50%
+        Y: =50%
+        ZIndex: =29
 
     ExportModal As group:
         Height: =5
