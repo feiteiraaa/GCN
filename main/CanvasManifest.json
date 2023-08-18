@@ -108,10 +108,10 @@
     "DocumentType": "App",
     "EnableInstrumentation": false,
     "FileID": "9d297aa1-e69d-4ec9-80ad-0d9d853f686c",
-    "Id": "f301f2a1-3bc2-4b14-9a65-a1f8f70c9137",
+    "Id": "46fa624e-c9d1-4f5c-903a-2a7c64a31a53",
     "InstrumentationKey": "",
     "ManualOfflineProfileId": "",
-    "Name": "GCN",
+    "Name": "GCN.msapp",
     "OriginatingVersion": "1.334",
     "ParserErrorCount": 0,
     "ShowStatusBar": false

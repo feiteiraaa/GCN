@@ -778,7 +778,8 @@ Listagem As screen:
         ExportBtn As DynamicBtn:
             BtnText: ="Exportar"
             BtnWidth: =200
-            Visible: =If(currentUser = "DRI", true, false)
+            Visible: |
+                =If(currentUser = "DRI", true, false)
             X: =931
             Y: =35
             ZIndex: =22
