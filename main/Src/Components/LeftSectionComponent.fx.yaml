@@ -70,16 +70,6 @@ LeftSectionComponent As CanvasComponent:
                 Y: =96
                 ZIndex: =3
 
-            Audio1 As audioPlayback:
-                BorderColor: =RGBA(56, 96, 178, 0)
-                Fill: =RGBA(56, 96, 178, 0)
-                Media: ='audience clapping'
-                ShowControls: =false
-                Start: =Clap
-                Width: =342
-                Y: =96
-                ZIndex: =4
-
         UserInfo As groupContainer.manualLayoutContainer:
             Height: =90
             Width: =342
