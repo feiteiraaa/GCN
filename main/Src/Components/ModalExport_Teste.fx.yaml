@@ -16,19 +16,6 @@ ModalExport_Teste As CanvasComponent:
     Y: =0
     ZIndex: =1
 
-    JsonTableExport2 As JsonTableExport:
-        ContentLanguage: =
-        Data: =ModalExport_Teste.Data
-        DisplayMode: =DisplayMode.Edit
-        Height: =46
-        OnChange: =Select(Icon4_4)
-        TabIndex: =-1
-        Tooltip: =
-        Width: =200
-        X: =(Parent.Width - Self.Width) / 2
-        Y: =Label4_2.Y + Label4_2.Height
-        ZIndex: =6
-
     InsideModal_1 As group:
         Height: =5
         Width: =5
