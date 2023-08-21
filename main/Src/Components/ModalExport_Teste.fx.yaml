@@ -16,6 +16,15 @@ ModalExport_Teste As CanvasComponent:
     Y: =0
     ZIndex: =1
 
+    JsonTableExport1 As JsonTableExport:
+        Data: =ModalExport_Teste.Data
+        DisplayMode: =DisplayMode.Edit
+        Height: =200
+        Width: =200
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =Label4_2.Y + Label4_2.Height
+        ZIndex: =5
+
     InsideModal_1 As group:
         Height: =5
         Width: =5
