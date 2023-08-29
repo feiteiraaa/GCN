@@ -161,6 +161,7 @@
             DataCardKey12 As label:
                 AutoHeight: =true
                 Color: =cores.cinzento
+                FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =294
@@ -254,6 +255,7 @@
             DataCardKey9 As label:
                 AutoHeight: =true
                 Color: =cores.cinzento
+                FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -342,6 +344,7 @@
             DataCardKey11 As label:
                 AutoHeight: =true
                 Color: =cores.cinzento
+                FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -431,6 +434,7 @@
             DataCardKey3 As label:
                 AutoHeight: =true
                 Color: =cores.cinzento
+                FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -518,6 +522,7 @@
             DataCardKey8 As label:
                 AutoHeight: =true
                 Color: =cores.cinzento
+                FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -592,6 +597,7 @@
             DataCardKey6 As label:
                 AutoHeight: =true
                 Color: =cores.cinzento
+                FontWeight: =FontWeight.Bold
                 Height: =34
                 Text: =Parent.DisplayName
                 Width: =Parent.Width - 60
@@ -3525,6 +3531,27 @@
             X: =1125
             Y: =700
             ZIndex: =26
+
+    Label7_1 As label:
+        Align: =Align.Center
+        Color: =cores.cinzento
+        Text: ="Adição de " & 'Passos do Registo de Atividade'.Selected.titulo & " apenas disponível quando Fatores de Criticidade houver valor igual a 4."
+        Visible: |-
+            =(
+                Value('4Horas'.Text) < 4 Or
+                Value('24Horas'.Text) < 4 Or
+                Value('48Horas'.Text) < 4 Or
+                Value('1Semana'.Text) < 4 Or
+                Value('2Semanas'.Text) < 4 Or
+                Value('1Mes'.Text) < 4
+            )
+            And
+            Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) <> Trim(Lower("Caracterização do Processo")) And
+             Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) <> Trim(Lower("Fatores de Criticidade")) 
+        Width: =980
+        X: =360
+        Y: =205
+        ZIndex: =33
 
     ApproveModal As group:
         Height: =5
