@@ -113,8 +113,33 @@
             )
         )
 
-    LeftSectionComponent_4 As LeftSectionComponent:
+    Label7_1 As label:
+        Align: =Align.Center
+        Color: =cores.cinzento
+        Text: ="Adição de " & 'Passos do Registo de Atividade'.Selected.titulo & " apenas disponível quando Fatores de Criticidade houver valor igual a 4."
+        Visible: |-
+            =Switch(
+                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)),
+                
+                Trim(Lower("Caracterização dos Recursos")),
+                If(CountRows(collectRecursos) = 0, true, false),
+            
+                Trim(Lower("Caracterização dos Equipamentos")),
+                If(CountRows(collectEquipamentos) = 0, true, false),
+            
+                Trim(Lower("Caracterização dos Sistemas")),
+                If(CountRows(collectSistemas) = 0, true, false),
+            
+                Trim(Lower("Dependências")),
+                If(CountRows(collectDependencias) = 0, true, false)
+            )
+        Width: =980
+        X: =360
+        Y: =220
         ZIndex: =1
+
+    LeftSectionComponent_4 As LeftSectionComponent:
+        ZIndex: =2
 
     "'Caracterizacao do Processo' As form":
         DataSource: =Atividades
@@ -141,7 +166,7 @@
         Width: =990
         X: =360
         Y: =175
-        ZIndex: =2
+        ZIndex: =3
 
         "'Tipo de Processo_DataCard1' As typedDataCard.comboBoxEditCard":
             BorderStyle: =BorderStyle.Solid
@@ -826,7 +851,7 @@
         Width: =990
         X: =360
         Y: =199
-        ZIndex: =9
+        ZIndex: =10
 
         Separator2 As rectangle:
             Height: =8
@@ -1403,7 +1428,7 @@
         Width: =110
         X: =1171
         Y: =160
-        ZIndex: =10
+        ZIndex: =11
 
     RTO As groupContainer.manualLayoutContainer:
         Height: =80
@@ -1411,7 +1436,7 @@
         Width: =723
         X: =360
         Y: =655
-        ZIndex: =11
+        ZIndex: =12
 
         Global As label:
             Fill: |-
@@ -1640,7 +1665,7 @@
             Width: =945
             X: =382
             Y: =167
-            ZIndex: =13
+            ZIndex: =14
 
             EquipamentoAtividadeID As combobox:
                 BorderColor: =cores.cinzento
@@ -1808,7 +1833,7 @@
             Width: =197
             X: =731
             Y: =655
-            ZIndex: =15
+            ZIndex: =16
 
             DynamicBtn_6 As DynamicBtn:
                 BtnText: ="Adic. Equip."
@@ -1863,7 +1888,7 @@
             Width: =945
             X: =382
             Y: =167
-            ZIndex: =16
+            ZIndex: =17
 
             SistemasAtividadeID As combobox:
                 BorderColor: =cores.cinzento
@@ -2064,7 +2089,7 @@
             Width: =194
             X: =726
             Y: =655
-            ZIndex: =17
+            ZIndex: =18
 
             DynamicBtn_7 As DynamicBtn:
                 BtnText: ="Adic. Sistema"
@@ -2110,7 +2135,7 @@
             Width: =945
             X: =382
             Y: =91
-            ZIndex: =19
+            ZIndex: =20
 
             Rectangle4 As rectangle:
                 Fill: |-
@@ -2206,7 +2231,7 @@
             Width: =1026
             X: =319
             Y: =28
-            ZIndex: =21
+            ZIndex: =22
 
             Label1_3 As label:
                 Size: =15
@@ -2321,9 +2346,11 @@
                                     texto: "Deseja submeter os dados da Atividade " & DataCardValue3.Text & "?"
                                 }
                             }
-                        ),
+                        )
+                      ,
                         //em caso de erro
                         Notify( "Preencha todos os campos necessários, verifique se existem registos em branco e tente novamente", NotificationType.Error, 4000)
+                      
                     )
                     )
                 PressedColor: =Color.Transparent
@@ -2355,13 +2382,16 @@
                         AtividadeRecord.Estado = 'Estado Processo'.'Em validação'
                         Or
                         AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
+                        Or 
+                            AtividadeRecord.Estado = 'Estado Processo'.'Em preenchimento'
                     )
                     And
                     currentUser = 'Gallery Data'.Selected.'Unidade Orgânica'
                 Width: =207
                 X: |-
                     =If(
-                        HistoricoBtn.Visible,
+                        HistoricoBtn.Visible Or
+                        SaveEditBtn.Visible,
                         570,
                         790
                     )
@@ -2408,7 +2438,8 @@
                                 'Gallery Data'.Selected.ID,
                                 currentUser,
                                 'Gallery Data'.Selected.Atividade
-                            )
+                            ),
+                            Notify("Pedido de Aprovação enviado com sucesso", NotificationType.Success)
                         )
                     )
                 PressedColor: =Color.Transparent
@@ -2419,13 +2450,17 @@
                         AtividadeRecord.Estado = 'Estado Processo'.'Em validação'
                         Or
                         AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação'
+                         Or
+                        AtividadeRecord.Estado = 'Estado Processo'.'Em preenchimento'
                     )
                     And
                     currentUser = 'Gallery Data'.Selected.'Unidade Orgânica'
                 Width: =201
                 X: |-
                     =If(
-                        HistoricoBtn.Visible,
+                        HistoricoBtn.Visible
+                        Or
+                        SaveEditBtn.Visible,
                         576,
                         790
                     )
@@ -2485,32 +2520,6 @@
                 Y: =5
                 ZIndex: =7
 
-    Label7 As label:
-        Align: =Align.Center
-        FontWeight: =FontWeight.Bold
-        Size: =15
-        Text: ="Sem dados para apresentar, de momento"
-        Visible: |-
-            =Switch(
-                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)),
-                
-                Trim(Lower("Caracterização dos Recursos")),
-                If(CountRows(collectRecursos) = 0, true, false),
-            
-                Trim(Lower("Caracterização dos Equipamentos")),
-                If(CountRows(collectEquipamentos) = 0, true, false),
-            
-                Trim(Lower("Caracterização dos Sistemas")),
-                If(CountRows(collectSistemas) = 0, true, false),
-            
-                Trim(Lower("Dependências")),
-                If(CountRows(collectDependencias) = 0, true, false)
-            )
-        Width: =980
-        X: =362
-        Y: =165
-        ZIndex: =22
-
     "'Caracterização dos Recursos' As group":
         Height: =5
         Width: =5
@@ -2549,7 +2558,7 @@
             Width: =960
             X: =382
             Y: =165
-            ZIndex: =12
+            ZIndex: =13
 
             AtividadeID As combobox:
                 BorderColor: =cores.cinzento
@@ -2823,7 +2832,7 @@
             Width: =197
             X: =731
             Y: =655
-            ZIndex: =14
+            ZIndex: =15
 
             DynamicBtn_5 As DynamicBtn:
                 BtnText: ="Adic. Recurso"
@@ -2851,6 +2860,32 @@
                 Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
                 Width: =200
                 ZIndex: =2
+
+    Label7 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Size: =15
+        Text: ="Sem dados para apresentar, de momento"
+        Visible: |-
+            =Switch(
+                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)),
+                
+                Trim(Lower("Caracterização dos Recursos")),
+                If(CountRows(collectRecursos) = 0, true, false),
+            
+                Trim(Lower("Caracterização dos Equipamentos")),
+                If(CountRows(collectEquipamentos) = 0, true, false),
+            
+                Trim(Lower("Caracterização dos Sistemas")),
+                If(CountRows(collectSistemas) = 0, true, false),
+            
+                Trim(Lower("Dependências")),
+                If(CountRows(collectDependencias) = 0, true, false)
+            )
+        Width: =980
+        X: =362
+        Y: =165
+        ZIndex: =23
 
     "'Caracterização das Dependencias' As group":
         Height: =5
@@ -2880,7 +2915,7 @@
             Width: =945
             X: =382
             Y: =167
-            ZIndex: =18
+            ZIndex: =19
 
             AtividadeID_1 As combobox:
                 BorderColor: =cores.cinzento
@@ -3146,7 +3181,7 @@
             Width: =198
             X: =713
             Y: =655
-            ZIndex: =20
+            ZIndex: =21
 
             DynamicBtn_8 As DynamicBtn:
                 BtnText: ="Adic. Depend."
@@ -3184,7 +3219,7 @@
             ModalIconColor: =cores.amareloMontepio
             ModalText: ="Deseja submeter os dados da Atividade " & DataCardValue3.Text & "?"
             Visible: =ModalForm.visible
-            ZIndex: =27
+            ZIndex: =28
 
         BtnModalConfirm As button:
             Color: =Color.Transparent
@@ -3439,7 +3474,7 @@
             Width: =164
             X: =486
             Y: =440
-            ZIndex: =28
+            ZIndex: =29
 
         BtnModalCancel As button:
             Color: =Color.Transparent
@@ -3457,7 +3492,7 @@
             Width: =164
             X: =718
             Y: =440
-            ZIndex: =29
+            ZIndex: =30
 
     AproveReject As group:
         Height: =5
@@ -3475,7 +3510,7 @@
             Width: =201
             X: =912
             Y: =700
-            ZIndex: =23
+            ZIndex: =24
 
         ApproveBtnCode As button:
             Color: =Color.Transparent
@@ -3496,9 +3531,9 @@
             Text: ="Aprovar"
             Visible: =(AtividadeRecord.Estado = 'Estado Processo'.'Em validação' Or AtividadeRecord.Estado = 'Estado Processo'.'Em revalidação') And currentUser = "DRI"
             Width: =201
-            X: =912
+            X: =903
             Y: =700
-            ZIndex: =24
+            ZIndex: =25
 
         RejectBtn As DynamicBtn:
             BtnText: ="Rejeitar"
@@ -3509,7 +3544,7 @@
             Width: =201
             X: =1125
             Y: =700
-            ZIndex: =25
+            ZIndex: =26
 
         RejectBtnCode As button:
             Color: =Color.Transparent
@@ -3530,32 +3565,7 @@
             Width: =201
             X: =1125
             Y: =700
-            ZIndex: =26
-
-    Label7_1 As label:
-        Align: =Align.Center
-        Color: =cores.cinzento
-        Text: ="Adição de " & 'Passos do Registo de Atividade'.Selected.titulo & " apenas disponível quando Fatores de Criticidade houver valor igual a 4."
-        Visible: |-
-            =Switch(
-                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)),
-                
-                Trim(Lower("Caracterização dos Recursos")),
-                If(CountRows(collectRecursos) = 0, true, false),
-            
-                Trim(Lower("Caracterização dos Equipamentos")),
-                If(CountRows(collectEquipamentos) = 0, true, false),
-            
-                Trim(Lower("Caracterização dos Sistemas")),
-                If(CountRows(collectSistemas) = 0, true, false),
-            
-                Trim(Lower("Dependências")),
-                If(CountRows(collectDependencias) = 0, true, false)
-            )
-        Width: =980
-        X: =360
-        Y: =205
-        ZIndex: =33
+            ZIndex: =27
 
     ApproveModal As group:
         Height: =5
@@ -3576,7 +3586,7 @@
                     false
                 )
             Width: =1366
-            ZIndex: =30
+            ZIndex: =31
 
         BtnModalConfirm_1 As button:
             Color: =Color.Transparent
@@ -3658,7 +3668,7 @@
             Width: =164
             X: =488
             Y: =440
-            ZIndex: =31
+            ZIndex: =32
 
         BtnModalCancel_1 As button:
             Color: =Color.Transparent
@@ -3676,7 +3686,7 @@
             Width: =164
             X: =716
             Y: =440
-            ZIndex: =32
+            ZIndex: =33
 
     FatoresHeaders As group:
         Height: =5
@@ -3693,7 +3703,7 @@
             Width: =110
             X: =434
             Y: =160
-            ZIndex: =3
+            ZIndex: =4
 
         Label3_6 As label:
             Align: =Align.Center
@@ -3703,7 +3713,7 @@
             Width: =110
             X: =544
             Y: =160
-            ZIndex: =4
+            ZIndex: =5
 
         Label3_7 As label:
             Align: =Align.Center
@@ -3713,7 +3723,7 @@
             Width: =110
             X: =654
             Y: =160
-            ZIndex: =5
+            ZIndex: =6
 
         Label3_8 As label:
             Align: =Align.Center
@@ -3723,7 +3733,7 @@
             Width: =110
             X: =764
             Y: =160
-            ZIndex: =6
+            ZIndex: =7
 
         Label3_9 As label:
             Align: =Align.Center
@@ -3733,7 +3743,7 @@
             Width: =110
             X: =874
             Y: =160
-            ZIndex: =7
+            ZIndex: =8
 
         Label3_10 As label:
             Align: =Align.Center
@@ -3743,5 +3753,5 @@
             Width: =110
             X: =984
             Y: =160
-            ZIndex: =8
+            ZIndex: =9
 

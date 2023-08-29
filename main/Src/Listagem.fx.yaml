@@ -199,11 +199,13 @@ Listagem As screen:
             ZIndex: =4
 
         "'Atividade Split' As rectangle":
+            BorderColor: =Color.LightGray
+            BorderThickness: =2
             Fill: =Color.LightGray
             Height: =Rectangle2.Height
             OnSelect: =Atividade.X + Atividade.Width
             Width: =2
-            X: =Atividade.X + Atividade.Width
+            X: =332
             Y: =Rectangle2.Y
             ZIndex: =5
 
@@ -593,7 +595,7 @@ Listagem As screen:
             OnSelect: =
             TabIndex: =0
             Width: =2
-            X: =458
+            X: =457
             Y: =Principal.Y
             ZIndex: =3
 
