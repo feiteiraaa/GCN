@@ -74,11 +74,11 @@ App As appinfo:
                 )
             )
         );
-        
+        /*
         Set(
             currentUser,
             "DRI"
-        );
+        );*/
         
         RemoveIf(
             MenuTable,
