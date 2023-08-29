@@ -3537,17 +3537,21 @@
         Color: =cores.cinzento
         Text: ="Adição de " & 'Passos do Registo de Atividade'.Selected.titulo & " apenas disponível quando Fatores de Criticidade houver valor igual a 4."
         Visible: |-
-            =(
-                Value('4Horas'.Text) < 4 Or
-                Value('24Horas'.Text) < 4 Or
-                Value('48Horas'.Text) < 4 Or
-                Value('1Semana'.Text) < 4 Or
-                Value('2Semanas'.Text) < 4 Or
-                Value('1Mes'.Text) < 4
+            =Switch(
+                Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)),
+                
+                Trim(Lower("Caracterização dos Recursos")),
+                If(CountRows(collectRecursos) = 0, true, false),
+            
+                Trim(Lower("Caracterização dos Equipamentos")),
+                If(CountRows(collectEquipamentos) = 0, true, false),
+            
+                Trim(Lower("Caracterização dos Sistemas")),
+                If(CountRows(collectSistemas) = 0, true, false),
+            
+                Trim(Lower("Dependências")),
+                If(CountRows(collectDependencias) = 0, true, false)
             )
-            And
-            Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) <> Trim(Lower("Caracterização do Processo")) And
-             Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) <> Trim(Lower("Fatores de Criticidade")) 
         Width: =980
         X: =360
         Y: =205
