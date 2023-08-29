@@ -157,12 +157,7 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.'Unidade Orgânica'
-            Width: |-
-                =If(
-                    currentUser = "DRI",
-                    118,
-                    155
-                )
+            Width: =92
             X: |-
                 =If(
                     currentUser = "DRI",
@@ -198,10 +193,7 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.Atividade
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
+            Width: =228
             X: ='U.O. Split'.X + 'U.O. Split'.Width
             Y: =Rectangle2.Y
             ZIndex: =4
@@ -232,11 +224,8 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.'Descrição de atividade'
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
-            X: ='Atividade Split'.X + 'Atividade Split'.Width
+            Width: =188
+            X: =332
             Y: =Rectangle2.Y
             ZIndex: =6
 
@@ -245,7 +234,7 @@ Listagem As screen:
             Height: =Rectangle2.Height
             OnSelect: =
             Width: =2
-            X: =Descricao.X + Descricao.Width
+            X: =521
             Y: =Rectangle2.Y
             ZIndex: =7
 
@@ -266,11 +255,8 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
-            X: ='Descricao Split'.X + 'Descricao Split'.Width
+            Width: =163
+            X: =523
             Y: =Rectangle2.Y
             ZIndex: =8
 
@@ -300,11 +286,8 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.Processo.'Processo (uipp_processo)'
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
-            X: ='Tipo Processo Split'.X + 'Tipo Processo Split'.Width
+            Width: =146
+            X: =688
             Y: =Rectangle2.Y
             ZIndex: =10
 
@@ -313,7 +296,7 @@ Listagem As screen:
             Height: =Rectangle2.Height
             OnSelect: =
             Width: =2
-            X: =Processo.X + Processo.Width
+            X: =832
             Y: =Rectangle2.Y
             ZIndex: =11
 
@@ -334,11 +317,8 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
-            X: ='Processo Split'.X + 'Processo Split'.Width
+            Width: =156
+            X: =832
             Y: =Rectangle2.Y
             ZIndex: =12
 
@@ -596,13 +576,8 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             TabIndex: =0
-            Text: ="Unidade Orgânica"
-            Width: |-
-                =If(
-                    currentUser = "DRI",
-                    124,
-                    155
-                )
+            Text: ="UO"
+            Width: =96
             X: |-
                 =If(
                     currentUser = "DRI",
@@ -618,7 +593,7 @@ Listagem As screen:
             OnSelect: =
             TabIndex: =0
             Width: =2
-            X: =521
+            X: =458
             Y: =Principal.Y
             ZIndex: =3
 
@@ -636,7 +611,7 @@ Listagem As screen:
                 =(
                     Principal.Width - ('U.O. Header Split'.Width * 6)
                 ) / 6
-            X: =523
+            X: =490
             Y: =176
             ZIndex: =4
 
@@ -660,10 +635,7 @@ Listagem As screen:
             PaddingTop: =0
             TabIndex: =0
             Text: ="Descrição"
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
+            Width: =182
             X: =688
             Y: =176
             ZIndex: =6
@@ -674,7 +646,7 @@ Listagem As screen:
             OnSelect: =
             TabIndex: =0
             Width: =2
-            X: =851
+            X: =880
             Y: =Principal.Y
             ZIndex: =7
 
@@ -688,12 +660,9 @@ Listagem As screen:
             PaddingTop: =0
             TabIndex: =0
             Text: ="Tipo de processo"
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
-            X: =853
-            Y: =176
+            Width: =155
+            X: =888
+            Y: =175
             ZIndex: =8
 
         "'Tipo Processo Header Split' As rectangle":
@@ -702,7 +671,7 @@ Listagem As screen:
             OnSelect: =
             TabIndex: =0
             Width: =2
-            X: =1016
+            X: =1044
             Y: =Principal.Y
             ZIndex: =9
 
@@ -716,11 +685,8 @@ Listagem As screen:
             PaddingTop: =0
             TabIndex: =0
             Text: ="Processo"
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
-            X: =1018
+            Width: =144
+            X: =1048
             Y: =176
             ZIndex: =10
 
@@ -730,7 +696,7 @@ Listagem As screen:
             OnSelect: =
             TabIndex: =0
             Width: =2
-            X: =1181
+            X: =1191
             Y: =Principal.Y
             ZIndex: =11
 
@@ -744,11 +710,8 @@ Listagem As screen:
             PaddingTop: =0
             TabIndex: =0
             Text: ="Macro processo"
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
-            X: =1183
+            Width: =143
+            X: =1203
             Y: =176
             ZIndex: =12
 
@@ -778,6 +741,7 @@ Listagem As screen:
         ExportBtn As DynamicBtn:
             BtnText: ="Exportar"
             BtnWidth: =200
+            ButtonIcon: =Icon.Download
             Visible: |+
                 =If(currentUser = "DSI", true, false)
                 

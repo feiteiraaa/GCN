@@ -28,6 +28,8 @@
                 {estado : "feito"}
             );
             // dados dos Recursos/Pessoas
+        Clear(collectRecursos);
+        
             ForAll(
                 Filter(
                     Pessoas,
@@ -48,6 +50,8 @@
                 )
             );
             // dados dos Equipamentos
+        
+        Clear(collectEquipamentos);
             ForAll(
                 Filter(
                     'Equipamentos de Escritório',
@@ -65,6 +69,9 @@
                 )
             );
             // dados dos Sistemas/Aplicações
+        
+        Clear(collectSistemas);
+        
             ForAll(
                 Filter(
                     Sistemas,
@@ -83,6 +90,8 @@
                 )
             );
             // dados das Dependências
+        Clear(collectDependencias);
+        
             ForAll(
                 Filter(
                     Dependências,
@@ -154,7 +163,7 @@
                 Color: =cores.cinzento
                 Height: =34
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =294
                 Wrap: =false
                 X: =30
                 Y: =10
@@ -167,6 +176,7 @@
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["uipp_tipodeprocesso"]
                 DisplayMode: =Parent.DisplayMode
+                Height: =50
                 HoverBorderColor: =cores.cinzento
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: ="Tipo de Processo"
@@ -185,16 +195,18 @@
                             }
                         )
                     )
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingLeft: |-
+                    =//If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    5
                 PressedFill: =cores.amareloMontepio
                 SearchFields: =["uipp_tipodeprocesso"]
                 SearchItems: =Search(Choices([@Atividades].'Tipo de Processo'),DataCardValue11.SearchText,"uipp_tipodeprocesso")
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =280
                 X: =30
-                Y: =54
+                Y: =44
                 ZIndex: =2
 
             ErrorMessage10 As label:
@@ -275,7 +287,6 @@
                             }
                         )
                     )
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =cores.amareloMontepio
                 SearchFields: =["uipp_macroprocesso"]
                 SearchItems: =Search(Choices([@Atividades].'Macro Processo'),DataCardValue8.SearchText,"uipp_macroprocesso")
@@ -284,7 +295,7 @@
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =54
+                Y: =44
                 ZIndex: =2
 
             ErrorMessage7 As label:
@@ -364,7 +375,6 @@
                             }
                         )
                     )
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =cores.amareloMontepio
                 SearchFields: =["uipp_processo"]
                 SearchItems: =Search(Choices([@Atividades].Processo),DataCardValue10.SearchText,"uipp_processo")
@@ -373,7 +383,7 @@
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =54
+                Y: =49
                 ZIndex: =2
 
             ErrorMessage9 As label:
@@ -527,7 +537,6 @@
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: ="Edifício"
                 Items: =Choices([@Atividades].Edifício)
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =cores.amareloMontepio
                 SearchFields: =["uipp_localizacao"]
                 SearchItems: =Search(Choices([@Atividades].Edifício),DataCardValue7.SearchText,"uipp_localizacao")
@@ -536,7 +545,7 @@
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardKey8.Y + DataCardKey8.Height + 5
+                Y: =49
                 ZIndex: =2
 
             ErrorMessage6 As label:
@@ -1622,8 +1631,8 @@
             TemplatePadding: =0
             TemplateSize: =90
             Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Equipamentos"))
-            Width: =980
-            X: =362
+            Width: =945
+            X: =382
             Y: =167
             ZIndex: =13
 
@@ -1647,10 +1656,10 @@
             SeparadorEquipamentos As rectangle:
                 BorderColor: =cores.cinzento
                 BorderStyle: =BorderStyle.Dashed
-                BorderThickness: =1
+                BorderThickness: =0.5
                 DisplayMode: =DisplayMode.View
                 Fill: =cores.cinzento
-                Height: =2
+                Height: =1
                 OnSelect: =Select(Parent)
                 Width: =Parent.TemplateWidth
                 Y: =Parent.TemplateHeight - Self.Height
@@ -1728,8 +1737,8 @@
                         ThisRecord.row = ThisItem.row
                     )
                 Width: =30
-                X: =937
-                Y: =28
+                X: =909
+                Y: =25
                 ZIndex: =9
 
             Equipamento As combobox:
@@ -1790,8 +1799,8 @@
                 )
                 And
                 Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Equipamentos"))
-            Width: =201
-            X: =718
+            Width: =197
+            X: =731
             Y: =655
             ZIndex: =15
 
@@ -1845,8 +1854,8 @@
             TemplatePadding: =0
             TemplateSize: =90
             Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Sistemas"))
-            Width: =980
-            X: =362
+            Width: =945
+            X: =382
             Y: =167
             ZIndex: =16
 
@@ -1870,10 +1879,10 @@
             SeparadorSistemas As rectangle:
                 BorderColor: =cores.cinzento
                 BorderStyle: =BorderStyle.Dashed
-                BorderThickness: =1
+                BorderThickness: =0.5
                 DisplayMode: =DisplayMode.View
                 Fill: =cores.cinzento
-                Height: =2
+                Height: =1
                 OnSelect: =Select(Parent)
                 Width: =Parent.TemplateWidth
                 Y: =Parent.TemplateHeight - Self.Height
@@ -1890,8 +1899,8 @@
                         ThisRecord.row = ThisItem.row
                     )
                 Width: =30
-                X: =937
-                Y: =28
+                X: =911
+                Y: =14
                 ZIndex: =3
 
             "'Sistemas Obs' As text":
@@ -1919,7 +1928,7 @@
                 RadiusTopRight: =0
                 Size: =12
                 Tooltip: =
-                Width: =292
+                Width: =280
                 X: =631
                 Y: =14
                 ZIndex: =4
@@ -2046,8 +2055,8 @@
                 )
                 And
                 Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Sistemas"))
-            Width: =201
-            X: =718
+            Width: =194
+            X: =726
             Y: =655
             ZIndex: =17
 
@@ -2325,9 +2334,9 @@
                     =If(
                         formMode = 0,
                         "Cancelar",
-                        "Aprovação"
+                        "Pedir Aprovação"
                     )
-                BtnWidth: =200
+                BtnWidth: =215
                 ButtonIcon: |-
                     =If(
                         formMode = 0,
@@ -2343,11 +2352,11 @@
                     )
                     And
                     currentUser = 'Gallery Data'.Selected.'Unidade Orgânica'
-                Width: =201
+                Width: =207
                 X: |-
                     =If(
                         HistoricoBtn.Visible,
-                        578,
+                        570,
                         790
                     )
                 Y: =5
@@ -2411,7 +2420,7 @@
                 X: |-
                     =If(
                         HistoricoBtn.Visible,
-                        578,
+                        576,
                         790
                     )
                 Y: =5
@@ -2531,8 +2540,8 @@
                 )
                 And
                 Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
-            Width: =980
-            X: =362
+            Width: =960
+            X: =382
             Y: =165
             ZIndex: =12
 
@@ -2556,10 +2565,10 @@
             SeparadorRecursos As rectangle:
                 BorderColor: =cores.cinzento
                 BorderStyle: =BorderStyle.Dashed
-                BorderThickness: =1
+                BorderThickness: =0.5
                 DisplayMode: =DisplayMode.View
                 Fill: =cores.cinzento
-                Height: =2
+                Height: =1
                 OnSelect: =Select(Parent)
                 Width: =Parent.TemplateWidth
                 Y: =Parent.TemplateHeight - Self.Height
@@ -2779,8 +2788,8 @@
                         ThisRecord.row = ThisItem.row
                     )
                 Width: =30
-                X: =937
-                Y: =43
+                X: =894
+                Y: =40
                 ZIndex: =9
 
             Label6 As label:
@@ -2805,8 +2814,8 @@
                 )
                 And
                 Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
-            Width: =201
-            X: =718
+            Width: =197
+            X: =731
             Y: =655
             ZIndex: =14
 
@@ -2862,8 +2871,8 @@
             TemplatePadding: =0
             TemplateSize: =215
             Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Dependências"))
-            Width: =980
-            X: =360
+            Width: =945
+            X: =382
             Y: =167
             ZIndex: =18
 
@@ -2887,10 +2896,10 @@
             SeparadorDependencias As rectangle:
                 BorderColor: =cores.cinzento
                 BorderStyle: =BorderStyle.Dashed
-                BorderThickness: =1
+                BorderThickness: =0.5
                 DisplayMode: =DisplayMode.View
                 Fill: =cores.cinzento
-                Height: =2
+                Height: =1
                 OnSelect: =Select(Parent)
                 Width: =Parent.TemplateWidth
                 Y: =Parent.TemplateHeight - Self.Height
@@ -2967,7 +2976,7 @@
                         ThisRecord.row = ThisItem.row
                     )
                 Width: =30
-                X: =938
+                X: =877
                 Y: =93
                 ZIndex: =5
 
@@ -3128,8 +3137,8 @@
                 )
                 And
                 Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Dependências"))
-            Width: =201
-            X: =718
+            Width: =198
+            X: =713
             Y: =655
             ZIndex: =20
 
