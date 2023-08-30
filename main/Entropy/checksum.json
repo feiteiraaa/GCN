@@ -25,7 +25,7 @@
     "Controls\\255.json": "C8_bL6KwbpOWLvdncPQdn2Qy6Ek8CVotEoleDFo6Lbx2/A=",
     "Controls\\287.json": "C8_aTruiTZNGdmlTdaoOFtfAFzpEev8rcR7ArelnOnjDJY=",
     "Controls\\57.json": "C8_oNEFaqcO9ihl/Su+AJFhuGvOiRltKb+4MzIZXggJh5k=",
-    "Header.json": "C8_42QHGKvoF1DsiuFM4RGQ7iYujLKPcF0p2WiSKSoZ6Cw=",
+    "Header.json": "C8_dMtIXWV5sIO/wsm9QlvSdwTOaAfLh8hMs9YrrgsUx6c=",
     "Properties.json": "C8_KGpR+Ni4+sCtCAkUBP4Cj0/f9hL8JoQaaFVzsJLtIJ0=",
     "References\\DataSources.json": "C8_JR5NbL/uvI/KmYh9IPO2aqK+rpjGSY9DUujM0t9kDTA=",
     "References\\ModernThemes.json": "C8_KDQJ/3t27vgKx25iCQB/PGqxkWE34ZB7Eyb+RxNxY0k=",
@@ -38,7 +38,7 @@
     "Resources\\Controls\\strings\\codidharma.canvas.pcf.components.JsonTableExport.JsonTableExport.1033.resx": "C8_LUzQaVBTg4GRsqni7iuAvUtUmSUz5y0gYCf9YPWi5Qw=",
     "Resources\\PublishInfo.json": "C8_fA8S9+m70wZwkUAWZsPSvS+gPtXn8W2uGgZFv9ywc38="
   },
-  "ClientStampedChecksum": "C8_nOU0l4UhTxSQg9SpNdDGidpo20nUAsbbJt0jBnUMlDg=",
+  "ClientStampedChecksum": "C8_y/Rt75RT1mQ0F4a97c6sLRP3f/7lNlsJOtiMwxwqqAg=",
   "ServerPerFileChecksums": {
     "AppCheckerResult.sarif": "C8_AJzQRzryxxOx0d7DTs1HfdwMd3h//ZkR2L7nkj38gYc=",
     "Assets\\Audio\\b2622fff-7ef4-4b0e-ad23-1dc978ade0c0.wav": "C8_AcTJYYKQrUS4yv1404lJMxCIBMIJgL5u6Q7He0WWu1Y=",
@@ -61,7 +61,7 @@
     "Controls\\255.json": "C8_bL6KwbpOWLvdncPQdn2Qy6Ek8CVotEoleDFo6Lbx2/A=",
     "Controls\\287.json": "C8_aTruiTZNGdmlTdaoOFtfAFzpEev8rcR7ArelnOnjDJY=",
     "Controls\\57.json": "C8_oNEFaqcO9ihl/Su+AJFhuGvOiRltKb+4MzIZXggJh5k=",
-    "Header.json": "C8_42QHGKvoF1DsiuFM4RGQ7iYujLKPcF0p2WiSKSoZ6Cw=",
+    "Header.json": "C8_dMtIXWV5sIO/wsm9QlvSdwTOaAfLh8hMs9YrrgsUx6c=",
     "Properties.json": "C8_KGpR+Ni4+sCtCAkUBP4Cj0/f9hL8JoQaaFVzsJLtIJ0=",
     "References\\DataSources.json": "C8_JR5NbL/uvI/KmYh9IPO2aqK+rpjGSY9DUujM0t9kDTA=",
     "References\\ModernThemes.json": "C8_KDQJ/3t27vgKx25iCQB/PGqxkWE34ZB7Eyb+RxNxY0k=",
@@ -74,5 +74,5 @@
     "Resources\\Controls\\strings\\codidharma.canvas.pcf.components.JsonTableExport.JsonTableExport.1033.resx": "C8_LUzQaVBTg4GRsqni7iuAvUtUmSUz5y0gYCf9YPWi5Qw=",
     "Resources\\PublishInfo.json": "C8_fA8S9+m70wZwkUAWZsPSvS+gPtXn8W2uGgZFv9ywc38="
   },
-  "ServerStampedChecksum": "C8_nOU0l4UhTxSQg9SpNdDGidpo20nUAsbbJt0jBnUMlDg="
+  "ServerStampedChecksum": "C8_y/Rt75RT1mQ0F4a97c6sLRP3f/7lNlsJOtiMwxwqqAg="
 }
