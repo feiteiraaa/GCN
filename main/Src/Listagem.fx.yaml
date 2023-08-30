@@ -177,7 +177,6 @@ Listagem As screen:
             ZIndex: =3
 
         Atividade As label:
-            Align: =Align.Center
             Color: |-
                 =If(
                     Mod(ThisItem.rowNumber, 2) = 0,
@@ -189,12 +188,12 @@ Listagem As screen:
                 =Select(Parent);
                 Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
-            PaddingLeft: =0
+            PaddingLeft: =10
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.Atividade
-            Width: =228
-            X: ='U.O. Split'.X + 'U.O. Split'.Width
+            Width: =418
+            X: =102
             Y: =Rectangle2.Y
             ZIndex: =4
 
@@ -205,40 +204,9 @@ Listagem As screen:
             Height: =Rectangle2.Height
             OnSelect: =Atividade.X + Atividade.Width
             Width: =2
-            X: =332
+            X: =Atividade.X + Atividade.Width
             Y: =Rectangle2.Y
             ZIndex: =5
-
-        Descricao As label:
-            Align: =Align.Center
-            Color: |-
-                =If(
-                    Mod(ThisItem.rowNumber, 2) = 0,
-                    Color.White,
-                    Color.DarkSlateGray
-                )
-            Height: =Rectangle2.Height
-            OnSelect: |-
-                =Select(Parent);
-                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.'Descrição de atividade'
-            Width: =188
-            X: =332
-            Y: =Rectangle2.Y
-            ZIndex: =6
-
-        "'Descricao Split' As rectangle":
-            Fill: =Color.LightGray
-            Height: =Rectangle2.Height
-            OnSelect: =
-            Width: =2
-            X: =521
-            Y: =Rectangle2.Y
-            ZIndex: =7
 
         "'Tipo Processo' As label":
             Align: =Align.Center
@@ -298,7 +266,7 @@ Listagem As screen:
             Height: =Rectangle2.Height
             OnSelect: =
             Width: =2
-            X: =832
+            X: ='Processo'.X + 'Processo'.Width
             Y: =Rectangle2.Y
             ZIndex: =11
 
@@ -595,25 +563,21 @@ Listagem As screen:
             OnSelect: =
             TabIndex: =0
             Width: =2
-            X: =457
+            X: ='U.O. Header'.X + 'U.O. Header'.Width
             Y: =Principal.Y
             ZIndex: =3
 
         "'Atividade Header' As label":
-            Align: =Align.Center
             Color: =Color.LightGray
             Height: =Principal.Height
             PaddingBottom: =0
-            PaddingLeft: =0
+            PaddingLeft: =10
             PaddingRight: =0
             PaddingTop: =0
             TabIndex: =0
             Text: ="Atividade"
-            Width: |-
-                =(
-                    Principal.Width - ('U.O. Header Split'.Width * 6)
-                ) / 6
-            X: =490
+            Width: =416
+            X: =460
             Y: =176
             ZIndex: =4
 
@@ -623,34 +587,9 @@ Listagem As screen:
             OnSelect: =
             TabIndex: =0
             Width: =2
-            X: =686
+            X: ='Atividade Header'.Width + 'Atividade Header'.X
             Y: =Principal.Y
             ZIndex: =5
-
-        "'Descricao Header' As label":
-            Align: =Align.Center
-            Color: =Color.LightGray
-            Height: =Principal.Height
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            TabIndex: =0
-            Text: ="Descrição"
-            Width: =182
-            X: =688
-            Y: =176
-            ZIndex: =6
-
-        "'Descricao Header Split' As rectangle":
-            Fill: =Color.LightGray
-            Height: =Principal.Height
-            OnSelect: =
-            TabIndex: =0
-            Width: =2
-            X: =880
-            Y: =Principal.Y
-            ZIndex: =7
 
         "'Tipo Processo Header' As label":
             Align: =Align.Center
@@ -662,8 +601,8 @@ Listagem As screen:
             PaddingTop: =0
             TabIndex: =0
             Text: ="Tipo de processo"
-            Width: =155
-            X: =888
+            Width: =166
+            X: =877
             Y: =175
             ZIndex: =8
 
@@ -673,7 +612,7 @@ Listagem As screen:
             OnSelect: =
             TabIndex: =0
             Width: =2
-            X: =1044
+            X: ='Tipo Processo Header'.Width + 'Tipo Processo Header'.X
             Y: =Principal.Y
             ZIndex: =9
 
@@ -698,7 +637,7 @@ Listagem As screen:
             OnSelect: =
             TabIndex: =0
             Width: =2
-            X: =1191
+            X: ='Processo Header'.Width + 'Processo Header'.X
             Y: =Principal.Y
             ZIndex: =11
 

@@ -202,7 +202,6 @@
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["uipp_tipodeprocesso"]
                 DisplayMode: =Parent.DisplayMode
-                Height: =50
                 HoverBorderColor: =cores.cinzento
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: ="Tipo de Processo"
@@ -411,7 +410,7 @@
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =49
+                Y: =44
                 ZIndex: =2
 
             ErrorMessage9 As label:

@@ -74,8 +74,8 @@ App As appinfo:
                 )
             )
         );
-        /*
-        Set(
+        
+        /*Set(
             currentUser,
             "DRI"
         );*/
