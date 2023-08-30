@@ -201,7 +201,6 @@ Listagem As screen:
 
         "'Atividade Split' As rectangle":
             BorderColor: =Color.LightGray
-            BorderThickness: =2
             Fill: =Color.LightGray
             Height: =Rectangle2.Height
             OnSelect: =Atividade.X + Atividade.Width
@@ -228,7 +227,7 @@ Listagem As screen:
             PaddingTop: =0
             Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
             Width: =163
-            X: =523
+            X: =524
             Y: =Rectangle2.Y
             ZIndex: =8
 
@@ -258,8 +257,8 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.Processo.'Processo (uipp_processo)'
-            Width: =146
-            X: =688
+            Width: =144
+            X: =690
             Y: =Rectangle2.Y
             ZIndex: =10
 
@@ -289,7 +288,7 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
-            Width: =156
+            Width: =154
             X: =832
             Y: =Rectangle2.Y
             ZIndex: =12
@@ -604,8 +603,8 @@ Listagem As screen:
             TabIndex: =0
             Text: ="Tipo de processo"
             Width: =163
-            X: =877
-            Y: =175
+            X: =882
+            Y: =176
             ZIndex: =8
 
         "'Tipo Processo Header Split' As rectangle":
@@ -653,8 +652,8 @@ Listagem As screen:
             PaddingTop: =0
             TabIndex: =0
             Text: ="Macro processo"
-            Width: =143
-            X: =1203
+            Width: =154
+            X: =1194
             Y: =176
             ZIndex: =12
 

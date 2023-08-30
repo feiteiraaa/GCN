@@ -1053,7 +1053,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Atividade Header",
-      "ParentIndex": 17,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1340,7 +1340,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Atividade Header Split",
-      "ParentIndex": 18,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1501,7 +1501,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "0",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "BorderThickness",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -5256,7 +5256,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "150",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Width",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -6450,7 +6450,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Principal",
-      "ParentIndex": 14,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6591,7 +6591,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "665",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "X",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -6604,7 +6604,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Width",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Width",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -9510,7 +9517,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "515",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "X",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -9856,7 +9863,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "329",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Y",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -9930,7 +9937,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Tipo Processo Header",
-      "ParentIndex": 13,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10368,7 +10375,14 @@
           "NameMapSourceSchema": "?"
         },
         "ZIndex",
-        "BorderThickness",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "BorderThickness",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "FocusedBorderThickness"
       ],
       "HasDynamicProperties": false,
@@ -10944,7 +10958,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "U.O. Header",
-      "ParentIndex": 15,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11231,7 +11245,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "U.O. Header Split",
-      "ParentIndex": 16,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
