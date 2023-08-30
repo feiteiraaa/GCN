@@ -2017,6 +2017,7 @@
                 Mode: =TextMode.MultiLine
                 OnChange: =
                 PaddingLeft: =2
+                PaddingTop: =10
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
@@ -2045,6 +2046,7 @@
                 Mode: =TextMode.MultiLine
                 OnChange: =
                 PaddingLeft: =2
+                PaddingTop: =10
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0

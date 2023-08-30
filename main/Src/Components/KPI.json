@@ -985,7 +985,7 @@
       "KPIName",
       "KPIInfo"
     ],
-    "LastModifiedTimestamp": "638289882342651132",
+    "LastModifiedTimestamp": "638290058000856928",
     "Name": "KPI",
     "Rules": [
       {
@@ -1090,7 +1090,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638289882342651132",
+  "LastModifiedTimestamp": "638290058000856928",
   "Name": "5a4be3bd4c8f4cdf850d831d6eebf73a",
   "OverridableProperties": {},
   "Version": "638255500449069760"
