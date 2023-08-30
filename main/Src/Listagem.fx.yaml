@@ -55,7 +55,7 @@ Listagem As screen:
     "'Gallery Data' As gallery.variableTemplateHeightGallery":
         DelayItemLoading: =true
         Fill: =Color.White
-        Height: =493
+        Height: =450
         Items: |-
             =With(
                 {
@@ -206,7 +206,7 @@ Listagem As screen:
             Height: =Rectangle2.Height
             OnSelect: =Atividade.X + Atividade.Width
             Width: =2
-            X: =Atividade.X + Atividade.Width
+            X: ='Tipo Processo'.X
             Y: =Rectangle2.Y
             ZIndex: =5
 
@@ -268,7 +268,7 @@ Listagem As screen:
             Height: =Rectangle2.Height
             OnSelect: =
             Width: =2
-            X: ='Processo'.X + 'Processo'.Width
+            X: =Processo.X + Processo.Width
             Y: =Rectangle2.Y
             ZIndex: =11
 
@@ -589,7 +589,7 @@ Listagem As screen:
             OnSelect: =
             TabIndex: =0
             Width: =2
-            X: ='Atividade Header'.Width + 'Atividade Header'.X
+            X: ='Tipo Processo Header'.X
             Y: =Principal.Y
             ZIndex: =5
 
@@ -603,7 +603,7 @@ Listagem As screen:
             PaddingTop: =0
             TabIndex: =0
             Text: ="Tipo de processo"
-            Width: =166
+            Width: =163
             X: =877
             Y: =175
             ZIndex: =8
@@ -792,4 +792,135 @@ Listagem As screen:
             X: =858
             Y: =232
             ZIndex: =28
+
+    LegendaCores As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =44
+
+        Rectangle2_3 As rectangle:
+            Fill: =Color.Blue
+            Height: =7
+            OnSelect: =
+            Width: =75
+            X: =510
+            Y: =720
+            ZIndex: =30
+
+        LblLegendaCores As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Legenda de cores:"
+            Width: =154
+            X: =369
+            Y: =694
+            ZIndex: =31
+
+        TextCanvas3 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Height: =42
+            Text: ="Em preenchimento"
+            Width: =126
+            X: =484
+            Y: =726
+            ZIndex: =33
+
+        Rectangle2_4 As rectangle:
+            Fill: =Color.Yellow
+            Height: =7
+            OnSelect: =
+            Width: =75
+            X: =650
+            Y: =720
+            ZIndex: =34
+
+        TextCanvas3_1 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Height: =42
+            Text: ="Em validação"
+            Width: =100
+            X: =639
+            Y: =726
+            ZIndex: =35
+
+        Rectangle2_5 As rectangle:
+            Fill: =Color.Green
+            Height: =7
+            OnSelect: =
+            Width: =75
+            X: =766
+            Y: =720
+            ZIndex: =36
+
+        TextCanvas3_2 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Height: =42
+            Text: ="Aprovado"
+            Width: =77
+            X: =766
+            Y: =726
+            ZIndex: =37
+
+        Rectangle2_6 As rectangle:
+            Fill: =Color.Red
+            Height: =7
+            OnSelect: =
+            Width: =75
+            X: =881
+            Y: =720
+            ZIndex: =38
+
+        TextCanvas3_3 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Height: =42
+            Text: ="Rejeitado"
+            Width: =77
+            X: =877
+            Y: =726
+            ZIndex: =39
+
+        Rectangle2_7 As rectangle:
+            Fill: =Color.DarkOrange
+            Height: =7
+            OnSelect: =
+            Width: =75
+            X: =1009
+            Y: =720
+            ZIndex: =40
+
+        TextCanvas3_4 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Height: =42
+            Text: ="Em revisão pela UO"
+            Width: =126
+            X: =983
+            Y: =726
+            ZIndex: =41
+
+        Rectangle2_8 As rectangle:
+            Fill: =Color.Yellow
+            Height: =7
+            OnSelect: =
+            Width: =75
+            X: =1156
+            Y: =720
+            ZIndex: =42
+
+        TextCanvas3_5 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Height: =42
+            Text: ="Em revalidação"
+            Width: =101
+            X: =1149
+            Y: =726
+            ZIndex: =43
 

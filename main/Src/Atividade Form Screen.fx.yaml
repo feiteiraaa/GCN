@@ -116,7 +116,7 @@
     Label7_1 As label:
         Align: =Align.Center
         Color: =cores.cinzento
-        Text: ="Adição de " & 'Passos do Registo de Atividade'.Selected.titulo & " apenas disponível quando Fatores de Criticidade houver valor igual a 4."
+        Text: ="Adição de " & 'Passos do Registo de Atividade'.Selected.titulo & " apenas disponível quando Fatores de Criticidade com valor igual a 4."
         Visible: |-
             =Switch(
                 Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)),
@@ -2801,6 +2801,7 @@
                         collectRecursos,
                         ThisRecord.row = ThisItem.row
                     )
+                Visible: =If(currentUser = "DRI", false, true)
                 Width: =30
                 X: =894
                 Y: =40
@@ -2856,7 +2857,8 @@
                 PressedFill: =Color.Transparent
                 Size: =13
                 Text: =""
-                Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
+                Visible: |
+                    =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Recursos"))
                 Width: =200
                 ZIndex: =2
 
