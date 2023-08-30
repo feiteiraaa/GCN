@@ -52,6 +52,14 @@ Listagem As screen:
             )
         )
 
+    Rectangle5 As rectangle:
+        Fill: =RGBA(237, 237, 237, 0.5)
+        Height: =74
+        Width: =984
+        X: =359
+        Y: =694
+        ZIndex: =1
+
     "'Gallery Data' As gallery.variableTemplateHeightGallery":
         DelayItemLoading: =true
         Fill: =Color.White
@@ -109,7 +117,7 @@ Listagem As screen:
         Width: =Principal.Width
         X: =Principal.X
         Y: =Principal.Y + Principal.Height
-        ZIndex: =13
+        ZIndex: =12
 
         Rectangle2 As rectangle:
             Fill: |-
@@ -309,6 +317,14 @@ Listagem As screen:
             Y: =1
             ZIndex: =13
 
+    Label1_1 As label:
+        Size: =15
+        Text: ="Atividades"
+        Width: =360
+        X: =359
+        Y: =35
+        ZIndex: =23
+
     ActionBar As group:
         Height: =5
         Width: =5
@@ -333,7 +349,7 @@ Listagem As screen:
             Width: =264
             X: =358
             Y: =124
-            ZIndex: =15
+            ZIndex: =14
 
         "Icon1_1 As icon.'3DPrinting'":
             Color: |-
@@ -345,7 +361,7 @@ Listagem As screen:
             Width: =18
             X: =365
             Y: =131
-            ZIndex: =16
+            ZIndex: =15
 
         Dropdown1 As dropdown:
             AllowEmptySelection: =true
@@ -365,14 +381,9 @@ Listagem As screen:
             Width: =264
             X: =656
             Y: =TextInput2.Y
-            ZIndex: =19
+            ZIndex: =18
 
-    Label1_1 As label:
-        Size: =15
-        Text: ="Atividades"
-        Width: =360
-        X: =359
-        Y: =35
+    LeftSectionComponent_2 As LeftSectionComponent:
         ZIndex: =24
 
     NovaAtividade As group:
@@ -387,7 +398,7 @@ Listagem As screen:
             BtnWidth: =200
             X: =1143
             Y: =35
-            ZIndex: =14
+            ZIndex: =13
 
         Button2 As button:
             BorderColor: =Color.Transparent
@@ -453,7 +464,7 @@ Listagem As screen:
             Width: =DynamicBtn_1.Width
             X: =DynamicBtn_1.X
             Y: =DynamicBtn_1.Y
-            ZIndex: =20
+            ZIndex: =19
 
     AnualApproval As group:
         Height: =5
@@ -472,7 +483,7 @@ Listagem As screen:
                 )
             X: =719
             Y: =35
-            ZIndex: =18
+            ZIndex: =17
 
         AnualApprovalBtnCode As button:
             BorderColor: =Color.Transparent
@@ -516,10 +527,7 @@ Listagem As screen:
             Width: =AnualApprovalBtn.Width
             X: =719
             Y: =AnualApprovalBtn.Y
-            ZIndex: =21
-
-    LeftSectionComponent_2 As LeftSectionComponent:
-        ZIndex: =25
+            ZIndex: =20
 
     "'Galery Headers' As group":
         Height: =5
@@ -536,7 +544,7 @@ Listagem As screen:
             Width: =990
             X: =358
             Y: =176
-            ZIndex: =1
+            ZIndex: =2
 
         "'U.O. Header' As label":
             Align: =Align.Center
@@ -556,7 +564,7 @@ Listagem As screen:
                     362
                 )
             Y: =176
-            ZIndex: =2
+            ZIndex: =3
 
         "'U.O. Header Split' As rectangle":
             Fill: =Color.LightGray
@@ -566,7 +574,7 @@ Listagem As screen:
             Width: =2
             X: ='U.O. Header'.X + 'U.O. Header'.Width
             Y: =Principal.Y
-            ZIndex: =3
+            ZIndex: =4
 
         "'Atividade Header' As label":
             Color: =Color.LightGray
@@ -580,7 +588,7 @@ Listagem As screen:
             Width: =384
             X: ='U.O. Header'.X + 'U.O. Header'.Width
             Y: =176
-            ZIndex: =4
+            ZIndex: =5
 
         "'Atividade Header Split' As rectangle":
             Fill: =Color.LightGray
@@ -590,7 +598,7 @@ Listagem As screen:
             Width: =2
             X: ='Tipo Processo Header'.X
             Y: =Principal.Y
-            ZIndex: =5
+            ZIndex: =6
 
         "'Tipo Processo Header' As label":
             Align: =Align.Center
@@ -605,7 +613,7 @@ Listagem As screen:
             Width: =163
             X: =882
             Y: =176
-            ZIndex: =8
+            ZIndex: =7
 
         "'Tipo Processo Header Split' As rectangle":
             Fill: =Color.LightGray
@@ -615,7 +623,7 @@ Listagem As screen:
             Width: =2
             X: ='Tipo Processo Header'.Width + 'Tipo Processo Header'.X
             Y: =Principal.Y
-            ZIndex: =9
+            ZIndex: =8
 
         "'Processo Header' As label":
             Align: =Align.Center
@@ -630,7 +638,7 @@ Listagem As screen:
             Width: =144
             X: =1048
             Y: =176
-            ZIndex: =10
+            ZIndex: =9
 
         "'Processo Header Split' As rectangle":
             Fill: =Color.LightGray
@@ -640,7 +648,7 @@ Listagem As screen:
             Width: =2
             X: ='Processo Header'.Width + 'Processo Header'.X
             Y: =Principal.Y
-            ZIndex: =11
+            ZIndex: =10
 
         "'Macro Processo Header Split' As label":
             Align: =Align.Center
@@ -655,7 +663,7 @@ Listagem As screen:
             Width: =154
             X: =1194
             Y: =176
-            ZIndex: =12
+            ZIndex: =11
 
         Checkbox1 As checkbox:
             BorderColor: =Color.Transparent
@@ -671,7 +679,7 @@ Listagem As screen:
             Width: =40
             X: =362
             Y: =182
-            ZIndex: =17
+            ZIndex: =16
 
     Export As group:
         Height: =5
@@ -689,7 +697,7 @@ Listagem As screen:
                 
             X: =931
             Y: =35
-            ZIndex: =22
+            ZIndex: =21
 
         ExportBtnCode As button:
             BorderColor: =Color.Transparent
@@ -744,7 +752,7 @@ Listagem As screen:
             Width: =ExportBtn.Width
             X: =931
             Y: =35
-            ZIndex: =23
+            ZIndex: =22
 
     ModalExport_Teste_1 As ModalExport_Teste:
         Data: =dataExport
@@ -755,7 +763,7 @@ Listagem As screen:
         Visible: =Var
         X: =50%
         Y: =50%
-        ZIndex: =29
+        ZIndex: =27
 
     ExportModal As group:
         Height: =5
@@ -771,7 +779,7 @@ Listagem As screen:
                 
                 Será efetuado o download após a confirmação."
             Visible: =false
-            ZIndex: =26
+            ZIndex: =25
 
         ExportBtnCode_1 As button:
             BorderColor: =Color.Transparent
@@ -790,7 +798,7 @@ Listagem As screen:
             Width: =41
             X: =858
             Y: =232
-            ZIndex: =28
+            ZIndex: =26
 
     LegendaCores As group:
         Height: =5
@@ -806,7 +814,7 @@ Listagem As screen:
             Width: =75
             X: =510
             Y: =720
-            ZIndex: =30
+            ZIndex: =28
 
         LblLegendaCores As Text:
             DisplayMode: =DisplayMode.Edit
@@ -816,7 +824,7 @@ Listagem As screen:
             Width: =154
             X: =369
             Y: =694
-            ZIndex: =31
+            ZIndex: =29
 
         TextCanvas3 As Text:
             Align: ='TextCanvas.Align'.Center
@@ -826,7 +834,7 @@ Listagem As screen:
             Width: =126
             X: =484
             Y: =726
-            ZIndex: =33
+            ZIndex: =30
 
         Rectangle2_4 As rectangle:
             Fill: =Color.Yellow
@@ -835,7 +843,7 @@ Listagem As screen:
             Width: =75
             X: =650
             Y: =720
-            ZIndex: =34
+            ZIndex: =31
 
         TextCanvas3_1 As Text:
             Align: ='TextCanvas.Align'.Center
@@ -845,7 +853,7 @@ Listagem As screen:
             Width: =100
             X: =639
             Y: =726
-            ZIndex: =35
+            ZIndex: =32
 
         Rectangle2_5 As rectangle:
             Fill: =Color.Green
@@ -854,7 +862,7 @@ Listagem As screen:
             Width: =75
             X: =766
             Y: =720
-            ZIndex: =36
+            ZIndex: =33
 
         TextCanvas3_2 As Text:
             Align: ='TextCanvas.Align'.Center
@@ -864,7 +872,7 @@ Listagem As screen:
             Width: =77
             X: =766
             Y: =726
-            ZIndex: =37
+            ZIndex: =34
 
         Rectangle2_6 As rectangle:
             Fill: =Color.Red
@@ -873,7 +881,7 @@ Listagem As screen:
             Width: =75
             X: =881
             Y: =720
-            ZIndex: =38
+            ZIndex: =35
 
         TextCanvas3_3 As Text:
             Align: ='TextCanvas.Align'.Center
@@ -883,7 +891,7 @@ Listagem As screen:
             Width: =77
             X: =877
             Y: =726
-            ZIndex: =39
+            ZIndex: =36
 
         Rectangle2_7 As rectangle:
             Fill: =Color.DarkOrange
@@ -892,7 +900,7 @@ Listagem As screen:
             Width: =75
             X: =1009
             Y: =720
-            ZIndex: =40
+            ZIndex: =37
 
         TextCanvas3_4 As Text:
             Align: ='TextCanvas.Align'.Center
@@ -902,7 +910,7 @@ Listagem As screen:
             Width: =126
             X: =983
             Y: =726
-            ZIndex: =41
+            ZIndex: =38
 
         Rectangle2_8 As rectangle:
             Fill: =Color.Yellow
@@ -911,7 +919,7 @@ Listagem As screen:
             Width: =75
             X: =1156
             Y: =720
-            ZIndex: =42
+            ZIndex: =39
 
         TextCanvas3_5 As Text:
             Align: ='TextCanvas.Align'.Center
@@ -921,5 +929,5 @@ Listagem As screen:
             Width: =101
             X: =1149
             Y: =726
-            ZIndex: =43
+            ZIndex: =40
 
