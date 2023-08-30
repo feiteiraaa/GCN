@@ -295,7 +295,7 @@ Listagem As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
+            Text: =ThisItem.'Macro Processo'.'Macro Processo (uipp_macroprocesso)'
             Width: =154
             X: =832
             Y: =Rectangle2.Y
