@@ -1749,7 +1749,6 @@
                     )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                FontWeight: =FontWeight.Lighter
                 Height: =34
                 HintText: ="Observações"
                 HoverBorderColor: =cores.cinzento
@@ -1934,7 +1933,7 @@
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
-            TemplateSize: =108
+            TemplateSize: =98
             Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Sistemas"))
             Width: =945
             X: =382
@@ -2007,11 +2006,10 @@
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
-                Size: =12
                 Tooltip: =
-                Width: =268
-                X: =614
-                Y: =40
+                Width: =302
+                X: =598
+                Y: =28
                 ZIndex: =4
 
             "'Sistemas Descrição' As text":
@@ -2036,11 +2034,10 @@
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
-                Size: =12
                 Tooltip: =
-                Width: =270
-                X: =328
-                Y: =40
+                Width: =256
+                X: =341
+                Y: =31
                 ZIndex: =5
 
             "'Sistemas Duracao' As combobox":
@@ -2058,6 +2055,7 @@
                     )
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
+                Height: =41
                 HoverFill: =cores.amareloMontepio
                 IsSearchable: =false
                 Items: =Choices('Duração (Pessoas)')
@@ -2069,9 +2067,9 @@
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
                 Tooltip: =
-                Width: =150
-                X: =164
-                Y: =40
+                Width: =114
+                X: =214
+                Y: =27
                 ZIndex: =6
 
             Sistema As combobox:
@@ -2089,6 +2087,7 @@
                     )
                 DisplayFields: =["uipp_nome"]
                 DisplayMode: =Parent.DisplayMode
+                Height: =41
                 HoverBorderColor: =ColorFade(cores.cinzento, 15%)
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: ="Sistema/App"
@@ -2102,8 +2101,8 @@
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
                 Tooltip: =Self.Selected.Nome
-                Width: =148
-                Y: =40
+                Width: =214
+                Y: =27
                 ZIndex: =7
 
             Label9_1 As label:
@@ -2141,7 +2140,7 @@
                 VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
-                X: =164
+                X: =214
                 Y: =0
                 ZIndex: =10
 
@@ -2153,7 +2152,7 @@
                 VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
-                X: =328
+                X: =341
                 Y: =0
                 ZIndex: =11
 
@@ -2165,7 +2164,7 @@
                 VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
-                X: =614
+                X: =598
                 Y: =0
                 ZIndex: =12
 
@@ -2725,7 +2724,7 @@
                             }
                         )
                     )
-                PaddingLeft: =5
+                PaddingLeft: =0
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
@@ -2750,14 +2749,14 @@
                 HoverFill: =RGBA(255, 255, 255, 1)
                 MaxLength: =30
                 OnChange: =
-                PaddingLeft: =5
+                PaddingLeft: =0
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 Tooltip: =
-                Width: =255
-                X: =204
+                Width: =236
+                X: =172
                 Y: =30
                 ZIndex: =4
 
@@ -2792,7 +2791,7 @@
                 SelectMultiple: =false
                 Tooltip: =
                 Width: =110
-                Y: =103
+                Y: =95
                 ZIndex: =5
 
             Tipo As combobox:
@@ -2820,8 +2819,8 @@
                 SelectMultiple: =false
                 Tooltip: =
                 Width: =140
-                X: =136
-                Y: =103
+                X: =172
+                Y: =95
                 ZIndex: =6
 
             Duracao As combobox:
@@ -2851,8 +2850,8 @@
                 SelectMultiple: =false
                 Tooltip: =
                 Width: =150
-                X: =318
-                Y: =103
+                X: =408
+                Y: =30
                 ZIndex: =7
 
             Critico_1 As text:
@@ -2865,7 +2864,7 @@
                     )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                Height: =71
+                Height: =41
                 HintText: ="Observações"
                 HoverBorderColor: =cores.cinzento
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -2879,9 +2878,9 @@
                 RadiusTopRight: =0
                 Size: =12
                 Tooltip: ="Observações"
-                Width: =397
-                X: =459
-                Y: =30
+                Width: =538
+                X: =408
+                Y: =100
                 ZIndex: =8
 
             Icon3 As icon.Add:
@@ -2931,7 +2930,7 @@
                 Visible: =true
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =141
-                X: =204
+                X: =172
                 Y: =0
                 ZIndex: =12
 
@@ -2944,8 +2943,8 @@
                 Visible: =true
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =141
-                X: =459
-                Y: =0
+                X: =408
+                Y: =74
                 ZIndex: =13
 
             Llbtitulo_6 As Text:
@@ -2958,7 +2957,7 @@
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =110
                 X: =0
-                Y: =80
+                Y: =74
                 ZIndex: =14
 
             Llbtitulo_7 As Text:
@@ -2970,8 +2969,8 @@
                 Visible: =true
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =130
-                X: =136
-                Y: =77
+                X: =172
+                Y: =74
                 ZIndex: =15
 
             Llbtitulo_8 As Text:
@@ -2983,8 +2982,8 @@
                 Visible: =true
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =141
-                X: =318
-                Y: =77
+                X: =408
+                Y: =0
                 ZIndex: =16
 
         AddRecursoBTN As groupContainer:
@@ -3141,7 +3140,6 @@
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
-                Size: =12
                 Tooltip: ="Observações"
                 Width: =505
                 X: =393
@@ -3170,7 +3168,6 @@
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
-                Size: =12
                 Tooltip: ="Observações"
                 Width: =505
                 X: =395
