@@ -1942,7 +1942,7 @@
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
-            TemplateSize: =100
+            TemplateSize: =111
             Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Sistemas"))
             Width: =945
             X: =382
@@ -2024,7 +2024,7 @@
                 Tooltip: =
                 Width: =260
                 X: =610
-                Y: =28
+                Y: =40
                 ZIndex: =4
 
             "'Sistemas Descrição' As text":
@@ -2052,7 +2052,7 @@
                 Tooltip: =
                 Width: =260
                 X: =341
-                Y: =28
+                Y: =40
                 ZIndex: =5
 
             "'Sistemas Duracao' As combobox":
@@ -2084,7 +2084,7 @@
                 Tooltip: =
                 Width: =114
                 X: =220
-                Y: =28
+                Y: =40
                 ZIndex: =6
 
             Sistema As combobox:
@@ -2117,7 +2117,7 @@
                 SelectMultiple: =false
                 Tooltip: =Self.Selected.Nome
                 Width: =214
-                Y: =28
+                Y: =40
                 ZIndex: =7
 
             Label9_1 As label:
@@ -2144,7 +2144,7 @@
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
                 X: =0
-                Y: =0
+                Y: =8
                 ZIndex: =9
 
             TextCanvas8_1 As Text:
@@ -2156,7 +2156,7 @@
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
                 X: =220
-                Y: =0
+                Y: =8
                 ZIndex: =10
 
             TextCanvas8_2 As Text:
@@ -2168,7 +2168,7 @@
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
                 X: =341
-                Y: =0
+                Y: =8
                 ZIndex: =11
 
             TextCanvas8_3 As Text:
@@ -2180,7 +2180,8 @@
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
                 X: =610
-                Y: =0
+                Y: |
+                    =8
                 ZIndex: =12
 
         AddSistemasBTN As groupContainer:
@@ -3159,7 +3160,7 @@
                 MaxLength: =100
                 Mode: =TextMode.MultiLine
                 OnChange: =
-                PaddingLeft: =5
+                PaddingLeft: =3
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
@@ -3187,7 +3188,7 @@
                 MaxLength: =100
                 Mode: =TextMode.MultiLine
                 OnChange: =
-                PaddingLeft: =5
+                PaddingLeft: =3
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
