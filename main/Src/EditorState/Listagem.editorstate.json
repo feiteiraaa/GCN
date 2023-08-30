@@ -715,7 +715,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Atividade",
-      "ParentIndex": 4,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -968,7 +968,14 @@
           "NameMapSourceSchema": "?"
         },
         "VerticalAlign",
-        "X",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "460",
+          "InvariantPropertyName": "X",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -1046,7 +1053,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Atividade Header",
-      "ParentIndex": 17,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9061,7 +9068,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "U.O.",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9686,7 +9693,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "U.O. Header Split",
-      "ParentIndex": 16,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9850,7 +9857,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "U.O. Split",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

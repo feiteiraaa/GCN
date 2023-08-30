@@ -192,8 +192,10 @@ Listagem As screen:
             PaddingRight: =0
             PaddingTop: =0
             Text: =ThisItem.Atividade
-            Width: =418
-            X: =102
+            Width: |+
+                =382
+                
+            X: ='U.O.'.X + 'U.O.'.Width
             Y: =Rectangle2.Y
             ZIndex: =4
 
@@ -576,8 +578,8 @@ Listagem As screen:
             PaddingTop: =0
             TabIndex: =0
             Text: ="Atividade"
-            Width: =416
-            X: =460
+            Width: =384
+            X: ='U.O. Header'.X + 'U.O. Header'.Width
             Y: =176
             ZIndex: =4
 
