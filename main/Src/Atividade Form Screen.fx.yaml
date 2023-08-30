@@ -1734,7 +1734,7 @@
                 Tooltip: =
                 Width: =150
                 X: =289
-                Y: =15
+                Y: =40
                 ZIndex: =7
 
             "'Equipamento Obs' As text":
@@ -1748,7 +1748,6 @@
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 FontWeight: =FontWeight.Lighter
-                Height: =59
                 HintText: ="Observações"
                 HoverBorderColor: =cores.cinzento
                 HoverFill: =RGBA(255, 255, 255, 1)
@@ -1760,11 +1759,10 @@
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
-                Size: =12
                 Tooltip: =
-                Width: =470
+                Width: =443
                 X: =454
-                Y: =14
+                Y: =40
                 ZIndex: =8
 
             "'Equipamentos Remove' As icon.Add":
@@ -1778,7 +1776,7 @@
                         ThisRecord.row = ThisItem.row
                     )
                 Width: =30
-                X: =909
+                X: =900
                 Y: =25
                 ZIndex: =9
 
@@ -1808,8 +1806,7 @@
                 SelectMultiple: =false
                 Tooltip: =
                 Width: =275
-                X: =2
-                Y: =15
+                Y: =40
                 ZIndex: =10
 
             Label9 As label:
@@ -1826,6 +1823,42 @@
                 X: =924
                 Y: =73
                 ZIndex: =11
+
+            Llbtitulo_2 As Text:
+                DisplayMode: =Parent.DisplayMode
+                Height: =32
+                Size: =12
+                Text: ="Duração"
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =96
+                X: =289
+                Y: =0
+                ZIndex: =12
+
+            Llbtitulo_1 As Text:
+                DisplayMode: =Parent.DisplayMode
+                Height: =32
+                Size: =12
+                Text: ="Equipamento"
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =13
+
+            Llbtitulo As Text:
+                DisplayMode: =Parent.DisplayMode
+                Height: =32
+                Size: =12
+                Text: ="Observações"
+                Visible: =true
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =96
+                X: =454
+                Y: =0
+                ZIndex: =14
 
         AddEquipamentoBTN As groupContainer:
             Height: =40
@@ -1893,7 +1926,7 @@
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
-            TemplateSize: =90
+            TemplateSize: =108
             Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Caracterização dos Sistemas"))
             Width: =945
             X: =382
@@ -1940,8 +1973,8 @@
                         ThisRecord.row = ThisItem.row
                     )
                 Width: =30
-                X: =911
-                Y: =14
+                X: =900
+                Y: =28
                 ZIndex: =3
 
             "'Sistemas Obs' As text":
@@ -1954,7 +1987,6 @@
                     )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                FontWeight: =FontWeight.Lighter
                 Height: =59
                 HintText: ="Observações"
                 HoverBorderColor: =cores.cinzento
@@ -1969,9 +2001,9 @@
                 RadiusTopRight: =0
                 Size: =12
                 Tooltip: =
-                Width: =280
-                X: =631
-                Y: =14
+                Width: =268
+                X: =621
+                Y: =40
                 ZIndex: =4
 
             "'Sistemas Descrição' As text":
@@ -1984,7 +2016,6 @@
                     )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                FontWeight: =FontWeight.Lighter
                 Height: =59
                 HintText: ="Descrição"
                 HoverBorderColor: =cores.cinzento
@@ -1999,9 +2030,9 @@
                 RadiusTopRight: =0
                 Size: =12
                 Tooltip: =
-                Width: =292
-                X: =327
-                Y: =14
+                Width: =282
+                X: =328
+                Y: =40
                 ZIndex: =5
 
             "'Sistemas Duracao' As combobox":
@@ -2031,8 +2062,8 @@
                 SelectMultiple: =false
                 Tooltip: =
                 Width: =150
-                X: =165
-                Y: =14
+                X: =162
+                Y: =40
                 ZIndex: =6
 
             Sistema As combobox:
@@ -2064,8 +2095,7 @@
                 SelectMultiple: =false
                 Tooltip: =Self.Selected.Nome
                 Width: =148
-                X: =2
-                Y: =14
+                Y: =40
                 ZIndex: =7
 
             Label9_1 As label:
@@ -2082,6 +2112,46 @@
                 X: =924
                 Y: =73
                 ZIndex: =8
+
+            TextCanvas8 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Text: ="Sistema"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =96
+                X: =0
+                Y: =4
+                ZIndex: =9
+
+            TextCanvas8_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Text: ="Duração"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =96
+                X: =162
+                Y: =8
+                ZIndex: =10
+
+            TextCanvas8_2 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Text: ="Descrição"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =96
+                X: =328
+                Y: =8
+                ZIndex: =11
+
+            TextCanvas8_3 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Text: ="Observações"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =96
+                X: =621
+                Y: =8
+                ZIndex: =12
 
         AddSistemasBTN As groupContainer:
             Height: =40
@@ -2707,7 +2777,7 @@
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
                 Tooltip: =
-                Width: =118
+                Width: =125
                 X: =2
                 Y: =63
                 ZIndex: =5
@@ -2737,7 +2807,7 @@
                 SelectMultiple: =false
                 Tooltip: =
                 Width: =140
-                X: =134
+                X: =141
                 Y: =63
                 ZIndex: =6
 
@@ -2797,7 +2867,7 @@
                 RadiusTopRight: =0
                 Size: =12
                 Tooltip: ="Observações"
-                Width: =470
+                Width: =440
                 X: =454
                 Y: =14
                 ZIndex: =8
@@ -2814,7 +2884,7 @@
                     )
                 Visible: =If(currentUser = "DRI", false, true)
                 Width: =30
-                X: =894
+                X: =900
                 Y: =40
                 ZIndex: =9
 
@@ -2922,7 +2992,7 @@
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
-            TemplateSize: =215
+            TemplateSize: =322
             Visible: =Trim(Lower('Passos do Registo de Atividade'.Selected.titulo)) = Trim(Lower("Dependências"))
             Width: =945
             X: =382
@@ -2935,6 +3005,7 @@
                 DefaultSelectedItems: =First(Atividades)//LookUp(Atividades, ThisRecord.ID = LastAtividadeId)
                 DisplayFields: =["uipp_atividade"]
                 DisplayMode: =Parent.DisplayMode
+                Height: =32
                 IsSearchable: =false
                 Items: =Choices([@Pessoas].'ID Atividade')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
@@ -2968,7 +3039,6 @@
                     )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                FontWeight: =FontWeight.Lighter
                 Height: =89
                 HintText: ="Observações"
                 HoverBorderColor: =cores.cinzento
@@ -2983,9 +3053,9 @@
                 RadiusTopRight: =0
                 Size: =12
                 Tooltip: ="Observações"
-                Width: =540
-                X: =387
-                Y: =113
+                Width: =505
+                X: =393
+                Y: =173
                 ZIndex: =3
 
             "'Dependencias Informacao' As text":
@@ -2998,7 +3068,6 @@
                     )
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
-                FontWeight: =FontWeight.Lighter
                 Height: =89
                 HintText: ="Informação de suporte"
                 HoverBorderColor: =cores.cinzento
@@ -3013,9 +3082,9 @@
                 RadiusTopRight: =0
                 Size: =12
                 Tooltip: ="Observações"
-                Width: =540
-                X: =387
-                Y: =14
+                Width: =505
+                X: =393
+                Y: =40
                 ZIndex: =4
 
             "'Dependencias Remove' As icon.Add":
@@ -3029,8 +3098,8 @@
                         ThisRecord.row = ThisItem.row
                     )
                 Width: =30
-                X: =877
-                Y: =93
+                X: =900
+                Y: =135
                 ZIndex: =5
 
             "'Dependencias UO' As combobox":
@@ -3062,8 +3131,7 @@
                 SelectMultiple: =false
                 Tooltip: =
                 Width: =368
-                X: =4
-                Y: =162
+                Y: =262
                 ZIndex: =6
 
             "'Dependencias Tipo' As combobox":
@@ -3094,8 +3162,7 @@
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
                 Width: =368
-                X: =4
-                Y: =112
+                Y: =188
                 ZIndex: =7
 
             "'Dependencias Importancia' As combobox":
@@ -3127,8 +3194,7 @@
                 SelectMultiple: =false
                 Tooltip: =
                 Width: =176
-                X: =4
-                Y: =63
+                Y: =116
                 ZIndex: =9
 
             "'Dependencias Entidades' As combobox":
@@ -3158,8 +3224,7 @@
                 SelectMultiple: =false
                 Tooltip: =
                 Width: =368
-                X: =4
-                Y: =14
+                Y: =40
                 ZIndex: =10
 
             Label9_2 As label:
@@ -3176,6 +3241,66 @@
                 X: =924
                 Y: =198
                 ZIndex: =11
+
+            TextCanvas9 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Text: ="Unidade Orgância"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =147
+                X: =0
+                Y: =230
+                ZIndex: =12
+
+            TextCanvas9_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Text: ="Tipo de Dependência"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =147
+                X: =0
+                Y: =156
+                ZIndex: =13
+
+            TextCanvas9_2 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Text: ="Importância"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =147
+                X: =0
+                Y: =85
+                ZIndex: =14
+
+            TextCanvas9_3 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =36
+                Text: ="Entidades"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =147
+                X: =0
+                Y: =4
+                ZIndex: =15
+
+            TextCanvas9_4 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Text: ="Dependência Informação"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =198
+                X: =395
+                Y: =4
+                ZIndex: =16
+
+            TextCanvas9_5 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Text: ="Dependência Observações"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =198
+                X: =393
+                Y: =129
+                ZIndex: =17
 
         AddDependenciaBTN As groupContainer:
             Height: =40
