@@ -53,11 +53,11 @@ Listagem As screen:
         )
 
     Rectangle5 As rectangle:
-        Fill: =RGBA(237, 237, 237, 0.5)
-        Height: =74
+        Fill: =RGBA(237, 237, 237, 0.4)
+        Height: =69
         Width: =984
-        X: =359
-        Y: =694
+        X: =362
+        Y: =700
         ZIndex: =1
 
     "'Gallery Data' As gallery.variableTemplateHeightGallery":
@@ -851,7 +851,7 @@ Listagem As screen:
             Height: =42
             Text: ="Em validação"
             Width: =100
-            X: =639
+            X: =637
             Y: =726
             ZIndex: =32
 
@@ -860,7 +860,7 @@ Listagem As screen:
             Height: =7
             OnSelect: =
             Width: =75
-            X: =766
+            X: =790
             Y: =720
             ZIndex: =33
 
@@ -870,7 +870,7 @@ Listagem As screen:
             Height: =42
             Text: ="Aprovado"
             Width: =77
-            X: =766
+            X: =790
             Y: =726
             ZIndex: =34
 
@@ -879,7 +879,7 @@ Listagem As screen:
             Height: =7
             OnSelect: =
             Width: =75
-            X: =881
+            X: =930
             Y: =720
             ZIndex: =35
 
@@ -889,7 +889,7 @@ Listagem As screen:
             Height: =42
             Text: ="Rejeitado"
             Width: =77
-            X: =877
+            X: =929
             Y: =726
             ZIndex: =36
 
@@ -898,7 +898,7 @@ Listagem As screen:
             Height: =7
             OnSelect: =
             Width: =75
-            X: =1009
+            X: =1070
             Y: =720
             ZIndex: =37
 
@@ -908,7 +908,7 @@ Listagem As screen:
             Height: =42
             Text: ="Em revisão pela UO"
             Width: =126
-            X: =983
+            X: =1044
             Y: =726
             ZIndex: =38
 
@@ -917,7 +917,7 @@ Listagem As screen:
             Height: =7
             OnSelect: =
             Width: =75
-            X: =1156
+            X: =1210
             Y: =720
             ZIndex: =39
 
@@ -927,7 +927,7 @@ Listagem As screen:
             Height: =42
             Text: ="Em revalidação"
             Width: =101
-            X: =1149
+            X: =1197
             Y: =726
             ZIndex: =40
 

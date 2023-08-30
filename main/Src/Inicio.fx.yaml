@@ -180,7 +180,7 @@ Inicio As screen:
         DelayItemLoading: =true
         DisplayMode: =DisplayMode.View
         Fill: =Color.White
-        Height: =333
+        Height: =341
         Items: |-
             =With(
                 {
@@ -224,8 +224,8 @@ Inicio As screen:
         TemplatePadding: =0
         TemplateSize: =75
         Width: =Principal_2.Width
-        X: =356
-        Y: =392
+        X: =355
+        Y: =397
         ZIndex: =30
 
         Rectangle2_2 As rectangle:
