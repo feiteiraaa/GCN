@@ -1805,6 +1805,7 @@
                 HoverBorderColor: =cores.cinzento
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: ="Equipamento"
+                IsSearchable: =false
                 Items: =Choices([@'Equipamentos de Escritório'].Equipamento)
                 NoSelectionText: ="Equipamento"
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
@@ -1812,7 +1813,7 @@
                 PressedBorderColor: =cores.cinzento
                 PressedFill: =cores.amareloMontepio
                 SearchFields: =["uipp_equipamento"]
-                SearchItems: =Search(Choices([@'Equipamentos de Escritório'].Equipamento),Equipamento.SearchText,"uipp_equipamento")
+                SearchItems: =[]
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
                 Tooltip: =
@@ -3335,11 +3336,12 @@
                 HoverBorderColor: =cores.cinzento
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: ="Entidades"
+                IsSearchable: =false
                 Items: =Choices([@Dependências].Entidades)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =cores.amareloMontepio
                 SearchFields: =["uipp_nome"]
-                SearchItems: =Search(Choices([@Dependências].Entidades),'Dependencias Entidades'.SearchText,"uipp_nome")
+                SearchItems: =[]
                 SelectionFill: =cores.amareloMontepio
                 SelectMultiple: =false
                 Tooltip: =
