@@ -13,14 +13,6 @@ Informações As screen:
         Y: =35
         ZIndex: =10
 
-    Label1_6 As label:
-        Align: =Align.Center
-        Size: =15
-        Text: ="Made by FEITEIRA ;) "
-        Width: =1366
-        Y: =765
-        ZIndex: =11
-
     Label10 As label:
         Align: =Align.Center
         DisplayMode: =DisplayMode.View

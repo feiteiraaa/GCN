@@ -26,6 +26,7 @@
       "timezoneruleversionnumber": "Time Zone Rule Version Number",
       "uipp_id": "ID",
       "uipp_idmacroprocesso": "ID Macro Processo",
+      "uipp_IDTipodeProcesso": "ID Tipo de Processo",
       "uipp_macroprocesso": "Macro Processo (uipp_macroprocesso)",
       "uipp_macroprocesso_AsyncOperations": "System Jobs",
       "uipp_macroprocesso_BulkDeleteFailures": "Bulk Delete Failures",
