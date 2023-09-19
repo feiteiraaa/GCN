@@ -6,7 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "uipp_processo",
-    "MaxGetRowsCount": 500,
+    "MaxGetRowsCount": 2000,
     "Name": "Processos",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",

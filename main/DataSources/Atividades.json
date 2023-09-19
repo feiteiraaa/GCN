@@ -6,7 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "uipp_atividades",
-    "MaxGetRowsCount": 500,
+    "MaxGetRowsCount": 2000,
     "Name": "Atividades",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",

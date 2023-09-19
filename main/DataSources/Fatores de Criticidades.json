@@ -6,7 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "uipp_fatoresdecriticidade",
-    "MaxGetRowsCount": 500,
+    "MaxGetRowsCount": 2000,
     "Name": "Fatores de Criticidades",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",

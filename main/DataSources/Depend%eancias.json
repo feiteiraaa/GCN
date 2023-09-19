@@ -6,7 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "uipp_dependencias",
-    "MaxGetRowsCount": 500,
+    "MaxGetRowsCount": 2000,
     "Name": "Dependências",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
