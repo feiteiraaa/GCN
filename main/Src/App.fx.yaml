@@ -2,7 +2,7 @@ App As appinfo:
     BackEnabled: =false
     Formulas: =
     OnStart: |-
-        =/*Concurrent(
+        =Concurrent(
             Set(
                 appVersion,
                 "1.4"
@@ -73,48 +73,18 @@ App As appinfo:
                     }
                 )
             )
-        );*/
+        );
         
         /*Set(
             currentUser,
             "DRI"
         );*/
         
-        /*RemoveIf(
+        RemoveIf(
             MenuTable,
             !ThisRecord.VisivelPara
-        )*/
-         Set(
-                currentUser,
-                First(
-                    Split(
-                        Office365Users.MyProfileV2().department,
-                        "-"
-                    )
-                ).Value
-            );
-        
-        ClearCollect(MenuTable,{
-                        selected: true,
-                        icon: Icon.Home,
-                        text: "Inicio",
-                        Navigate: Inicio,
-                        VisivelPara: true
-                    },
-                    {
-                        selected: false,
-                        icon: Icon.People,
-                        text: "Listagem de atividades",
-                        Navigate: Listagem,
-                        VisivelPara: true
-                    },
-                    {
-                        selected: false,
-                        icon: Icon.Information,
-                        text: "Informações",
-                        Navigate: Informações,
-                        VisivelPara: true
-                    })
+        )
+         
     StartScreen: =
     Theme: =PowerAppsTheme
 
