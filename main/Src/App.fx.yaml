@@ -11,15 +11,15 @@ App As appinfo:
                 Clap,
                 false
             ),
-           /*Set(
+           Set(
                 currentUser,
                 First(
                     Split(
-                        Office365Users.MyProfileV2().department,
+                        Office365Users.MyProfile().Department,
                         "-"
                     )
                 ).Value
-            ),*/
+            ),
             Set(
                 cores,
                 {
