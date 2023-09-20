@@ -2,7 +2,7 @@ App As appinfo:
     BackEnabled: =false
     Formulas: =
     OnStart: |-
-        =Concurrent(
+        =/*Concurrent(
             Set(
                 appVersion,
                 "1.4"
@@ -73,17 +73,17 @@ App As appinfo:
                     }
                 )
             )
-        );
+        );*/
         
         /*Set(
             currentUser,
             "DRI"
         );*/
         
-        RemoveIf(
+        /*RemoveIf(
             MenuTable,
             !ThisRecord.VisivelPara
-        )
+        )*/
     StartScreen: =Listagem
     Theme: =PowerAppsTheme
 

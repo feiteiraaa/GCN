@@ -50,6 +50,13 @@
       }
     },
     {
+      "Kind": "default.cds_uipp_historicodeaprovacoes_forms",
+      "Namespace": "Histórico de aprovações (Forms)",
+      "Values": {
+        "Information": "8df85899-f888-48ae-b7dc-f8c96ceabf32"
+      }
+    },
+    {
       "Kind": "default.cds_uipp_macroprocesso_forms",
       "Namespace": "Macro Processos (Forms)",
       "Values": {
@@ -110,13 +117,6 @@
       "Namespace": "Unidade Orgânicas (Forms)",
       "Values": {
         "Information": "5a837025-2a26-4bfb-8ca6-b270b0314fdb"
-      }
-    },
-    {
-      "Kind": "default.cds_uipp_historicodeaprovacoes_forms",
-      "Namespace": "Histórico de aprovações (Forms)",
-      "Values": {
-        "Information": "8df85899-f888-48ae-b7dc-f8c96ceabf32"
       }
     },
     {
