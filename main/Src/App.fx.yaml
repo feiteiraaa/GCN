@@ -2,14 +2,7 @@ App As appinfo:
     BackEnabled: =false
     Formulas: =
     OnStart: |-
-        =First(
-                    Split(
-                        Office365Users.MyProfileV2().department,
-                        "-"
-                    )
-                ).Value;
-        
-        Concurrent(
+        =Concurrent(
             Set(
                 appVersion,
                 "1.4"
@@ -18,7 +11,7 @@ App As appinfo:
                 Clap,
                 false
             ),
-            /*Set(
+            Set(
                 currentUser,
                 First(
                     Split(
@@ -26,7 +19,7 @@ App As appinfo:
                         "-"
                     )
                 ).Value
-            ),*/
+            ),
             Set(
                 cores,
                 {
@@ -90,9 +83,10 @@ App As appinfo:
         RemoveIf(
             MenuTable,
             !ThisRecord.VisivelPara
-        )
+        );
+        Set(UserDep,currentUser)
          
-    StartScreen: =
+    StartScreen: =Screen1
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
