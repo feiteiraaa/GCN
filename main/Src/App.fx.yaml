@@ -11,7 +11,7 @@ App As appinfo:
                 Clap,
                 false
             ),
-            Set(
+           /* Set(
                 currentUser,
                 First(
                     Split(
@@ -19,7 +19,7 @@ App As appinfo:
                         "-"
                     )
                 ).Value
-            ),
+            ),*/
             Set(
                 cores,
                 {
@@ -75,16 +75,16 @@ App As appinfo:
             )
         );
         
-        /*Set(
+        Set(
             currentUser,
             "DRI"
-        );*/
+        );
         
         RemoveIf(
             MenuTable,
             !ThisRecord.VisivelPara
         );
-        Set(UserDep,currentUser)
+        
          
     StartScreen: =
     Theme: =PowerAppsTheme

@@ -7724,36 +7724,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.UserDep"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.UserDep",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "UserDep",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.Clap"
                 }
               ],
