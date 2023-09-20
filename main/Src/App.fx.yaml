@@ -84,6 +84,7 @@ App As appinfo:
             MenuTable,
             !ThisRecord.VisivelPara
         )
+    StartScreen: =Listagem
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
