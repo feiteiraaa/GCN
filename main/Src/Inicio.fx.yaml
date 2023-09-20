@@ -383,6 +383,12 @@ Inicio As screen:
             Y: =Rectangle2_2.Y
             ZIndex: =8
 
+    Label11 As label:
+        Text: =UserDep
+        X: =927
+        Y: =16
+        ZIndex: =31
+
     "'Galery Headers_2' As group":
         Height: =5
         Width: =5
@@ -501,4 +507,11 @@ Inicio As screen:
             X: =1100
             Y: =329
             ZIndex: =29
+
+    Button3 As button:
+        OnSelect: =Set(currentUser,Label11.Text)
+        Text: ="Button"
+        X: =1021
+        Y: =23
+        ZIndex: =32
 

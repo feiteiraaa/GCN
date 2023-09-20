@@ -3,7 +3,7 @@ App As appinfo:
     Formulas: =
     OnStart: |-
         =Set(
-                currentUser,
+                UserDep,
                 First(
                     Split(
                         Office365Users.MyProfileV2().department,
