@@ -2,7 +2,9 @@ App As appinfo:
     BackEnabled: =false
     Formulas: =
     OnStart: |-
-        =Concurrent(
+        =Office365Users.MyProfileV2().department;
+        
+        Concurrent(
             Set(
                 appVersion,
                 "1.4"
