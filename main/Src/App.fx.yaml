@@ -77,7 +77,7 @@ App As appinfo:
         
         Set(
             currentUser,
-            "DTI"
+            "DRI"
         );
         
         RemoveIf(
