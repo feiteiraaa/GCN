@@ -529,7 +529,7 @@
     </resource>
     <resource path="/{connectionId}/codeless/httprequest">
       <param style="template" name="connectionId" type="xs:string" required="true" />
-      <method siena:requiresAuthentication="true" name="POST" id="HttpRequest" actionName="HttpRequest" visibility="important" siena:isDeprecated="false" siena:status="Preview">
+      <method siena:requiresAuthentication="true" name="POST" id="HttpRequest" actionName="HttpRequest" visibility="important" siena:isDeprecated="false" siena:status="Production">
         <doc title="Send an HTTP request&#xA;Construct a Microsoft Graph REST API request to invoke. These segments are supported: 1st segement: /me, /users/&lt;userId&gt; 2nd segment: messages, mailFolders, events, calendar, calendars, outlook, inferenceClassification. Learn more: https://docs.microsoft.com/en-us/graph/use-the-api." />
         <request>
           <param style="header" name="Uri" type="xs:string" required="true">

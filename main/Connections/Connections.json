@@ -51,14 +51,11 @@
     "dependents": [],
     "id": "84e0689b-70a2-4ae3-9a7a-77ba0a25dc70"
   },
-  "91f2bfd4-685e-4b8c-9feb-05860874215f": {
+  "bfe05602-5bf9-42a1-9ec7-5c03ab8556f9": {
     "connectionRef": {
-      "apiTier": "Standard",
       "displayName": "Office 365 Users",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1644/1.0.1644.3342/office365users/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
-      "parameterHints": {},
-      "parameterHintsV2": {}
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/ase-v3/1.0.1653.3402/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users"
     },
     "datasets": {},
     "dataSources": [
@@ -66,7 +63,7 @@
     ],
     "dependencies": {},
     "dependents": [],
-    "id": "91f2bfd4-685e-4b8c-9feb-05860874215f"
+    "id": "bfe05602-5bf9-42a1-9ec7-5c03ab8556f9"
   },
   "c969daf5-f313-4754-8b7f-defe99cd7215": {
     "connectionRef": {
