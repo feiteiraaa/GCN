@@ -2,7 +2,12 @@ App As appinfo:
     BackEnabled: =false
     Formulas: =
     OnStart: |-
-        =Office365Users.MyProfileV2().department;
+        =First(
+                    Split(
+                        Office365Users.MyProfileV2().department,
+                        "-"
+                    )
+                ).Value;
         
         Concurrent(
             Set(
