@@ -22,14 +22,24 @@ Inicio As screen:
         KPI_Total As KPI:
             KPIInfo: ="Total de Processos de Atividades"
             KPIName: ="Total"
-            KPINumber: |-
-                =If(
+            KPINumber: |
+                =/*If(
                     currentUser = "DRI",
                     CountRows(Atividades),
                     CountRows(
                         Filter(
                             Atividades,
                             currentUser in ThisRecord.'Unidade Orgânica'
+                        )
+                    )
+                )*/
+                If(
+                    currentUser = "DRI",
+                    CountRows(Atividades),
+                    CountRows(
+                        Filter(
+                            Atividades,
+                            ThisRecord.'Unidade Orgânica' = currentUser
                         )
                     )
                 )

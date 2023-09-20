@@ -98,7 +98,7 @@
       "Type": "ControlInfo"
     },
     "KPI": {
-      "AllowAccessToGlobals": false,
+      "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
           "AFDDataSourceName": "",
