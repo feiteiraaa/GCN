@@ -1,5 +1,14 @@
 Informações As screen:
-    OnVisible: =
+    OnVisible: |-
+        =Set(
+                currentUser,
+                First(
+                    Split(
+                        Office365Users.MyProfileV2().department,
+                        "-"
+                    )
+                ).Value
+            )
 
     LeftSectionComponent_3 As LeftSectionComponent:
         ZIndex: =8
