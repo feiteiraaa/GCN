@@ -84,7 +84,38 @@ App As appinfo:
             MenuTable,
             !ThisRecord.VisivelPara
         )*/
-    StartScreen: =Listagem
+         Set(
+                currentUser,
+                First(
+                    Split(
+                        Office365Users.MyProfileV2().department,
+                        "-"
+                    )
+                ).Value
+            );
+        
+        ClearCollect(MenuTable,{
+                        selected: true,
+                        icon: Icon.Home,
+                        text: "Inicio",
+                        Navigate: Inicio,
+                        VisivelPara: true
+                    },
+                    {
+                        selected: false,
+                        icon: Icon.People,
+                        text: "Listagem de atividades",
+                        Navigate: Listagem,
+                        VisivelPara: true
+                    },
+                    {
+                        selected: false,
+                        icon: Icon.Information,
+                        text: "Informações",
+                        Navigate: Informações,
+                        VisivelPara: true
+                    })
+    StartScreen: =
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
