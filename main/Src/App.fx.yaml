@@ -15,7 +15,7 @@ App As appinfo:
                 currentUser,
                 First(
                     Split(
-                        Office365Users.MyProfile().Department,
+                        Office365Users.MyProfileV2().department,
                         "-"
                     )
                 ).Value
