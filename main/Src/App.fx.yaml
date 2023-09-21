@@ -3,9 +3,15 @@ App As appinfo:
     Formulas: =
     OnStart: |-
         =Set(
-                currentUser,
+                User,
                Office365Users.MyProfileV2().department
               );
+        Set(currentUser,First(
+                    Split(
+                        User,
+                        "-"
+                    )
+                ).Value);
         
         Concurrent(
             Set(
