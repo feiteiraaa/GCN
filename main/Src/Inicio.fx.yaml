@@ -1,6 +1,33 @@
 Inicio As screen:
     OnVisible: =
 
+    KPI_Total As KPI:
+        KPIInfo: ="Total de Processos de Atividades"
+        KPIName: ="Total"
+        KPINumber: |
+            =/*If(
+                currentUser = "DRI",
+                CountRows(Atividades),
+                CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica'
+                    )
+                )
+            )*/
+            If(
+                currentUser = "DRI",
+                CountRows(Atividades),
+                CountRows(
+                    Filter(
+                        Atividades,
+                        ThisRecord.'Unidade Orgânica' = currentUser
+                    )
+                )
+            )
+        X: =359
+        Y: =100
+
     KPI_EmPreenchimento As KPI:
         KPIInfo: ="Processos de Atvividades em Preenchimento"
         KPIName: ="Em Preenchimento"
@@ -22,6 +49,7 @@ Inicio As screen:
             )
         X: =527
         Y: =100
+        ZIndex: =2
 
     KPI_EmValidação As KPI:
         KPIInfo: ="Processos de Atividades em Validação"
@@ -44,7 +72,7 @@ Inicio As screen:
             )
         X: =696
         Y: =100
-        ZIndex: =2
+        ZIndex: =3
 
     KPI_Aprovados As KPI:
         KPIInfo: ="Processos de Atividade Aprovados"
@@ -67,7 +95,7 @@ Inicio As screen:
             )
         X: =864
         Y: =100
-        ZIndex: =3
+        ZIndex: =4
 
     KPI_Rejeitados As KPI:
         KPIInfo: ="Processos de Atividade Rejeitados"
@@ -90,7 +118,7 @@ Inicio As screen:
             )
         X: =1031
         Y: =100
-        ZIndex: =4
+        ZIndex: =5
 
     KPI_EmRevisao As KPI:
         KPIInfo: ="Processos de Atividade em Revisão"
@@ -113,7 +141,7 @@ Inicio As screen:
             )
         X: =1196
         Y: =100
-        ZIndex: =5
+        ZIndex: =6
 
     Label1 As label:
         Size: =15
@@ -121,10 +149,10 @@ Inicio As screen:
         Width: =610
         X: =359
         Y: =35
-        ZIndex: =6
+        ZIndex: =7
 
     LeftSectionComponent_1 As LeftSectionComponent:
-        ZIndex: =7
+        ZIndex: =8
 
     TextCanvas1 As Text:
         DisplayMode: =DisplayMode.View
@@ -133,7 +161,7 @@ Inicio As screen:
         Width: =58
         X: =1308
         Y: =20
-        ZIndex: =8
+        ZIndex: =10
 
     Icon1 As icon.Information:
         Color: =Color.Black
@@ -142,14 +170,14 @@ Inicio As screen:
         Width: =25
         X: =1278
         Y: =23
-        ZIndex: =9
+        ZIndex: =11
 
     Label1_5 As label:
         Text: ="Histórico de estado das atividades"
         Width: =337
         X: =359
         Y: =294
-        ZIndex: =10
+        ZIndex: =21
 
     "'Gallery Data_2' As gallery.variableTemplateHeightGallery":
         DelayItemLoading: =true
@@ -201,7 +229,7 @@ Inicio As screen:
         Width: =Principal_2.Width
         X: =355
         Y: =397
-        ZIndex: =19
+        ZIndex: =30
 
         Rectangle2_2 As rectangle:
             Fill: |-
@@ -373,7 +401,7 @@ Inicio As screen:
             Width: =990
             X: =356
             Y: =334
-            ZIndex: =11
+            ZIndex: =22
 
         "'U.O. Header_2' As label":
             Align: =Align.Center
@@ -391,7 +419,7 @@ Inicio As screen:
                 ) / 4
             X: =357
             Y: =329
-            ZIndex: =12
+            ZIndex: =23
 
         "'U.O. Header Split_2' As rectangle":
             Fill: =Color.LightGray
@@ -401,7 +429,7 @@ Inicio As screen:
             Width: =2
             X: =601
             Y: =334
-            ZIndex: =13
+            ZIndex: =24
 
         "'Atividade Header_2' As label":
             Align: =Align.Center
@@ -419,7 +447,7 @@ Inicio As screen:
                 ) / 4
             X: =603
             Y: =329
-            ZIndex: =14
+            ZIndex: =25
 
         "'Atividade Header Split_2' As rectangle":
             Fill: =Color.LightGray
@@ -429,7 +457,7 @@ Inicio As screen:
             Width: =2
             X: =849
             Y: =334
-            ZIndex: =15
+            ZIndex: =26
 
         "'Descricao Header_2' As label":
             Align: =Align.Center
@@ -447,7 +475,7 @@ Inicio As screen:
                 ) / 4
             X: =847
             Y: =329
-            ZIndex: =16
+            ZIndex: =27
 
         "'Descricao Header Split_2' As rectangle":
             Fill: =Color.LightGray
@@ -457,7 +485,7 @@ Inicio As screen:
             Width: =2
             X: =1096
             Y: =334
-            ZIndex: =17
+            ZIndex: =28
 
         "'Tipo Processo Header_2' As label":
             Align: =Align.Center
@@ -475,59 +503,5 @@ Inicio As screen:
                 ) / 4
             X: =1100
             Y: =329
-            ZIndex: =18
-
-    KPITotal As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =35
-
-        Rectangle3_2 As rectangle:
-            BorderColor: =Color.Black
-            BorderThickness: =1
-            Fill: =RGBA(222, 221, 231, 1)
-            Height: =150
-            X: =359
-            Y: =100
-            ZIndex: =20
-
-        "'KPI title_2' As label":
-            Align: =Align.Center
-            Height: =60
-            Text: ="Total"
-            X: =359
-            Y: =100
-            ZIndex: =21
-
-        "'KPI number_2' As label":
-            Align: =Align.Center
-            FontWeight: =FontWeight.Bold
-            Height: =77
-            Size: =22
-            Text: |-
-                =If(
-                    currentUser = "DRI",
-                    CountRows(Atividades),
-                    CountRows(
-                        Filter(
-                            Atividades,
-                            currentUser in ThisRecord.'Unidade Orgânica'
-                        )
-                    )
-                )
-            X: =359
-            Y: =155
-            ZIndex: =22
-
-        "InfoButtonCanvas1_2 As 'Information button'":
-            Content: ="Total de Processos de Atividades"
-            DisplayMode: =DisplayMode.Edit
-            Height: =30
-            IconSize: ='InfoButtonCanvas.IconSize'.Large
-            Width: =30
-            X: =479
-            Y: =100
-            ZIndex: =23
+            ZIndex: =29
 
