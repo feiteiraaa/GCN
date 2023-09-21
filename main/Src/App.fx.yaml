@@ -86,7 +86,7 @@ App As appinfo:
         );
         
          
-    StartScreen: =
+    StartScreen: =Screen1
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
