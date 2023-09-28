@@ -2,7 +2,7 @@ App As appinfo:
     BackEnabled: =false
     Formulas: =
     OnStart: |-
-        =Set(
+        =/*Set(
                 User,
                Office365Users.MyProfileV2().department
               );
@@ -12,7 +12,7 @@ App As appinfo:
                         "-"
                     )
                 ).Value);
-        
+        */
         Concurrent(
             Set(
                 appVersion,
@@ -86,10 +86,10 @@ App As appinfo:
             )
         );
         
-        /*Set(
+        Set(
             currentUser,
             "DRI"
-        );*/
+        );
         
         RemoveIf(
             MenuTable,

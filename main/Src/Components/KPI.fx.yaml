@@ -32,6 +32,7 @@ KPI As CanvasComponent:
         ZIndex: =3
 
     "InfoButtonCanvas1 As 'Information button'":
+        BasePaletteColor: =""
         Content: =KPI.KPIInfo
         DisplayMode: =DisplayMode.Edit
         Height: =30

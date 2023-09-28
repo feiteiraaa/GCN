@@ -38,6 +38,7 @@ Screen1 As screen:
         ZIndex: =3
 
     "InfoButtonCanvas1_1 As 'Information button'":
+        BasePaletteColor: =""
         Content: ="Total de Processos de Atividades"
         DisplayMode: =DisplayMode.Edit
         Height: =30

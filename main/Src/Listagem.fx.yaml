@@ -693,7 +693,7 @@ Listagem As screen:
             BtnWidth: =200
             ButtonIcon: =Icon.Download
             Visible: |+
-                =If(currentUser = "DSI", true, false)
+                =If(currentUser = "DRI", true, false)
                 
             X: =931
             Y: =35
@@ -748,7 +748,7 @@ Listagem As screen:
             PressedColor: =Color.Transparent
             Text: =
             Visible: |
-                =If(currentUser = "DSI", true, false)
+                =If(currentUser = "DRI", true, false)
             Width: =ExportBtn.Width
             X: =931
             Y: =35
