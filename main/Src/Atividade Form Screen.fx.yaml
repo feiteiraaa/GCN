@@ -1587,16 +1587,24 @@
         "'Calculate RTO' As button":
             OnSelect: |+
                 =UpdateContext({
-                    RTO: 0,
+                    RTO: 4,
                     RTOTempo: "<4 horas"
                 });
                 
+                If( Value('4Horas'.Text) > RTO, UpdateContext({ RTO: Value('4Horas'.Text), RTOTempo: "<4 horas"}),If( Value('24Horas'.Text) >= RTO, UpdateContext({ RTO: Value('24Horas'.Text), RTOTempo: "<24 horas" }),If( Value('48Horas'.Text) >= RTO, UpdateContext({ RTO: Value('48Horas'.Text), RTOTempo: "<48 horas" }),If( Value('1Semana'.Text) >= RTO, UpdateContext({ RTO: Value('1Semana'.Text), RTOTempo: "<1 semana" }),If( Value('2Semanas'.Text) >= RTO, UpdateContext({ RTO: Value('2Semanas'.Text), RTOTempo: "<2 semanas" }),If( Value('1Mes'.Text) >= RTO, UpdateContext({ RTO: Value('1Mes'.Text), RTOTempo: "<1 mês" })))))));
+                
+                
+                
+                
+                /*
                 If( Value('4Horas'.Text) > RTO, UpdateContext({ RTO: Value('4Horas'.Text), RTOTempo: "<4 horas"}));
                 If( Value('24Horas'.Text) >= RTO, UpdateContext({ RTO: Value('24Horas'.Text), RTOTempo: "<24 horas" }));
                 If( Value('48Horas'.Text) >= RTO, UpdateContext({ RTO: Value('48Horas'.Text), RTOTempo: "<48 horas" }));
                 If( Value('1Semana'.Text) >= RTO, UpdateContext({ RTO: Value('1Semana'.Text), RTOTempo: "<1 semana" }));
                 If( Value('2Semanas'.Text) >= RTO, UpdateContext({ RTO: Value('2Semanas'.Text), RTOTempo: "<2 semanas" }));
                 If( Value('1Mes'.Text) >= RTO, UpdateContext({ RTO: Value('1Mes'.Text), RTOTempo: "<1 mês" }));
+                */
+                
                 
                 If(
                     Value('4Horas'.Text) = 4 Or
