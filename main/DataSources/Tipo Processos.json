@@ -25,6 +25,7 @@
       "statuscode": "Status Reason",
       "timezoneruleversionnumber": "Time Zone Rule Version Number",
       "uipp_id": "ID",
+      "uipp_id_tipo_processo": "ID_Tipo_Processo",
       "uipp_idtipoprocesso": "ID Tipo Processo",
       "uipp_tipodeprocesso": "Tipo de Processo",
       "uipp_tipoprocesso_AsyncOperations": "System Jobs",

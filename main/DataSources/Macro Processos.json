@@ -25,6 +25,7 @@
       "statuscode": "Status Reason",
       "timezoneruleversionnumber": "Time Zone Rule Version Number",
       "uipp_id": "ID",
+      "uipp_id_macro_processo": "ID_Macro_Processo",
       "uipp_idmacroprocesso": "ID Macro Processo",
       "uipp_IDTipodeProcesso": "ID Tipo de Processo",
       "uipp_macroprocesso": "Macro Processo (uipp_macroprocesso)",

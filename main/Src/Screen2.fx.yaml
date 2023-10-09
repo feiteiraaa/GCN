@@ -1,0 +1,63 @@
+Screen2 As screen:
+    OnVisible: |-
+        =Collect(collectatividades, {Atividade: inp_atividade.Text});
+
+    Gallery1 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =470
+        Items: =collectatividades
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =59
+        X: =97
+        Y: =88
+        ZIndex: =1
+
+        Label12 As label:
+            Height: =35
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Atividade
+            Width: =365
+            X: =32
+            Y: =12
+            ZIndex: =1
+
+        "'Equipamentos Remove_2' As icon.Add":
+            Color: =cores.cinzento
+            Height: =30
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =Select(Parent);
+                RemoveIf(
+                    collectatividades,
+                    ThisRecord.Atividade=ThisItem.Atividade
+                )
+            Width: =30
+            X: =521
+            Y: =14
+            ZIndex: =2
+
+    Button3 As button:
+        OnSelect: |-
+            =Collect(collectRecursos, {row: Last(collectatividades).row + 1})
+        Text: ="Button"
+        X: =946
+        Y: =558
+        ZIndex: =2
+
+    inp_atividade As text:
+        Default: ="Text input"
+        X: =144
+        Y: =36
+        ZIndex: =3
+
+    Icon7 As icon.Save:
+        Height: =52
+        Icon: =Icon.Save
+        OnSelect: |-
+            =Collect(collectatividades, {Atividade: inp_atividade.Text});
+        Width: =45
+        X: =482
+        Y: =30
+        ZIndex: =4
+

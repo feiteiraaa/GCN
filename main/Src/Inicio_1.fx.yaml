@@ -1,0 +1,507 @@
+Inicio_1 As screen:
+    OnVisible: =
+
+    KPI_Total_1 As KPI:
+        KPIInfo: ="Total de Processos de Atividades"
+        KPIName: ="Total"
+        KPINumber: |
+            =/*If(
+                currentUser = "DRI",
+                CountRows(Atividades),
+                CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica'
+                    )
+                )
+            )*/
+            If(
+                currentUser = "DRI",
+                CountRows(Atividades),
+                CountRows(
+                    Filter(
+                        Atividades,
+                        ThisRecord.'Unidade Orgânica' = currentUser
+                    )
+                )
+            )
+        X: =359
+        Y: =100
+
+    KPI_EmPreenchimento_1 As KPI:
+        KPIInfo: ="Processos de Atvividades em Preenchimento"
+        KPIName: ="Em Preenchimento"
+        KPINumber: |-
+            =If(
+                currentUser = "DRI",
+                CountRows(
+                    Filter(
+                        Atividades,
+                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Preenchimento"))
+                    )
+                ),
+                CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Preenchimento"))
+                    )
+                )
+            )
+        X: =527
+        Y: =100
+        ZIndex: =2
+
+    KPI_EmValidação_1 As KPI:
+        KPIInfo: ="Processos de Atividades em Validação"
+        KPIName: ="Em Validação"
+        KPINumber: |-
+            =If(
+                currentUser = "DRI",
+                CountRows(
+                    Filter(
+                        Atividades,
+                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Validação"))
+                    )
+                ),
+                CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Validação"))
+                    )
+                )
+            )
+        X: =696
+        Y: =100
+        ZIndex: =3
+
+    KPI_Aprovados_1 As KPI:
+        KPIInfo: ="Processos de Atividade Aprovados"
+        KPIName: ="Aprovados"
+        KPINumber: |-
+            =If(
+                currentUser = "DRI",
+                CountRows(
+                    Filter(
+                        Atividades,
+                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Aprovado"))
+                    )
+                ),
+                CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Aprovado"))
+                    )
+                )
+            )
+        X: =864
+        Y: =100
+        ZIndex: =4
+
+    KPI_Rejeitados_1 As KPI:
+        KPIInfo: ="Processos de Atividade Rejeitados"
+        KPIName: ="Rejeitados"
+        KPINumber: |-
+            =If(
+                currentUser = "DRI",
+                CountRows(
+                    Filter(
+                        Atividades,
+                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Rejeitado"))
+                    )
+                ),
+                CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Rejeitado"))
+                    )
+                )
+            )
+        X: =1031
+        Y: =100
+        ZIndex: =5
+
+    KPI_EmRevisao_1 As KPI:
+        KPIInfo: ="Processos de Atividade em Revisão"
+        KPIName: ="Em Revisão"
+        KPINumber: |-
+            =If(
+                currentUser = "DRI",
+                CountRows(
+                    Filter(
+                        Atividades,
+                        Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Revalidação"))
+                    )
+                ),
+                CountRows(
+                    Filter(
+                        Atividades,
+                        currentUser in ThisRecord.'Unidade Orgânica' And Lower(Trim(ThisRecord.Estado)) = Lower(Trim("Em Revalidação"))
+                    )
+                )
+            )
+        X: =1196
+        Y: =100
+        ZIndex: =6
+
+    Label1_9 As label:
+        Size: =15
+        Text: ="Bem vindo, " & User().FullName & " (" & currentUser & ")"
+        Width: =610
+        X: =359
+        Y: =35
+        ZIndex: =7
+
+    LeftSectionComponent_9 As LeftSectionComponent:
+        ZIndex: =8
+
+    TextCanvas1_1 As Text:
+        DisplayMode: =DisplayMode.View
+        Height: =32
+        Text: ="v" & appVersion
+        Width: =58
+        X: =1308
+        Y: =20
+        ZIndex: =10
+
+    Icon1_3 As icon.Information:
+        Color: =Color.Black
+        Height: =25
+        Icon: =Icon.Information
+        Width: =25
+        X: =1278
+        Y: =23
+        ZIndex: =11
+
+    Label1_10 As label:
+        Text: ="Histórico de estado das atividades"
+        Width: =337
+        X: =359
+        Y: =294
+        ZIndex: =21
+
+    "'Gallery Data_5' As gallery.variableTemplateHeightGallery":
+        DelayItemLoading: =true
+        DisplayMode: =DisplayMode.View
+        Fill: =Color.White
+        Height: =325
+        Items: |-
+            =With(
+                {
+                    records:
+                    If(
+                        currentUser = "DRI",
+                        'Histórico de aprovações',
+                        Filter(
+                            'Histórico de aprovações',
+                            ThisRecord.'ID Atividade'.'Unidade Orgânica' = currentUser
+                        )
+                    )        
+                },
+                ForAll(
+                    Sequence(CountRows(records)),
+                    Patch(
+                        Last(
+                            FirstN(
+                                SortByColumns(
+                                    records,
+                                    "createdon",
+                                    SortOrder.Descending
+                                ),
+                                Value
+                            )
+                        ),
+                        {rowNumber: Value}
+                    )
+                )
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =
+        ShowScrollbar: =false
+        TemplateFill: |-
+            =If(
+                Mod(ThisItem.rowNumber, 2) = 0,
+                Color.LightSlateGray,
+                Color.White
+            )
+        TemplatePadding: =0
+        TemplateSize: =75
+        Width: =Principal_5.Width
+        X: =355
+        Y: =397
+        ZIndex: =30
+
+        Rectangle2_17 As rectangle:
+            Fill: |-
+                =Switch(
+                    Trim(Lower(ThisItem.Estado)),
+                    
+                    Trim(Lower("Em preenchimento")),
+                    Color.Blue,
+                    
+                    Trim(Lower("Em validação")),
+                    Color.Yellow,
+                
+                    Trim(Lower("Aprovado")),
+                    Color.Green,
+                
+                    Trim(Lower("Rejeitado")),
+                    Color.Red,
+                
+                    Trim(Lower("Em revisão pela U.O.")),
+                    Color.DarkOrange,
+                
+                    Trim(Lower("Em revalidação")),
+                    Color.Yellow
+                
+                )
+            Height: =75
+            OnSelect: =Select(Parent)
+            Width: =7
+            ZIndex: =1
+
+        "'U.O._5' As label":
+            Align: =Align.Center
+            Color: |-
+                =If(
+                    Mod(ThisItem.rowNumber, 2) = 0,
+                    Color.White,
+                    Color.DarkSlateGray
+                )
+            Height: =Rectangle2_17.Height
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Estado
+            Width: |-
+                =(
+                    Principal_5.Width - ('U.O. Header Split_5'.Width * 4)
+                ) / 4
+            Y: =Rectangle2_17.Y
+            ZIndex: =2
+
+        "'U.O. Split_5' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Rectangle2_17.Height
+            OnSelect: =
+            Width: =2
+            X: ='U.O._5'.X + 'U.O._5'.Width
+            Y: =Rectangle2_17.Y
+            ZIndex: =3
+
+        Atividade_5 As label:
+            Align: =Align.Center
+            Color: |-
+                =If(
+                    Mod(ThisItem.rowNumber, 2) = 0,
+                    Color.White,
+                    Color.DarkSlateGray
+                )
+            Height: =Rectangle2_17.Height
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'ID Atividade'.Atividade
+            Width: |-
+                =(
+                    Principal_5.Width - ('U.O. Header Split_5'.Width * 4)
+                ) / 4
+            X: ='U.O. Split_5'.X + 'U.O. Split_5'.Width
+            Y: =Rectangle2_17.Y
+            ZIndex: =4
+
+        "'Atividade Split_5' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Rectangle2_17.Height
+            OnSelect: =Atividade_5.X + Atividade_5.Width
+            Width: =2
+            X: =Atividade_5.X + Atividade_5.Width
+            Y: =Rectangle2_17.Y
+            ZIndex: =5
+
+        Descricao_4 As label:
+            Align: =Align.Center
+            Color: |-
+                =If(
+                    Mod(ThisItem.rowNumber, 2) = 0,
+                    Color.White,
+                    Color.DarkSlateGray
+                )
+            Height: =Rectangle2_17.Height
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'ID Atividade'.'Unidade Orgânica'
+            Width: |-
+                =(
+                    Principal_5.Width - ('U.O. Header Split_5'.Width * 4)
+                ) / 4
+            X: ='Atividade Split_5'.X + 'Atividade Split_5'.Width
+            Y: =Rectangle2_17.Y
+            ZIndex: =6
+
+        "'Descricao Split_4' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Rectangle2_17.Height
+            OnSelect: =
+            Width: =2
+            X: =Descricao_4.X + Descricao_4.Width
+            Y: =Rectangle2_17.Y
+            ZIndex: =7
+
+        "'Tipo Processo_5' As label":
+            Align: =Align.Center
+            Color: |-
+                =If(
+                    Mod(ThisItem.rowNumber, 2) = 0,
+                    Color.White,
+                    Color.DarkSlateGray
+                )
+            Height: =Rectangle2_17.Height
+            OnSelect: |-
+                =Select(Parent);
+                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =First(ThisItem.'ID Atividade'.RTOS).Classificação
+            Width: |-
+                =(
+                    Principal_5.Width - ('U.O. Header Split_5'.Width * 4)
+                ) / 4
+            X: ='Descricao Split_4'.X + 'Descricao Split_4'.Width
+            Y: =Rectangle2_17.Y
+            ZIndex: =8
+
+    "'Galery Headers_5' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =31
+
+        Principal_5 As rectangle:
+            Fill: =cores.cinzento
+            Height: =63
+            OnSelect: =
+            TabIndex: =0
+            Width: =990
+            X: =356
+            Y: =334
+            ZIndex: =22
+
+        "'U.O. Header_5' As label":
+            Align: =Align.Center
+            Color: =Color.LightGray
+            Height: =Principal_5.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            TabIndex: =0
+            Text: ="Estado"
+            Width: |-
+                =(
+                    Principal_5.Width - ('U.O. Header Split_5'.Width * 4)
+                ) / 4
+            X: =357
+            Y: =329
+            ZIndex: =23
+
+        "'U.O. Header Split_5' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Principal_5.Height
+            OnSelect: =
+            TabIndex: =0
+            Width: =2
+            X: =601
+            Y: =334
+            ZIndex: =24
+
+        "'Atividade Header_5' As label":
+            Align: =Align.Center
+            Color: =Color.LightGray
+            Height: =Principal_5.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            TabIndex: =0
+            Text: ="Atividade"
+            Width: |-
+                =(
+                    Principal_5.Width - ('U.O. Header Split_5'.Width * 4)
+                ) / 4
+            X: =603
+            Y: =329
+            ZIndex: =25
+
+        "'Atividade Header Split_5' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Principal_5.Height
+            OnSelect: =
+            TabIndex: =0
+            Width: =2
+            X: =849
+            Y: =334
+            ZIndex: =26
+
+        "'Descricao Header_4' As label":
+            Align: =Align.Center
+            Color: =Color.LightGray
+            Height: =Principal_5.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            TabIndex: =0
+            Text: ="Unidade Orgânica"
+            Width: |-
+                =(
+                    Principal_5.Width - ('U.O. Header Split_5'.Width * 4)
+                ) / 4
+            X: =847
+            Y: =329
+            ZIndex: =27
+
+        "'Descricao Header Split_4' As rectangle":
+            Fill: =Color.LightGray
+            Height: =Principal_5.Height
+            OnSelect: =
+            TabIndex: =0
+            Width: =2
+            X: =1096
+            Y: =334
+            ZIndex: =28
+
+        "'Tipo Processo Header_5' As label":
+            Align: =Align.Center
+            Color: =Color.LightGray
+            Height: =Principal_5.Height
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            TabIndex: =0
+            Text: ="Classificação de RTO"
+            Width: |-
+                =(
+                    Principal_5.Width - ('U.O. Header Split_5'.Width * 4)
+                ) / 4
+            X: =1100
+            Y: =329
+            ZIndex: =29
+
