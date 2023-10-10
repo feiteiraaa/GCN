@@ -70,8 +70,13 @@ Screen2 As screen:
 
     Icon7 As icon.Alarm:
         Icon: =Icon.Alarm
-        OnSelect: |-
-            =ForAll(glr_Atividades.AllItems, Patch(Atividades,LookUp(Atividades,ID=ThisRecord.ID),{Atividade:Label12.Text, 'Tipo de Processo':LookUp('Tipo Processos','Tipo de Processo'=DataCardValue11_1.Selected.'Tipo de Processo'),'Macro Processo':LookUp('Macro Processos','Macro Processo (uipp_macroprocesso)'=DataCardValue8_1.Selected.'Macro Processo (uipp_macroprocesso)'),Processo:LookUp(Processos,'Processo (uipp_processo)'=DataCardValue10_1.Selected.'Processo (uipp_processo)'),Edifício:LookUp(Edifícios,Edifícios=DataCardValue7_1.Selected.Edifícios),ID_Total:Label11.Text}))
+        OnSelect: |+
+            =
+            
+            ForAll(glr_Atividades_3.AllItems, Patch(Atividadestable,LookUp(Atividadestable,ID=ThisRecord.ID),{Atividade:Label12_3.Text, 'Tipo de Processo':LookUp('Tipo Processos','Tipo de Processo'=DataCardValue11_1.Selected.'Tipo de Processo'),'Macro Processo':LookUp('Macro Processos','Macro Processo (uipp_macroprocesso)'=DataCardValue8_1.Selected.'Macro Processo (uipp_macroprocesso)'),Processo:LookUp(Processos,'Processo (uipp_processo)'=DataCardValue10_1.Selected.'Processo (uipp_processo)'),Edifício:LookUp(Edifícios,Edifícios=DataCardValue7_1.Selected.Edifícios),ID_Total:Label11.Text}))
+            
+            
+            
         X: =809
         Y: =147
         ZIndex: =7
@@ -79,7 +84,8 @@ Screen2 As screen:
     glr_Atividades_3 As gallery.galleryVertical:
         DelayItemLoading: =true
         Height: =270
-        Items: =Filter(Atividades,ID_Total='Gallery Data_3'.Selected.ID_Total)
+        Items: |
+            =Filter(Atividades,ID_Total='Gallery Data_3'.Selected.ID_Total)
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =41
@@ -90,7 +96,7 @@ Screen2 As screen:
         Label12_3 As label:
             Height: =35
             OnSelect: =Select(Parent)
-            Text: ="- "&ThisItem.Atividade
+            Text: =ThisItem.Atividade
             Width: =365
             X: =28
             ZIndex: =1
