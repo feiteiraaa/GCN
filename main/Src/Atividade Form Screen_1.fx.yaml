@@ -3900,14 +3900,14 @@
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =41
         Visible: =If(formMode=2 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-        X: =700
-        Y: =369
+        X: =693
+        Y: =411
         ZIndex: =39
 
         Label12_2 As label:
             Height: =35
             OnSelect: =Select(Parent)
-            Text: =ThisItem.Atividade
+            Text: ="- "&ThisItem.Atividade
             Width: =365
             X: =28
             ZIndex: =1
