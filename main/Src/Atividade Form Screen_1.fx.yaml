@@ -175,8 +175,8 @@
             )
         Visible: =Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo"))
         Width: =990
-        X: =361
-        Y: =212
+        X: =358
+        Y: =255
         ZIndex: =3
 
         "'Tipo de Processo_DataCard1_1' As typedDataCard.comboBoxEditCard":
@@ -524,84 +524,6 @@
                 Y: =DataCardKey8_1.Y
                 ZIndex: =4
 
-        Estado_DataCard1_1 As typedDataCard.comboBoxOptionSetSingleEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="uipp_estado"
-            Default: =ThisItem.Estado
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Atividades],DataSourceInfo.DisplayName,"uipp_estado")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: =DataCardValue6_1.Selected.Value
-            Visible: =false
-            Width: =329
-            X: =1
-            Y: =1
-            ZIndex: =1
-
-            DataCardKey7_1 As label:
-                AutoHeight: =true
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                ZIndex: =1
-
-            DataCardValue6_1 As combobox:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: |-
-                    =LookUp(
-                        Choices('Estado Processo'),
-                        Text(ThisRecord.Value) = "Em preenchimento"
-                    )
-                DefaultSelectedItems: |-
-                    =/*If(
-                        IsBlank([Parent.Default]),
-                        */LookUp(
-                            Choices('Estado Processo'),
-                            Text(ThisRecord.Value) = "Em preenchimento"
-                        )/*,
-                        [Parent.Default]
-                    )*/
-                DisplayFields: =["Value"]
-                DisplayMode: =Parent.DisplayMode
-                IsSearchable: =false
-                Items: =Choices('Estado Processo')
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SearchFields: =["Value"]
-                SearchItems: =[]
-                SelectMultiple: =false
-                Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Y: =21
-                ZIndex: =2
-
-            ErrorMessage5_1 As label:
-                AutoHeight: =true
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue6_1.Y + DataCardValue6_1.Height
-                ZIndex: =3
-
-            StarVisible5_1 As label:
-                Align: =Align.Center
-                Height: =DataCardKey7_1.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey7_1.Y
-                ZIndex: =4
-
         "'Unidade Orgânica_DataCard1_1' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="uipp_unidadeorganica"
@@ -674,6 +596,84 @@
                 Width: =30
                 Wrap: =false
                 Y: =DataCardKey13_1.Y
+                ZIndex: =4
+
+        Estado_DataCard1_1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="uipp_estado"
+            Default: =ThisItem.Estado
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Atividades],DataSourceInfo.DisplayName,"uipp_estado")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue6_1.Selected.Value
+            Visible: =false
+            Width: =329
+            X: =332
+            Y: =152
+            ZIndex: =1
+
+            DataCardKey7_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue6_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: |-
+                    =LookUp(
+                        Choices('Estado Processo'),
+                        Text(ThisRecord.Value) = "Em preenchimento"
+                    )
+                DefaultSelectedItems: |-
+                    =/*If(
+                        IsBlank([Parent.Default]),
+                        */LookUp(
+                            Choices('Estado Processo'),
+                            Text(ThisRecord.Value) = "Em preenchimento"
+                        )/*,
+                        [Parent.Default]
+                    )*/
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
+                Items: =Choices('Estado Processo')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Y: =21
+                ZIndex: =2
+
+            ErrorMessage5_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue6_1.Y + DataCardValue6_1.Height
+                ZIndex: =3
+
+            StarVisible5_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey7_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey7_1.Y
                 ZIndex: =4
 
     "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
@@ -3340,7 +3340,7 @@
             OnSelect: |+
                 =
                 // Submeter Caracterização do Processo
-                ForAll(glr_Atividades.AllItems, Patch(Atividades,Defaults(Atividades),{Atividade:Label12.Text, 'Tipo de Processo':LookUp('Tipo Processos','Tipo de Processo'=DataCardValue11_1.Selected.'Tipo de Processo'),'Macro Processo':LookUp('Macro Processos','Macro Processo (uipp_macroprocesso)'=DataCardValue8_1.Selected.'Macro Processo (uipp_macroprocesso)'),Processo:LookUp(Processos,'Processo (uipp_processo)'=DataCardValue10_1.Selected.'Processo (uipp_processo)'),Edifício:LookUp(Edifícios,Edifícios=DataCardValue7_1.Selected.Edifícios),ID_Total:Label11.Text}));
+                ForAll(glr_Atividades.AllItems, Patch(Atividades,Defaults(Atividades),{Atividade:Label12.Text, 'Tipo de Processo':LookUp('Tipo Processos','Tipo de Processo'=DataCardValue11_1.Selected.'Tipo de Processo'),'Macro Processo':LookUp('Macro Processos','Macro Processo (uipp_macroprocesso)'=DataCardValue8_1.Selected.'Macro Processo (uipp_macroprocesso)'),Processo:LookUp(Processos,'Processo (uipp_processo)'=DataCardValue10_1.Selected.'Processo (uipp_processo)'),Edifício:LookUp(Edifícios,Edifícios=DataCardValue7_1.Selected.Edifícios),ID_Total:Label11.Text,Estado:DataCardValue6_1.Selected.Value,'Unidade Orgânica':DataCardValue12_1.Text}));
                 Set(
                     LastAtividadeId,
                     'Caracterizacao do Processo_1'.LastSubmit.ID
@@ -3636,7 +3636,7 @@
                     {
                         ApproveForm: {
                             visible: true,
-                            texto: "Deseja APROVAR a atividade " & DataCardValue3_1.Text & " ?"
+                            texto: "Deseja APROVAR a atividade ?"
                         }
                     }
                 )
@@ -3675,7 +3675,7 @@
                 =UpdateContext({
                     ApproveForm: {
                         visible: true,
-                        texto: "Deseja REJEITAR a atividade " & DataCardValue3_1.Text & " ?"
+                        texto: "Deseja REJEITAR a atividade ?"
                     }
                 });
             PressedColor: =Color.Transparent
@@ -3814,14 +3814,14 @@
     Label11 As label:
         Text: =LookUp('Tipo Processos','Tipo de Processo'=DataCardValue11_1.Selected.'Tipo de Processo',ID_Tipo_Processo) &"-" & LookUp('Macro Processos','Macro Processo (uipp_macroprocesso)'=DataCardValue8_1.Selected.'Macro Processo (uipp_macroprocesso)',ID_Macro_Processo) &"-" & Left(DataCardValue10_1.Selected.'Processo (uipp_processo)', 4)
         Visible: =Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo"))
-        X: =394
-        Y: =172
+        X: =387
+        Y: =210
         ZIndex: =34
 
     Button5 As button:
         OnSelect: =ResetForm('Caracterizacao do Processo_1');
         Text: ="Button"
-        X: =913
+        X: =722
         ZIndex: =35
 
     glr_Atividades_1 As gallery.galleryVertical:
@@ -3830,19 +3830,22 @@
         Items: =collectatividades
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =59
-        Visible: =If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-        X: =716
-        Y: =385
+        TemplateSize: =51
+        Visible: |-
+            =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+            If(formMode=1 || formMode=0,If( Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
+        Width: =676
+        X: =682
+        Y: =465
         ZIndex: =36
 
         Label12_1 As label:
-            Height: =35
+            Height: =33
             OnSelect: =Select(Parent)
             Text: =ThisItem.Atividade
-            Width: =365
-            X: =32
-            Y: =12
+            Width: =541
+            X: =68
+            Y: =11
             ZIndex: =1
 
         "'Equipamentos Remove_3' As icon.Add":
@@ -3856,26 +3859,37 @@
                     ThisRecord.Atividade=ThisItem.Atividade
                 )
             Width: =30
-            X: =521
-            Y: =14
+            X: =38
+            Y: =11
             ZIndex: =2
 
     inp_atividade_1 As text:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =1
         Default: ="Text input"
-        Visible: =If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-        X: =763
-        Y: =333
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: |-
+            =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+            If(formMode=1 || formMode=0,If( Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
+        X: =720
+        Y: =413
         ZIndex: =37
 
     Icon5_1 As icon.Add:
+        Color: =RGBA(0, 0, 0, 1)
         Height: =36
         Icon: =Icon.Add
         OnSelect: |-
             =Collect(collectatividades, {Atividade: inp_atividade_1.Text});
-        Visible: =If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+        Visible: |-
+            =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+            If(formMode=1 || formMode=0,If( Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
         Width: =46
-        X: =1094
-        Y: =333
+        X: =1054
+        Y: =417
         ZIndex: =38
 
     glr_Atividades_2 As gallery.galleryVertical:
@@ -3897,6 +3911,20 @@
             Width: =365
             X: =28
             ZIndex: =1
+
+    Label13 As label:
+        FontWeight: =FontWeight.Bold
+        Text: ="Atividades"
+        X: =721
+        Y: =373
+        ZIndex: =40
+
+    Label14 As label:
+        FontWeight: =FontWeight.Bold
+        Text: ="ID"
+        X: =387
+        Y: =175
+        ZIndex: =41
 
     FatoresHeaders_1 As group:
         Height: =5
