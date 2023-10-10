@@ -1,10 +1,9 @@
 Screen2 As screen:
-    OnVisible: |-
-        =Collect(collectatividades, {Atividade: inp_atividade.Text});
+    OnVisible: =
 
-    Gallery1 As gallery.galleryVertical:
+    glr_Atividades As gallery.galleryVertical:
         DelayItemLoading: =true
-        Height: =470
+        Height: =270
         Items: =collectatividades
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
@@ -51,13 +50,21 @@ Screen2 As screen:
         Y: =36
         ZIndex: =3
 
-    Icon7 As icon.Save:
-        Height: =52
-        Icon: =Icon.Save
+    Icon5 As icon.Add:
+        Height: =36
+        Icon: =Icon.Add
         OnSelect: |-
             =Collect(collectatividades, {Atividade: inp_atividade.Text});
-        Width: =45
-        X: =482
-        Y: =30
-        ZIndex: =4
+        Width: =46
+        X: =475
+        Y: =36
+        ZIndex: =5
+
+    Icon6 As icon.Save:
+        Icon: =Icon.Save
+        OnSelect: |-
+            =ForAll(glr_Atividades.AllItems, Patch(Atividades,Defaults(Atividades),{Atividade:Label12.Text, 'Tipo de Processo':LookUp('Tipo Processos','Tipo de Processo'=DataCardValue11_1.Selected.'Tipo de Processo'),'Macro Processo':LookUp('Macro Processos','Macro Processo (uipp_macroprocesso)'=DataCardValue8_1.Selected.'Macro Processo (uipp_macroprocesso)'),Processo:LookUp(Processos,'Processo (uipp_processo)'=DataCardValue10_1.Selected.'Processo (uipp_processo)'),Edifício:LookUp(Edifícios,Edifícios=DataCardValue7_1.Selected.Edifícios),ID_Total:Label11.Text}))
+        X: =809
+        Y: =47
+        ZIndex: =6
 
