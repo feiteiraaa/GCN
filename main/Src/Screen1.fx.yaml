@@ -1,0 +1,79 @@
+Screen1 As screen:
+    OnVisible: |
+        =ClearCollect(ColAtividades,Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID));
+
+    glr_Atividades_3 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =270
+        Items: =ColAtividades
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =59
+        X: =132
+        Y: =200
+        ZIndex: =1
+
+        Label12_3 As label:
+            Height: =35
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Atividade
+            Width: =365
+            X: =32
+            Y: =12
+            ZIndex: =1
+
+        "'Equipamentos Remove_6' As icon.Add":
+            Color: =cores.cinzento
+            Height: =30
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =Select(Parent);
+                Collect(RemoveAtividades,{ID: ThisItem.'Atividade/Processo'});
+                RemoveIf(
+                    ColAtividades,
+                    ThisRecord.Atividade=ThisItem.Atividade
+                )
+            Width: =30
+            X: =521
+            Y: =14
+            ZIndex: =2
+
+    inp_atividade_3 As text:
+        Default: ="Text input"
+        X: =179
+        Y: =148
+        ZIndex: =2
+
+    Icon5_3 As icon.Add:
+        Height: =36
+        Icon: =Icon.Add
+        OnSelect: |-
+            =Collect(ColAtividades, {Atividade: inp_atividade_3.Text});
+            Collect(Colnovasatividades,{Atividade: inp_atividade_3.Text,ID_PROCol:LookUp('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID)})
+        Width: =46
+        X: =510
+        Y: =148
+        ZIndex: =3
+
+    Button4 As button:
+        OnSelect: |
+            =RemoveIf(
+                'Atividade/Processos',
+               CountRows(Filter(RemoveAtividades,ID= 'Atividade/Processo')
+            )>=1);
+            ForAll(Colnovasatividades,
+            Patch('Atividade/Processos',Defaults('Atividade/Processos'),{Atividade:ThisRecord.Atividade,ID_PRO:LookUp(Atividades,ID='Gallery Data_6'.Selected.ID)}));
+            
+            Clear(RemoveAtividades);
+            Clear(Colnovasatividades)
+        Text: ="Button"
+        X: =955
+        Y: =144
+        ZIndex: =4
+
+    Label17 As label:
+        Text: ='Gallery Data_6'.Selected.ID
+        X: =868
+        Y: =460
+        ZIndex: =5
+

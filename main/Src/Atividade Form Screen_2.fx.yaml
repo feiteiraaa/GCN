@@ -111,7 +111,8 @@
                     }
                 )
             )
-        )
+        );
+        ClearCollect(ColAtividades,Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID));
 
     Label7_5 As label:
         Align: =Align.Center
@@ -3969,6 +3970,104 @@
         X: =732
         Y: =13
         ZIndex: =38
+
+    glr_Atividades_5 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =270
+        Items: =Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =41
+        Visible: =If(formMode=2 && Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+        X: =705
+        Y: =436
+        ZIndex: =39
+
+        Label12_5 As label:
+            Height: =35
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Atividade
+            Width: =365
+            X: =23
+            Y: =5
+            ZIndex: =1
+
+        Label16 As label:
+            OnSelect: =Select(Parent)
+            Text: ="-"
+            Width: =15
+            X: =8
+            ZIndex: =2
+
+    glr_Atividades_6 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =270
+        Items: =ColAtividades
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =37
+        Visible: =If(formMode=0 && Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+        X: =710
+        Y: =480
+        ZIndex: =40
+
+        Label12_6 As label:
+            Height: =35
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Atividade
+            Width: =365
+            X: =32
+            ZIndex: =1
+
+        "'Equipamentos Remove_7' As icon.Add":
+            Color: =cores.cinzento
+            Height: =30
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =Select(Parent);
+                Collect(RemoveAtividades,{ID: ThisItem.'Atividade/Processo'});
+                RemoveIf(
+                    ColAtividades,
+                    ThisRecord.Atividade=ThisItem.Atividade
+                )
+            Width: =30
+            X: =567
+            Y: =5
+            ZIndex: =2
+
+        Label18 As label:
+            Height: =33
+            OnSelect: =Select(Parent)
+            Text: ="-"
+            Width: =13
+            X: =19
+            ZIndex: =3
+
+    inp_atividade_4 As text:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Default: =""
+        HintText: ="Atividades"
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =If(formMode=0 && Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+        Width: =490
+        X: =723
+        Y: =432
+        ZIndex: =41
+
+    Icon5_4 As icon.Add:
+        Height: =36
+        Icon: =Icon.Add
+        OnSelect: |-
+            =Collect(ColAtividades, {Atividade: inp_atividade_4.Text});
+            Collect(Colnovasatividades,{Atividade: inp_atividade_4.Text,ID_PROCol:LookUp('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID)})
+        Visible: =If(formMode=0 && Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+        Width: =46
+        X: =1231
+        Y: =436
+        ZIndex: =42
 
     FatoresHeaders_2 As group:
         Height: =5

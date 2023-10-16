@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "ColAtividades",
+    "Type": "CollectionDataSourceInfo"
+  }
+]
