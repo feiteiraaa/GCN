@@ -98,7 +98,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 15,
+    "BindingErrorCount": 25,
     "ContainsThirdPartyPcfControls": true,
     "DefaultConnectedDataSourceMaxGetRowsCount": 2000,
     "DocumentAppType": "DesktopOrTablet",
@@ -136,6 +136,9 @@
     "Atividade Form Screen",
     "Histórico de Aprovações",
     "Informações",
+    "Listagem_2",
+    "Atividade Form Screen_2",
+    "Histórico de Aprovações_2",
     "Inicio_1",
     "Listagem_1",
     "Atividade Form Screen_1",
