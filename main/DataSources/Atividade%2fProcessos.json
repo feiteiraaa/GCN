@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "uipp_atividadeprocessos",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "uipp_atividadeprocesso",
+    "Name": "Atividade/Processos",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_atividade": "Atividade",
+      "uipp_atividadeprocesso_AsyncOperations": "System Jobs",
+      "uipp_atividadeprocesso_BulkDeleteFailures": "Bulk Delete Failures",
+      "uipp_atividadeprocesso_DuplicateBaseRecord": "Duplicate Records (uipp_atividadeprocesso_DuplicateBaseRecord)",
+      "uipp_atividadeprocesso_DuplicateMatchingRecord": "Duplicate Records (uipp_atividadeprocesso_DuplicateMatchingRecord)",
+      "uipp_atividadeprocesso_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "uipp_atividadeprocesso_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "uipp_atividadeprocesso_ProcessSession": "Process Sessions",
+      "uipp_atividadeprocesso_SyncErrors": "Sync Errors",
+      "uipp_atividadeprocessoid": "Atividade/Processo",
+      "uipp_ID_PRO": "ID_PRO",
+      "uipp_id_processo": "ID_Processo",
+      "uipp_name": "Name",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Atividade/Processos",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Atividade/Processos (Views)",
+    "Name": "_uipp_atividadeprocesso_views",
+    "RelatedEntityName": "Atividade/Processos",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5a4529bf-4644-459c-b98d-004a2fee4ac2": "Active Atividade/Processos",
+      "623d7ca6-30f5-4f71-a515-67fde97664b2": "Atividade/Processo Advanced Find View",
+      "6483fb9b-0604-49ac-9c42-c120a6bd8035": "Inactive Atividade/Processos",
+      "bfb90a80-f6b4-4933-b11e-5c43ad11b042": "Atividade/Processo Lookup View",
+      "caadc003-4ae1-45b4-b931-6b6480b7c250": "Atividade/Processo Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Atividade/Processos)",
+    "Name": "uipp_atividadeprocesso_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Atividade/Processos"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Atividade/Processos",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Atividade/Processos)",
+    "Name": "uipp_atividadeprocesso_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Atividade/Processos"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Atividade/Processos",
+    "Type": "OptionSetInfo"
+  }
+]

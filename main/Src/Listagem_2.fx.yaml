@@ -159,7 +159,7 @@ Listagem_2 As screen:
             Height: =Rectangle2_18.Height
             OnSelect: |-
                 =Select(Parent);
-                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
+                Navigate('Atividade Form Screen_2',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -194,7 +194,7 @@ Listagem_2 As screen:
             Height: =Rectangle2_18.Height
             OnSelect: |-
                 =Select(Parent);
-                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
+                Navigate('Atividade Form Screen_2',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =10
             PaddingRight: =0
@@ -228,7 +228,7 @@ Listagem_2 As screen:
             Height: =Rectangle2_18.Height
             OnSelect: |-
                 =Select(Parent);
-                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
+                Navigate('Atividade Form Screen_2',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -259,7 +259,7 @@ Listagem_2 As screen:
             Height: =Rectangle2_18.Height
             OnSelect: |-
                 =Select(Parent);
-                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
+                Navigate('Atividade Form Screen_2',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -290,7 +290,7 @@ Listagem_2 As screen:
             Height: =Rectangle2_18.Height
             OnSelect: |-
                 =Select(Parent);
-                Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
+                Navigate('Atividade Form Screen_2',ScreenTransition.None, {formMode: FormMode.View, Criticidade: 0});
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
@@ -408,7 +408,7 @@ Listagem_2 As screen:
             HoverColor: =Color.Transparent
             HoverFill: =Color.Transparent
             OnSelect: |-
-                =Navigate('Atividade Form Screen',ScreenTransition.None, {formMode: FormMode.New, Criticidade: 0});
+                =Navigate('Atividade Form Screen_2',ScreenTransition.None, {formMode: FormMode.New, Criticidade: 0});
                 
                 Concurrent(
                     UpdateContext({ RTO: 0, RTOTempo: "" }),
