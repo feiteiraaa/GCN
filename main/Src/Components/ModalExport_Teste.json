@@ -65,7 +65,7 @@
         "Name": "Rectangle1_2",
         "Parent": "ModalExport_Teste",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 916,
+        "PublishOrderIndex": 918,
         "Rules": [
           {
             "Category": "Design",
@@ -236,7 +236,7 @@
         "Name": "Icon4_3",
         "Parent": "ModalExport_Teste",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 917,
+        "PublishOrderIndex": 919,
         "Rules": [
           {
             "Category": "Design",
@@ -477,7 +477,7 @@
         "Name": "Icon4_4",
         "Parent": "ModalExport_Teste",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 918,
+        "PublishOrderIndex": 920,
         "Rules": [
           {
             "Category": "Design",
@@ -726,7 +726,7 @@
         "Name": "Label4_2",
         "Parent": "ModalExport_Teste",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 919,
+        "PublishOrderIndex": 921,
         "Rules": [
           {
             "Category": "Data",
@@ -1031,7 +1031,7 @@
         "Name": "JsonTableExport1",
         "Parent": "ModalExport_Teste",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 920,
+        "PublishOrderIndex": 922,
         "Rules": [
           {
             "Category": "Data",
@@ -1123,7 +1123,7 @@
         "Name": "InsideModal_1",
         "Parent": "ModalExport_Teste",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 915,
+        "PublishOrderIndex": 917,
         "Rules": [
           {
             "Category": "Design",
