@@ -189,7 +189,7 @@
             Height: =50
             MaxLength: =DataSourceInfo([@Atividades], DataSourceInfo.MaxLength, "uipp_id_total")
             Required: =false
-            Update: =DataCardValue1.Text
+            Update: =dcv_idtotal.Text
             Width: =330
             X: =0
             Y: =0
@@ -207,7 +207,7 @@
                 Y: =10
                 ZIndex: =1
 
-            DataCardValue1 As text:
+            dcv_idtotal As text:
                 BorderColor: =Color.Black
                 BorderThickness: =0
                 Default: =LookUp('Tipo Processos','Tipo de Processo'=DataCardValue11_2.Selected.'Tipo de Processo',ID_Tipo_Processo) &"-" & LookUp('Macro Processos','Macro Processo (uipp_macroprocesso)'=DataCardValue8_2.Selected.'Macro Processo (uipp_macroprocesso)',ID_Macro_Processo) &"-" & Left(DataCardValue10_2.Selected.'Processo (uipp_processo)', 4)
@@ -237,7 +237,7 @@
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =30
-                Y: =DataCardValue1.Y + DataCardValue1.Height
+                Y: =dcv_idtotal.Y + dcv_idtotal.Height
                 ZIndex: =3
 
             StarVisible2 As label:
@@ -3412,6 +3412,8 @@
                 =
                 // Submeter Caracterização do Processo
                 SubmitForm('Caracterizacao do Processo_2');
+                ForAll(glr_Atividades_4.AllItems, Patch('Atividade/Processos',Defaults('Atividade/Processos'),{Atividade:Label12_4.Text,ID_Processo:'Caracterizacao do Processo_2'.LastSubmit.ID_Total,ID_PRO:LookUp(Atividades,ID_Total='Caracterizacao do Processo_2'.LastSubmit.ID_Total) }));
+                
                 Set(
                     LastAtividadeId,
                     'Caracterizacao do Processo_2'.LastSubmit.ID
@@ -3891,7 +3893,7 @@
         TemplateSize: =51
         Visible: |-
             =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-            If(formMode=1 || formMode=0,If( Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
+            If(formMode=1 ,If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
         Width: =676
         X: =690
         Y: =480
@@ -3925,14 +3927,15 @@
     inp_atividade_2 As text:
         BorderColor: =RGBA(0, 0, 0, 1)
         BorderThickness: =1
-        Default: ="Text input"
+        Default: =""
+        HintText: ="Atividade"
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Visible: |-
             =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-            If(formMode=1 || formMode=0,If( Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
+            If(formMode=1 ,If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
         Width: =490
         X: =718
         Y: =432
@@ -3944,9 +3947,10 @@
         Icon: =Icon.Add
         OnSelect: |-
             =Collect(collectatividades, {Atividade: inp_atividade_2.Text});
+            Reset(inp_atividade_2)
         Visible: |-
             =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-            If(formMode=1 || formMode=0,If( Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
+            If(formMode=1 ,If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
         Width: =46
         X: =1208
         Y: =436
@@ -3955,9 +3959,16 @@
     Label13_1 As label:
         FontWeight: =FontWeight.Bold
         Text: ="Atividades"
+        Visible: =If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
         X: =723
         Y: =392
         ZIndex: =37
+
+    Label15 As label:
+        Text: =formMode
+        X: =732
+        Y: =13
+        ZIndex: =38
 
     FatoresHeaders_2 As group:
         Height: =5

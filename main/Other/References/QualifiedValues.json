@@ -131,6 +131,13 @@
       }
     },
     {
+      "Kind": "default.cds_uipp_atividadeprocesso_forms",
+      "Namespace": "Atividade/Processos (Forms)",
+      "Values": {
+        "Information": "f641ab9b-6926-4413-b081-a44c47da0163"
+      }
+    },
+    {
       "Kind": "default.cds_aaduser_forms",
       "Namespace": "AAD Users (Forms)",
       "Values": {
@@ -156,13 +163,6 @@
       "Namespace": "Aprovacaos (Forms)",
       "Values": {
         "Information": "a10858ff-b782-4ff9-8b96-92e39c030996"
-      }
-    },
-    {
-      "Kind": "default.cds_uipp_atividadeprocesso_forms",
-      "Namespace": "Atividade/Processos (Forms)",
-      "Values": {
-        "Information": "f641ab9b-6926-4413-b081-a44c47da0163"
       }
     }
   ]
