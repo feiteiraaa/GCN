@@ -3413,7 +3413,15 @@
                 =
                 // Submeter Caracterização do Processo
                 SubmitForm('Caracterizacao do Processo_2');
-                ForAll(glr_Atividades_4.AllItems, Patch('Atividade/Processos',Defaults('Atividade/Processos'),{Atividade:Label12_4.Text,ID_Processo:'Caracterizacao do Processo_2'.LastSubmit.ID_Total,ID_PRO:LookUp(Atividades,ID_Total='Caracterizacao do Processo_2'.LastSubmit.ID_Total) }));
+                If(formMode=1, ForAll(glr_Atividades_4.AllItems, Patch('Atividade/Processos',Defaults('Atividade/Processos'),{Atividade:Label12_4.Text,ID_Processo:'Caracterizacao do Processo_2'.LastSubmit.ID_Total,ID_PRO:LookUp(Atividades,ID_Total='Caracterizacao do Processo_2'.LastSubmit.ID_Total) })),If(formMode=0,RemoveIf(
+                    'Atividade/Processos',
+                   CountRows(Filter(RemoveAtividades,ID= 'Atividade/Processo')
+                )>=1);
+                ForAll(Colnovasatividades,
+                Patch('Atividade/Processos',Defaults('Atividade/Processos'),{Atividade:ThisRecord.Atividade,ID_PRO:LookUp(Atividades,ID='Gallery Data_6'.Selected.ID)}))));
+                
+                Clear(RemoveAtividades);
+                Clear(Colnovasatividades);
                 
                 Set(
                     LastAtividadeId,

@@ -195,7 +195,7 @@
     "Name": "PowerApps_CoreControls_InfoButtonCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "Information button",
-    "Version": "0.0.16"
+    "Version": "0.0.17"
   },
   "JsonTableExport": {
     "CustomGroupControlTemplateName": "",
