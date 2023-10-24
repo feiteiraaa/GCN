@@ -3086,7 +3086,7 @@
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: ="Unidades Orgânicas"
                 IsSearchable: =false
-                Items: =Choices([@Dependências].uipp_UnidadeOrganica)
+                Items: =Choices([@Dependências].'Unidade Orgânica')
                 NoSelectionText: ="Unidades Orgânicas"
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =cores.amareloMontepio

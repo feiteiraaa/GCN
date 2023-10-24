@@ -24,6 +24,8 @@
       "statecode": "Status",
       "statuscode": "Status Reason",
       "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "uipp_dataaprovacao": "Data Aprovaçao",
+      "uipp_decisor": "Decisor",
       "uipp_estado": "Estado",
       "uipp_historicodeaprovacoes_AsyncOperations": "System Jobs",
       "uipp_historicodeaprovacoes_BulkDeleteFailures": "Bulk Delete Failures",
@@ -35,6 +37,7 @@
       "uipp_historicodeaprovacoes_SyncErrors": "Sync Errors",
       "uipp_historicodeaprovacoesid": "Histórico de aprovações",
       "uipp_id": "ID",
+      "uipp_ID_total": "ID_Total",
       "uipp_IDAtividade": "ID Atividade",
       "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
       "versionnumber": "Version Number"

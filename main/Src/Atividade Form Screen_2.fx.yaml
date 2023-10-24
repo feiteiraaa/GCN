@@ -2446,7 +2446,7 @@
                                 Atividades,
                                 LookUp(
                                     Atividades,
-                                    ThisRecord.ID = 'Gallery Data'.Selected.ID
+                                    ThisRecord.ID = 'Gallery Data_6'.Selected.ID
                                 ),
                                 {
                                     Estado: 'Estado Processo'.'Em validação'
@@ -2467,9 +2467,9 @@
                             ),
                     
                             'GCN-Pediraprovação'.Run(
-                                'Gallery Data'.Selected.ID,
+                                'Gallery Data_6'.Selected.ID,
                                 currentUser,
-                                'Gallery Data'.Selected.Atividade
+                                'Gallery Data_6'.Selected.Atividade
                             ),
                             Notify("Pedido de Aprovação enviado com sucesso", NotificationType.Success)
                         )
@@ -3158,7 +3158,7 @@
                 HoverFill: =cores.amareloMontepio
                 InputTextPlaceholder: ="Unidades Orgânicas"
                 IsSearchable: =false
-                Items: =Choices([@Dependências].uipp_UnidadeOrganica)
+                Items: =Choices([@Dependências].'Unidade Orgânica')
                 NoSelectionText: ="Unidades Orgânicas"
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: =cores.amareloMontepio
@@ -3402,7 +3402,7 @@
             ModalIconColor: =cores.amareloMontepio
             ModalText: ="Deseja submeter os dados do Processo?"
             Visible: =ModalForm.visible
-            ZIndex: =40
+            ZIndex: =37
 
         BtnModalConfirm_4 As button:
             Color: =Color.Transparent
@@ -3667,7 +3667,7 @@
             Width: =164
             X: =486
             Y: =440
-            ZIndex: =41
+            ZIndex: =38
 
         BtnModalCancel_5 As button:
             Color: =Color.Transparent
@@ -3685,7 +3685,79 @@
             Width: =164
             X: =718
             Y: =440
-            ZIndex: =42
+            ZIndex: =39
+
+    glr_Atividades_4 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =270
+        Items: =collectatividades
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =51
+        Visible: |-
+            =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+            If(formMode=1 ,If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
+        Width: =676
+        X: =690
+        Y: =480
+        ZIndex: =28
+
+        Label12_4 As label:
+            Height: =33
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Atividade
+            Width: =541
+            X: =68
+            Y: =11
+            ZIndex: =1
+
+        "'Equipamentos Remove_5' As icon.Add":
+            Color: =cores.cinzento
+            Height: =30
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =Select(Parent);
+                RemoveIf(
+                    collectatividades,
+                    ThisRecord.Atividade=ThisItem.Atividade
+                )
+            Visible: =If(IsEmpty(collectatividades),false,true)
+            Width: =30
+            X: =38
+            Y: =11
+            ZIndex: =2
+
+    inp_atividade_2 As text:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =1
+        Default: =""
+        HintText: ="Atividade"
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: |-
+            =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+            If(formMode=1 ,If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
+        Width: =490
+        X: =718
+        Y: =432
+        ZIndex: =29
+
+    Icon5_2 As icon.Add:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =36
+        Icon: =Icon.Add
+        OnSelect: |-
+            =Collect(collectatividades, {Atividade: inp_atividade_2.Text});
+            Reset(inp_atividade_2)
+        Visible: |-
+            =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+            If(formMode=1 ,If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
+        Width: =46
+        X: =1208
+        Y: =436
+        ZIndex: =30
 
     AproveReject_2 As group:
         Height: =5
@@ -3772,77 +3844,47 @@
             Y: =695
             ZIndex: =27
 
-    glr_Atividades_4 As gallery.galleryVertical:
-        DelayItemLoading: =true
-        Height: =270
-        Items: =collectatividades
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =51
-        Visible: |-
-            =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-            If(formMode=1 ,If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
-        Width: =676
-        X: =690
-        Y: =480
+    Label13_1 As label:
+        FontWeight: =FontWeight.Bold
+        Text: ="Atividades"
+        Visible: =If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+        X: =723
+        Y: =392
         ZIndex: =31
 
-        Label12_4 As label:
-            Height: =33
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Atividade
-            Width: =541
-            X: =68
-            Y: =11
-            ZIndex: =1
-
-        "'Equipamentos Remove_5' As icon.Add":
-            Color: =cores.cinzento
-            Height: =30
-            Icon: =Icon.Trash
-            OnSelect: |-
-                =Select(Parent);
-                RemoveIf(
-                    collectatividades,
-                    ThisRecord.Atividade=ThisItem.Atividade
-                )
-            Visible: =If(IsEmpty(collectatividades),false,true)
-            Width: =30
-            X: =38
-            Y: =11
-            ZIndex: =2
-
-    inp_atividade_2 As text:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        BorderThickness: =1
-        Default: =""
-        HintText: ="Atividade"
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Visible: |-
-            =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-            If(formMode=1 ,If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
-        Width: =490
-        X: =718
-        Y: =432
+    Label15 As label:
+        Text: =formMode
+        X: =732
+        Y: =13
         ZIndex: =32
 
-    Icon5_2 As icon.Add:
-        Color: =RGBA(0, 0, 0, 1)
-        Height: =36
-        Icon: =Icon.Add
-        OnSelect: |-
-            =Collect(collectatividades, {Atividade: inp_atividade_2.Text});
-            Reset(inp_atividade_2)
-        Visible: |-
-            =//If(formMode=1 || formMode=0 && Trim(Lower('Passos do Registo de Atividade_1'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-            If(formMode=1 ,If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false))
-        Width: =46
-        X: =1208
+    glr_Atividades_5 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =270
+        Items: =Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =41
+        Visible: =If(formMode=2 && Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
+        X: =705
         Y: =436
         ZIndex: =33
+
+        Label12_5 As label:
+            Height: =35
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Atividade
+            Width: =365
+            X: =23
+            Y: =5
+            ZIndex: =1
+
+        Label16 As label:
+            OnSelect: =Select(Parent)
+            Text: ="-"
+            Width: =15
+            X: =8
+            ZIndex: =2
 
     ApproveModal_2 As group:
         Height: =5
@@ -3863,7 +3905,7 @@
                     false
                 )
             Width: =1366
-            ZIndex: =28
+            ZIndex: =40
 
         BtnModalConfirm_5 As button:
             Color: =Color.Transparent
@@ -3883,8 +3925,15 @@
                             'ID Atividade':
                                 LookUp(
                                     Atividades,
-                                    ThisRecord.ID = 'Gallery Data'.Selected.ID
-                                )
+                                    ThisRecord.ID = 'Gallery Data_6'.Selected.ID
+                                ),
+                            'ID_Total': 
+                               LookUp(
+                                    Atividades,
+                                    ThisRecord.ID_Total = 'Gallery Data_6'.Selected.ID_Total
+                                ),
+                            Decisor: User().FullName,
+                            'Data Aprovaçao': DateTimeValue(Text(Now(), "dd/mm/yyyy"))
                         }
                     );
                     //Atualizar o estado da Atividade - APROVADO
@@ -3892,19 +3941,19 @@
                         Atividades,
                         LookUp(
                             Atividades,
-                            ThisRecord.ID = 'Gallery Data'.Selected.ID
+                            ThisRecord.ID = 'Gallery Data_6'.Selected.ID
                         ),
                         {
                             Estado:'Estado Processo'.Aprovado
                         }
                     );
                     'GCN-Respostaaopedido'.Run(
-                        'Gallery Data'.Selected.Atividade,
+                        'Gallery Data_6'.Selected.Atividade,
                         User().Email,
                         "APROVADO"
                     );
                     Back();
-                    Notify("Atividade " & 'Gallery Data'.Selected.Atividade & " aprovada!", NotificationType.Success, 4000),
+                    Notify("Atividade " & 'Gallery Data_6'.Selected.Atividade & " aprovada!", NotificationType.Success, 4000),
                 
                     //Escrever no Histórico de Aprovações - REJEITADO
                     Patch(
@@ -3915,8 +3964,15 @@
                             'ID Atividade':
                                 LookUp(
                                     Atividades,
-                                    ThisRecord.ID = 'Gallery Data'.Selected.ID
-                                )
+                                    ThisRecord.ID = 'Gallery Data_6'.Selected.ID
+                                ),
+                            'ID_Total': 
+                               LookUp(
+                                    Atividades,
+                                    ThisRecord.ID_Total = 'Gallery Data_6'.Selected.ID_Total
+                                ),
+                            Decisor: User().FullName,
+                            'Data Aprovaçao': DateValue(Text(Now(), "dd/mm/yyyy"))
                         }
                     );
                     //Atualizar o estado da Atividade - Rejeitado
@@ -3924,19 +3980,19 @@
                         Atividades,
                         LookUp(
                             Atividades,
-                            ThisRecord.ID = 'Gallery Data'.Selected.ID
+                            ThisRecord.ID = 'Gallery Data_6'.Selected.ID
                         ),
                         {
                             Estado:'Estado Processo'.Rejeitado
                         }
                     );
                     'GCN-Respostaaopedido'.Run(
-                        'Gallery Data'.Selected.Atividade,
+                        'Gallery Data_6'.Selected.Atividade,
                         User().Email,
                         "REJEITADO"
                     );
                     Back();
-                    Notify("Atividade " & 'Gallery Data'.Selected.Atividade & " rejeitada!", NotificationType.Success, 4000)
+                    Notify("Atividade " & 'Gallery Data_6'.Selected.Atividade & " rejeitada!", NotificationType.Success, 4000)
                 )
             PressedColor: =Color.Transparent
             PressedFill: =Color.Transparent
@@ -3945,7 +4001,7 @@
             Width: =164
             X: =488
             Y: =440
-            ZIndex: =29
+            ZIndex: =41
 
         BtnModalCancel_4 As button:
             Color: =Color.Transparent
@@ -3963,49 +4019,7 @@
             Width: =164
             X: =716
             Y: =440
-            ZIndex: =30
-
-    Label13_1 As label:
-        FontWeight: =FontWeight.Bold
-        Text: ="Atividades"
-        Visible: =If( Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-        X: =723
-        Y: =392
-        ZIndex: =34
-
-    Label15 As label:
-        Text: =formMode
-        X: =732
-        Y: =13
-        ZIndex: =35
-
-    glr_Atividades_5 As gallery.galleryVertical:
-        DelayItemLoading: =true
-        Height: =270
-        Items: =Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID)
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =41
-        Visible: =If(formMode=2 && Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
-        X: =705
-        Y: =436
-        ZIndex: =36
-
-        Label12_5 As label:
-            Height: =35
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Atividade
-            Width: =365
-            X: =23
-            Y: =5
-            ZIndex: =1
-
-        Label16 As label:
-            OnSelect: =Select(Parent)
-            Text: ="-"
-            Width: =15
-            X: =8
-            ZIndex: =2
+            ZIndex: =42
 
     glr_Atividades_6 As gallery.galleryVertical:
         DelayItemLoading: =true
@@ -4017,7 +4031,7 @@
         Visible: =If(formMode=0 && Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo")),true,false)
         X: =710
         Y: =480
-        ZIndex: =37
+        ZIndex: =34
 
         Label12_6 As label:
             Height: =35
@@ -4063,7 +4077,7 @@
         Width: =490
         X: =723
         Y: =432
-        ZIndex: =38
+        ZIndex: =35
 
     Icon5_4 As icon.Add:
         Height: =36
@@ -4075,7 +4089,7 @@
         Width: =46
         X: =1231
         Y: =436
-        ZIndex: =39
+        ZIndex: =36
 
     FatoresHeaders_2 As group:
         Height: =5
