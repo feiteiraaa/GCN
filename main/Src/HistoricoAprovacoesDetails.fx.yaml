@@ -5,8 +5,9 @@ HistoricoAprovacoesDetails As screen:
         Filter(Atividades, ThisRecord.ID = DataTable1.Selected.'ID Atividade'.ID), 
         Filter(Pessoas, ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID),
         Filter(Dependências, ThisRecord.'ID Atividade'.ID =  DataTable1.Selected.'ID Atividade'.ID),
-        Filter('Fatores de Criticidades', ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID), 
-        Filter('Equipamentos de Escritório', ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID))
+        Filter('Fatores de Criticidades', ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID) 
+        //Filter('Equipamentos de Escritório', ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID)
+        )
 
     LeftSectionComponent_14 As LeftSectionComponent:
         ZIndex: =1
