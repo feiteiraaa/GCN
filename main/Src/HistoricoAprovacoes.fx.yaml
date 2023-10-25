@@ -1,0 +1,106 @@
+HistoricoAprovacoes As screen:
+    OnVisible: |-
+        =ClearCollect(
+            collectHistoricAprov,
+            Filter(
+                'Histórico de aprovações',
+                Text(ThisRecord.Estado) = "Aprovado" Or Text(ThisRecord.Estado) = "Rejeitado"
+            )
+        )
+
+    LeftSectionComponent_13 As LeftSectionComponent:
+        ZIndex: =1
+
+    Label1_14 As label:
+        Size: =15
+        Text: ="Historico de Aprovações"
+        Width: =360
+        X: =359
+        Y: =35
+        ZIndex: =2
+
+    DataTable1 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        HeadingFill: =RGBA(56, 56, 56, 1)
+        Height: =599
+        Items: =SortByColumns(collectHistoricAprov,"createdon",SortOrder.Descending)
+        Width: =953
+        X: =381
+        Y: =138
+        ZIndex: =3
+
+        Estado_Column1 As dataTableColumn.complexOptionSetColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Estado"
+            FieldName: ="uipp_estado"
+            FieldVariantName: ="complexOptionSetColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            OnSelect: =Navigate(HistoricoAprovacoesDetails)
+            Order: =3
+            Text: =ThisItem.Estado
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        Decisor_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Decisor"
+            FieldName: ="uipp_decisor"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.Decisor
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        "'Data Aprovaçao_Column1' As dataTableColumn.dateTimeColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Data Aprovaçao"
+            FieldName: ="uipp_dataaprovacao"
+            FieldVariantName: ="dateTimeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =Text(ThisItem.'Data Aprovaçao',"dd/mm/yyyy")
+            Width: =100
+            X: =732
+            Y: =0
+            ZIndex: =5
+
+        ID_Total_Column1 As dataTableColumn.complexTypeColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="ID_Total"
+            FieldName: ="uipp_ID_total"
+            FieldVariantName: ="complexTypeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =8
+            Text: =ThisItem.ID_Total.ID_Total
+            Width: =208
+            X: =536
+            Y: =0
+            ZIndex: =8
+
+        "'ID Atividade_Column2' As dataTableColumn.complexTypeColumn":
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="ID Atividade"
+            FieldName: ="uipp_IDAtividade"
+            FieldVariantName: ="complexTypeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =9
+            Text: =ThisItem.'ID Atividade'.Atividade
+            Width: =209
+            X: =160
+            Y: =0
+            ZIndex: =9
+

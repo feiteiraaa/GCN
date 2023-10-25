@@ -1,0 +1,19 @@
+HistoricoAprovacoesDetails As screen:
+    OnVisible: =
+
+    LeftSectionComponent_14 As LeftSectionComponent:
+        ZIndex: =1
+
+    Label1_15 As label:
+        Size: =15
+        Text: ="Historico de Aprovações - Detalhes"
+        Width: =360
+        X: =359
+        Y: =35
+        ZIndex: =2
+
+    Label19 As label:
+        Text: =DataTable1.Selected.ID
+        X: =1216
+        ZIndex: =3
+

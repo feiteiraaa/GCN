@@ -75,6 +75,13 @@ App As appinfo:
                         Navigate: Listagem,
                         VisivelPara: true
                     },
+                     {
+                        selected: false,
+                        icon: Icon.ListScrollWatchlist,
+                        text: "Histórico Aprovações",
+                        Navigate: HistoricoAprovacoes,
+                        VisivelPara: true
+                    },
                     {
                         selected: false,
                         icon: Icon.Information,

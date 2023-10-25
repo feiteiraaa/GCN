@@ -3972,7 +3972,7 @@
                                     ThisRecord.ID_Total = 'Gallery Data_6'.Selected.ID_Total
                                 ),
                             Decisor: User().FullName,
-                            'Data Aprovaçao': DateTimeValue(Now(),"pt-PT")
+                            'Data Aprovaçao': Now()
                         }
                     );
                     //Atualizar o estado da Atividade - Rejeitado
