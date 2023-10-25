@@ -1,5 +1,8 @@
 HistoricoAprovacoesDetails As screen:
-    OnVisible: =
+    OnVisible: |-
+        =ClearCollect(
+                collectDetailsAprov, 
+        Filter(Atividades, ThisRecord.ID = DataTable1.Selected.ID))
 
     LeftSectionComponent_14 As LeftSectionComponent:
         ZIndex: =1
