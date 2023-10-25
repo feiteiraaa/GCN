@@ -3927,13 +3927,13 @@
                                     Atividades,
                                     ThisRecord.ID = 'Gallery Data_6'.Selected.ID
                                 ),
-                            'ID_Total': 
+                            ID_Total: 
                                LookUp(
                                     Atividades,
                                     ThisRecord.ID_Total = 'Gallery Data_6'.Selected.ID_Total
                                 ),
                             Decisor: User().FullName,
-                            'Data Aprovaçao': DateTimeValue(Text(Now(), "dd/mm/yyyy"))
+                            'Data Aprovaçao': Now()
                         }
                     );
                     //Atualizar o estado da Atividade - APROVADO
@@ -3966,13 +3966,13 @@
                                     Atividades,
                                     ThisRecord.ID = 'Gallery Data_6'.Selected.ID
                                 ),
-                            'ID_Total': 
+                            ID_Total: 
                                LookUp(
                                     Atividades,
                                     ThisRecord.ID_Total = 'Gallery Data_6'.Selected.ID_Total
                                 ),
                             Decisor: User().FullName,
-                            'Data Aprovaçao': DateValue(Text(Now(), "dd/mm/yyyy"))
+                            'Data Aprovaçao': DateTimeValue(Now(),"pt-PT")
                         }
                     );
                     //Atualizar o estado da Atividade - Rejeitado
