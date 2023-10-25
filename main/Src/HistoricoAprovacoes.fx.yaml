@@ -53,6 +53,7 @@ HistoricoAprovacoes As screen:
             FieldVariantName: ="textualColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
+            OnSelect: =Navigate(HistoricoAprovacoesDetails)
             Order: =4
             Text: =ThisItem.Decisor
             Width: =100
@@ -67,6 +68,7 @@ HistoricoAprovacoes As screen:
             FieldVariantName: ="dateTimeColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
+            OnSelect: =Navigate(HistoricoAprovacoesDetails)
             Order: =5
             Text: =Text(ThisItem.'Data Aprovaçao',"dd/mm/yyyy")
             Width: =100
@@ -82,6 +84,7 @@ HistoricoAprovacoes As screen:
             FieldVariantName: ="complexTypeColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
+            OnSelect: =Navigate(HistoricoAprovacoesDetails)
             Order: =8
             Text: =ThisItem.ID_Total.ID_Total
             Width: =208
@@ -97,6 +100,7 @@ HistoricoAprovacoes As screen:
             FieldVariantName: ="complexTypeColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
+            OnSelect: =Navigate(HistoricoAprovacoesDetails)
             Order: =9
             Text: =ThisItem.'ID Atividade'.Atividade
             Width: =209

@@ -97,7 +97,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 32,
+    "BindingErrorCount": 26,
     "ContainsThirdPartyPcfControls": true,
     "DefaultConnectedDataSourceMaxGetRowsCount": 2000,
     "DocumentAppType": "DesktopOrTablet",
@@ -145,6 +145,7 @@
     "Screen2",
     "Screen1",
     "HistoricoAprovacoes",
-    "HistoricoAprovacoesDetails"
+    "HistoricoAprovacoesDetails",
+    "Screen3"
   ]
 }
