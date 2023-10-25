@@ -1556,7 +1556,7 @@
             Text: |-
                 =LookUp(
                     RTOS,
-                    ThisRecord.Atividade.ID = Text('Gallery Data'.Selected.ID)
+                    ThisRecord.Atividade.ID = Text('Gallery Data_6'.Selected.ID)
                 ).ID
             Visible: =false
             X: =60

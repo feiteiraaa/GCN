@@ -2,7 +2,11 @@ HistoricoAprovacoesDetails As screen:
     OnVisible: |-
         =ClearCollect(
                 collectDetailsAprov, 
-        Filter(Atividades, ThisRecord.ID = DataTable1.Selected.ID))
+        Filter(Atividades, ThisRecord.ID = DataTable1.Selected.'ID Atividade'.ID), 
+        Filter(Pessoas, ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID),
+        Filter(Dependências, ThisRecord.'ID Atividade'.ID =  DataTable1.Selected.'ID Atividade'.ID),
+        Filter('Fatores de Criticidades', ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID), 
+        Filter('Equipamentos de Escritório', ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID))
 
     LeftSectionComponent_14 As LeftSectionComponent:
         ZIndex: =1
@@ -16,7 +20,312 @@ HistoricoAprovacoesDetails As screen:
         ZIndex: =2
 
     Label19 As label:
-        Text: =DataTable1.Selected.ID
+        Text: =DataTable1.Selected.'ID Atividade'.ID
         X: =1216
         ZIndex: =3
+
+    DataTable2 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =500
+        Items: =collectDetailsAprov
+        Width: =800
+        X: =410
+        Y: =165
+        ZIndex: =4
+
+        uipp_TipodeProcesso_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_TipodeProcesso"
+            FieldName: ="uipp_TipodeProcesso"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.uipp_TipodeProcesso
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        uipp_unidadeorganica_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_unidadeorganica"
+            FieldName: ="uipp_unidadeorganica"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.uipp_unidadeorganica
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        uipp_Tipo_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_Tipo"
+            FieldName: ="uipp_Tipo"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.uipp_Tipo
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        uipp_teletrabalho_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_teletrabalho"
+            FieldName: ="uipp_teletrabalho"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.uipp_teletrabalho
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        uipp_Processo_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_Processo"
+            FieldName: ="uipp_Processo"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.uipp_Processo
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        uipp_pessoasid_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_pessoasid"
+            FieldName: ="uipp_pessoasid"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =6
+            Text: =ThisItem.uipp_pessoasid
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        uipp_observacoes_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_observacoes"
+            FieldName: ="uipp_observacoes"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =7
+            Text: =ThisItem.uipp_observacoes
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        uipp_nempregado_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_nempregado"
+            FieldName: ="uipp_nempregado"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =8
+            Text: =ThisItem.uipp_nempregado
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =8
+
+        uipp_MacroProcesso_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_MacroProcesso"
+            FieldName: ="uipp_MacroProcesso"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =9
+            Text: =ThisItem.uipp_MacroProcesso
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+        uipp_IDAtividade_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_IDAtividade"
+            FieldName: ="uipp_IDAtividade"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =10
+            Text: =ThisItem.uipp_IDAtividade
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =10
+
+        uipp_id_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_id"
+            FieldName: ="uipp_id"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =11
+            Text: =ThisItem.uipp_id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =11
+
+        uipp_id_total_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_id_total"
+            FieldName: ="uipp_id_total"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =12
+            Text: =ThisItem.uipp_id_total
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =12
+
+        uipp_estado_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_estado"
+            FieldName: ="uipp_estado"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =13
+            Text: =ThisItem.uipp_estado
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =13
+
+        uipp_Edificio_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_Edificio"
+            FieldName: ="uipp_Edificio"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =14
+            Text: =ThisItem.uipp_Edificio
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =14
+
+        uipp_descricaodeatividade_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_descricaodeatividade"
+            FieldName: ="uipp_descricaodeatividade"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =15
+            Text: =ThisItem.uipp_descricaodeatividade
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =15
+
+        uipp_duracao_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_duracao"
+            FieldName: ="uipp_duracao"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =16
+            Text: =ThisItem.uipp_duracao
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =16
+
+        uipp_comentarios_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_comentarios"
+            FieldName: ="uipp_comentarios"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =17
+            Text: =ThisItem.uipp_comentarios
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =17
+
+        uipp_datadedecisao_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_datadedecisao"
+            FieldName: ="uipp_datadedecisao"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =18
+            Text: =ThisItem.uipp_datadedecisao
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =18
+
+        uipp_colaboradorcritico_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_colaboradorcritico"
+            FieldName: ="uipp_colaboradorcritico"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =19
+            Text: =ThisItem.uipp_colaboradorcritico
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =19
+
+        uipp_atividadesid_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_atividadesid"
+            FieldName: ="uipp_atividadesid"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =20
+            Text: =ThisItem.uipp_atividadesid
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =20
+
+        uipp_atividade_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="uipp_atividade"
+            FieldName: ="uipp_atividade"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =21
+            Text: =ThisItem.uipp_atividade
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =21
 
