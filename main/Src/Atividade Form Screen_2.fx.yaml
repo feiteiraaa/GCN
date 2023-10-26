@@ -172,7 +172,7 @@
                 formMode <> FormMode.New And varIDTable,
                  LookUp(
                     Atividades,
-                    ThisRecord.ID = 'DataTable1'.Selected.'ID Atividade'.ID
+                    ThisRecord.ID = DataTable1.Selected.'ID Atividade'.ID
                   ),
                 formMode <> FormMode.New And !varIDTable,
                 LookUp(
