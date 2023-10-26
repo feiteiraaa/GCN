@@ -149,7 +149,14 @@
           "NameMapSourceSchema": "?"
         },
         "SelectedColor",
-        "HoverFill",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "HoverFill",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "HoverColor",
         "InputFill",
         "InvertedColor",

@@ -23,11 +23,12 @@ HistoricoAprovacoes As screen:
         BorderStyle: =BorderStyle.Solid
         DisplayMode: =DisplayMode.Edit
         Fill: =RGBA(0, 0, 0, 0)
-        HeadingFill: =RGBA(56, 56, 56, 1)
+        HeadingFill: =cores.cinzento
         HeadingSize: =16
         Height: =586
+        HoverFill: =RGBA(255, 191, 0, 0.54)
         Items: =SortByColumns(collectHistoricAprov,"createdon",SortOrder.Descending)
-        SelectedFill: =RGBA(0, 0, 0, 0.27)
+        SelectedFill: =cores.amareloMontepio
         Size: =16
         Width: =953
         X: =381
@@ -93,7 +94,7 @@ HistoricoAprovacoes As screen:
             OnSelect: =Navigate(HistoricoAprovacoesDetails)
             Order: =3
             Text: =ThisItem.ID_Total.ID_Total
-            Width: =208
+            Width: =187
             X: =0
             Y: =0
             ZIndex: =8
