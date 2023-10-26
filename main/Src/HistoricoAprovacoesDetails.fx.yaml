@@ -248,7 +248,7 @@ HistoricoAprovacoesDetails As screen:
 
         "Gallery5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             DelayItemLoading: =true
-            Height: =263
+            Height: =266
             Items: =Filter('Atividade/Processos',ID_PRO.ID=DataTable1.Selected.'ID Atividade'.ID)
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -307,7 +307,7 @@ HistoricoAprovacoesDetails As screen:
         Label24_24 As label:
             Height: =45
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_TipodeProcesso.'Tipo de Processo'
+            Text: =ThisItem'Tipo de Fator'
             Width: =403
             X: =10
             Y: =40
