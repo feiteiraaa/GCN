@@ -38,8 +38,9 @@ HistoricoAprovacoes As screen:
             FieldVariantName: ="complexOptionSetColumn"
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
-            OnSelect: =Navigate(HistoricoAprovacoesDetails)
-            Order: =3
+            OnSelect: |-
+                =Navigate('Atividade Form Screen_2', Transition.None ,{varIDTable: true})
+            Order: =4
             Text: =ThisItem.Estado
             Width: =100
             X: =0
@@ -54,7 +55,7 @@ HistoricoAprovacoes As screen:
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             OnSelect: =Navigate(HistoricoAprovacoesDetails)
-            Order: =4
+            Order: =8
             Text: =ThisItem.Decisor
             Width: =100
             X: =0
@@ -85,10 +86,10 @@ HistoricoAprovacoes As screen:
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             OnSelect: =Navigate(HistoricoAprovacoesDetails)
-            Order: =8
+            Order: =3
             Text: =ThisItem.ID_Total.ID_Total
             Width: =208
-            X: =536
+            X: =0
             Y: =0
             ZIndex: =8
 

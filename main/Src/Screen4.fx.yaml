@@ -1,0 +1,200 @@
+Screen4 As screen:
+
+    "Gallery3_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =637
+        Items: =collectDetailsAprov
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =637
+        Width: =979
+        X: =359
+        Y: =96
+        ZIndex: =1
+
+        Separator1_1 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =2
+
+        Rectangle6_1 As rectangle:
+            Height: =Parent.TemplateHeight - Separator1_1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =3
+
+        Label20_23 As label:
+            Height: =60
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.uipp_TipodeProcesso.'Tipo de Processo'
+            Width: =Label20_21.Width
+            X: =Label20_21.X
+            Y: =195
+            ZIndex: =4
+
+        Label20_21 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: ="Tipo de Processo"
+            Width: =Label20_20.Width
+            X: =489
+            Y: =135
+            ZIndex: =5
+
+        Label20_27 As label:
+            Height: =60
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.uipp_MacroProcesso.'Macro Processo (uipp_macroprocesso)'
+            Width: =Label20_21.Width
+            X: =489
+            Y: =315
+            ZIndex: =6
+
+        Label20_24 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: ="Macro Processo"
+            Width: =Label20_21.Width
+            X: =Label20_21.X
+            Y: =246
+            ZIndex: =7
+
+        Label20_22 As label:
+            Height: =60
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Text: =ThisItem.uipp_datadedecisao
+            Width: =Label20_20.Width
+            X: =4
+            Y: =195
+            ZIndex: =8
+
+        Label20_20 As label:
+            FontWeight: =FontWeight.Bold
+            Height: |
+                =60
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =14
+            Text: ="Data da decisão"
+            Width: =Gallery3_1.Width/2
+            Y: =135
+            ZIndex: =9
+
+        Label20_26 As label:
+            Height: =58
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
+            Width: =Label20_21.Width
+            Y: =315
+            ZIndex: =10
+
+        Label20_25 As label:
+            FontWeight: =FontWeight.Bold
+            Height: |
+                =60
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =14
+            Text: ="Processo"
+            Width: =Label20_20.Width
+            X: =Label20_20.X
+            Y: =Label20_22.Y + Label20_22.Height
+            ZIndex: =11
+
+        Label20_30 As label:
+            Height: =58
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Text: =ThisItem.uipp_Edificio.Localização
+            Width: =Label20_21.Width
+            Y: =435
+            ZIndex: =12
+
+        Label20_28 As label:
+            FontWeight: =FontWeight.Bold
+            Height: |
+                =60
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =14
+            Text: ="Edificio"
+            Width: =Label20_20.Width
+            Y: =369
+            ZIndex: =13
+
+        Label20_31 As label:
+            Height: =58
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
+            Width: =Label20_21.Width
+            X: =486
+            Y: =435
+            ZIndex: =14
+
+        Label20_29 As label:
+            FontWeight: =FontWeight.Bold
+            Height: |
+                =60
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =14
+            Text: ="Processo"
+            Width: =Label20_20.Width
+            X: =486
+            Y: =375
+            ZIndex: =15
+
+        Label20_18 As label:
+            Height: =60
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Text: =ThisItem.uipp_id_total
+            Width: =Label20_16.Width
+            X: =4
+            Y: =60
+            ZIndex: =16
+
+        Label20_16 As label:
+            FontWeight: =FontWeight.Bold
+            Height: |
+                =60
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =14
+            Text: ="ID Total"
+            Width: =Gallery3_1.Width/2
+            ZIndex: =17
+
+        Label20_19 As label:
+            Height: =60
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Text: =ThisItem.uipp_estado
+            Width: =Label20_17.Width
+            X: =489.5
+            Y: =60
+            ZIndex: =18
+
+        Label20_17 As label:
+            FontWeight: =FontWeight.Bold
+            Height: |
+                =60
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =14
+            Text: ="Estado"
+            Width: =Gallery3_1.Width/2
+            X: =486
+            ZIndex: =19
+

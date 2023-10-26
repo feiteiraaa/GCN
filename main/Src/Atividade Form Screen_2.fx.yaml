@@ -1,4 +1,6 @@
 "'Atividade Form Screen_2' As screen":
+    OnHidden: |-
+        =UpdateContext({varIDTable: false})
     OnVisible: |-
         =UpdateContext({
             ModalForm: {visible: false, text: "Deseja submeter os dados da Atividade?"}
@@ -165,14 +167,20 @@
                 FormMode.View
             )
         Height: =385
-        Item: |-
+        Item: |
             =If(
-                formMode = FormMode.New,
-                Blank(),
+                formMode <> FormMode.New And varIDTable,
+                 LookUp(
+                    Atividades,
+                    ThisRecord.ID = 'DataTable1'.Selected.ID
+                  ),
+                formMode <> FormMode.New,
                 LookUp(
                     Atividades,
-                    ThisRecord.ID = 'Gallery Data'.Selected.ID
-                )
+                    ThisRecord.ID = 'Gallery Data'.Selected.ID 
+                  ),
+                  formMode = FormMode.New,
+                  Blank()
             )
         Visible: =Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo"))
         Width: =990

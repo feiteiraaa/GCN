@@ -103,7 +103,7 @@ App As appinfo:
             !ThisRecord.VisivelPara
         );
         
-         
+        Set(varIDTable, false);
     StartScreen: =
     Theme: =PowerAppsTheme
 
