@@ -296,92 +296,6 @@ HistoricoAprovacoesDetails As screen:
         Y: =252
         ZIndex: =11
 
-        Label24_22 As label:
-            FontWeight: =FontWeight.Bold
-            OnSelect: =Select(Parent)
-            Text: ="Tipo de fator "
-            Width: =403
-            X: =10
-            ZIndex: =9
-
-        Label24_24 As label:
-            Height: =45
-            OnSelect: =Select(Parent)
-            Text: =ThisItem'Tipo de Fator'
-            Width: =403
-            X: =10
-            Y: =40
-            ZIndex: =10
-
-        Label24_23 As label:
-            FontWeight: =FontWeight.Bold
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="Macro process: "
-            Width: =540
-            X: =403
-            ZIndex: =11
-
-        Label24_25 As label:
-            Height: =45
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_MacroProcesso.'Macro Processo (uipp_macroprocesso)'
-            Width: =542
-            X: =403
-            Y: =40
-            ZIndex: =12
-
-        Label24_26 As label:
-            FontWeight: =FontWeight.Bold
-            Height: =45
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="Processo:"
-            Width: =403
-            X: =10
-            Y: =85
-            ZIndex: =13
-
-        Label24_29 As label:
-            AutoHeight: =true
-            Height: =68
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
-            Width: =galCriticidade.Width/2
-            X: =10
-            Y: =131
-            ZIndex: =14
-
-        Label24_27 As label:
-            FontWeight: =FontWeight.Bold
-            Height: =53
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="Edíficio: "
-            Width: =530
-            X: =413
-            Y: =85
-            ZIndex: =15
-
-        Label24_28 As label:
-            Height: =26
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Edifício.Localização
-            Width: =galCriticidade.Width/2
-            X: =413
-            Y: =130
-            ZIndex: =16
-
-        Label24_30 As label:
-            FontWeight: =FontWeight.Bold
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="Atividades: "
-            Width: =galCriticidade.Width/2
-            X: =10
-            Y: =161
-            ZIndex: =17
-
     "FormulariosAtividade As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         DisplayMode: |
@@ -425,7 +339,7 @@ HistoricoAprovacoesDetails As screen:
                         DisplayMode.Disabled
                     )
                 )*/
-                ThisItem.modo
+                DisplayMode.Edit
             FontWeight: |-
                 =If(
                     ThisItem.IsSelected,
@@ -471,108 +385,427 @@ HistoricoAprovacoesDetails As screen:
             Width: =Parent.Width / Parent.AllItemsCount
             ZIndex: =2
 
-    "galRecursos As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+    "galRecurso As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =488
-        Items: =collectRecursos
+        Height: =472
+        Items: =collectDetailsRecurso
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
         TemplatePadding: =0
-        TemplateSize: =263
-        Visible: |-
-            =//If(Trim(Lower(FormulariosAtividade.Selected.titulo)) = "Caracterização dos Recursos", true, false)
-            false
+        TemplateSize: =183
+        Visible: |
+            =If(FormulariosAtividade.Selected.titulo = "Caracterização dos Recursos", true, false)
         Width: =Container1.Width
         WrapCount: =0
-        X: =380
-        Y: =257
+        X: =379
+        Y: =262
         ZIndex: =13
 
-        Label24_31 As label:
+        Label24_22 As label:
             FontWeight: =FontWeight.Bold
             OnSelect: =Select(Parent)
             Text: |-
-                ="Tipo de Processo: "
-            Width: =403
-            X: =10
+                ="Nº Empregado: "
+            Width: =265
             ZIndex: =9
 
-        Label24_33 As label:
+        Label24_24 As label:
             Height: =45
             OnSelect: =Select(Parent)
-            Text: =ThisItem
-            Width: =403
-            X: =10
+            Text: =ThisItem.'Nº Empregado'
+            Width: =265
             Y: =40
             ZIndex: =10
+
+        Label24_23 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Colaborador: "
+            Width: =396
+            X: =265
+            ZIndex: =11
+
+        Label24_25 As label:
+            Height: =48
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'Colaborador Crítico'
+            Width: =396
+            X: =265
+            Y: =38
+            ZIndex: =12
+
+        Label24_26 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Duração: "
+            Width: =286
+            X: =659
+            ZIndex: =13
+
+        Label24_27 As label:
+            Height: =44
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Duração
+            Width: =286
+            X: =659
+            Y: =40
+            ZIndex: =14
+
+        Label24_28 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Principal/Substituto: "
+            Width: =275
+            Y: =86
+            ZIndex: =15
+
+        Label24_29 As label:
+            Height: =42
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Tipo
+            Width: =265
+            Y: =126
+            ZIndex: =16
+
+        Label24_30 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Teletrabalho: "
+            Width: =275
+            X: =265
+            Y: =86
+            ZIndex: =17
+
+        Label24_31 As label:
+            Height: =43
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Teletrabalho
+            Width: =275
+            X: =265
+            Y: =126
+            ZIndex: =18
 
         Label24_32 As label:
             FontWeight: =FontWeight.Bold
             OnSelect: =Select(Parent)
             Text: |-
-                ="Macro process: "
-            Width: =540
-            X: =403
-            ZIndex: =11
+                ="Observações: "
+            Width: =447
+            X: =475
+            Y: =84
+            ZIndex: =19
+
+        Label24_33 As label:
+            Height: =44
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Observações
+            Width: =447
+            X: =475
+            Y: =124
+            ZIndex: =20
+
+        Separator2_3 As rectangle:
+            Fill: =cores.amareloMontepio
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =21
+
+    "galEquipamento As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =472
+        Items: =collectDetailsEquipamentos
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =113
+        Visible: |
+            =If(FormulariosAtividade.Selected.titulo = "Caracterização dos Equipamentos", true, false)
+        Width: =Container1.Width
+        WrapCount: =0
+        X: =376
+        Y: =259
+        ZIndex: =14
 
         Label24_34 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Equipamento:  "
+            Width: =265
+            ZIndex: =9
+
+        Label24_36 As label:
             Height: =45
             OnSelect: =Select(Parent)
-            Text: =ThisItem.ID
-            Width: =542
-            X: =403
+            Text: =ThisItem.Equipamento.Equipamento
+            Width: =265
             Y: =40
+            ZIndex: =10
+
+        Label24_42 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Duração: "
+            Width: =233
+            X: =265
+            ZIndex: =11
+
+        Label24_40 As label:
+            Height: =47
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Duração
+            Width: =233
+            X: =265
+            Y: =38
             ZIndex: =12
+
+        Label24_44 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Observações: "
+            Width: =447
+            X: =498
+            ZIndex: =19
+
+        Label24_45 As label:
+            Height: =44
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Observações
+            Width: =447
+            X: =498
+            Y: =40
+            ZIndex: =20
+
+        Separator2_4 As rectangle:
+            Fill: =cores.amareloMontepio
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =21
+
+    "galSistemas As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =472
+        Items: =collectDetailsSistemas
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =169
+        Visible: |
+            =If(FormulariosAtividade.Selected.titulo = "Caracterização dos Sistemas", true, false)
+        Width: =Container1.Width
+        WrapCount: =0
+        X: =380
+        Y: =257
+        ZIndex: =15
 
         Label24_35 As label:
             FontWeight: =FontWeight.Bold
-            Height: =45
             OnSelect: =Select(Parent)
             Text: |-
-                ="Processo:"
-            Width: =403
-            X: =10
-            Y: =85
-            ZIndex: =13
-
-        Label24_38 As label:
-            AutoHeight: =true
-            Height: =68
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
-            Width: =galRecursos.Width/2
-            X: =10
-            Y: =131
-            ZIndex: =14
-
-        Label24_36 As label:
-            FontWeight: =FontWeight.Bold
-            Height: =53
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="Edíficio: "
-            Width: =530
-            X: =413
-            Y: =85
-            ZIndex: =15
+                ="Sistemas:"
+            Width: =galSistemas.Width/2
+            ZIndex: =9
 
         Label24_37 As label:
-            Height: =26
+            Height: |
+                =40
             OnSelect: =Select(Parent)
-            Text: =ThisItem.Edifício.Localização
-            Width: =galRecursos.Width/2
-            X: =413
-            Y: =130
-            ZIndex: =16
+            Text: =ThisItem.Equipamento.Equipamento
+            Width: |
+                =galSistemas.Width/2
+            Y: =40
+            ZIndex: =10
 
-        Label24_39 As label:
+        Label24_43 As label:
             FontWeight: =FontWeight.Bold
             OnSelect: =Select(Parent)
             Text: |-
-                ="Atividades: "
-            Width: =galRecursos.Width/2
-            X: =10
-            Y: =161
-            ZIndex: =17
+                ="Duração: "
+            Width: |
+                =galSistemas.Width/2
+            Y: =84
+            ZIndex: =11
+
+        Label24_41 As label:
+            Height: |
+                =40
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Duração
+            Width: |
+                =galSistemas.Width/2
+            Y: =124
+            ZIndex: =12
+
+        Label24_46 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Observações: "
+            Width: |
+                =galSistemas.Width/2
+            X: =472
+            ZIndex: =19
+
+        Label24_47 As label:
+            Height: |
+                =40
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Observações
+            Width: |
+                =galSistemas.Width/2
+            X: =472
+            Y: =40
+            ZIndex: =20
+
+        Separator2_5 As rectangle:
+            Fill: =cores.amareloMontepio
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =21
+
+        Label24_48 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Descrição: "
+            Width: |
+                =galSistemas.Width/2
+            X: =472
+            Y: =84
+            ZIndex: =22
+
+        Label24_49 As label:
+            Height: |
+                =40
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Descrição
+            Width: |
+                =galSistemas.Width/2
+            X: =472
+            Y: =124
+            ZIndex: =23
+
+    "galDependencias As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =472
+        Items: =collectDetailsDependencia
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =169
+        Visible: |
+            =If(FormulariosAtividade.Selected.titulo = "Dependências", true, false)
+        Width: =Container1.Width
+        WrapCount: =0
+        X: =380
+        Y: =252
+        ZIndex: =16
+
+        Label24_38 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Sistemas:"
+            Width: =galDependencias.Width/2
+            ZIndex: =9
+
+        Label24_39 As label:
+            Height: |
+                =40
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Equipamento.Equipamento
+            Width: |
+                =galDependencias.Width/2
+            Y: =40
+            ZIndex: =10
+
+        Label24_50 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Duração: "
+            Width: |
+                =galDependencias.Width/2
+            Y: =84
+            ZIndex: =11
+
+        Label24_52 As label:
+            Height: |
+                =40
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Duração
+            Width: |
+                =galDependencias.Width/2
+            Y: =124
+            ZIndex: =12
+
+        Label24_51 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Observações: "
+            Width: |
+                =galDependencias.Width/2
+            X: =472
+            ZIndex: =19
+
+        Label24_53 As label:
+            Height: |
+                =40
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Observações
+            Width: |
+                =galDependencias.Width/2
+            X: =472
+            Y: =40
+            ZIndex: =20
+
+        Separator2_6 As rectangle:
+            Fill: =cores.amareloMontepio
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =21
+
+        Label24_54 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Descrição: "
+            Width: |
+                =galDependencias.Width/2
+            X: =472
+            Y: =84
+            ZIndex: =22
+
+        Label24_55 As label:
+            Height: |
+                =40
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Descrição
+            Width: |
+                =galDependencias.Width/2
+            X: =472
+            Y: =124
+            ZIndex: =23
 
