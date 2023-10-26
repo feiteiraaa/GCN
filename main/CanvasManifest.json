@@ -115,7 +115,7 @@
     "ManualOfflineProfileId": "",
     "Name": "GCN",
     "OriginatingVersion": "1.334",
-    "ParserErrorCount": 0,
+    "ParserErrorCount": 2,
     "ShowStatusBar": false
   },
   "PublishInfo": {

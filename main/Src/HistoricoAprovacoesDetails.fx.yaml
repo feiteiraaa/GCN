@@ -228,7 +228,7 @@ HistoricoAprovacoesDetails As screen:
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
         TemplateSize: =472
-        Visible: =If(FormulariosAtividade.Selected.titulo = "Caracterização do Processo")
+        Visible: =Switch(
         Width: =Container1.Width
         X: =380
         Y: =262
