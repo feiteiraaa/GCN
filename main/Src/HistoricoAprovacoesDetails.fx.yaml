@@ -220,7 +220,7 @@ HistoricoAprovacoesDetails As screen:
             Width: =Parent.Width / Parent.AllItemsCount
             ZIndex: =2
 
-    "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+    "galProcesso As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =481
         Items: =collectDetailsAprov
@@ -228,6 +228,7 @@ HistoricoAprovacoesDetails As screen:
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
         TemplateSize: =472
+        Visible: =If(FormulariosAtividade.Selected.titulo = "Caracterização do Processo")
         Width: =Container1.Width
         X: =380
         Y: =262
@@ -247,7 +248,7 @@ HistoricoAprovacoesDetails As screen:
             Text: |-
                 ="ID_Total: "
             Width: |
-                =Gallery4.Width /3
+                =galProcesso.Width /3
             X: =4
             ZIndex: =7
 
@@ -268,7 +269,7 @@ HistoricoAprovacoesDetails As screen:
             Text: |-
                 ="Tipo de Processo: "
             Width: |
-                =Gallery4.Width /3
+                =galProcesso.Width /3
             X: =319
             ZIndex: =9
 
@@ -289,7 +290,7 @@ HistoricoAprovacoesDetails As screen:
             Text: |-
                 ="Macro process: "
             Width: |
-                =Gallery4.Width /3
+                =galProcesso.Width /3
             X: =630
             ZIndex: =11
 
@@ -309,7 +310,7 @@ HistoricoAprovacoesDetails As screen:
             OnSelect: =Select(Parent)
             Text: |-
                 ="Processo:"
-            Width: =Gallery4.Width/2
+            Width: =galProcesso.Width/2
             Y: =72
             ZIndex: =13
 
@@ -318,7 +319,7 @@ HistoricoAprovacoesDetails As screen:
             Height: =68
             OnSelect: =Select(Parent)
             Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
-            Width: =Gallery4.Width/2
+            Width: =galProcesso.Width/2
             Y: =112
             ZIndex: =14
 
@@ -327,7 +328,7 @@ HistoricoAprovacoesDetails As screen:
             OnSelect: =Select(Parent)
             Text: |-
                 ="Edíficio: "
-            Width: =Gallery4.Width/2
+            Width: =galProcesso.Width/2
             X: =473
             Y: =72
             ZIndex: =15
@@ -337,7 +338,7 @@ HistoricoAprovacoesDetails As screen:
             Height: =68
             OnSelect: =Select(Parent)
             Text: =ThisItem.uipp_Edificio.Localização
-            Width: =Gallery4.Width/2
+            Width: =galProcesso.Width/2
             X: =473
             Y: =112
             ZIndex: =16
@@ -347,7 +348,7 @@ HistoricoAprovacoesDetails As screen:
             OnSelect: =Select(Parent)
             Text: |-
                 ="Atividades: "
-            Width: =Gallery4.Width/2
+            Width: =galProcesso.Width/2
             X: =4
             Y: =144
             ZIndex: =17
@@ -359,8 +360,8 @@ HistoricoAprovacoesDetails As screen:
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
-            TemplateSize: =42
-            Width: =850
+            TemplateSize: =53
+            Width: =843
             X: =80
             Y: =184
             ZIndex: =18
@@ -373,6 +374,7 @@ HistoricoAprovacoesDetails As screen:
 
             Icon9 As icon.NextArrow:
                 Color: =cores.amareloMontepio
+                DisabledColor: =cores.amareloMontepio
                 DisplayMode: =DisplayMode.Disabled
                 Height: =23
                 Icon: =Icon.NextArrow
