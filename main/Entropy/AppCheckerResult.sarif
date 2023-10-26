@@ -10617,167 +10617,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.Items"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.Items",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 43,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "Items",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.Gallery1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Control",
-              "Text"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.Title1.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.Title1.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 14,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".SampleHeading"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.Gallery1.Title1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "SampleHeading"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.Subtitle1.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.Subtitle1.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 11,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".SampleText"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.Gallery1.Subtitle1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "SampleText"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.FormulariosAtividades.Label2_3.DisplayMode"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.FormulariosAtividades.Label2_3.DisplayMode",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 5,
-                  "charOffset": 436,
-                  "snippet": {
-                    "text": ".edit"
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayMode",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.FormulariosAtividades.Label2_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "edit"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "LeftSectionComponent.MainContainerLeftSection.background.AccessibleLabel"
                 }
               ],
@@ -23584,66 +23423,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.Gallery1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.Gallery1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.varIDTable"
                 }
               ],
@@ -25860,19 +25639,109 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.Items"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Container1.Label20_7.Text"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Gallery1.Items",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Container1.Label20_7.Text",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "Items",
+                "member": "Text",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.Gallery1"
+                "type": "HistoricoAprovacoesDetails.Container1.Label20_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 14
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Container1.Label20_5.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Container1.Label20_5.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.Container1.Label20_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 14
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Container1.Label20_3.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Container1.Label20_3.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.Container1.Label20_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 14
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Container1.Label20_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Container1.Label20_1.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.Container1.Label20_1"
               }
             }
           ],

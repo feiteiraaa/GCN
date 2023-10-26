@@ -167,21 +167,34 @@
                 FormMode.View
             )
         Height: =385
-        Item: |
+        Item: |-
             =If(
                 formMode <> FormMode.New And varIDTable,
                  LookUp(
                     Atividades,
-                    ThisRecord.ID = 'DataTable1'.Selected.ID
+                    ThisRecord.ID = 'DataTable1'.Selected.'ID Atividade'.ID
                   ),
-                formMode <> FormMode.New,
+                formMode <> FormMode.New And !varIDTable,
                 LookUp(
                     Atividades,
-                    ThisRecord.ID = 'Gallery Data'.Selected.ID 
+                    ThisRecord.ID = 'Gallery Data_6'.Selected.ID 
                   ),
                   formMode = FormMode.New,
                   Blank()
             )
+            
+            
+            
+            /* código original
+            
+            If(
+                formMode = FormMode.New,
+                Blank(),
+                LookUp(
+                    Atividades,
+                    ThisRecord.ID = 'Gallery Data_6'.Selected.ID
+                )
+            )*/
         Visible: =Trim(Lower('Passos do Registo de Atividade_2'.Selected.titulo)) = Trim(Lower("Caracterização do Processo"))
         Width: =990
         X: =360
@@ -3869,7 +3882,16 @@
     glr_Atividades_5 As gallery.galleryVertical:
         DelayItemLoading: =true
         Height: =270
-        Items: =Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID)
+        Items: |-
+            =If(varIDTable,
+            Filter('Atividade/Processos',ID_PRO.ID=DataTable1.Selected.'ID Atividade'.ID),
+            Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID) )
+            
+            
+            
+            /* código Original
+            
+            Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID) */
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =41

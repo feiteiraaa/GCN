@@ -27,8 +27,8 @@ HistoricoAprovacoesDetails As screen:
         TemplatePadding: =0
         TemplateSize: =FormulariosAtividades.Width / FormulariosAtividades.AllItemsCount
         Width: =945
-        X: =382
-        Y: =91
+        X: =380
+        Y: =207
         ZIndex: =4
 
         Rectangle4_3 As rectangle:
@@ -60,7 +60,7 @@ HistoricoAprovacoesDetails As screen:
                         DisplayMode.Disabled
                     )
                 )*/
-                ThisItem.edit
+                DisplayMode.Edit
             FontWeight: |-
                 =If(
                     ThisItem.IsSelected,
@@ -114,91 +114,93 @@ HistoricoAprovacoesDetails As screen:
         Y: =35
         ZIndex: =5
 
-    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-        DelayItemLoading: =true
-        Height: =563
-        Items: |-
-            =If(FormulariosAtividades.Selected.Label2_3 = "Caracterização do Processo",
-                Filter(Atividades, ThisRecord.ID = DataTable1.Selected.ID)   
-            )
-        Layout: =Layout.Vertical
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplatePadding: =0
-        TemplateSize: =104
+    Container1 As groupContainer.manualLayoutContainer:
+        BorderColor: =cores.amareloMontepio
+        BorderThickness: =2
+        DropShadow: =DropShadow.None
+        Height: =93
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
         Width: =945
-        X: =382
-        Y: =152
+        X: =380
+        Y: =94
         ZIndex: =6
 
-        Image1 As image:
-            Height: =72
-            OnSelect: =Select(Parent)
-            RadiusBottomLeft: =8
-            RadiusBottomRight: =8
-            RadiusTopLeft: =8
-            RadiusTopRight: =8
-            Width: =72
-            X: =16
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+        Label20 As label:
+            FontWeight: =FontWeight.Bold
+            PaddingBottom: =0
+            PaddingLeft: =10
+            PaddingTop: =10
+            Text: |-
+                ="ID_Total:"
+            Width: |
+                =Container1.Width/4
             ZIndex: =1
 
-        Title1 As label:
-            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
+        Label20_1 As label:
+            PaddingLeft: =10
             PaddingTop: =0
-            Text: =ThisItem.SampleHeading
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Parent.TemplateWidth - 173
-            X: =103
-            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
+            Text: =DataTable1.Selected.'ID Atividade'.ID_Total
+            Width: =236
+            Y: =40
             ZIndex: =2
 
-        Subtitle1 As label:
-            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
+        Label20_2 As label:
+            FontWeight: =FontWeight.Bold
             PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: =ThisItem.SampleText
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Title1.Width
-            X: =Title1.X
-            Y: =Title1.Y + Title1.Height
+            PaddingTop: =10
+            Text: |-
+                ="Estado:"
+            Width: |
+                =Container1.Width/4
+            X: =234
             ZIndex: =3
 
-        NextArrow1 As icon.ChevronRight:
-            AccessibleLabel: =Self.Tooltip
-            Color: =RGBA(166, 166, 166, 1)
-            Height: =50
-            Icon: =Icon.ChevronRight
-            OnSelect: =Select(Parent)
-            PaddingBottom: =16
-            PaddingLeft: =16
-            PaddingRight: =16
-            PaddingTop: =16
-            Tooltip: ="View item details"
-            Width: =50
-            X: =Parent.TemplateWidth - Self.Width - 12
-            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+        Label20_3 As label:
+            PaddingTop: =0
+            Text: =DataTable1.Selected.Estado
+            Width: =236
+            X: =234
+            Y: =40
             ZIndex: =4
 
-        Separator1 As rectangle:
-            Height: =8
-            OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
-            Y: =Parent.TemplateHeight - Self.Height
+        Label20_4 As label:
+            FontWeight: =FontWeight.Bold
+            PaddingBottom: =0
+            PaddingTop: =10
+            Text: |-
+                ="Data Decisão:"
+            Width: |
+                =Container1.Width/4
+            X: =471
             ZIndex: =5
 
-        Rectangle6 As rectangle:
-            Height: =Parent.TemplateHeight - Separator1.Height
-            OnSelect: =Select(Parent)
-            Visible: =ThisItem.IsSelected
-            Width: =4
+        Label20_5 As label:
+            PaddingTop: =0
+            Text: =Text(DataTable1.Selected.'Data Aprovaçao',"dd/mm/yyyy")
+            Width: =236
+            X: =471
+            Y: =40
             ZIndex: =6
+
+        Label20_6 As label:
+            FontWeight: =FontWeight.Bold
+            PaddingBottom: =0
+            PaddingTop: =10
+            Text: |-
+                ="Decisor:"
+            Width: |
+                =Container1.Width/4
+            X: =708
+            ZIndex: =7
+
+        Label20_7 As label:
+            PaddingTop: =0
+            Text: =DataTable1.Selected.Decisor
+            Width: =236
+            X: =708
+            Y: =40
+            ZIndex: =8
 
