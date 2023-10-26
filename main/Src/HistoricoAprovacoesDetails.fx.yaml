@@ -1,13 +1,40 @@
 HistoricoAprovacoesDetails As screen:
     OnVisible: |-
-        =ClearCollect(
+        =/*ClearCollect(
                 collectDetailsAprov, 
         Filter(Atividades, ThisRecord.ID = DataTable1.Selected.'ID Atividade'.ID), 
         Filter(Pessoas, ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID),
         Filter(Dependências, ThisRecord.'ID Atividade'.ID =  DataTable1.Selected.'ID Atividade'.ID),
         Filter('Fatores de Criticidades', ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID) 
         //Filter('Equipamentos de Escritório', ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID)
-        )
+        )*/
+        
+        
+        ClearCollect(
+                collectDetailsAprov, 
+        Filter(Atividades, ThisRecord.ID = DataTable1.Selected.'ID Atividade'.ID));
+        
+        
+        ClearCollect(
+                collectDetailsCriticidade, 
+        Filter('Fatores de Criticidades', ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID) );
+        
+        ClearCollect(
+                collectDetailsRecurso, 
+        Filter(Pessoas, ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID) );
+        
+        ClearCollect(
+                collectDetailsEquipamentos, 
+        Filter('Equipamentos de Escritório', ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID) );
+        
+        ClearCollect(
+                collectDetailsSistemas, 
+        Filter(Sistemas, ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID) );
+        
+        
+        ClearCollect(
+                collectDetailsDependencia, 
+        Filter(Dependências, ThisRecord.'ID Atividade'.ID = DataTable1.Selected.'ID Atividade'.ID) );
 
     LeftSectionComponent_14 As LeftSectionComponent:
         ZIndex: =1
@@ -115,21 +142,245 @@ HistoricoAprovacoesDetails As screen:
             Y: =40
             ZIndex: =8
 
-    Label19_1 As label:
-        Text: =FormulariosAtividades.AllItemsCount
-        X: =1039
-        ZIndex: =7
+    "galProcesso As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =472
+        Items: =collectDetailsAprov
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =544
+        Visible: |
+            =If(FormulariosAtividade.Selected.titulo = "Caracterização do Processo", true, false)
+        Width: =Container1.Width
+        WrapCount: =0
+        X: =376
+        Y: =266
+        ZIndex: =10
 
-    Label19_2 As label:
-        Text: =Count(AtividadeFormMenu)
-        X: =1091
-        ZIndex: =8
+        Label24_2 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Tipo de Processo: "
+            Width: =403
+            X: =10
+            ZIndex: =9
 
-    Label21 As label:
-        Text: ="Text"
-        X: =40
-        Y: =40
-        ZIndex: =9
+        Label24_3 As label:
+            Height: =45
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.uipp_TipodeProcesso.'Tipo de Processo'
+            Width: =403
+            X: =10
+            Y: =40
+            ZIndex: =10
+
+        Label24_4 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Macro process: "
+            Width: =540
+            X: =403
+            ZIndex: =11
+
+        Label24_5 As label:
+            Height: =45
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.uipp_MacroProcesso.'Macro Processo (uipp_macroprocesso)'
+            Width: =542
+            X: =403
+            Y: =40
+            ZIndex: =12
+
+        Label24_6 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Processo:"
+            Width: =403
+            X: =10
+            Y: =85
+            ZIndex: =13
+
+        Label24_7 As label:
+            AutoHeight: =true
+            Height: =68
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
+            Width: =galProcesso.Width/2
+            X: =10
+            Y: =131
+            ZIndex: =14
+
+        Label24_8 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =53
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Edíficio: "
+            Width: =530
+            X: =413
+            Y: =85
+            ZIndex: =15
+
+        Label24_9 As label:
+            Height: =26
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Edifício.Localização
+            Width: =galProcesso.Width/2
+            X: =413
+            Y: =130
+            ZIndex: =16
+
+        Label24_10 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Atividades: "
+            Width: =galProcesso.Width/2
+            X: =10
+            Y: =161
+            ZIndex: =17
+
+        "Gallery5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =263
+            Items: =Filter('Atividade/Processos',ID_PRO.ID=DataTable1.Selected.'ID Atividade'.ID)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =101
+            Width: =843
+            X: =76
+            Y: =201
+            ZIndex: =18
+
+            Label25 As label:
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Atividade
+                X: =69
+                ZIndex: =6
+
+            Icon9 As icon.NextArrow:
+                Color: =cores.amareloMontepio
+                DisabledColor: =cores.amareloMontepio
+                DisplayMode: =DisplayMode.Disabled
+                Height: =23
+                Icon: =Icon.NextArrow
+                OnSelect: =Select(Parent)
+                Width: =23
+                X: =28
+                Y: =8
+                ZIndex: =7
+
+    "galCriticidade As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =486
+        Items: =collectDetailsCriticidade
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =263
+        Visible: |+
+            =If(Trim(Lower(FormulariosAtividade.Selected.titulo)) = "Fatores de Criticidade", true, false)
+            
+        Width: =Container1.Width
+        WrapCount: =0
+        X: =380
+        Y: =252
+        ZIndex: =11
+
+        Label24_22 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: ="Tipo de fator "
+            Width: =403
+            X: =10
+            ZIndex: =9
+
+        Label24_24 As label:
+            Height: =45
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.uipp_TipodeProcesso.'Tipo de Processo'
+            Width: =403
+            X: =10
+            Y: =40
+            ZIndex: =10
+
+        Label24_23 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Macro process: "
+            Width: =540
+            X: =403
+            ZIndex: =11
+
+        Label24_25 As label:
+            Height: =45
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.uipp_MacroProcesso.'Macro Processo (uipp_macroprocesso)'
+            Width: =542
+            X: =403
+            Y: =40
+            ZIndex: =12
+
+        Label24_26 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Processo:"
+            Width: =403
+            X: =10
+            Y: =85
+            ZIndex: =13
+
+        Label24_29 As label:
+            AutoHeight: =true
+            Height: =68
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
+            Width: =galCriticidade.Width/2
+            X: =10
+            Y: =131
+            ZIndex: =14
+
+        Label24_27 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =53
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Edíficio: "
+            Width: =530
+            X: =413
+            Y: =85
+            ZIndex: =15
+
+        Label24_28 As label:
+            Height: =26
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Edifício.Localização
+            Width: =galCriticidade.Width/2
+            X: =413
+            Y: =130
+            ZIndex: =16
+
+        Label24_30 As label:
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Atividades: "
+            Width: =galCriticidade.Width/2
+            X: =10
+            Y: =161
+            ZIndex: =17
 
     "FormulariosAtividade As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
@@ -142,10 +393,10 @@ HistoricoAprovacoesDetails As screen:
         TemplateSize: =FormulariosAtividade.Width / FormulariosAtividade.AllItemsCount
         Width: =945
         X: =380
-        Y: =201
-        ZIndex: =10
+        Y: =196
+        ZIndex: =12
 
-        Rectangle4_3 As rectangle:
+        Rectangle4_4 As rectangle:
             Fill: =
             Height: =2
             OnSelect: =Select(Parent)
@@ -153,7 +404,7 @@ HistoricoAprovacoesDetails As screen:
             Y: =47
             ZIndex: =1
 
-        Label2_3 As label:
+        Label2_4 As label:
             Align: =Align.Center
             DisplayMode: |-
                 =/*If(
@@ -220,170 +471,108 @@ HistoricoAprovacoesDetails As screen:
             Width: =Parent.Width / Parent.AllItemsCount
             ZIndex: =2
 
-    "galProcesso As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+    "galRecursos As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
-        Height: =481
-        Items: =collectHistoricAprov
+        Height: =488
+        Items: =collectRecursos
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
         TemplatePadding: =0
-        TemplateSize: =472
-        Visible: =If(FormulariosAtividade.Selected.titulo = "Caracterização do Processo", true, false)
+        TemplateSize: =263
+        Visible: |-
+            =//If(Trim(Lower(FormulariosAtividade.Selected.titulo)) = "Caracterização dos Recursos", true, false)
+            false
         Width: =Container1.Width
         WrapCount: =0
         X: =380
-        Y: =262
-        ZIndex: =11
+        Y: =257
+        ZIndex: =13
 
-        Rectangle8 As rectangle:
-            Fill: =cores.amareloMontepio
-            Height: =Parent.TemplateHeight
-            OnSelect: =Select(Parent)
-            Visible: =ThisItem.IsSelected
-            Width: =4
-            ZIndex: =6
-
-        Label24 As label:
-            FontWeight: =FontWeight.Bold
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="ID_Total: "
-            Width: |
-                =galProcesso.Width /3
-            X: =4
-            ZIndex: =7
-
-        Label24_1 As label:
-            AutoHeight: =true
-            Height: |
-                =40
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_id_total
-            Width: =315
-            X: =4
-            Y: =40
-            ZIndex: =8
-
-        Label24_2 As label:
+        Label24_31 As label:
             FontWeight: =FontWeight.Bold
             OnSelect: =Select(Parent)
             Text: |-
                 ="Tipo de Processo: "
-            Width: |
-                =galProcesso.Width /3
-            X: =319
+            Width: =403
+            X: =10
             ZIndex: =9
 
-        Label24_3 As label:
-            AutoHeight: =true
-            Height: |
-                =40
+        Label24_33 As label:
+            Height: =45
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_TipodeProcesso.'Tipo de Processo'
-            Width: =315
-            X: =319
+            Text: =ThisItem
+            Width: =403
+            X: =10
             Y: =40
             ZIndex: =10
 
-        Label24_4 As label:
+        Label24_32 As label:
             FontWeight: =FontWeight.Bold
             OnSelect: =Select(Parent)
             Text: |-
                 ="Macro process: "
-            Width: |
-                =galProcesso.Width /3
-            X: =630
+            Width: =540
+            X: =403
             ZIndex: =11
 
-        Label24_5 As label:
-            AutoHeight: =true
-            Height: |
-                =80
+        Label24_34 As label:
+            Height: =45
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_MacroProcesso.'Macro Processo (uipp_macroprocesso)'
-            Width: =315
-            X: =630
+            Text: =ThisItem.ID
+            Width: =542
+            X: =403
             Y: =40
             ZIndex: =12
 
-        Label24_6 As label:
+        Label24_35 As label:
             FontWeight: =FontWeight.Bold
+            Height: =45
             OnSelect: =Select(Parent)
             Text: |-
                 ="Processo:"
-            Width: =galProcesso.Width/2
-            Y: =72
+            Width: =403
+            X: =10
+            Y: =85
             ZIndex: =13
 
-        Label24_7 As label:
+        Label24_38 As label:
             AutoHeight: =true
             Height: =68
             OnSelect: =Select(Parent)
             Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
-            Width: =galProcesso.Width/2
-            Y: =112
+            Width: =galRecursos.Width/2
+            X: =10
+            Y: =131
             ZIndex: =14
 
-        Label24_8 As label:
+        Label24_36 As label:
             FontWeight: =FontWeight.Bold
+            Height: =53
             OnSelect: =Select(Parent)
             Text: |-
                 ="Edíficio: "
-            Width: =galProcesso.Width/2
-            X: =473
-            Y: =72
+            Width: =530
+            X: =413
+            Y: =85
             ZIndex: =15
 
-        Label24_9 As label:
-            AutoHeight: =true
-            Height: =68
+        Label24_37 As label:
+            Height: =26
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_Edificio.Localização
-            Width: =galProcesso.Width/2
-            X: =473
-            Y: =112
+            Text: =ThisItem.Edifício.Localização
+            Width: =galRecursos.Width/2
+            X: =413
+            Y: =130
             ZIndex: =16
 
-        Label24_10 As label:
+        Label24_39 As label:
             FontWeight: =FontWeight.Bold
             OnSelect: =Select(Parent)
             Text: |-
                 ="Atividades: "
-            Width: =galProcesso.Width/2
-            X: =4
-            Y: =144
+            Width: =galRecursos.Width/2
+            X: =10
+            Y: =161
             ZIndex: =17
-
-        "Gallery5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-            DelayItemLoading: =true
-            Height: =288
-            Items: =Filter('Atividade/Processos',ID_PRO.ID=DataTable1.Selected.'ID Atividade'.ID)
-            Layout: =Layout.Vertical
-            LoadingSpinner: =LoadingSpinner.Data
-            ShowScrollbar: =false
-            TemplatePadding: =0
-            TemplateSize: =53
-            Width: =843
-            X: =80
-            Y: =184
-            ZIndex: =18
-
-            Label25 As label:
-                OnSelect: =Select(Parent)
-                Text: =ThisItem.Atividade
-                X: =63
-                ZIndex: =6
-
-            Icon9 As icon.NextArrow:
-                Color: =cores.amareloMontepio
-                DisabledColor: =cores.amareloMontepio
-                DisplayMode: =DisplayMode.Disabled
-                Height: =23
-                Icon: =Icon.NextArrow
-                OnSelect: =Select(Parent)
-                Width: =23
-                X: =28
-                Y: =8
-                ZIndex: =7
 

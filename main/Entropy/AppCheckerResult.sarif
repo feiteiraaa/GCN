@@ -4574,6 +4574,360 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_Tipo_Column1_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_Tipo_Column1_1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 10,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_Tipo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Screen3",
+                "type": "Screen3.DataTable2_1.uipp_Tipo_Column1_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_Tipo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_Tipo_Column1_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_Tipo_Column1_1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 5,
+                  "charOffset": 18,
+                  "snippet": {
+                    "text": ".Tipo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Screen3",
+                "type": "Screen3.DataTable2_1.uipp_Tipo_Column1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_teletrabalho_Column1_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_teletrabalho_Column1_1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 18,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_teletrabalho"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Screen3",
+                "type": "Screen3.DataTable2_1.uipp_teletrabalho_Column1_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_teletrabalho"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_pessoasid_Column1_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_pessoasid_Column1_1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 15,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_pessoasid"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Screen3",
+                "type": "Screen3.DataTable2_1.uipp_pessoasid_Column1_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_pessoasid"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_nempregado_Column1_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_nempregado_Column1_1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 16,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_nempregado"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Screen3",
+                "type": "Screen3.DataTable2_1.uipp_nempregado_Column1_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_nempregado"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_IDAtividade_Column1_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_IDAtividade_Column1_1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 17,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_IDAtividade"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Screen3",
+                "type": "Screen3.DataTable2_1.uipp_IDAtividade_Column1_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_IDAtividade"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_IDAtividade_Column1_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_IDAtividade_Column1_1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 3,
+                  "charOffset": 25,
+                  "snippet": {
+                    "text": ".ID"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Screen3",
+                "type": "Screen3.DataTable2_1.uipp_IDAtividade_Column1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_duracao_Column1_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_duracao_Column1_1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 13,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_duracao"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Screen3",
+                "type": "Screen3.DataTable2_1.uipp_duracao_Column1_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_duracao"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_colaboradorcritico_Column1_1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.DataTable2_1.uipp_colaboradorcritico_Column1_1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 24,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_colaboradorcritico"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "Screen3",
+                "type": "Screen3.DataTable2_1.uipp_colaboradorcritico_Column1_1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_colaboradorcritico"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "'Histórico de Aprovações_1'.Label1_8.Text"
                 }
               ],
@@ -4647,7 +5001,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -4728,7 +5082,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -4808,7 +5162,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -4888,7 +5242,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -7568,7 +7922,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -7689,7 +8043,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -7729,7 +8083,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -7769,7 +8123,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrColDNE-Name",
-          "ruleIndex": 5
+          "ruleIndex": 6
         },
         {
           "locations": [
@@ -7809,7 +8163,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9169,7 +9523,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9250,7 +9604,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
+          "ruleIndex": 5
         },
         {
           "locations": [
@@ -9330,7 +9684,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -9410,7 +9764,7 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -10617,32 +10971,32 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Label19_1.Text"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.Label24_37.Text"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Label19_1.Text",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.Label24_37.Text",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 21,
-                  "charOffset": 0,
+                  "charLength": 9,
+                  "charOffset": 8,
                   "snippet": {
-                    "text": "FormulariosAtividades"
+                    "text": ".Edifício"
                   }
                 }
               },
               "properties": {
                 "member": "Text",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.Label19_1"
+                "type": "HistoricoAprovacoesDetails.galRecursos.Label24_37"
               }
             }
           ],
           "message": {
             "arguments": [
-              "FormulariosAtividades"
+              "Edifício"
             ],
             "id": "issue"
           },
@@ -10657,26 +11011,26 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Label19_1.Text"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.Label24_37.Text"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Label19_1.Text",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.Label24_37.Text",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 14,
-                  "charOffset": 21,
+                  "charLength": 12,
+                  "charOffset": 17,
                   "snippet": {
-                    "text": ".AllItemsCount"
+                    "text": ".Localização"
                   }
                 }
               },
               "properties": {
                 "member": "Text",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.Label19_1"
+                "type": "HistoricoAprovacoesDetails.galRecursos.Label24_37"
               }
             }
           ],
@@ -10687,86 +11041,6 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Label19_2.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Label19_2.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 17,
-                  "charOffset": 6,
-                  "snippet": {
-                    "text": "AtividadeFormMenu"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.Label19_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Count"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrNeedTableCol-Func",
-          "ruleIndex": 7
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Label19_2.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.Label19_2.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 24,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "Count(AtividadeFormMenu)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.Label19_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Count"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
           "ruleIndex": 3
         },
         {
@@ -10774,206 +11048,12 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_1.Text"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.Label24_38.Text"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_1.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 14,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".uipp_id_total"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Label24_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "uipp_id_total"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_3.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_3.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 20,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".uipp_TipodeProcesso"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Label24_3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "uipp_TipodeProcesso"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_3.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_3.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 19,
-                  "charOffset": 28,
-                  "snippet": {
-                    "text": ".'Tipo de Processo'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Label24_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_5.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_5.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 19,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".uipp_MacroProcesso"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Label24_5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "uipp_MacroProcesso"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_5.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_5.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 38,
-                  "charOffset": 27,
-                  "snippet": {
-                    "text": ".'Macro Processo (uipp_macroprocesso)'"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Label24_5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_7.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_7.Text",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.Label24_38.Text",
                   "relativeAddress": 0
                 },
                 "region": {
@@ -10987,7 +11067,7 @@
               "properties": {
                 "member": "Text",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Label24_7"
+                "type": "HistoricoAprovacoesDetails.galRecursos.Label24_38"
               }
             }
           ],
@@ -11008,12 +11088,12 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_7.Text"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.Label24_38.Text"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_7.Text",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.Label24_38.Text",
                   "relativeAddress": 0
                 },
                 "region": {
@@ -11027,7 +11107,7 @@
               "properties": {
                 "member": "Text",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Label24_7"
+                "type": "HistoricoAprovacoesDetails.galRecursos.Label24_38"
               }
             }
           ],
@@ -11038,39 +11118,39 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 3
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_9.Text"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_24.Text"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_9.Text",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_24.Text",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 14,
+                  "charLength": 20,
                   "charOffset": 8,
                   "snippet": {
-                    "text": ".uipp_Edificio"
+                    "text": ".uipp_TipodeProcesso"
                   }
                 }
               },
               "properties": {
                 "member": "Text",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Label24_9"
+                "type": "HistoricoAprovacoesDetails.galCriticidade.Label24_24"
               }
             }
           ],
           "message": {
             "arguments": [
-              "uipp_Edificio"
+              "uipp_TipodeProcesso"
             ],
             "id": "issue"
           },
@@ -11085,26 +11165,26 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_9.Text"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_24.Text"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Label24_9.Text",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_24.Text",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 12,
-                  "charOffset": 22,
+                  "charLength": 19,
+                  "charOffset": 28,
                   "snippet": {
-                    "text": ".Localização"
+                    "text": ".'Tipo de Processo'"
                   }
                 }
               },
               "properties": {
                 "member": "Text",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Label24_9"
+                "type": "HistoricoAprovacoesDetails.galCriticidade.Label24_24"
               }
             }
           ],
@@ -11115,7 +11195,279 @@
             "level": "High"
           },
           "ruleId": "app-ErrInvalidDot",
-          "ruleIndex": 6
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_25.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_25.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 19,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_MacroProcesso"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galCriticidade.Label24_25"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_MacroProcesso"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_25.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_25.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 38,
+                  "charOffset": 27,
+                  "snippet": {
+                    "text": ".'Macro Processo (uipp_macroprocesso)'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galCriticidade.Label24_25"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_28.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_28.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".Edifício"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galCriticidade.Label24_28"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Edifício"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_28.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_28.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 17,
+                  "snippet": {
+                    "text": ".Localização"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galCriticidade.Label24_28"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_29.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_29.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 14,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".uipp_Processo"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galCriticidade.Label24_29"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "uipp_Processo"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_29.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.Label24_29.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 27,
+                  "charOffset": 22,
+                  "snippet": {
+                    "text": ".'Processo (uipp_processo)'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galCriticidade.Label24_29"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.Label24_33.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.Label24_33.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "ThisItem"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galRecursos.Label24_33"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Record"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
+          "ruleIndex": 7
         },
         {
           "locations": [
@@ -23868,19 +24220,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_3.FocusedBorderThickness"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_4.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_3.FocusedBorderThickness",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_4.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_3"
+                "type": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_4"
               }
             }
           ],
@@ -23898,19 +24250,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_3.TabIndex"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_4.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_3.TabIndex",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_4.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_3"
+                "type": "HistoricoAprovacoesDetails.FormulariosAtividade.Label2_4"
               }
             }
           ],
@@ -23928,19 +24280,229 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.TabIndex"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Gallery5.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.TabIndex",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Gallery5.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso"
+                "type": "HistoricoAprovacoesDetails.galProcesso.Gallery5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Gallery5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Gallery5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galProcesso.Gallery5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galCriticidade"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galCriticidade.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galCriticidade"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen4",
+                "type": "Screen4.galProcesso_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Screen4",
+                "type": "Screen4.galProcesso_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.Gallery5_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.Gallery5_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen4",
+                "type": "Screen4.galProcesso_1.Gallery5_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.Gallery5_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.Gallery5_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Screen4",
+                "type": "Screen4.galProcesso_1.Gallery5_1"
               }
             }
           ],
@@ -23988,19 +24550,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Gallery5.AccessibleLabel"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Gallery5.AccessibleLabel",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "HistoricoAprovacoesDetails",
+                "type": "HistoricoAprovacoesDetails.galProcesso"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Gallery5"
+                "type": "HistoricoAprovacoesDetails.galRecursos"
               }
             }
           ],
@@ -24018,19 +24610,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Gallery5.TabIndex"
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Gallery5.TabIndex",
+                  "fullyQualifiedName": "HistoricoAprovacoesDetails.galRecursos.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "HistoricoAprovacoesDetails",
-                "type": "HistoricoAprovacoesDetails.galProcesso.Gallery5"
+                "type": "HistoricoAprovacoesDetails.galRecursos"
               }
             }
           ],
@@ -26384,6 +26976,96 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.Width"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.Width",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Width",
+                "module": "Screen4",
+                "type": "Screen4.galProcesso_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 16
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.Visible",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "Screen4",
+                "type": "Screen4.galProcesso_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 16
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.Gallery5_1.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen4.galProcesso_1.Gallery5_1.Items",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "Screen4",
+                "type": "Screen4.galProcesso_1.Gallery5_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 16
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "HistoricoAprovacoesDetails.galProcesso.Gallery5.Items"
                 }
               ],
@@ -26472,6 +27154,20 @@
               }
             },
             {
+              "id": "app-ErrInvalidDot",
+              "messageStrings": {
+                "issue": {
+                  "text": "Invalid use of '.'"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
               "id": "app-ErrInvalidArgs-Func",
               "messageStrings": {
                 "issue": {
@@ -26518,28 +27214,17 @@
               }
             },
             {
-              "id": "app-ErrInvalidDot",
+              "id": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
               "messageStrings": {
                 "issue": {
-                  "text": "Invalid use of '.'"
+                  "text": "Expected {0} value."
                 }
               },
               "properties": {
                 "componentType": "app",
-                "level": "High",
-                "primaryCategory": "formula",
-                "whyFix": ""
-              }
-            },
-            {
-              "id": "app-ErrNeedTableCol-Func",
-              "messageStrings": {
-                "issue": {
-                  "text": "The first argument of '{0}' should be a one-column table."
-                }
-              },
-              "properties": {
-                "componentType": "app",
+                "howToFix": [
+                  "Change the rule to produce a {0} value."
+                ],
                 "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""

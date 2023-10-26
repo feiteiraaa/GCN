@@ -49,7 +49,7 @@ Screen3 As screen:
             Order: =3
             Text: =ThisItem.uipp_Tipo.Tipo
             Width: =100
-            X: =345
+            X: =480
             Y: =0
             ZIndex: =3
 
