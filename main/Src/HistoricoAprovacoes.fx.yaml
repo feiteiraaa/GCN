@@ -40,10 +40,10 @@ HistoricoAprovacoes As screen:
                          If(!IsBlank(TextInput2_3.Text), TextInput2_3.Text in ThisRecord.'ID Atividade'.ID_Total , true)
                              Or
                          If(!IsBlank(TextInput2_3.Text), TextInput2_3.Text in ThisRecord.Estado , true)
-                        And
+                        Or
                         If(!IsBlank(DatePicker1.SelectedDate),  
                             ThisRecord.'Data Aprovaçao' >= DatePicker1.SelectedDate, true)
-                        And
+                        Or
                         If(!IsBlank(DatePicker1_1.SelectedDate),
                              ThisRecord.'Data Aprovaçao' <= DateAdd( DatePicker1_1.SelectedDate, 1, TimeUnit.Days), true)
                         And 
@@ -174,23 +174,33 @@ HistoricoAprovacoes As screen:
         ZIndex: =5
 
     DatePicker1 As datepicker:
+        BorderColor: =RGBA(255, 191, 0, 1)
+        BorderThickness: =1
+        Format: ="dd/mm/yyyy"
         Height: =TextInput2_3.Height
+        IconBackground: =cores.amareloMontepio
         Width: =174
         X: =719
         Y: =TextInput2_3.Y
         ZIndex: =6
 
     DatePicker1_1 As datepicker:
+        BorderColor: =RGBA(255, 191, 0, 1)
+        BorderThickness: =1
+        Format: ="dd/mm/yyyy"
         Height: =TextInput2_3.Height
+        IconBackground: =cores.amareloMontepio
         Width: =174
         X: =920
         Y: =95
         ZIndex: =7
 
     Label22 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
         Height: =30
         Text: ="a"
-        Width: =41
+        Width: =27
         X: =893
         Y: =94
         ZIndex: =8
