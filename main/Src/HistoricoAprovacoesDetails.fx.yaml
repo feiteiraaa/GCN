@@ -258,20 +258,20 @@ HistoricoAprovacoesDetails As screen:
                 Height: =48
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.Atividade
-                Width: =720
-                X: =69
+                Width: =721
+                X: =68
                 ZIndex: =6
 
             Icon9 As icon.NextArrow:
                 Color: =cores.amareloMontepio
                 DisabledColor: =cores.amareloMontepio
                 DisplayMode: =DisplayMode.Disabled
-                Height: =23
+                Height: =22
                 Icon: =Icon.NextArrow
                 OnSelect: =Select(Parent)
                 Width: =23
-                X: =28
-                Y: =8
+                X: =45
+                Y: =13
                 ZIndex: =7
 
     "FormulariosAtividade As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":

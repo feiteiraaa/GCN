@@ -24,13 +24,23 @@ HistoricoAprovacoes As screen:
         DisplayMode: =DisplayMode.Edit
         Fill: =RGBA(0, 0, 0, 0)
         HeadingFill: =cores.cinzento
-        Height: =586
+        Height: =581
         HoverFill: =RGBA(255, 191, 0, 0.54)
-        Items: =SortByColumns(collectHistoricAprov,"createdon",SortOrder.Descending)
+        Items: |-
+            =Filter( collectHistoricAprov,
+                TextInput2_3.Text in ThisRecord.Decisor Or
+                TextInput2_3.Text in ThisRecord.'ID Atividade'.'Unidade Orgânica' Or
+                TextInput2_3.Text in ThisRecord.'ID Atividade'.ID_Total Or
+                TextInput2_3.Text in ThisRecord.Estado,
+                Or( DatePicker1.SelectedDate in ThisRecord.'Data Aprovaçao')
+            )
+            
+            
+            //SortByColumns(collectHistoricAprov,"createdon",SortOrder.Descending)
         SelectedFill: =cores.amareloMontepio
         Width: =953
         X: =381
-        Y: =138
+        Y: =153
         ZIndex: =3
 
         Estado_Column1 As dataTableColumn.complexOptionSetColumn:
@@ -45,7 +55,7 @@ HistoricoAprovacoes As screen:
                 =Navigate('Atividade Form Screen_2', Transition.None ,{varIDTable: true})
             Order: =4
             Text: =ThisItem.Estado
-            Width: =124
+            Width: =180
             X: =0
             Y: =0
             ZIndex: =3
@@ -61,7 +71,7 @@ HistoricoAprovacoes As screen:
             OnSelect: =Navigate(HistoricoAprovacoesDetails)
             Order: =8
             Text: =ThisItem.Decisor
-            Width: =163
+            Width: =200
             X: =529
             Y: =0
             ZIndex: =4
@@ -77,7 +87,7 @@ HistoricoAprovacoes As screen:
             OnSelect: =Navigate(HistoricoAprovacoesDetails)
             Order: =5
             Text: =Text(ThisItem.'Data Aprovaçao',"dd/mm/yyyy")
-            Width: =134
+            Width: =180
             X: =732
             Y: =0
             ZIndex: =5
@@ -93,7 +103,7 @@ HistoricoAprovacoes As screen:
             OnSelect: =Navigate(HistoricoAprovacoesDetails)
             Order: =3
             Text: =ThisItem.ID_Total.ID_Total
-            Width: =148
+            Width: =180
             X: =0
             Y: =0
             ZIndex: =8
@@ -108,8 +118,61 @@ HistoricoAprovacoes As screen:
             LayoutHeight: =Parent.Height
             Order: =9
             Text: =ThisItem.uipp_IDAtividade.'Unidade Orgânica'
-            Width: =160
-            X: =0
+            Width: =180
+            X: =594
             Y: =0
             ZIndex: =9
+
+    TextInput2_3 As text:
+        BorderColor: =ColorFade(cores.cinzento, 80%)
+        BorderThickness: =1
+        Clear: =true
+        Color: |-
+            =//RGBA(0, 0, 0, 1)
+            cores.cinzento
+        Default: =
+        Fill: =ColorFade(cores.cinzento, 90%)
+        Height: =29
+        HoverBorderColor: =RGBA(128, 128, 128, 1)
+        HoverFill: =
+        PaddingLeft: =40
+        Tooltip: =
+        Width: =264
+        X: =383
+        Y: =95
+        ZIndex: =4
+
+    "Icon1_5 As icon.'3DPrinting'":
+        Color: |-
+            =///RGBA(0, 18, 107, 1)
+            cores.amareloMontepio
+        Height: =18
+        Icon: =Icon.Search
+        OnSelect: =//Select(Parent)
+        Width: =18
+        X: =383
+        Y: =100
+        ZIndex: =5
+
+    DatePicker1 As datepicker:
+        Height: =TextInput2_3.Height
+        Width: =174
+        X: =719
+        Y: =TextInput2_3.Y
+        ZIndex: =6
+
+    DatePicker1_1 As datepicker:
+        Height: =TextInput2_3.Height
+        Width: =174
+        X: =920
+        Y: =95
+        ZIndex: =7
+
+    Label22 As label:
+        Height: =30
+        Text: ="a"
+        Width: =41
+        X: =893
+        Y: =94
+        ZIndex: =8
 
