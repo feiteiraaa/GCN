@@ -19,7 +19,7 @@ Screen3 As screen:
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =1
-            Text: =ThisItem.uipp_TipodeProcesso.'Tipo de Processo'
+            Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
             Width: =100
             X: =0
             Y: =0
@@ -75,7 +75,7 @@ Screen3 As screen:
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =5
-            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
+            Text: =ThisItem.Processo.'Processo (uipp_processo)'
             Width: =100
             X: =0
             Y: =0
@@ -131,7 +131,7 @@ Screen3 As screen:
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =9
-            Text: =ThisItem.uipp_MacroProcesso.'Macro Processo (uipp_macroprocesso)'
+            Text: =ThisItem.'Macro Processo'.'Macro Processo (uipp_macroprocesso)'
             Width: =100
             X: =0
             Y: =0
@@ -201,7 +201,7 @@ Screen3 As screen:
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =14
-            Text: =ThisItem.uipp_Edificio.Localização
+            Text: =ThisItem.Edifício.Localização
             Width: =100
             X: =1161
             Y: =0

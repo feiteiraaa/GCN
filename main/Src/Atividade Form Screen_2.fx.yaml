@@ -3963,7 +3963,7 @@
                                     ThisRecord.ID_Total = 'Gallery Data_6'.Selected.ID_Total
                                 ),
                             Decisor: User().FullName,
-                            'Data Aprovaçao': Now()
+                            'Data Aprovacao': Now()
                         }
                     );
                     //Atualizar o estado da Atividade - APROVADO
@@ -4002,7 +4002,7 @@
                                     ThisRecord.ID_Total = 'Gallery Data_6'.Selected.ID_Total
                                 ),
                             Decisor: User().FullName,
-                            'Data Aprovaçao': Now()
+                            'Data Aprovacao': Now()
                         }
                     );
                     //Atualizar o estado da Atividade - Rejeitado

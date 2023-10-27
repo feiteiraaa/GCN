@@ -9439,7 +9439,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "CancelAndAporoveBtn",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9622,7 +9622,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "CancelAndAporoveBtnCode",
-      "ParentIndex": 4,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -37101,7 +37101,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "SaveEditBtn",
-      "ParentIndex": 1,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -37277,7 +37277,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "SaveEditBtnCode",
-      "ParentIndex": 2,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

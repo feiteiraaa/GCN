@@ -42,15 +42,15 @@ HistoricoAprovacoes As screen:
                          If(!IsBlank(TextInput2_3.Text), TextInput2_3.Text in ThisRecord.Estado , true)
                         Or
                         If(!IsBlank(DatePicker1.SelectedDate),  
-                            ThisRecord.'Data Aprovaçao' >= DatePicker1.SelectedDate, true)
+                            ThisRecord.'Data Aprovacao' >= DatePicker1.SelectedDate, true)
                         Or
                         If(!IsBlank(DatePicker1_1.SelectedDate),
-                             ThisRecord.'Data Aprovaçao' <= DateAdd( DatePicker1_1.SelectedDate, 1, TimeUnit.Days), true)
+                             ThisRecord.'Data Aprovacao' <= DateAdd( DatePicker1_1.SelectedDate, 1, TimeUnit.Days), true)
                         And 
                         If(DatePicker1.SelectedDate = DatePicker1_1.SelectedDate, 
-                        ThisRecord.'Data Aprovaçao' >= DatePicker1.SelectedDate
+                        ThisRecord.'Data Aprovacao' >= DatePicker1.SelectedDate
                         Or
-                          ThisRecord.'Data Aprovaçao'  < DateAdd( DatePicker1_1.SelectedDate, 1, TimeUnit.Days), true)
+                          ThisRecord.'Data Aprovacao'  < DateAdd( DatePicker1_1.SelectedDate, 1, TimeUnit.Days), true)
                      
                 
                 ),"createdon",SortOrder.Descending
@@ -105,7 +105,7 @@ HistoricoAprovacoes As screen:
             LayoutHeight: =Parent.Height
             OnSelect: =Navigate(HistoricoAprovacoesDetails)
             Order: =5
-            Text: =Text(ThisItem.'Data Aprovaçao',"dd/mm/yyyy")
+            Text: =Text(ThisItem.'Data Aprovacao',"dd/mm/yyyy")
             Width: =180
             X: =732
             Y: =0
@@ -136,7 +136,7 @@ HistoricoAprovacoes As screen:
             Height: =Parent.Height
             LayoutHeight: =Parent.Height
             Order: =9
-            Text: =ThisItem.uipp_IDAtividade.'Unidade Orgânica'
+            Text: =ThisItem.'ID Atividade'.'Unidade Orgânica'
             Width: =180
             X: =594
             Y: =0

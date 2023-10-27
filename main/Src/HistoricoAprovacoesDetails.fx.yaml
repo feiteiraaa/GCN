@@ -117,7 +117,7 @@ HistoricoAprovacoesDetails As screen:
 
         Label20_5 As label:
             PaddingTop: =0
-            Text: =Text(DataTable1.Selected.'Data Aprovaçao',"dd/mm/yyyy")
+            Text: =Text(DataTable1.Selected.'Data Aprovacao',"dd/mm/yyyy")
             Width: =236
             X: =471
             Y: =40
@@ -171,7 +171,7 @@ HistoricoAprovacoesDetails As screen:
 
         Label24_3 As label:
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_TipodeProcesso.'Tipo de Processo'
+            Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
             Width: =galProcesso.Width / 2
             X: |
                 =0
@@ -189,7 +189,7 @@ HistoricoAprovacoesDetails As screen:
 
         Label24_5 As label:
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_MacroProcesso.'Macro Processo (uipp_macroprocesso)'
+            Text: =ThisItem.'Macro Processo'.'Macro Processo (uipp_macroprocesso)'
             Width: =galProcesso.Width / 2
             X: =galProcesso.Width/2
             Y: =40
@@ -206,7 +206,7 @@ HistoricoAprovacoesDetails As screen:
 
         Label24_7 As label:
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
+            Text: =ThisItem.Processo.'Processo (uipp_processo)'
             Width: =galProcesso.Width / 2
             Y: =125
             ZIndex: =14
@@ -250,7 +250,6 @@ HistoricoAprovacoesDetails As screen:
             TemplatePadding: =0
             TemplateSize: =51
             Width: =843
-            X: =76
             Y: =205
             ZIndex: =18
 
@@ -874,6 +873,7 @@ HistoricoAprovacoesDetails As screen:
             ZIndex: =22
 
         Label24_65 As label:
+            Align: =Align.Center
             OnSelect: =Select(Parent)
             Text: =ThisItem.'quatro horas'
             Width: =125
@@ -892,6 +892,7 @@ HistoricoAprovacoesDetails As screen:
             ZIndex: =24
 
         Label24_66 As label:
+            Align: =Align.Center
             OnSelect: =Select(Parent)
             Text: =ThisItem.'vinte quatro horas'
             Width: =125
@@ -910,6 +911,7 @@ HistoricoAprovacoesDetails As screen:
             ZIndex: =26
 
         Label24_67 As label:
+            Align: =Align.Center
             OnSelect: =Select(Parent)
             Text: =ThisItem.'quarenta oito horas'
             Width: =125
@@ -928,6 +930,7 @@ HistoricoAprovacoesDetails As screen:
             ZIndex: =28
 
         Label24_69 As label:
+            Align: =Align.Center
             OnSelect: =Select(Parent)
             Text: =ThisItem.'uma semana'
             Width: =125
@@ -946,6 +949,7 @@ HistoricoAprovacoesDetails As screen:
             ZIndex: =30
 
         Label24_71 As label:
+            Align: =Align.Center
             OnSelect: =Select(Parent)
             Text: =ThisItem.'duas semanas'
             Width: =125
@@ -954,6 +958,7 @@ HistoricoAprovacoesDetails As screen:
             ZIndex: =31
 
         Label24_73 As label:
+            Align: =Align.Center
             OnSelect: =Select(Parent)
             PaddingLeft: =10
             Text: =ThisItem.'um mes'

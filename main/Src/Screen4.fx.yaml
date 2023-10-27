@@ -30,7 +30,7 @@ Screen4 As screen:
         Label20_23 As label:
             Height: =60
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_TipodeProcesso.'Tipo de Processo'
+            Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
             Width: =Label20_21.Width
             X: =Label20_21.X
             Y: =195
@@ -50,7 +50,7 @@ Screen4 As screen:
         Label20_27 As label:
             Height: =60
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_MacroProcesso.'Macro Processo (uipp_macroprocesso)'
+            Text: =ThisItem.'Macro Processo'.'Macro Processo (uipp_macroprocesso)'
             Width: =Label20_21.Width
             X: =489
             Y: =315
@@ -93,7 +93,7 @@ Screen4 As screen:
             Height: =58
             OnSelect: =Select(Parent)
             PaddingLeft: =10
-            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
+            Text: =ThisItem.Processo.'Processo (uipp_processo)'
             Width: =Label20_21.Width
             Y: =315
             ZIndex: =10
@@ -115,7 +115,7 @@ Screen4 As screen:
             Height: =58
             OnSelect: =Select(Parent)
             PaddingLeft: =10
-            Text: =ThisItem.uipp_Edificio.Localização
+            Text: =ThisItem.Edifício.Localização
             Width: =Label20_21.Width
             Y: =435
             ZIndex: =12
@@ -136,7 +136,7 @@ Screen4 As screen:
             Height: =58
             OnSelect: =Select(Parent)
             PaddingLeft: =10
-            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
+            Text: =ThisItem.Processo.'Processo (uipp_processo)'
             Width: =Label20_21.Width
             X: =486
             Y: =435
@@ -257,7 +257,7 @@ Screen4 As screen:
             Height: |
                 =40
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_TipodeProcesso.'Tipo de Processo'
+            Text: =ThisItem.'Tipo de Processo'.'Tipo de Processo'
             Width: =315
             X: =319
             Y: =40
@@ -278,7 +278,7 @@ Screen4 As screen:
             Height: |
                 =80
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_MacroProcesso.'Macro Processo (uipp_macroprocesso)'
+            Text: =ThisItem.'Macro Processo'.'Macro Processo (uipp_macroprocesso)'
             Width: =315
             X: =630
             Y: =40
@@ -297,7 +297,7 @@ Screen4 As screen:
             AutoHeight: =true
             Height: =68
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_Processo.'Processo (uipp_processo)'
+            Text: =ThisItem.Processo.'Processo (uipp_processo)'
             Width: =galProcesso_1.Width/2
             Y: =112
             ZIndex: =14
@@ -316,7 +316,7 @@ Screen4 As screen:
             AutoHeight: =true
             Height: =68
             OnSelect: =Select(Parent)
-            Text: =ThisItem.uipp_Edificio.Localização
+            Text: =ThisItem.Edifício.Localização
             Width: =galProcesso_1.Width/2
             X: =473
             Y: =112
