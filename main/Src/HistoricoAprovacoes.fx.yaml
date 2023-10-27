@@ -26,17 +26,36 @@ HistoricoAprovacoes As screen:
         HeadingFill: =cores.cinzento
         Height: =581
         HoverFill: =RGBA(255, 191, 0, 0.54)
-        Items: |-
-            =Filter( collectHistoricAprov,
-                TextInput2_3.Text in ThisRecord.Decisor Or
-                TextInput2_3.Text in ThisRecord.'ID Atividade'.'Unidade Orgânica' Or
-                TextInput2_3.Text in ThisRecord.'ID Atividade'.ID_Total Or
-                TextInput2_3.Text in ThisRecord.Estado,
-                Or( DatePicker1.SelectedDate in ThisRecord.'Data Aprovaçao')
+        Items: |+
+            =
+            SortByColumns(
+                   
+                     Filter (
+            
+                        collectHistoricAprov, 
+                        If(!IsBlank(TextInput2_3.Text), TextInput2_3.Text in ThisRecord.Decisor, true)
+                        Or
+                         If(!IsBlank(TextInput2_3.Text), TextInput2_3.Text in ThisRecord.'ID Atividade'.'Unidade Orgânica', true)
+                         Or
+                         If(!IsBlank(TextInput2_3.Text), TextInput2_3.Text in ThisRecord.'ID Atividade'.ID_Total , true)
+                             Or
+                         If(!IsBlank(TextInput2_3.Text), TextInput2_3.Text in ThisRecord.Estado , true)
+                        And
+                        If(!IsBlank(DatePicker1.SelectedDate),  
+                            ThisRecord.'Data Aprovaçao' >= DatePicker1.SelectedDate, true)
+                        And
+                        If(!IsBlank(DatePicker1_1.SelectedDate),
+                             ThisRecord.'Data Aprovaçao' <= DateAdd( DatePicker1_1.SelectedDate, 1, TimeUnit.Days), true)
+                        And 
+                        If(DatePicker1.SelectedDate = DatePicker1_1.SelectedDate, 
+                        ThisRecord.'Data Aprovaçao' >= DatePicker1.SelectedDate
+                        Or
+                          ThisRecord.'Data Aprovaçao'  < DateAdd( DatePicker1_1.SelectedDate, 1, TimeUnit.Days), true)
+                     
+                
+                ),"createdon",SortOrder.Descending
             )
             
-            
-            //SortByColumns(collectHistoricAprov,"createdon",SortOrder.Descending)
         SelectedFill: =cores.amareloMontepio
         Width: =953
         X: =381
