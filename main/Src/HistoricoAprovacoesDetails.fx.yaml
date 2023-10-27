@@ -826,66 +826,34 @@ HistoricoAprovacoesDetails As screen:
     "galCriticidade As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         DelayItemLoading: =true
         Height: =469
-        Items: =collectDetailsEquipamentos
+        Items: =collectDetailsCriticidade
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
         TemplatePadding: =0
-        TemplateSize: =92
+        TemplateSize: =89
         Visible: |
-            =If(FormulariosAtividade.Selected.titulo = "Caracterização dos Equipamentos", true, false)
+            =If(FormulariosAtividade.Selected.titulo = "Fatores de Criticidade", true, false)
         Width: =Container1.Width
         WrapCount: =0
         X: =galProcesso.X
-        Y: =2galProcesso.X52
+        Y: =galProcesso.Y
         ZIndex: =17
 
         Label24_58 As label:
             FontWeight: =FontWeight.Bold
             OnSelect: =Select(Parent)
             Text: |-
-                ="Equipamento:  "
-            Width: =333
+                ="Tipos de Fator:  "
+            Width: =195
             ZIndex: =9
 
         Label24_64 As label:
             OnSelect: =Select(Parent)
-            Text: =ThisItem.Equipamento.Equipamento
-            Width: =333
+            Text: =ThisItem.'Tipo de Fator'
+            Width: =195
             Y: =40
             ZIndex: =10
-
-        Label24_61 As label:
-            FontWeight: =FontWeight.Bold
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="Duração: "
-            X: =348
-            ZIndex: =11
-
-        Label24_63 As label:
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Duração
-            X: =348
-            Y: =40
-            ZIndex: =12
-
-        Label24_62 As label:
-            FontWeight: =FontWeight.Bold
-            OnSelect: =Select(Parent)
-            Text: |-
-                ="Observações: "
-            Width: =447
-            X: =498
-            ZIndex: =19
-
-        Label24_65 As label:
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Observações
-            Width: =447
-            X: =498
-            Y: =40
-            ZIndex: =20
 
         Separator2_7 As rectangle:
             Fill: =cores.amareloMontepio
@@ -894,4 +862,139 @@ HistoricoAprovacoesDetails As screen:
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - Self.Height
             ZIndex: =21
+
+        Label24_61 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="<4 horas:  "
+            Width: |
+                =125
+            X: =195
+            ZIndex: =22
+
+        Label24_65 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'quatro horas'
+            Width: =125
+            X: =195
+            Y: =40
+            ZIndex: =23
+
+        Label24_62 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="<24 horas:  "
+            Width: |
+                =125
+            X: =320
+            ZIndex: =24
+
+        Label24_66 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'vinte quatro horas'
+            Width: =125
+            X: =320
+            Y: =40
+            ZIndex: =25
+
+        Label24_63 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="<48 horas:"
+            Width: |
+                =125
+            X: =445
+            ZIndex: =26
+
+        Label24_67 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'quarenta oito horas'
+            Width: =125
+            X: =445
+            Y: =40
+            ZIndex: =27
+
+        Label24_68 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="<1 semana:"
+            Width: |
+                =125
+            X: =570
+            ZIndex: =28
+
+        Label24_69 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'uma semana'
+            Width: =125
+            X: =570
+            Y: =40
+            ZIndex: =29
+
+        Label24_70 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="<2 semanas:"
+            Width: |
+                =125
+            X: =695
+            ZIndex: =30
+
+        Label24_71 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'duas semanas'
+            Width: =125
+            X: =695
+            Y: =40
+            ZIndex: =31
+
+        Label24_73 As label:
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Text: =ThisItem.'um mes'
+            Width: =125
+            X: =820
+            Y: =40
+            ZIndex: =33
+
+        Label24_72 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Text: |-
+                ="<1 mês:"
+            Width: |
+                =125
+            X: =820
+            ZIndex: =34
+
+    Label21 As label:
+        FontWeight: =FontWeight.Lighter
+        Height: =34
+        Text: ="Não existem dados associados em " & FormulariosAtividade.Selected.titulo
+        Visible: |-
+            =Switch(
+                Trim(Lower(FormulariosAtividade.Selected.titulo)),
+                
+                Trim(Lower("Caracterização dos Recursos")),
+                If(galRecurso.AllItemsCount = 0, true, false),
+            
+                Trim(Lower("Caracterização dos Equipamentos")),
+                If(galEquipamento.AllItemsCount = 0, true, false),
+            
+                Trim(Lower("Caracterização dos Sistemas")),
+                If(galSistemas.AllItemsCount = 0, true, false),
+            
+                Trim(Lower("Dependências")),
+                If(galDependencias.AllItemsCount = 0, true, false)
+            )
+        Width: =612
+        X: =644
+        Y: =300
+        ZIndex: =18
 
