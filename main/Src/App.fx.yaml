@@ -72,7 +72,7 @@ App As appinfo:
                         selected: false,
                         icon: Icon.People,
                         text: "Listagem de atividades",
-                        Navigate: Listagem,
+                        Navigate: Listagem_2,
                         VisivelPara: true
                     },
                      {

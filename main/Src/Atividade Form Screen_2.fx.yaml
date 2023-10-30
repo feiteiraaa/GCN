@@ -2482,7 +2482,7 @@
                                     'ID Atividade':
                                         LookUp(
                                             Atividades,
-                                            ThisRecord.ID = 'Gallery Data'.Selected.ID
+                                            ThisRecord.ID = 'Gallery Data_6'.Selected.ID
                                         )
                                 }
                             ),
@@ -2490,7 +2490,7 @@
                             'GCN-Pediraprovação'.Run(
                                 'Gallery Data_6'.Selected.ID,
                                 currentUser,
-                                'Gallery Data_6'.Selected.Atividade
+                                'Gallery Data_6'.Selected.ID_Total
                             ),
                             Notify("Pedido de Aprovação enviado com sucesso", NotificationType.Success)
                         )
@@ -3883,15 +3883,14 @@
         DelayItemLoading: =true
         Height: =270
         Items: |-
-            =If(varIDTable,
+            =/*If(varIDTable,
             Filter('Atividade/Processos',ID_PRO.ID=DataTable1.Selected.'ID Atividade'.ID),
-            Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID) )
+            Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID) )*/
             
             
+            //código Original
             
-            /* código Original
-            
-            Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID) */
+            Filter('Atividade/Processos',ID_PRO.ID='Gallery Data_6'.Selected.ID) 
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplateSize: =41
