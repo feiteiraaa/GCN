@@ -2,7 +2,9 @@
     OnHidden: |-
         =UpdateContext({varIDTable: false})
     OnVisible: |-
-        =UpdateContext({
+        =Clear(collectatividades);
+        
+        UpdateContext({
             ModalForm: {visible: false, text: "Deseja submeter os dados da Atividade?"}
         });
         
